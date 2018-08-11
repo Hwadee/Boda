@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- MyBatis的基础配置文件，在整合Spring后就没啥大用了。 -->
+<configuration> 
+    <!-- <typeAliases>
+    	typeAlias标签定义pojo类的别名，可以写多个typeAlias标签定义多个类的别名
+        <typeAlias alias="user" type="com.db.demo.pojo.User"/>
+    	
+        批量定义pojo类的别名 
+       
+		<package name="com.boda.pojo"/>
+    </typeAliases> -->
+    <settings>
+  		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+    
+    <!-- 定义数据源列表，与Spring整合后就不再需要了。 -->
+	<environments default="development">
+		<!-- 定义一个数据源。可以定义多个数据源，由 environments 标签的 default 参数选定某个数据源 。-->
+		<environment id="development">
+			<!-- 使用jdbc的事务管理，由MyBatis来控制。 -->
+			<transactionManager type="JDBC" />
+			<!-- 数据库连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/boda?characterEncoding=UTF-8" />
+				<property name="username" value="root" />
+				<property name="password" value="970708" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 加载映射文件 -->
+	<mappers>
+		
+			<!-- mapper标签通过resource属性一次加载一个映射文件。
+			可以写多个mapper标签来加载多个映射文件。 -->
+		<!-- <mapper resource="com/boda/mapper/EmployeeMapper.xml"/> -->
+		
+		
+		<!-- 
+			package标签通过指定映射文件的包名来批量加载映射文件。
+			需要遵循一些规范：
+				1、需要使mapper接口类和mapper.xml映射文件的名称保持一致；
+				2、需要将mapper接口类和mapper.xml映射文件放在一个包下边；
+				
+		 -->
+		<package name="com.boda.mapper"/>
+	</mappers>
+
+</configuration>
