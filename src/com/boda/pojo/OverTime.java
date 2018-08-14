@@ -6,12 +6,32 @@ public class OverTime {
 	//逾期信息表
 	private Integer overTimeId;
 	private Integer loanId;
+	private Integer whichStage;//哪一期逾期
 	private Float overTimeMoney;
-	private Integer overTimeDays;
-	private String overUrge;//是否已经催促
-	private Date urgeDate;//催促日期
+	private Date shouldReturnDate;
+	private String urgeState;
+	
+	
 	public Integer getOverTimeId() {
 		return overTimeId;
+	}
+	public Integer getWhichStage() {
+		return whichStage;
+	}
+	public void setWhichStage(Integer whichStage) {
+		this.whichStage = whichStage;
+	}
+	public Date getShouldReturnDate() {
+		return shouldReturnDate;
+	}
+	public void setShouldReturnDate(Date shouldReturnDate) {
+		this.shouldReturnDate = shouldReturnDate;
+	}
+	public String getUrgeState() {
+		return urgeState;
+	}
+	public void setUrgeState(String urgeState) {
+		this.urgeState = urgeState;
 	}
 	public void setOverTimeId(Integer overTimeId) {
 		this.overTimeId = overTimeId;
@@ -28,24 +48,5 @@ public class OverTime {
 	public void setOverTimeMoney(Float overTimeMoney) {
 		this.overTimeMoney = overTimeMoney;
 	}
-	public Integer getOverTimeDays() {
-		return overTimeDays;
-	}
-	public void setOverTimeDays(Integer overTimeDays) {
-		this.overTimeDays = overTimeDays;
-	}
-	public String getOverUrge() {
-		return overUrge;
-	}
-	public void setOverUrge(String overUrge) {
-		this.overUrge = overUrge;
-	}
-	public Date getUrgeDate() {
-		return urgeDate;
-	}
-	public void setUrgeDate(Date urgeDate) {
-		this.urgeDate = urgeDate;
-	}
-	
 
 }

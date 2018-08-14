@@ -67,5 +67,13 @@ public class CustomerMessage {
 	public void setCustomerCredit(Integer customerCredit) {
 		this.customerCredit = customerCredit;
 	}
+	@Override
+	public String toString() {
+		return "CustomerMessage [customerId=" + customerId + ", customerName=" + customerName + ", customerSex="
+				+ customerSex + ", customerIdentityId=" + customerIdentityId + ", customerBirthday=" + customerBirthday
+				+ ", customerEmail=" + customerEmail + ", customerPhone=" + customerPhone + ", customerAddress="
+				+ customerAddress + ", customerCredit=" + customerCredit + "]";
+	}
+	
 
 }

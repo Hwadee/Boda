@@ -56,7 +56,6 @@
 <!-- 根据员工id删除员工 -->	
 	<delete id="delUserById" parameterType="int">
 		DELETE from employee where emp_id=#{value}
-		DELETE reom emp_detail where emp_detail_id=#{value}
 	</delete>
 	
 </mapper>
