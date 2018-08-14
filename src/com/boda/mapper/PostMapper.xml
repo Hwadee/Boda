@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.PostMapper">
+
+	<resultMap type="com.boda.pojo.Post" id="postResultMap">
+		<id column="post_id" property="postId"/>
+		<result column="dept_id" property="deptId"/>
+		<result column="post_name" property="postName"/>	
+	</resultMap>
+
+<!-- 根据id查询职务信息-->	 
+	<select id="findPostById" parameterType="Integer" resultType="com.boda.pojo.Post">
+		select * from post where post_id = #{value}
+	</select>
+<!-- 根据职务名字查询职务信息；-->	
+	<select id="findPostByName" parameterType="String" resultType="com.boda.pojo.Post">
+		select * from post where post_name like '%${value}%'
+	</select>	
+	
+<!-- 插入数据到数据库 -->
+	<insert id="addPostMessage" parameterType="com.boda.pojo.Post">
+		insert into post (post_id,dept_id,post_name) 
+		values (#{postId},#{deptId},#{postName});	
+	</insert>
+<!-- 根据id更新职务信息-->	
+	<update id="updatePostMessage" parameterType="com.boda.pojo.Post">
+		UPDATE post 
+		SET post_id=#{postId},dept_id=#{deptId},post_name=#{postName}
+		WHERE post_id=#{postId}
+	</update>
+<!-- 根据员工id删除员工 -->	
+	<delete id="delPostById" parameterType="Integer">
+		DELETE from post where post_id=#{value}
+	</delete>
+	
+</mapper>
