@@ -14,7 +14,7 @@ import com.boda.pojo.Employee;
 
 public class TestEmp {
 	
-	/*@Test
+	@Test
 	public void quaryEmployeeTest() throws IOException
 	{
 		//MybatisÅäÖÃÎÄ¼şÂ·¾¶
@@ -31,7 +31,7 @@ public class TestEmp {
 		sqlSession.close();
 		System.out.println(employee.toString());
 		
-	}*/
+	}
 	/*@Test
 	public void quaryEmployeeTest2() throws IOException
 	{
