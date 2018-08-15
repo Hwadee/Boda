@@ -32,7 +32,7 @@ public class UserManager {
 	
 	@RequestMapping("/UserLogin.do")
 	public String UserLoginController(String account,String password,Model model) throws IOException{
-		//从静态单例工厂获取sqlSession
+		//浠庨潤鎬佸崟渚嬪伐鍘傝幏鍙杝qlSession
 		/*SqlSession sqlSession = SessionFactory.getSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = employeeMapper.findEmpByAccount(account);
@@ -45,7 +45,7 @@ public class UserManager {
 			
 			return "success";
 		}else{
-			model.addAttribute("MSG", "账号或密码错误！");
+			model.addAttribute("MSG", "璐﹀彿鎴栧瘑鐮侀敊璇紒");
 			return "userLogin";
 		}
 		

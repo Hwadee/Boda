@@ -8,7 +8,7 @@ import com.boda.pojo.EmpPowerRelation;
 public interface EmpPowerRelationMapper {
 	
 	/**
-	 * ¸ù¾İÖ°Îñid²éÑ¯¸ÃÖ°ÎñËùÓµÓĞµÄËùÓĞÈ¨ÏŞ
+	 * æ ¹æ®èŒåŠ¡idæŸ¥è¯¢è¯¥èŒåŠ¡æ‰€æ‹¥æœ‰çš„æ‰€æœ‰æƒé™
 	 * @param postId
 	 * @return
 	 * @throws IOException
@@ -16,7 +16,7 @@ public interface EmpPowerRelationMapper {
 	public List<EmpPowerRelation> findPowerByPostId(Integer postId) throws IOException;
 	
 	/**
-	 * ¸ù¾İÈ¨ÏŞid²éÑ¯ÓµÓĞÕâÏîÈ¨ÏŞµÄËùÓĞÖ°Îñ
+	 * æ ¹æ®æƒé™idæŸ¥è¯¢æ‹¥æœ‰è¿™é¡¹æƒé™çš„æ‰€æœ‰èŒåŠ¡
 	 * @param powerId
 	 * @return
 	 * @throws IOException
@@ -24,7 +24,7 @@ public interface EmpPowerRelationMapper {
 	public List<EmpPowerRelation> findPostByPowerId(Integer powerId) throws IOException;
 	
 	/**
-	 * ÎªÄ³Ö°ÎñÌí¼ÓÈ¨ÏŞ
+	 * ä¸ºæŸèŒåŠ¡æ·»åŠ æƒé™
 	 * @param empPowerRelation
 	 * @return
 	 * @throws IOException
@@ -32,7 +32,7 @@ public interface EmpPowerRelationMapper {
 	public Integer addPostPowerRelation(EmpPowerRelation empPowerRelation) throws IOException;
 	
 	/**
-	 * É¾³ıÄ³Ö°ÎñµÄÄ³È¨ÏŞ
+	 * åˆ é™¤æŸèŒåŠ¡çš„æŸæƒé™
 	 * @param empPowerRelation
 	 * @return
 	 * @throws IOException

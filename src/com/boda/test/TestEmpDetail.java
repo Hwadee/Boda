@@ -17,54 +17,54 @@ import com.boda.pojo.Employee;
 
 public class TestEmpDetail {
 	
-	/*@Test
+	@Test
 	public void quaryEmployeeTest() throws IOException
 	{
-		//MybatisÅäÖÃÎÄ¼şÂ·¾¶
+		//Mybatisé…ç½®æ–‡ä»¶è·¯å¾„
 		String sqlConfig = "SqlMapConfig.xml";
-		//¼ÓÔØÅäÖÃÎÄ¼ş
+		//åŠ è½½é…ç½®æ–‡ä»¶
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//´´½¨session¹¤³§
+		//åˆ›å»ºsessionå·¥å‚
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//´Ó¹¤³§»ñÈ¡session»á»°
+		//ä»å·¥å‚è·å–sessionä¼šè¯
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmpDetailMapper eDetailMapper = sqlSession.getMapper(EmpDetailMapper.class);
-		List<EmpDetail> empDetail = eDetailMapper.findEmpDetailByName("ÕÅ");
+		List<EmpDetail> empDetail = eDetailMapper.findEmpDetailByName("å¼ ");
 		sqlSession.commit();
 		sqlSession.close();
 		System.out.println(empDetail.toString());
 		
-	}*/
-	@Test
+	}
+	/*@Test
 	public void quaryEmployeeTest2() throws IOException
 	{
-		//MybatisÅäÖÃÎÄ¼şÂ·¾¶
+		//Mybatisé…ç½®æ–‡ä»¶è·¯å¾„
 		String sqlConfig = "SqlMapConfig.xml";
-		//¼ÓÔØÅäÖÃÎÄ¼ş
+		//åŠ è½½é…ç½®æ–‡ä»¶
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//´´½¨session¹¤³§
+		//åˆ›å»ºsessionå·¥å‚
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//´Ó¹¤³§»ñÈ¡session»á»°
+		//ä»å·¥å‚è·å–sessionä¼šè¯
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmpDetailMapper eDetailMapper = sqlSession.getMapper(EmpDetailMapper.class);	
 		EmpDetail empDetail = eDetailMapper.findEmpDetailById(7);
-		empDetail.setEmpAddress("³É¶¼");
-		empDetail.setEmpEducation("±¾¿Æ");
+		empDetail.setEmpAddress("æˆéƒ½");
+		empDetail.setEmpEducation("æœ¬ç§‘");
 		eDetailMapper.updateEmpDetail(empDetail);
 		sqlSession.commit();
 		sqlSession.close();
 		System.out.println(empDetail.toString());
-	}
+	}*/
 	/*@Test
 	public void quaryEmployeeTest3() throws IOException
 	{
-		//MybatisÅäÖÃÎÄ¼şÂ·¾¶
+		//Mybatisé…ç½®æ–‡ä»¶è·¯å¾„
 		String sqlConfig = "SqlMapConfig.xml";
-		//¼ÓÔØÅäÖÃÎÄ¼ş
+		//åŠ è½½é…ç½®æ–‡ä»¶
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//´´½¨session¹¤³§
+		//åˆ›å»ºsessionå·¥å‚
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//´Ó¹¤³§»ñÈ¡session»á»°
+		//ä»å·¥å‚è·å–sessionä¼šè¯
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = new Employee();
@@ -79,13 +79,13 @@ public class TestEmpDetail {
 	/*@Test
 	public void quaryEmployeeTest3() throws IOException
 	{
-		//MybatisÅäÖÃÎÄ¼şÂ·¾¶
+		//Mybatisé…ç½®æ–‡ä»¶è·¯å¾„
 		String sqlConfig = "SqlMapConfig.xml";
-		//¼ÓÔØÅäÖÃÎÄ¼ş
+		//åŠ è½½é…ç½®æ–‡ä»¶
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//´´½¨session¹¤³§
+		//åˆ›å»ºsessionå·¥å‚
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//´Ó¹¤³§»ñÈ¡session»á»°
+		//ä»å·¥å‚è·å–sessionä¼šè¯
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = new Employee();
@@ -93,7 +93,7 @@ public class TestEmpDetail {
 		employeeMapper.delUserById(employee.getEmpId());
 		sqlSession.commit();
 		sqlSession.close();
-		System.out.println("É¾³ı³É¹¦");
+		System.out.println("åˆ é™¤æˆåŠŸ");
 	}
 */
 }

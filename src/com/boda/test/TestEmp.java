@@ -17,13 +17,13 @@ public class TestEmp {
 	@Test
 	public void quaryEmployeeTest() throws IOException
 	{
-		//Mybatis配置文件路径
+		//Mybatis閰嶇疆鏂囦欢璺緞
 		String sqlConfig = "SqlMapConfig.xml";
-		//加载配置文件
+		//鍔犺浇閰嶇疆鏂囦欢
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//创建session工厂
+		//鍒涘缓session宸ュ巶
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//从工厂获取session会话
+		//浠庡伐鍘傝幏鍙杝ession浼氳瘽
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = employeeMapper.findEmpDetailByAccount("100");
@@ -35,13 +35,13 @@ public class TestEmp {
 	/*@Test
 	public void quaryEmployeeTest2() throws IOException
 	{
-		//Mybatis配置文件路径
+		//Mybatis閰嶇疆鏂囦欢璺緞
 		String sqlConfig = "SqlMapConfig.xml";
-		//加载配置文件
+		//鍔犺浇閰嶇疆鏂囦欢
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//创建session工厂
+		//鍒涘缓session宸ュ巶
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//从工厂获取session会话
+		//浠庡伐鍘傝幏鍙杝ession浼氳瘽
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = new Employee();
@@ -56,13 +56,13 @@ public class TestEmp {
 	/*@Test
 	public void quaryEmployeeTest3() throws IOException
 	{
-		//Mybatis配置文件路径
+		//Mybatis閰嶇疆鏂囦欢璺緞
 		String sqlConfig = "SqlMapConfig.xml";
-		//加载配置文件
+		//鍔犺浇閰嶇疆鏂囦欢
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//创建session工厂
+		//鍒涘缓session宸ュ巶
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//从工厂获取session会话
+		//浠庡伐鍘傝幏鍙杝ession浼氳瘽
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = new Employee();
@@ -77,13 +77,13 @@ public class TestEmp {
 	/*@Test
 	public void quaryEmployeeTest3() throws IOException
 	{
-		//Mybatis配置文件路径
+		//Mybatis閰嶇疆鏂囦欢璺緞
 		String sqlConfig = "SqlMapConfig.xml";
-		//加载配置文件
+		//鍔犺浇閰嶇疆鏂囦欢
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-		//创建session工厂
+		//鍒涘缓session宸ュ巶
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
-		//从工厂获取session会话
+		//浠庡伐鍘傝幏鍙杝ession浼氳瘽
 		SqlSession sqlSession = sessionFactory.openSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = new Employee();
@@ -91,7 +91,7 @@ public class TestEmp {
 		employeeMapper.delUserById(employee.getEmpId());
 		sqlSession.commit();
 		sqlSession.close();
-		System.out.println("删除成功");
+		System.out.println("鍒犻櫎鎴愬姛");
 	}
 */
 }

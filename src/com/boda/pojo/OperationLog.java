@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class OperationLog {
 	private Integer operationId;
-	private Integer empId;//外键，哪个员工进行的操作
+	private Integer empId;//澶栭敭锛屽摢涓憳宸ヨ繘琛岀殑鎿嶄綔
 	private Date operationDate;
 	private String operationType;
 	

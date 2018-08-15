@@ -3,7 +3,7 @@ package com.boda.pojo;
 import java.util.Date;
 
 public class EmpDetail {
-	private Integer empDetailId;//ÓëemployeeId±£³ÖÒ»ÖÂ
+	private Integer empDetailId;//ä¸employeeIdä¿æŒä¸€è‡´
 	private String empName;
 	private Integer empWeight;
 	private Integer empHeight;

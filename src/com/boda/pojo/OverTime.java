@@ -3,10 +3,10 @@ package com.boda.pojo;
 import java.util.Date;
 
 public class OverTime {
-	//ÓâÆÚĞÅÏ¢±í
+	//é€¾æœŸä¿¡æ¯è¡¨
 	private Integer overTimeId;
 	private Integer loanId;
-	private Integer whichStage;//ÄÄÒ»ÆÚÓâÆÚ
+	private Integer whichStage;//å“ªä¸€æœŸé€¾æœŸ
 	private Float overTimeMoney;
 	private Date shouldReturnDate;
 	private String urgeState;

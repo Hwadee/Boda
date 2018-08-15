@@ -6,40 +6,40 @@ import com.boda.pojo.Employee;
 
 public interface EmployeeMapper {
 	/**
-	 * ¸ù¾İID²éÑ¯employee
-	 * @param Ô±¹¤id
+	 * æ ¹æ®IDæŸ¥è¯¢employee
+	 * @param å‘˜å·¥id
 	 * @return
 	 * @throws IOException
 	 */
 	public Employee findEmpById(Integer id) throws IOException;
 	
 	/**
-	 * ¸ù¾İÕË»§Ãû²éÑ¯employee
-	 * @param Ô±¹¤account
-	 * @return Ô±¹¤ÕË»§±íµÄĞÅÏ¢
+	 * æ ¹æ®è´¦æˆ·åæŸ¥è¯¢employee
+	 * @param å‘˜å·¥account
+	 * @return å‘˜å·¥è´¦æˆ·è¡¨çš„ä¿¡æ¯
 	 * @throws IOException
 	 */
 	public Employee findEmpByAccount(String account) throws IOException;
 	
 	/**
-	 * ¸ù¾İÔ±¹¤ÕË»§²éÑ¯Ô±¹¤ÏêÏ¸ĞÅÏ¢
-	 * @param Ô±¹¤account
-	 * @return Ó³ÉäÀàĞÍÏêÏ¸ĞÅÏ¢
+	 * æ ¹æ®å‘˜å·¥è´¦æˆ·æŸ¥è¯¢å‘˜å·¥è¯¦ç»†ä¿¡æ¯
+	 * @param å‘˜å·¥account
+	 * @return æ˜ å°„ç±»å‹è¯¦ç»†ä¿¡æ¯
 	 * @throws IOException
 	 */
 	public Employee findEmpDetailByAccount(String account) throws IOException; 
 	
 	
 	/**
-	 * ĞÂÔöÒ»¸öÔ±¹¤ÕË»§
+	 * æ–°å¢ä¸€ä¸ªå‘˜å·¥è´¦æˆ·
 	 * @param employee
-	 * @return ´øidµÄÔ­ĞÅÏ¢
+	 * @return å¸¦idçš„åŸä¿¡æ¯
 	 * @throws IOException
 	 */
 	public Integer addEmployee(Employee employee) throws IOException; 
 	
 	/**
-	 * ¸ù¾İid¸üĞÂÓÃ»§ĞÅÏ¢
+	 * æ ¹æ®idæ›´æ–°ç”¨æˆ·ä¿¡æ¯
 	 * @param employee
 	 * @return
 	 * @throws IOException
@@ -47,7 +47,7 @@ public interface EmployeeMapper {
 	public void updateUserById(Employee employee) throws IOException;
 	
 	/**
-	 * ¸ù¾İÓÃ»§idÉ¾³ıÓÃ»§
+	 * æ ¹æ®ç”¨æˆ·idåˆ é™¤ç”¨æˆ·
 	 * @param id
 	 * @throws IOException
 	 */

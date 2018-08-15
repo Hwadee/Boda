@@ -1,7 +1,7 @@
 package com.boda.pojo;
 
 public class EmpPowerRelation {
-	//ְλȨ�޹�ϵά����
+	//职位权限关系维护表
 	private Integer postId;
 	private Integer powerId;
 	

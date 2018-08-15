@@ -8,7 +8,7 @@ import com.boda.pojo.ReturnLoan;
 public interface ReturnLoanMapper {
 	
 	/**
-	 * ¸ù¾İ»¹¿îid²éÑ¯»¹¿îĞÅÏ¢
+	 * æ ¹æ®è¿˜æ¬¾idæŸ¥è¯¢è¿˜æ¬¾ä¿¡æ¯
 	 * @param returnId
 	 * @return
 	 * @throws IOException
@@ -16,7 +16,7 @@ public interface ReturnLoanMapper {
 	public ReturnLoan findReturnLoanById(Integer returnId) throws IOException;
 	
 	/**
-	 * ¸ù¾İ´û¿îid²éÑ¯Æä»¹¿îĞÅÏ¢
+	 * æ ¹æ®è´·æ¬¾idæŸ¥è¯¢å…¶è¿˜æ¬¾ä¿¡æ¯
 	 * @param loanId
 	 * @return
 	 * @throws IOException
@@ -24,7 +24,7 @@ public interface ReturnLoanMapper {
 	public List<ReturnLoan> findReturnLoanByLoanId(Integer loanId) throws IOException;
 	
 	/**
-	 * Ìí¼Ó»¹¿îĞÅÏ¢
+	 * æ·»åŠ è¿˜æ¬¾ä¿¡æ¯
 	 * @param returnLoan
 	 * @return
 	 * @throws IOException

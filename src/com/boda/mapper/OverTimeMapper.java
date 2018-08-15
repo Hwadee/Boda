@@ -9,7 +9,7 @@ import com.boda.pojo.OverTime;
 public interface OverTimeMapper {
 	
 	/**
-	 * 根据逾期信息id查询逾期信息
+	 * 鏍规嵁閫炬湡淇℃伅id鏌ヨ閫炬湡淇℃伅
 	 * @param overTimeId
 	 * @return
 	 * @throws IOException
@@ -17,7 +17,7 @@ public interface OverTimeMapper {
 	public OverTime findOverTimeById(Integer overTimeId) throws IOException;
 	
 	/**
-	 * 根据贷款id查询该贷款有多少逾期记录
+	 * 鏍规嵁璐锋id鏌ヨ璇ヨ捶娆炬湁澶氬皯閫炬湡璁板綍
 	 * @param loanId
 	 * @return
 	 * @throws IOException
@@ -25,17 +25,17 @@ public interface OverTimeMapper {
 	public List<OverTime> findOverTimeByLoanId(Integer loanId) throws IOException;
 	
 	/**
-	 * 根据逾期时间查询逾期信息
+	 * 鏍规嵁閫炬湡鏃堕棿鏌ヨ閫炬湡淇℃伅
 	 * @param overTimeDays
-	 * @return 逾期时间超过某一天数限制
+	 * @return 閫炬湡鏃堕棿瓒呰繃鏌愪竴澶╂暟闄愬埗
 	 * @throws IOException
 	 */
 	public List<OverTime> findOverMessageByShouldReturnDate(Date shouldReturnDate) throws IOException;
 	
 	/**
-	 * 根据逾期金额查询逾期信息
+	 * 鏍规嵁閫炬湡閲戦鏌ヨ閫炬湡淇℃伅
 	 * @param overTimeMoney
-	 * @return 逾期金额超过某一限制
+	 * @return 閫炬湡閲戦瓒呰繃鏌愪竴闄愬埗
 	 * @throws IOException
 	 */
 	public List<OverTime> findOverMessageByOverMoney(Float overTimeMoney) throws IOException;
