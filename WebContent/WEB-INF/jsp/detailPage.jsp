@@ -12,6 +12,15 @@
 </head>
 <body>
 用户${MSG}详细信息：
-
+<br>
+<div>
+    ${detailInfo}
+</div>
+<br>
+<form action="UpdateUserInfo.do" method="post">
+    姓名：<input type="text" name="name"><br>
+    电话：<input type="text" name="phone">
+    <input type="submit" value="修改个人资料">
+</form>
 </body>
 </html>

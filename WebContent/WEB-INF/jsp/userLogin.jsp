@@ -13,11 +13,11 @@
 		<input type="submit" value="登录">
 	</form>
 </body>
+
 <script type="text/javascript">
 	var msg = "${MSG}";
 	if(msg!=null&&msg!=""){
 		alert(msg);
 	}
-	
 </script>
 </html>

@@ -38,7 +38,7 @@
 		values (#{empDetailId},#{empName},#{empWeight},#{empHeight},#{empAddress},#{empEducation},#{empHometown},#{empNation},#{empSex},
 		#{empBirthday},#{empPhone},#{empPhotoUrl});	
 	</insert> -->
-<!-- 根据员工id更新员工信息-->	
+<!-- 根据员工id更新员工信息-->
 	<update id="updateEmpDetail" parameterType="com.boda.pojo.EmpDetail">
 		UPDATE emp_detail 
 		SET emp_name=#{empName},emp_weight=#{empWeight},
