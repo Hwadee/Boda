@@ -8,24 +8,23 @@ import com.boda.pojo.EmpDetail;
 public interface EmpDetailMapper {
 	
 	/**
-	 * 根据员工详细信息id查询员工信息
+	 * 鏍规嵁鍛樺伐璇︾粏淇℃伅id鏌ヨ鍛樺伐淇℃伅
 	 * @param id
-	 * @return 员工详细信息信息
+	 * @return 鍛樺伐璇︾粏淇℃伅淇℃伅
 	 * @throws IOException
 	 */
 	public EmpDetail findEmpDetailById(Integer empDetailId) throws IOException;
 	
 	/**
-	 * 根据员工名字模糊查询员工信息
+	 * 鏍规嵁鍛樺伐鍚嶅瓧妯＄硦鏌ヨ鍛樺伐淇℃伅
 	 * @param empName
-	 * @return 员工详细信息列表
+	 * @return 鍛樺伐璇︾粏淇℃伅鍒楄〃
 	 * @throws IOException
 	 */
 	public List<EmpDetail> findEmpDetailByName(String empName) throws IOException;
-	
-	
+
 	/**
-	 * 根据员工详细信息id更新员工详细信息
+	 * 鏍规嵁鍛樺伐璇︾粏淇℃伅id鏇存柊鍛樺伐璇︾粏淇℃伅
 	 * @param empDetailId
 	 * @return
 	 * @throws IOException

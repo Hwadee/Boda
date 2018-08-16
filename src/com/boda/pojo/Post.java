@@ -2,7 +2,7 @@ package com.boda.pojo;
 
 public class Post {
 	private Integer postId;
-	private Integer deptId;//Íâ¼ü£¬ÊôÓÚÄÄ¸ö²¿ÃÅ
+	private Integer deptId;//å¤–é”®ï¼Œå±äºå“ªä¸ªéƒ¨é—¨
 	private String postName;
 	
 	public Integer getPostId() {

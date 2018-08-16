@@ -8,7 +8,7 @@ import com.boda.pojo.Post;
 public interface PostMapper {
 	
 	/**
-	 * 根据id查询职务信息
+	 * 鏍规嵁id鏌ヨ鑱屽姟淇℃伅
 	 * @param postId
 	 * @return
 	 * @throws IOException
@@ -16,7 +16,7 @@ public interface PostMapper {
 	public Post findPostById(Integer postId) throws IOException;
 	
 	/**
-	 * 根据职务名字模糊查询职务信息
+	 * 鏍规嵁鑱屽姟鍚嶅瓧妯＄硦鏌ヨ鑱屽姟淇℃伅
 	 * @param postName
 	 * @return
 	 * @throws IOException
@@ -24,7 +24,7 @@ public interface PostMapper {
 	public List<Post> findPostByName(String postName) throws IOException;
 	
 	/**
-	 * 添加职务信息
+	 * 娣诲姞鑱屽姟淇℃伅
 	 * @param post
 	 * @return
 	 * @throws IOException
@@ -32,7 +32,7 @@ public interface PostMapper {
 	public Integer addPostMessage(Post post) throws IOException;
 	
 	/**
-	 * 根据id更新职务信息
+	 * 鏍规嵁id鏇存柊鑱屽姟淇℃伅
 	 * @param post
 	 * @return
 	 * @throws IOException
@@ -40,7 +40,7 @@ public interface PostMapper {
 	public Integer updatePostMessage(Post post) throws IOException;
 	
 	/**
-	 * 根据id删除职务信息
+	 * 鏍规嵁id鍒犻櫎鑱屽姟淇℃伅
 	 * @param postId
 	 * @return
 	 * @throws IOException

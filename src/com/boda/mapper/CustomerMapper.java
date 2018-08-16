@@ -8,30 +8,30 @@ import com.boda.pojo.CustomerMessage;
 public interface CustomerMapper {
 	
 	/**
-	 * ¸ù¾İÓÃ»§id²éÑ¯ÓÃ»§ÏêÏ¸ĞÅÏ¢
+	 * æ ¹æ®ç”¨æˆ·idæŸ¥è¯¢ç”¨æˆ·è¯¦ç»†ä¿¡æ¯
 	 * @param id
-	 * @return Ô±¹¤ÏêÏ¸ĞÅÏ¢ĞÅÏ¢
+	 * @return å‘˜å·¥è¯¦ç»†ä¿¡æ¯ä¿¡æ¯
 	 * @throws IOException
 	 */
 	public CustomerMessage findCustomerById(Integer customerId) throws IOException;
 	
 	/**
-	 * ¸ù¾İÓÃ»§Ãû×ÖÄ£ºı²éÑ¯ÓÃ»§ĞÅÏ¢
+	 * æ ¹æ®ç”¨æˆ·åå­—æ¨¡ç³ŠæŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯
 	 * @param empName
-	 * @return ÓÃ»§ÏêÏ¸ĞÅÏ¢ÁĞ±í
+	 * @return ç”¨æˆ·è¯¦ç»†ä¿¡æ¯åˆ—è¡¨
 	 * @throws IOException
 	 */
 	public List<CustomerMessage> findCustomerByName(String customerName) throws IOException;
 	
 	/**
-	 * Ìí¼ÓÒ»ÌõÓÃ»§ĞÅÏ¢
+	 * æ·»åŠ ä¸€æ¡ç”¨æˆ·ä¿¡æ¯
 	 * @param customerMessage
 	 * @return
 	 * @throws IOException
 	 */
 	public Integer addCustomerMessage(CustomerMessage customerMessage) throws IOException;
 	/**
-	 * ¸üĞÂÓÃ»§ÏêÏ¸ĞÅÏ¢
+	 * æ›´æ–°ç”¨æˆ·è¯¦ç»†ä¿¡æ¯
 	 * @param customerMessage
 	 * @return
 	 * @throws IOException
@@ -39,7 +39,7 @@ public interface CustomerMapper {
 	public Integer updateCustomerMessage(CustomerMessage customerMessage) throws IOException;
 	
 	/**
-	 * ¸ù¾İÓÃ»§idÉ¾³ıÓÃ»§ĞÅÏ¢
+	 * æ ¹æ®ç”¨æˆ·idåˆ é™¤ç”¨æˆ·ä¿¡æ¯
 	 * @param customerId
 	 * @return
 	 * @throws IOException

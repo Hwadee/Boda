@@ -3,16 +3,16 @@ package com.boda.pojo;
 import java.util.Date;
 
 public class Loan {
-	//´û¿îĞÅÏ¢±í
+	//è´·æ¬¾ä¿¡æ¯è¡¨
 	private Integer loanId;
-	private Integer customerId;//Íâ¼ü£¬´û¿î¶ÔÓ¦µÄ¿Í»§ĞÅÏ¢
-	private Integer empId;//Íâ¼ü£¬ÄÄ¸öÔ±¹¤½øĞĞµÄ´¦Àí
-	private Integer loanMoney;//´û¿î½ğ¶î
+	private Integer customerId;//å¤–é”®ï¼Œè´·æ¬¾å¯¹åº”çš„å®¢æˆ·ä¿¡æ¯
+	private Integer empId;//å¤–é”®ï¼Œå“ªä¸ªå‘˜å·¥è¿›è¡Œçš„å¤„ç†
+	private Integer loanMoney;//è´·æ¬¾é‡‘é¢
 	private Date loanDate;
 	private String loanState;
-	private Date returnDate;//¹é»¹ÈÕÆÚ
-	private Integer numOfStages;//´û¿îÆÚÊı£¨·Ö¼¸ÆÚ¹é»¹£©
-	private Float rateOfInterest;//´û¿îÀûÂÊ
+	private Date returnDate;//å½’è¿˜æ—¥æœŸ
+	private Integer numOfStages;//è´·æ¬¾æœŸæ•°ï¼ˆåˆ†å‡ æœŸå½’è¿˜ï¼‰
+	private Float rateOfInterest;//è´·æ¬¾åˆ©ç‡
 	public Integer getLoanId() {
 		return loanId;
 	}

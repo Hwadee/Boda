@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.LoanMapper">
+
+	<resultMap type="com.boda.pojo.Loan" id="LoanResultMap">
+		<id column="loan_id" property="loanId"/>
+		<result column="customer_id" property="customerId"/>
+		<result column="emp_id" property="empId"/>
+		<result column="loan_money" property="loanMoney"/>
+		<result column="loan_date" property="loanDate"/>
+		<result column="loan_state" property="loanState"/>
+		<result column="return_date" property="returnDate"/>
+		<result column="num_of_stages" property="numOfStages"/>
+		<result column="rate_of_interest" property="rateOfInterest"/>
+			
+	</resultMap>
+
+<!--根据贷款id查询贷款信息-->	 
+	<select id="findLoanById" parameterType="Integer" resultType="com.boda.pojo.Loan">
+		select * from loan where loan = #{value}
+	</select>
+<!-- 根据客户id查询客户所有贷款-->	
+	<select id="findLoanByEmpId" parameterType="Integer" resultType="com.boda.pojo.Loan">
+		select * from loan where customer_id = #{value}
+	</select>	
+	
+<!-- 插入数据到数据库 -->
+	<insert id="addLoan" parameterType="com.boda.pojo.Loan">
+		insert into employee (loan_id,customer_id,emp_id,loan_money,loan_date,loan_state,return_date,num_of_stages,rate_of_interest) 
+		values (#{loanId},#{customerId},#{empId},#{loanMoney},#{loanDate},#{loanState},#{returnDate},#{numOfStages},#{rateOfInterest});	
+	</insert>
+<!-- 更新贷款状态信息-->	
+	<update id="updateLoanState" parameterType="com.boda.pojo.Loan">
+		UPDATE loan 
+		SET loan_state=#{loanState}
+		WHERE loan_id=#{loanId}
+	</update>
+<!-- 根据员工id删除员工 -->	
+	<!-- <delete id="delEmpDatailById" parameterType="int">
+		DELETE from emp_detail where emp_datail_id=#{value}
+	</delete> -->
+	
+</mapper>

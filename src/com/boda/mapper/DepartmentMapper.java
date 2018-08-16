@@ -7,24 +7,24 @@ import com.boda.pojo.Department;
 
 public interface DepartmentMapper {
 	/**
-	 * ¸ù¾İ²¿ÃÅid²éÑ¯²¿ÃÅĞÅÏ¢
+	 * æ ¹æ®éƒ¨é—¨idæŸ¥è¯¢éƒ¨é—¨ä¿¡æ¯
 	 * @param deptId
-	 * @return ²¿ÃÅÏêÏ¸ĞÅÏ¢
+	 * @return éƒ¨é—¨è¯¦ç»†ä¿¡æ¯
 	 * @throws IOException
 	 */
 	public Department findDepartmentById(Integer deptId) throws IOException;
 	
 	/**
-	 * ¸ù¾İ²¿ÃÅÃû³Æ²éÑ¯Ä£ºıĞÅÏ¢
+	 * æ ¹æ®éƒ¨é—¨åç§°æŸ¥è¯¢æ¨¡ç³Šä¿¡æ¯
 	 * @param deptName
-	 * @return ²¿ÃÅÏêÏ¸ĞÅÏ¢ÁĞ±í
+	 * @return éƒ¨é—¨è¯¦ç»†ä¿¡æ¯åˆ—è¡¨
 	 * @throws IOException
 	 */
 	public List<Department> findDepartmentByName(String deptName) throws IOException;
 	
 	
 	/**
-	 * ĞÂÔöÒ»¸ö²¿ÃÅĞÅÏ¢
+	 * æ–°å¢ä¸€ä¸ªéƒ¨é—¨ä¿¡æ¯
 	 * @param department
 	 * @return
 	 * @throws IOException
@@ -32,7 +32,7 @@ public interface DepartmentMapper {
 	public Integer addDepartment(Department department) throws IOException;
 	
 	/**
-	 * ¸ù¾İ²¿ÃÅidÉ¾³ı²¿ÃÅĞÅÏ¢
+	 * æ ¹æ®éƒ¨é—¨idåˆ é™¤éƒ¨é—¨ä¿¡æ¯
 	 * @param deptId
 	 * @return
 	 * @throws IOException
@@ -40,7 +40,7 @@ public interface DepartmentMapper {
 	public Integer delDepartmentById(Integer deptId) throws IOException;
 	
 	/**
-	 * ¸üĞÂÒ»¸ö²¿ÃÅµÄĞÅÏ¢
+	 * æ›´æ–°ä¸€ä¸ªéƒ¨é—¨çš„ä¿¡æ¯
 	 * @param department
 	 * @return
 	 * @throws IOException

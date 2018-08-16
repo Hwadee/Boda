@@ -8,7 +8,7 @@ import com.boda.pojo.Loan;
 public interface LoanMapper {
 	
 	/**
-	 * ¸ù¾İ´û¿îid²éÑ¯´û¿îĞÅÏ¢
+	 * æ ¹æ®è´·æ¬¾idæŸ¥è¯¢è´·æ¬¾ä¿¡æ¯
 	 * @param loanId
 	 * @return
 	 * @throws IOException
@@ -16,15 +16,15 @@ public interface LoanMapper {
 	public Loan findLoanById(Integer loanId) throws IOException; 
 	
 	/**
-	 * ¸ù¾İÓÃ»§id²éÑ¯ÓÃ»§ËùÓĞ´û¿îĞÅÏ¢
+	 * æ ¹æ®ç”¨æˆ·idæŸ¥è¯¢ç”¨æˆ·æ‰€æœ‰è´·æ¬¾ä¿¡æ¯
 	 * @param empId
-	 * @return ´û¿îĞÅÏ¢ÁĞ±í
+	 * @return è´·æ¬¾ä¿¡æ¯åˆ—è¡¨
 	 * @throws IOException
 	 */
 	public List<Loan> findLoanByEmpId(Integer empId) throws IOException;
 	
 	/**
-	 * ĞÂÔöÒ»Ìõ´û¿îĞÅÏ¢
+	 * æ–°å¢ä¸€æ¡è´·æ¬¾ä¿¡æ¯
 	 * @param loan
 	 * @return
 	 * @throws IOException
@@ -32,7 +32,7 @@ public interface LoanMapper {
 	public Integer addLoan(Loan loan) throws IOException;
 	
 	/**
-	 * ¸ù¾İ´û¿îid¸üĞÂ´û¿î×´Ì¬
+	 * æ ¹æ®è´·æ¬¾idæ›´æ–°è´·æ¬¾çŠ¶æ€
 	 * @param loan
 	 * @return
 	 * @throws IOException

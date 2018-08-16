@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.ReturnLoanMapper">
+
+	<resultMap type="com.boda.pojo.ReturnLoan" id="returnLoanResultMap">
+		<id column="return_id" property="returnId"/>
+		<result column="loan_id" property="loanId"/>
+		<result column="return_money" property="returnMoney"/>
+		<result column="return_date" property="returnDate"/>
+	</resultMap>
+
+<!-- 通过还款idid查询还款信息-->	 
+	<select id="findReturnLoanById" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
+		select * from return_loan where return_id = #{value}
+	</select>
+<!-- 根据贷款id查询还款信息-->	
+	<select id="findReturnLoanByLoanId" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
+		select * from return_loan where loan_id = #{value}
+	</select>
+	
+<!-- 插入数据到数据库-->
+	<insert id="addReturnLoan" parameterType="com.boda.pojo.ReturnLoan">
+		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
+	 	<selectKey keyProperty="returnId" order="AFTER" resultType="Integer">
+	 		Select last_insert_id()
+	 	</selectKey>
+		insert into return_loan (return_id,loan_id,return_money,return_date) values (#{returnId},#{loanId},#{returnMoney},#{returnDate});
+	</insert>
+	
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.EmpDetailMapper">
+
+	<resultMap type="com.boda.pojo.EmpDetail" id="empDetailResultMap">
+		<id column="emp_detail_id" property="empDetailId"/>
+		<result column="emp_name" property="empName"/>
+		<result column="emp_weight" property="empWeight"/>
+		<result column="emp_height" property="empHeight"/>
+		<result column="emp_address" property="empAddress"/>
+		<result column="emp_hometown" property="empHometown"/>
+		<result column="emp_nation" property="empNation"/>
+		<result column="emp_sex" property="empSex"/>
+		<result column="emp_birthday" property="empBirthday"/>
+		<result column="emp_phone" property="empPhone"/>
+		<result column="emp_photo_url" property="empPhotoUrl"/>
+			
+	</resultMap>
+
+<!-- 通过员工详细信息id查询员工：查询结果封装成EmpDetail类返回；-->	 
+	<select id="findEmpDetailById" parameterType="Integer" resultType="com.boda.pojo.EmpDetail">
+		select * from emp_detail where emp_detail_id = #{value}
+	</select>
+<!-- 通过名字查询员工：查询结果封装成EmpDetail类的列表返回；-->	
+	<select id="findEmpDetailByName" parameterType="String" resultType="com.boda.pojo.EmpDetail">
+		select * from emp_detail where emp_name like '%${value}%'
+	</select>	
+	
+<!-- 插入数据到数据库-->
+	<!-- <insert id="addEmpDetailById" parameterType="com.boda.pojo.EmpDetail">
+		insert into employee (emp_detail_id,emp_name,emp_weight,emp_height,emp_address,emp_education,emp_hometown,emp_nation,emp_sex,
+		emp_birthday,emp_phone,emp_photo_url) 
+		values (#{empDetailId},#{empName},#{empWeight},#{empHeight},#{empAddress},#{empEducation},#{empHometown},#{empNation},#{empSex},
+		#{empBirthday},#{empPhone},#{empPhotoUrl});	
+	</insert> -->
+<!-- 根据员工id更新员工信息-->	
+	<update id="updateEmpDetail" parameterType="com.boda.pojo.EmpDetail">
+		UPDATE emp_detail 
+		SET emp_name=#{empName},emp_weight=#{empWeight},
+		emp_height=#{empHeight},emp_address=#{empAddress},emp_education=#{empEducation},
+		emp_hometown=#{empHometown},emp_nation=#{empNation},emp_sex=#{empSex},
+		emp_birthday=#{empBirthday},emp_phone=#{empPhone},emp_photo_url=#{empPhotoUrl} 
+		WHERE emp_detail_id=#{empDetailId}
+	</update>
+<!-- 根据员工id删除员工 -->	
+	<!-- <delete id="delEmpDatailById" parameterType="int">
+		DELETE from emp_detail where emp_datail_id=#{value}
+	</delete> -->
+	
+</mapper>

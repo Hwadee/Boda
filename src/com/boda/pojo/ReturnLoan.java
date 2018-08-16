@@ -3,10 +3,10 @@ package com.boda.pojo;
 import java.util.Date;
 
 public class ReturnLoan {
-	//´û¿î¹é»¹ĞÅÏ¢±í
+	//è´·æ¬¾å½’è¿˜ä¿¡æ¯è¡¨
 	private Integer retuenId;
-	private Integer loanId;//Íâ¼ü£¬´û¿îid
-	private Float returnMoney;//¹é»¹½ğ¶î
+	private Integer loanId;//å¤–é”®ï¼Œè´·æ¬¾id
+	private Float returnMoney;//å½’è¿˜é‡‘é¢
 	private Date returnDate;
 	public Integer getRetuenId() {
 		return retuenId;

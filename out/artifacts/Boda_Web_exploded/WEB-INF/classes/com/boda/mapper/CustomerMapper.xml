@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.CustomerMapper">
+
+	<resultMap type="com.boda.pojo.CustomerMessage" id="customerResultMap">
+		<id column="customer_id" property="customerId"/>
+		<result column="customer_name" property="customerName"/>
+		<result column="customer_sex" property="customerSex"/>
+		<result column="customer_identity_id" property="customerIdentityId"/>
+		<result column="customer_birthday" property="customerBirthday"/>
+		<result column="customer_email" property="customerEmail"/>
+		<result column="customer_phone" property="customerPhone"/>
+		<result column="customer_address" property="customerAddress"/>
+		<result column="customer_credit" property="customerCredit"/>		
+	</resultMap>
+
+<!-- 通过客户id查询客户详细信息：查询结果封装成CustomerMessage类返回；-->	 
+	<select id="findCustomerById" parameterType="Integer" resultType="com.boda.pojo.CustomerMessage">
+		select * from customer_message where customer_id = #{value}
+	</select>
+<!-- 通过名字查询客户：查询结果封装成CustomerMessage类的列表返回；-->	
+	<select id="findCustomerByName" parameterType="String" resultType="com.boda.pojo.CustomerMessage">
+		select * from customer_message where customer_name like '%${value}%'
+	</select>	
+	
+<!-- 插入数据到数据库 -->
+	<insert id="addCustomerMessage" parameterType="com.boda.pojo.CustomerMessage">
+		insert into customer_message (customer_id,customer_name,customer_sex,customer_identity_id,customer_birthday,
+		customer_email,customer_phone,customer_address,customer_credit) 
+		values (#{customerId},#{customerName},#{customerSex},#{customerIdentityId},#{customerBirthday},
+		#{customerEmail},#{customerPhone},#{customerAddress},#{customerCredit});	
+	</insert>
+<!-- 根据客户id更新客户信息-->	
+	<update id="updateCustomerMessage" parameterType="com.boda.pojo.CustomerMessage">
+		UPDATE customer_message 
+		SET customer_id=#{customerId},customer_name=#{customerName},
+		customer_sex=#{customerSex},customer_identity_id=#{customerIdentityId},customer_birthday=#{customerBirthday},
+		customer_email=#{customerEmail},customer_phone=#{customerPhone},customer_address=#{customerAddress},
+		customer_credit=#{customerCredit} 
+		WHERE customer_id=#{customerId}
+	</update>
+<!-- 根据员工id删除员工 -->	
+	<delete id="delCustomerById" parameterType="Integer">
+		DELETE from customer_message where customer_id=#{value}
+	</delete>
+	
+</mapper>

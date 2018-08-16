@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.OverTimeMapper">
+
+	<resultMap type="com.boda.pojo.OverTime" id="overTimeResultMap">
+		<id column="over_time_id" property="overTimeId"/>
+		<result column="loan_id" property="loanId"/>
+		<result column="which_stage" property="whichStage"/>
+		<result column="over_time_money" property="overTimeMoney"/>
+		<result column="should_return_date" property="shouldReturnDate"/>
+		<result column="urge_state" property="urgeState"/>	
+	</resultMap>
+
+<!-- 根据id查询逾期信息-->	 
+	<select id="findOverTimeById" parameterType="Integer" resultType="com.boda.pojo.OverTime">
+		select * from over_time where over_time_id = #{value}
+	</select>
+<!-- 根据贷款id查询某条贷款逾期信息-->	
+	<select id="findOverTimeByLoanId" parameterType="Integer" resultType="com.boda.pojo.OverTime">
+		select * from over_time where loan_id = #{value}
+	</select>
+<!-- 根据应归还日期查询逾期记录-->		
+	<select id="findOverMessageByShouldReturnDate" parameterType="Date" resultType="com.boda.pojo.OverTime">
+		select * from over_time where should_return_date > #{value}
+	</select>
+<!-- 根据逾期金额查询逾期记录-->		
+	<select id="findOverMessageByOverMoney" parameterType="Float" resultType="com.boda.pojo.OverTime">
+		select * from over_time where over_time_money > #{value}
+	</select>	
+
+	
+<!-- 插入数据到数据库-->
+	<!-- <insert id="addOperationLog" parameterType="com.boda.pojo.OperationLog">
+		通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里
+	 	<selectKey keyProperty="empId" order="AFTER" resultType="Integer">
+	 		Select last_insert_id()
+	 	</selectKey>
+		insert into over_time (operation_id,emp_id,operation_date,operation_type) 
+		values (#{operationId},#{empId},#{operationDate},#{operationType});
+	</insert>	 -->
+</mapper>

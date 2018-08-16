@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.PowerGroupMapper">
+
+	<resultMap type="com.boda.pojo.PowerGroup" id="powerGroupResultMap">
+		<id column="power_id" property="powerId"/>
+		<result column="power_name" property="powerName"/>	
+	</resultMap>
+
+<!-- 根据id查询权限信息-->	 
+	<select id="findPowerById" parameterType="Integer" resultType="com.boda.pojo.PowerGroup">
+		select * from power_group where power_id = #{value}
+	</select>
+<!-- 根据权限名字查询权限信息；-->	
+	<select id="findPowerByName" parameterType="String" resultType="com.boda.pojo.PowerGroup">
+		select * from power_group where power_name like '%${value}%'
+	</select>	
+	
+<!-- 插入数据到数据库 -->
+	<insert id="addPowerMessage" parameterType="com.boda.pojo.PowerGroup">
+		insert into power_group (power_id,power_name) 
+		values (#{powerId},#{powerName});	
+	</insert>
+<!-- 根据id更新权限信息-->	
+	<update id="updatePowerMessage" parameterType="com.boda.pojo.PowerGroup">
+		UPDATE power_group 
+		SET power_id=#{powerId},power_name=#{powerName}
+		WHERE power_id=#{powerId}
+	</update>
+<!-- 根据id删除权限 -->	
+	<delete id="delPowerById" parameterType="Integer">
+		DELETE from power_group where power_id=#{value}
+	</delete>
+	
+</mapper>

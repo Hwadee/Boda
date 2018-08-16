@@ -5,7 +5,7 @@ import java.util.Date;
 public class Department {
 	private Integer deptId;
 	private String deptName;
-	private Integer deptEmpNum;//部门员工数量
+	private Integer deptEmpNum;//閮ㄩ棬鍛樺伐鏁伴噺
 	private Date deptBuildTime;
 	
 	

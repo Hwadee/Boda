@@ -12,14 +12,13 @@ public class SessionFactory {
 	static 
 	{
 		try {
-			//Mybatis配置文件路径
+			//Mybatis閰嶇疆鏂囦欢璺緞
 			String sqlConfig = "SqlMapConfig.xml";
-			//加载配置文件
+			//鍔犺浇閰嶇疆鏂囦欢
 			InputStream iStream = Resources.getResourceAsStream(sqlConfig);
-			//创建session工厂
+			//鍒涘缓session宸ュ巶
 			sessionFactory = new SqlSessionFactoryBuilder().build(iStream);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 	}

@@ -2,7 +2,7 @@ package com.boda.pojo;
 
 public class Employee {
 	private Integer empId;
-	private Integer postId;//Ö°Î»id£¬Íâ¼ü
+	private Integer postId;
 	private String empAccount;
 	private String empPassword;
 	

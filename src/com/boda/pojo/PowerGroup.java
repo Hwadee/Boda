@@ -1,7 +1,7 @@
 package com.boda.pojo;
 
 public class PowerGroup {
-	//È¨ÏŞ·Ö×é±í
+	//æƒé™åˆ†ç»„è¡¨
 	private Integer powerId;
 	private String powerName;
 	public Integer getPowerId() {

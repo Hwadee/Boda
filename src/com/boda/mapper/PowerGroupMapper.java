@@ -7,45 +7,50 @@ import com.boda.pojo.Post;
 import com.boda.pojo.PowerGroup;
 
 public interface PowerGroupMapper {
-	
-	/**
-	 * 根据id查询权限信息
-	 * @param powerId
-	 * @return
-	 * @throws IOException
-	 */
-	public PowerGroup findPowerById(Integer powerId) throws IOException;
-	
-	/**
-	 * 根据权限名字模糊查询权限信息
-	 * @param powerName
-	 * @return
-	 * @throws IOException
-	 */
-	public List<PowerGroup> findPowerByName(String powerName) throws IOException;
-	
-	/**
-	 * 添加权限信息
-	 * @param power
-	 * @return
-	 * @throws IOException
-	 */
-	public Integer addPowerMessage(PowerGroup power) throws IOException;
-	
-	/**
-	 * 根据id更新权限信息
-	 * @param power
-	 * @return
-	 * @throws IOException
-	 */
-	public Integer updatePowerMessage(PowerGroup power) throws IOException;
-	
-	/**
-	 * 根据id删除权限信息
-	 * @param powerId
-	 * @return
-	 * @throws IOException
-	 */
-	public Integer delPowerById(Integer powerId) throws IOException;
+
+    /**
+     * 鏍规嵁id鏌ヨ鏉冮檺淇℃伅
+     *
+     * @param powerId
+     * @return
+     * @throws IOException
+     */
+    public PowerGroup findPowerById(Integer powerId) throws IOException;
+
+    /**
+     * 鏍规嵁鏉冮檺鍚嶅瓧妯＄硦鏌ヨ鏉冮檺淇℃伅
+     *
+     * @param powerName
+     * @return
+     * @throws IOException
+     */
+    public List<PowerGroup> findPowerByName(String powerName) throws IOException;
+
+    /**
+     * 娣诲姞鏉冮檺淇℃伅
+     *
+     * @param power
+     * @return
+     * @throws IOException
+     */
+    public Integer addPowerMessage(PowerGroup power) throws IOException;
+
+    /**
+     * 鏍规嵁id鏇存柊鏉冮檺淇℃伅
+     *
+     * @param power
+     * @return
+     * @throws IOException
+     */
+    public Integer updatePowerMessage(PowerGroup power) throws IOException;
+
+    /**
+     * 鏍规嵁id鍒犻櫎鏉冮檺淇℃伅
+     *
+     * @param powerId
+     * @return
+     * @throws IOException
+     */
+    public Integer delPowerById(Integer powerId) throws IOException;
 
 }

@@ -7,5 +7,20 @@
 </head>
 <body>
 	${MSG}成功登陆
+
+	<form action="UserDetail.do" method="post">
+
+		<input type="submit" value="查看用户详情">
+	</form>
+<a href="UserDetail.do">查看用户详情</a>
 </body>
+
+<!--
+<script type="text/javascript">
+    var msg = "${MSG}";
+    if(msg!=null&&msg!=""){
+        alert(msg);
+    }
+</script>
+-->
 </html>
