@@ -25,30 +25,19 @@ public class UserManager {
 	UserManagerService ums;
 
 	@RequestMapping("/IntoLogin.do")
-	public String IntoLoginController(){
-		
+	public String IntoLoginController() throws IOException{
+		ums.userLogin();
 		return "userLogin";
 	}
 	
 	@RequestMapping("/UserLogin.do")
-	public String UserLoginController(String account,String password,Model model) throws IOException{
+	public void UserLoginController(String account,String password,Model model) throws IOException{
 		//从静态单例工厂获取sqlSession
 		/*SqlSession sqlSession = SessionFactory.getSession();
 		EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);		
 		Employee employee = employeeMapper.findEmpByAccount(account);
 		sqlSession.commit();
 		sqlSession.close();*/
-		Employee employee = null;
-		
-		if((employee=ums.userLogin(account, password))!=null){
-			model.addAttribute("MSG", account);
-			
-			return "success";
-		}else{
-			model.addAttribute("MSG", "账号或密码错误！");
-			return "userLogin";
-		}
-		
 		
 	}
 }

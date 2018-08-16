@@ -38,5 +38,27 @@ public interface LoanMapper {
 	 * @throws IOException
 	 */
 	public Integer updateLoanState(Loan loan) throws IOException;
+	
+	/**
+	 * 根据贷款id查询客户信息及还款信息
+	 * @param loan
+	 * @return
+	 * @throws IOException
+	 */
+	public Loan findCustomerMessageAndReturnMessage(Integer loanId) throws IOException;
+	
+	/**
+	 * 查询所有存在逾期的账户详细信息
+	 * @return
+	 * @throws IOException
+	 */
+	public List<Loan> findAllOverTimeMessage() throws IOException;
+	
+	/**
+	 * 查询逾期信息总条数
+	 * @return
+	 * @throws IOException
+	 */
+	public Integer findAllOverTimeMessageNum() throws IOException;
 
 }

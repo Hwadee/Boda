@@ -4,15 +4,44 @@ import java.util.Date;
 
 public class ReturnLoan {
 	//贷款归还信息表
-	private Integer retuenId;
+	private Integer returnId;
 	private Integer loanId;//外键，贷款id
 	private Float returnMoney;//归还金额
+	private Float shouldReturnMonry;
 	private Date returnDate;
-	public Integer getRetuenId() {
-		return retuenId;
+	private Date shouldReturnDate;
+	private Integer whichStage;
+	private String returnState;
+	
+	public Float getShouldReturnMonry() {
+		return shouldReturnMonry;
 	}
-	public void setRetuenId(Integer retuenId) {
-		this.retuenId = retuenId;
+	public void setShouldReturnMonry(Float shouldReturnMonry) {
+		this.shouldReturnMonry = shouldReturnMonry;
+	}
+	public Date getShouldReturnDate() {
+		return shouldReturnDate;
+	}
+	public void setShouldReturnDate(Date shouldReturnDate) {
+		this.shouldReturnDate = shouldReturnDate;
+	}
+	public Integer getWhichStage() {
+		return whichStage;
+	}
+	public void setWhichStage(Integer whichStage) {
+		this.whichStage = whichStage;
+	}
+	public String getReturnState() {
+		return returnState;
+	}
+	public void setReturnState(String returnState) {
+		this.returnState = returnState;
+	}
+	public Integer getReturnId() {
+		return returnId;
+	}
+	public void setReturnId(Integer returnId) {
+		this.returnId = returnId;
 	}
 	public Integer getLoanId() {
 		return loanId;

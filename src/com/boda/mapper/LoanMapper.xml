@@ -14,10 +14,33 @@
 		<result column="loan_money" property="loanMoney"/>
 		<result column="loan_date" property="loanDate"/>
 		<result column="loan_state" property="loanState"/>
-		<result column="return_date" property="returnDate"/>
-		<result column="num_of_stages" property="numOfStages"/>
+		<result column="return_start_date" property="returnStartDate"/>
+		<result column="return_years" property="returnYears"/>
+		<result column="number_of_stages" property="numberOfStages"/>
 		<result column="rate_of_interest" property="rateOfInterest"/>
-			
+		<!-- 客户信息与贷款信息一对一关系 -->
+		<association property="customerMessage" javaType="com.boda.pojo.CustomerMessage">
+			<id column="customer_id" property="customerId"/>
+			<result column="customer_name" property="customerName"/>
+			<result column="customer_sex" property="customerSex"/>
+			<result column="customer_identity_id" property="customerIdentityId"/>
+			<result column="customer_birthday" property="customerBirthday"/>
+			<result column="customer_email" property="customerEmail"/>
+			<result column="customer_phone" property="customerPhone"/>
+			<result column="customer_address" property="customerAddress"/>
+			<result column="customer_credit" property="customerCredit"/>		
+		</association>
+		<!-- 贷款信息与还款信息一对多关系 -->
+		<collection property="returnLoans" ofType="com.boda.pojo.ReturnLoan">
+			<id column="return_id" property="returnId"/>
+			<result column="loan_id" property="loanId"/>
+			<result column="return_money" property="returnMoney"/>
+			<result column="should_return_money" property="shouldReturnMoney"/>
+			<result column="return_date" property="returnDate"/>
+			<result column="should_return_date" property="shouldReturnDate"/>
+			<result column="which_stage" property="which_stage"/>
+			<result column="return_state" property="return_state"/>
+		</collection>	
 	</resultMap>
 
 <!--根据贷款id查询贷款信息-->	 
@@ -40,9 +63,25 @@
 		SET loan_state=#{loanState}
 		WHERE loan_id=#{loanId}
 	</update>
-<!-- 根据员工id删除员工 -->	
-	<!-- <delete id="delEmpDatailById" parameterType="int">
-		DELETE from emp_detail where emp_datail_id=#{value}
-	</delete> -->
+	
+	
+<!-- 查询贷款客户信息及还款情况  -->
+	<select id="findCustomerMessageAndReturnMessage" parameterType="Integer" resultMap="LoanResultMap">
+		select * 
+		from loan l, customer_message c, return_loan r
+		where l.loan_id=#{loanId} and c.customer_id=#{customerId} and r.loan_id=#{loanId}	
+	</select>
+<!-- 查询所有逾期贷款及客户详细信息  -->
+	<select id="findAllOverTimeMessage" resultMap="LoanResultMap">
+		select * 
+		from loan l, customer_message c
+		where l.loan_state="存在逾期" and l.customer_id=c.customer_id
+	</select>
+<!-- 查询所有逾期贷款及客户详细信息条数  -->
+	<select id="findAllOverTimeMessageNum" resultType="Integer">
+		select count(*) 
+		from loan l
+		where l.loan_state="存在逾期"
+	</select>
 	
 </mapper>

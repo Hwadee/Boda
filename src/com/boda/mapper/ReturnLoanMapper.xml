@@ -11,7 +11,11 @@
 		<id column="return_id" property="returnId"/>
 		<result column="loan_id" property="loanId"/>
 		<result column="return_money" property="returnMoney"/>
+		<result column="should_return_money" property="shouldReturnMoney"/>
 		<result column="return_date" property="returnDate"/>
+		<result column="should_return_date" property="shouldReturnDate"/>
+		<result column="which_stage" property="which_stage"/>
+		<result column="return_state" property="return_state"/>
 	</resultMap>
 
 <!-- 通过还款idid查询还款信息-->	 
@@ -29,7 +33,8 @@
 	 	<selectKey keyProperty="returnId" order="AFTER" resultType="Integer">
 	 		Select last_insert_id()
 	 	</selectKey>
-		insert into return_loan (return_id,loan_id,return_money,return_date) values (#{returnId},#{loanId},#{returnMoney},#{returnDate});
+		insert into return_loan (return_id,loan_id,return_money,should_return_money,return_date,should_return_date,which_stage,return_state) 
+		values (#{returnId},#{loanId},#{returnMoney},#{shouldReturnMoney},#{returnDate},#{shouldReturnDate},#{which_stage},#{return_state});
 	</insert>
 	
 </mapper>

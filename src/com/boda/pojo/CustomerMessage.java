@@ -31,6 +31,8 @@ public class CustomerMessage {
 	public void setCustomerSex(String customerSex) {
 		this.customerSex = customerSex;
 	}
+	
+	
 	public String getCustomerIdentityId() {
 		return customerIdentityId;
 	}

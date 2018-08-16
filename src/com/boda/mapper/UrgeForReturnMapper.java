@@ -8,12 +8,12 @@ import com.boda.pojo.UrgeForReturn;
 public interface UrgeForReturnMapper {
 	
 	/**
-	 * 根据逾期id查询催促信息
+	 * 根据应归还id查询催促信息
 	 * @param overTimeId
 	 * @return
 	 * @throws IOException
 	 */
-	public List<UrgeForReturn> findUrgeMessageByOverTimeId(Integer overTimeId) throws IOException;
+	public UrgeForReturn findUrgeMessageByOverTimeId(Integer returnId) throws IOException;
 	
 	/**
 	 * 根据员工id查询员工催促的信息
@@ -32,7 +32,7 @@ public interface UrgeForReturnMapper {
 	public Integer addUrgeMessage(UrgeForReturn urgeForReturn) throws IOException;
 	
 	/**
-	 * 根据员工id和逾期id更新查询信息
+	 * 根据员工id和应归还id更新查询信息
 	 * @param urgeForReturn
 	 * @return
 	 * @throws IOException

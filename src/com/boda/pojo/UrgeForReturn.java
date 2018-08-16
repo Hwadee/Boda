@@ -4,8 +4,9 @@ import java.util.Date;
 
 public class UrgeForReturn {
 	private Integer empId;
-	private Integer overTimeId;
+	private Integer returnId;
 	private Date lastUrgeDate;
+	private String urgeState;
 	
 	public Integer getEmpId() {
 		return empId;
@@ -13,19 +14,24 @@ public class UrgeForReturn {
 	public void setEmpId(Integer empId) {
 		this.empId = empId;
 	}
-	public Integer getOverTimeId() {
-		return overTimeId;
-	}
-	public void setOverTimeId(Integer overTimeId) {
-		this.overTimeId = overTimeId;
-	}
 	public Date getLastUrgeDate() {
 		return lastUrgeDate;
 	}
 	public void setLastUrgeDate(Date lastUrgeDate) {
 		this.lastUrgeDate = lastUrgeDate;
 	}
-	
+	public Integer getReturnId() {
+		return returnId;
+	}
+	public void setReturnId(Integer returnId) {
+		this.returnId = returnId;
+	}
+	public String getUrgeState() {
+		return urgeState;
+	}
+	public void setUrgeState(String urgeState) {
+		this.urgeState = urgeState;
+	}
 	
 
 }

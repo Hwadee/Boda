@@ -1,6 +1,7 @@
 package com.boda.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Loan {
 	//贷款信息表
@@ -10,9 +11,39 @@ public class Loan {
 	private Integer loanMoney;//贷款金额
 	private Date loanDate;
 	private String loanState;
-	private Date returnDate;//归还日期
-	private Integer numOfStages;//贷款期数（分几期归还）
+	private Date returnStartDate;//归还日期
+	private Integer returnYears;//归还年限（几年还完）
+	private Integer numberOfStages;//贷款期数（分几期归还）
 	private Float rateOfInterest;//贷款利率
+	
+	CustomerMessage customerMessage;//每条贷款信息关联一条客户信息
+	
+	List<ReturnLoan> returnLoans;//每条贷款信息关联多条还款信息
+	
+	public Date getReturnStartDate() {
+		return returnStartDate;
+	}
+	public void setReturnStartDate(Date returnStartDate) {
+		this.returnStartDate = returnStartDate;
+	}
+	public Integer getReturnYears() {
+		return returnYears;
+	}
+	public void setReturnYears(Integer returnYears) {
+		this.returnYears = returnYears;
+	}
+	public CustomerMessage getCustomerMessage() {
+		return customerMessage;
+	}
+	public void setCustomerMessage(CustomerMessage customerMessage) {
+		this.customerMessage = customerMessage;
+	}
+	public List<ReturnLoan> getReturnLoans() {
+		return returnLoans;
+	}
+	public void setReturnLoans(List<ReturnLoan> returnLoans) {
+		this.returnLoans = returnLoans;
+	}
 	public Integer getLoanId() {
 		return loanId;
 	}
@@ -49,17 +80,12 @@ public class Loan {
 	public void setLoanState(String loanState) {
 		this.loanState = loanState;
 	}
-	public Date getReturnDate() {
-		return returnDate;
+	
+	public Integer getNumberOfStages() {
+		return numberOfStages;
 	}
-	public void setReturnDate(Date returnDate) {
-		this.returnDate = returnDate;
-	}
-	public Integer getNumOfStages() {
-		return numOfStages;
-	}
-	public void setNumOfStages(Integer numOfStages) {
-		this.numOfStages = numOfStages;
+	public void setNumberOfStages(Integer numberOfStages) {
+		this.numberOfStages = numberOfStages;
 	}
 	public Float getRateOfInterest() {
 		return rateOfInterest;
@@ -67,5 +93,13 @@ public class Loan {
 	public void setRateOfInterest(Float rateOfInterest) {
 		this.rateOfInterest = rateOfInterest;
 	}
+	@Override
+	public String toString() {
+		return "Loan [loanId=" + loanId + ", customerId=" + customerId + ", empId=" + empId + ", loanMoney=" + loanMoney
+				+ ", loanDate=" + loanDate + ", loanState=" + loanState + ", returnStartDate=" + returnStartDate
+				+ ", returnYears=" + returnYears + ", numberOfStages=" + numberOfStages + ", rateOfInterest="
+				+ rateOfInterest + ", customerMessage=" + customerMessage + ", returnLoans=" + returnLoans + "]";
+	}
+	
 
 }

@@ -18,7 +18,7 @@ public class TestEmp {
 	public void quaryEmployeeTest() throws IOException
 	{
 		//Mybatis配置文件路径
-		String sqlConfig = "SqlMapConfig.xml";
+		String sqlConfig = "/mybatis/MyBatisConfig.xml";
 		//加载配置文件
 		InputStream iStream = Resources.getResourceAsStream(sqlConfig);
 		//创建session工厂
