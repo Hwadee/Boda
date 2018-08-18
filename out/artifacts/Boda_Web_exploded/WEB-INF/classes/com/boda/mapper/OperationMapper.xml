@@ -21,7 +21,8 @@
 
 	<!-- 查找全部操作记录 -->
 	<select id="findOperation" resultType="com.boda.pojo.OperationLog">
-		select * from operation_log
+		SELECT *
+		FROM operation_log
 	</select>
 
 	<!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返回-->
