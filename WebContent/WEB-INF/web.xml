@@ -7,6 +7,8 @@
 
     <!-- 网站默认开启页面，可以有多个，依序查找 -->
     <welcome-file-list>
+        <welcome-file>temp.jsp</welcome-file>
+
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
@@ -60,6 +62,7 @@
         <!-- 1) *.action,*.do等，对url的扩展名进行过滤，只将指定扩展名的url交给DispatcherServlet进行处理;
             2) /，接受任意的url; -->
         <url-pattern>*.do</url-pattern>
+
     </servlet-mapping>
 
 </web-app>

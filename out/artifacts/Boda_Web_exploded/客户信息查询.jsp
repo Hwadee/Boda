@@ -6,15 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>客户信息查询</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/print.js"></script>
@@ -104,17 +104,18 @@
         <div class="searchWidget">
             <form action="客户信息查询.do" method="post" id="form1">
                 <input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}"/>
-                <input type="text" name="search" placeholder="搜索..." id="lookfor" />
-                <input type="button" id="test" />
+                <input type="text" name="search" placeholder="搜索..." id="lookfor"/>
+                <input type="button" id="test"/>
             </form>
         </div>
         <!-- Widgets -->
         <!--startprint1-->
         <div class="widgets">
             <div class="widget">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon" ><h6>查看人员</h6>
+                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看人员</h6>
                     <div class="topIcons">
-                        <input type="image" src="./images/icons/downloadTop.png" class="tipS" title="打印该表格" onclick="preview(1)"/>
+                        <input type="image" src="./images/icons/downloadTop.png" class="tipS" title="打印该表格"
+                               onclick="preview(1)"/>
                     </div>
                 </div>
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">

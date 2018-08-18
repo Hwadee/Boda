@@ -15,20 +15,28 @@
 	</resultMap>
 
 	<!-- 通过操作记录id查询操作记录；-->
-	<select id="findoperationById" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
+	<select id="findOperationById" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
 		select * from operation_log where operation_id = #{value}
 	</select>
+
+	<!-- 查找全部操作记录 -->
+	<select id="findOperation" resultType="com.boda.pojo.OperationLog">
+		SELECT *
+		FROM operation_log
+	</select>
+
 	<!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返回-->
-	<select id="findOperationByDate" parameterType="String" resultMap="com.boda.pojo.OperationLog">
+	<select id="findOperationByDate" parameterType="String" resultType="com.boda.pojo.OperationLog">
 		select * from operation_log where operation_date = #{value}
 	</select>
+
 	<!-- 根据员工id查询某员工操作记录-->
-	<select id="findOperationByEmpId" parameterType="String" resultMap="com.boda.pojo.OperationLog">
+	<select id="findOperationByEmpId" parameterType="String" resultType="com.boda.pojo.OperationLog">
 		select * from operation_log where emp_id = #{value}
 	</select>
 
 	<!-- 根据日期和员工id查询操作记录 -->
-	<select id="findOperationLogs" resultMap="com.boda.pojo.OperationLog">
+	<select id="findOperationLogsBoth" resultType="com.boda.pojo.OperationLog">
 		SELECT *
 		FROM operation_log
 		WHERE operation_date = #{date} AND emp_id = #{empId}

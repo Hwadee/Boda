@@ -29,10 +29,10 @@ public class UserDetailManager {
             request.getSession().setAttribute("currentUserInfo", empDetail);
             model.addAttribute("MSG", empDetail.getEmpName());
             model.addAttribute("detailInfo", empDetail);
-            return "detailPage";
+            return "detailPageTest";
         } else {
             model.addAttribute("MSG", "无可用信息");
-            return "detailPage";
+            return "detailPageTest";
         }
     }
 
@@ -50,10 +50,10 @@ public class UserDetailManager {
             request.getSession().setAttribute("currentUserInfo", empDetail);
             model.addAttribute("MSG", empDetail.getEmpName());
             model.addAttribute("detailInfo", empDetail);
-            return "detailPage";
+            return "detailPageTest";
         } else {
             model.addAttribute("MSG", "更新失败");
-            return "detailPage";
+            return "detailPageTest";
         }
     }
 }

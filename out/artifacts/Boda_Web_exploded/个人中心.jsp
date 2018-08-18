@@ -9,10 +9,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>个人中心</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/place.js"></script>
@@ -110,137 +110,184 @@
                 <div id="tab1" class="tab_content np" style="display: block;">
                     <form id="validate" class="form" method="post" action="">
                         <fieldset>
-                            <div class="formRow" >
-                                <div class="oneThree"><label>姓名</label><div class="formRight"><input type="text" value="aaa" class="validate[required]" readonly="readonly" name="change"/></div></div>
-                                <div class="oneThree"><label>性别</label><div class="formRight"> <input type="text" value="男" readonly="readonly" name="change"/></div></div>
-                                <div class="oneThree"><label>民族</label><div class="formRight"> <input type="text" value="汉族" readonly="readonly" name="change"/></div></div>
+                            <div class="formRow">
+                                <div class="oneThree"><label>姓名</label>
+                                    <div class="formRight"><input type="text" value="aaa" class="validate[required]"
+                                                                  readonly="readonly" name="change"/></div>
+                                </div>
+                                <div class="oneThree"><label>性别</label>
+                                    <div class="formRight"><input type="text" value="男" readonly="readonly"
+                                                                  name="change"/></div>
+                                </div>
+                                <div class="oneThree"><label>民族</label>
+                                    <div class="formRight"><input type="text" value="汉族" readonly="readonly"
+                                                                  name="change"/></div>
+                                </div>
                                 <div class="clear"></div>
                             </div>
                             <div class="formRow">
-                                <div class="oneThree"><label>体重</label><div class="formRight"> <input type="text" value="11kg" readonly="readonly" name="change"/></div></div>
-                                <div class="oneThree"><label>身高</label><div class="formRight"> <input type="text" value="22cm" readonly="readonly" name="change"/></div></div>
-                                <div class="oneThree"><label>教育度</label><div class="formRight"> <input type="text" value="bbb" readonly="readonly" name="change"/></div></div>
+                                <div class="oneThree"><label>体重</label>
+                                    <div class="formRight"><input type="text" value="11kg" readonly="readonly"
+                                                                  name="change"/></div>
+                                </div>
+                                <div class="oneThree"><label>身高</label>
+                                    <div class="formRight"><input type="text" value="22cm" readonly="readonly"
+                                                                  name="change"/></div>
+                                </div>
+                                <div class="oneThree"><label>教育度</label>
+                                    <div class="formRight"><input type="text" value="bbb" readonly="readonly"
+                                                                  name="change"/></div>
+                                </div>
                                 <div class="clear"></div>
                             </div>
                             <div class="formRow">
-                                <span class="oneThree"><label>员工ID</label><div class="formRight"> <input type="text" value="123456" readonly="readonly"></div></span>
-                                <span class="oneThree"><label>部门</label><div class="formRight"> <input type="text" value="人事部门" readonly="readonly"></div></span>
-                                <span class="oneThree"><label>职位</label><div class="formRight"> <input type="text" value="普通员工" readonly="readonly"></div></span>
+                                <span class="oneThree"><label>员工ID</label><div class="formRight"> <input type="text"
+                                                                                                         value="123456"
+                                                                                                         readonly="readonly"></div></span>
+                                <span class="oneThree"><label>部门</label><div class="formRight"> <input type="text"
+                                                                                                       value="人事部门"
+                                                                                                       readonly="readonly"></div></span>
+                                <span class="oneThree"><label>职位</label><div class="formRight"> <input type="text"
+                                                                                                       value="普通员工"
+                                                                                                       readonly="readonly"></div></span>
                                 <div class="clear"></div>
                             </div>
                             <div class="formRow">
-                                <div class="oneTwo"><label>籍贯</label><div class="formRight">
-                                    <div class="oneTwo">
-                                        <select name="sel" disabled="disabled" onchange="chinaChange(this,document.getElementById('city1'))">
-                                            <option value ="请选择市区">请选择省份</option>
-                                            <option value ="北京市">北京市 </option>
-                                            <option value ="天津市">天津市 </option>
-                                            <option value ="上海市">上海市 </option>
-                                            <option value ="重庆市">重庆市 </option>
-                                            <option value ="河北省">河北省 </option>
-                                            <option value ="山西省">山西省 </option>
-                                            <option value ="辽宁省">辽宁省 </option>
-                                            <option value ="吉林省">吉林省 </option>
-                                            <option value ="黑龙江省">黑龙江省</option>
-                                            <option value ="江苏省">江苏省 </option>
-                                            <option value ="浙江省">浙江省 </option>
-                                            <option value ="安徽省">安徽省 </option>
-                                            <option value ="福建省">福建省 </option>
-                                            <option value ="江西省">江西省 </option>
-                                            <option value ="山东省">山东省 </option>
-                                            <option value ="河南省">河南省 </option>
-                                            <option value ="湖北省">湖北省 </option>
-                                            <option value ="湖南省">湖南省 </option>
-                                            <option value ="广东省">广东省 </option>
-                                            <option value ="海南省">海南省 </option>
-                                            <option value ="四川省">四川省 </option>
-                                            <option value ="贵州省">贵州省 </option>
-                                            <option value ="云南省">云南省 </option>
-                                            <option value ="陕西省">陕西省 </option>
-                                            <option value ="甘肃省">甘肃省 </option>
-                                            <option value ="青海省">青海省 </option>
-                                            <option value ="台湾省">台湾省 </option>
-                                            <option value ="广西壮族自治区">广西壮族自治区</option>
-                                            <option value ="内蒙古自治区">内蒙古自治区</option>
-                                            <option value ="西藏自治区">西藏自治区</option>
-                                            <option value ="宁夏回族自治区">宁夏回族自治区 </option>
-                                            <option value ="新疆维吾尔自治区">新疆维吾尔自治区</option>
-                                            <option value ="香港特别行政区">香港特别行政区</option>
-                                            <option value ="澳门特别行政区">澳门特别行政区</option>
-                                        </select>
+                                <div class="oneTwo"><label>籍贯</label>
+                                    <div class="formRight">
+                                        <div class="oneTwo">
+                                            <select name="sel" disabled="disabled"
+                                                    onchange="chinaChange(this,document.getElementById('city1'))">
+                                                <option value="请选择市区">请选择省份</option>
+                                                <option value="北京市">北京市</option>
+                                                <option value="天津市">天津市</option>
+                                                <option value="上海市">上海市</option>
+                                                <option value="重庆市">重庆市</option>
+                                                <option value="河北省">河北省</option>
+                                                <option value="山西省">山西省</option>
+                                                <option value="辽宁省">辽宁省</option>
+                                                <option value="吉林省">吉林省</option>
+                                                <option value="黑龙江省">黑龙江省</option>
+                                                <option value="江苏省">江苏省</option>
+                                                <option value="浙江省">浙江省</option>
+                                                <option value="安徽省">安徽省</option>
+                                                <option value="福建省">福建省</option>
+                                                <option value="江西省">江西省</option>
+                                                <option value="山东省">山东省</option>
+                                                <option value="河南省">河南省</option>
+                                                <option value="湖北省">湖北省</option>
+                                                <option value="湖南省">湖南省</option>
+                                                <option value="广东省">广东省</option>
+                                                <option value="海南省">海南省</option>
+                                                <option value="四川省">四川省</option>
+                                                <option value="贵州省">贵州省</option>
+                                                <option value="云南省">云南省</option>
+                                                <option value="陕西省">陕西省</option>
+                                                <option value="甘肃省">甘肃省</option>
+                                                <option value="青海省">青海省</option>
+                                                <option value="台湾省">台湾省</option>
+                                                <option value="广西壮族自治区">广西壮族自治区</option>
+                                                <option value="内蒙古自治区">内蒙古自治区</option>
+                                                <option value="西藏自治区">西藏自治区</option>
+                                                <option value="宁夏回族自治区">宁夏回族自治区</option>
+                                                <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                                                <option value="香港特别行政区">香港特别行政区</option>
+                                                <option value="澳门特别行政区">澳门特别行政区</option>
+                                            </select>
+                                        </div>
+                                        <div class="oneTwo">
+                                            <select name="city" id="city1" disabled="disabled">
+                                                <option value="请选择市区">请选择市区</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="oneTwo">
-                                        <select  name="city" id="city1" disabled="disabled">
-                                            <option value ="请选择市区">请选择市区</option>
-                                        </select>
-                                    </div>
-                                </div></div>
-                                <div class="oneTwo"><label>国籍</label><div class="formRight"> <input type="text" readonly="readonly" name="change"></div></div>
+                                </div>
+                                <div class="oneTwo"><label>国籍</label>
+                                    <div class="formRight"><input type="text" readonly="readonly" name="change"></div>
+                                </div>
                                 <div class="clear"></div>
                             </div>
 
                             <div class="formRow">
-                                <div class="oneTwo"><label>现居住地</label><div class="formRight">
-                                    <div class="oneTwo"> <select name="sel" onchange="chinaChange(this,document.getElementById('city2'))" disabled="disabled">
-                                        <option value ="请选择市区">请选择省份</option>
-                                        <option value ="北京市">北京市 </option>
-                                        <option value ="天津市">天津市 </option>
-                                        <option value ="上海市">上海市 </option>
-                                        <option value ="重庆市">重庆市 </option>
-                                        <option value ="河北省">河北省 </option>
-                                        <option value ="山西省">山西省 </option>
-                                        <option value ="辽宁省">辽宁省 </option>
-                                        <option value ="吉林省">吉林省 </option>
-                                        <option value ="黑龙江省">黑龙江省</option>
-                                        <option value ="江苏省">江苏省 </option>
-                                        <option value ="浙江省">浙江省 </option>
-                                        <option value ="安徽省">安徽省 </option>
-                                        <option value ="福建省">福建省 </option>
-                                        <option value ="江西省">江西省 </option>
-                                        <option value ="山东省">山东省 </option>
-                                        <option value ="河南省">河南省 </option>
-                                        <option value ="湖北省">湖北省 </option>
-                                        <option value ="湖南省">湖南省 </option>
-                                        <option value ="广东省">广东省 </option>
-                                        <option value ="海南省">海南省 </option>
-                                        <option value ="四川省">四川省 </option>
-                                        <option value ="贵州省">贵州省 </option>
-                                        <option value ="云南省">云南省 </option>
-                                        <option value ="陕西省">陕西省 </option>
-                                        <option value ="甘肃省">甘肃省 </option>
-                                        <option value ="青海省">青海省 </option>
-                                        <option value ="台湾省">台湾省 </option>
-                                        <option value ="广西壮族自治区">广西壮族自治区</option>
-                                        <option value ="内蒙古自治区">内蒙古自治区</option>
-                                        <option value ="西藏自治区">西藏自治区</option>
-                                        <option value ="宁夏回族自治区">宁夏回族自治区 </option>
-                                        <option value ="新疆维吾尔自治区">新疆维吾尔自治区</option>
-                                        <option value ="香港特别行政区">香港特别行政区</option>
-                                        <option value ="澳门特别行政区">澳门特别行政区</option>
-                                    </select></div>
-                                    <div class="oneTwo">
-                                        <select name="city" id="city2" disabled="disabled">
-                                            <option value ="请选择市区">请选择市区</option>
-                                        </select>
+                                <div class="oneTwo"><label>现居住地</label>
+                                    <div class="formRight">
+                                        <div class="oneTwo"><select name="sel"
+                                                                    onchange="chinaChange(this,document.getElementById('city2'))"
+                                                                    disabled="disabled">
+                                            <option value="请选择市区">请选择省份</option>
+                                            <option value="北京市">北京市</option>
+                                            <option value="天津市">天津市</option>
+                                            <option value="上海市">上海市</option>
+                                            <option value="重庆市">重庆市</option>
+                                            <option value="河北省">河北省</option>
+                                            <option value="山西省">山西省</option>
+                                            <option value="辽宁省">辽宁省</option>
+                                            <option value="吉林省">吉林省</option>
+                                            <option value="黑龙江省">黑龙江省</option>
+                                            <option value="江苏省">江苏省</option>
+                                            <option value="浙江省">浙江省</option>
+                                            <option value="安徽省">安徽省</option>
+                                            <option value="福建省">福建省</option>
+                                            <option value="江西省">江西省</option>
+                                            <option value="山东省">山东省</option>
+                                            <option value="河南省">河南省</option>
+                                            <option value="湖北省">湖北省</option>
+                                            <option value="湖南省">湖南省</option>
+                                            <option value="广东省">广东省</option>
+                                            <option value="海南省">海南省</option>
+                                            <option value="四川省">四川省</option>
+                                            <option value="贵州省">贵州省</option>
+                                            <option value="云南省">云南省</option>
+                                            <option value="陕西省">陕西省</option>
+                                            <option value="甘肃省">甘肃省</option>
+                                            <option value="青海省">青海省</option>
+                                            <option value="台湾省">台湾省</option>
+                                            <option value="广西壮族自治区">广西壮族自治区</option>
+                                            <option value="内蒙古自治区">内蒙古自治区</option>
+                                            <option value="西藏自治区">西藏自治区</option>
+                                            <option value="宁夏回族自治区">宁夏回族自治区</option>
+                                            <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                                            <option value="香港特别行政区">香港特别行政区</option>
+                                            <option value="澳门特别行政区">澳门特别行政区</option>
+                                        </select></div>
+                                        <div class="oneTwo">
+                                            <select name="city" id="city2" disabled="disabled">
+                                                <option value="请选择市区">请选择市区</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div></div>
-                                <div class="oneTwo"  style="display: flex; margin-right: 2px;"><input type="text" value="详细地址" style="width: 100%;" readonly="readonly" name="change"/></div>
+                                </div>
+                                <div class="oneTwo" style="display: flex; margin-right: 2px;"><input type="text"
+                                                                                                     value="详细地址"
+                                                                                                     style="width: 100%;"
+                                                                                                     readonly="readonly"
+                                                                                                     name="change"/>
+                                </div>
                                 <div class="clear"></div>
                             </div>
 
                             <div class="formRow">
                                 <label>手机号码：</label>
-                                <div class="formRight"><input type="text" value="123456789" name="change" readonly="readonly"></div><div class="clear"></div>
+                                <div class="formRight"><input type="text" value="123456789" name="change"
+                                                              readonly="readonly"></div>
+                                <div class="clear"></div>
                             </div>
                             <div class="formRow">
                                 <label>邮箱：</label>
-                                <div class="formRight"><input type="text" value="123@12.com" name="change" readonly="readonly"></div><div class="clear"></div>
+                                <div class="formRight"><input type="text" value="123@12.com" name="change"
+                                                              readonly="readonly"></div>
+                                <div class="clear"></div>
                             </div>
                             <div class="formRow">
                                 <label>工资卡号：</label>
-                                <div class="formRight"><input type="text" value="123456789" name="change" readonly="readonly"></div><div class="clear"></div>
+                                <div class="formRight"><input type="text" value="123456789" name="change"
+                                                              readonly="readonly"></div>
+                                <div class="clear"></div>
                             </div>
-                            <div class="formSubmit"><input id="b1" type="button" value="修改" class="greenB" onclick="edit()"><input id="b2" type="submit" value="完成" class="redB" disabled="disabled"></div>
+                            <div class="formSubmit"><input id="b1" type="button" value="修改" class="greenB"
+                                                           onclick="edit()"><input id="b2" type="submit" value="完成"
+                                                                                   class="redB" disabled="disabled">
+                            </div>
                             <div class="clear"></div>
                         </fieldset>
                     </form>
@@ -250,15 +297,22 @@
                         <fieldset>
                             <div class="formRow">
                                 <label>原密码：<span class="req">*</span></label>
-                                <div class="formRight"><input type="password" class="validate[required]" name="req" id="req"></div><div class="clear"></div>
+                                <div class="formRight"><input type="password" class="validate[required]" name="req"
+                                                              id="req"></div>
+                                <div class="clear"></div>
                             </div>
                             <div class="formRow">
                                 <label>新密码：<span class="req">*</span></label>
-                                <div class="formRight"><input type="password" class="validate[required,minSize[6]]" name="password1" id="password1"></div><div class="clear"></div>
+                                <div class="formRight"><input type="password" class="validate[required,minSize[6]]"
+                                                              name="password1" id="password1"></div>
+                                <div class="clear"></div>
                             </div>
                             <div class="formRow">
                                 <label>确认密码：<span class="req">*</span></label>
-                                <div class="formRight"><input type="password" class="validate[required,equals[password1]]" name="minValid" id="minValid"></div><div class="clear"></div>
+                                <div class="formRight"><input type="password"
+                                                              class="validate[required,equals[password1]]"
+                                                              name="minValid" id="minValid"></div>
+                                <div class="clear"></div>
                             </div>
                             <div class="formSubmit"><input type="submit" value="修改" class="redB"></div>
                             <div class="clear"></div>
@@ -270,7 +324,9 @@
                         <fieldset>
                             <div class="formRow">
                                 <label>上传头像<span class="req">*</span></label>
-                                <div class="formRight"><input type="file" class="validate[required]" name="req" id="req"></div><div class="clear"></div>
+                                <div class="formRight"><input type="file" class="validate[required]" name="req"
+                                                              id="req"></div>
+                                <div class="clear"></div>
                             </div>
                             <div class="formSubmit"><input type="button" value="修改" class="redB"></div>
                             <div class="clear"></div>

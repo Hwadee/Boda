@@ -9,10 +9,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>客户信息录入</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/birthday.js"></script>
     <script type="text/javascript" src="./js/place.js"></script>
@@ -116,8 +116,10 @@
                         <div class="formRow">
                             <label>性别<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="radio" name="sex" id="male"data-prompt-position="topRight:102" style="opacity: 0;"><label for="male">男</label>
-                                <input type="radio" name="sex" id="female"data-prompt-position="topRight:102" style="opacity: 0;"><label for="female">女</label>
+                                <input type="radio" name="sex" id="male" data-prompt-position="topRight:102"
+                                       style="opacity: 0;"><label for="male">男</label>
+                                <input type="radio" name="sex" id="female" data-prompt-position="topRight:102"
+                                       style="opacity: 0;"><label for="female">女</label>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -155,45 +157,46 @@
                         <div class="formRow dnone">
                             <label>所在地区：</label>
                             <div class="formRight">
-                                <div class="oneTwo"> <select onchange="chinaChange(this,document.getElementById('city'))">
-                                    <option value ="请选择市区">请选择省份</option>
-                                    <option value ="北京市">北京市 </option>
-                                    <option value ="天津市">天津市 </option>
-                                    <option value ="上海市">上海市 </option>
-                                    <option value ="重庆市">重庆市 </option>
-                                    <option value ="河北省">河北省 </option>
-                                    <option value ="山西省">山西省 </option>
-                                    <option value ="辽宁省">辽宁省 </option>
-                                    <option value ="吉林省">吉林省 </option>
-                                    <option value ="黑龙江省">黑龙江省</option>
-                                    <option value ="江苏省">江苏省 </option>
-                                    <option value ="浙江省">浙江省 </option>
-                                    <option value ="安徽省">安徽省 </option>
-                                    <option value ="福建省">福建省 </option>
-                                    <option value ="江西省">江西省 </option>
-                                    <option value ="山东省">山东省 </option>
-                                    <option value ="河南省">河南省 </option>
-                                    <option value ="湖北省">湖北省 </option>
-                                    <option value ="湖南省">湖南省 </option>
-                                    <option value ="广东省">广东省 </option>
-                                    <option value ="海南省">海南省 </option>
-                                    <option value ="四川省">四川省 </option>
-                                    <option value ="贵州省">贵州省 </option>
-                                    <option value ="云南省">云南省 </option>
-                                    <option value ="陕西省">陕西省 </option>
-                                    <option value ="甘肃省">甘肃省 </option>
-                                    <option value ="青海省">青海省 </option>
-                                    <option value ="台湾省">台湾省 </option>
-                                    <option value ="广西壮族自治区">广西壮族自治区</option>
-                                    <option value ="内蒙古自治区">内蒙古自治区</option>
-                                    <option value ="西藏自治区">西藏自治区</option>
-                                    <option value ="宁夏回族自治区">宁夏回族自治区 </option>
-                                    <option value ="新疆维吾尔自治区">新疆维吾尔自治区</option>
-                                    <option value ="香港特别行政区">香港特别行政区</option>
-                                    <option value ="澳门特别行政区">澳门特别行政区</option>
+                                <div class="oneTwo"><select
+                                        onchange="chinaChange(this,document.getElementById('city'))">
+                                    <option value="请选择市区">请选择省份</option>
+                                    <option value="北京市">北京市</option>
+                                    <option value="天津市">天津市</option>
+                                    <option value="上海市">上海市</option>
+                                    <option value="重庆市">重庆市</option>
+                                    <option value="河北省">河北省</option>
+                                    <option value="山西省">山西省</option>
+                                    <option value="辽宁省">辽宁省</option>
+                                    <option value="吉林省">吉林省</option>
+                                    <option value="黑龙江省">黑龙江省</option>
+                                    <option value="江苏省">江苏省</option>
+                                    <option value="浙江省">浙江省</option>
+                                    <option value="安徽省">安徽省</option>
+                                    <option value="福建省">福建省</option>
+                                    <option value="江西省">江西省</option>
+                                    <option value="山东省">山东省</option>
+                                    <option value="河南省">河南省</option>
+                                    <option value="湖北省">湖北省</option>
+                                    <option value="湖南省">湖南省</option>
+                                    <option value="广东省">广东省</option>
+                                    <option value="海南省">海南省</option>
+                                    <option value="四川省">四川省</option>
+                                    <option value="贵州省">贵州省</option>
+                                    <option value="云南省">云南省</option>
+                                    <option value="陕西省">陕西省</option>
+                                    <option value="甘肃省">甘肃省</option>
+                                    <option value="青海省">青海省</option>
+                                    <option value="台湾省">台湾省</option>
+                                    <option value="广西壮族自治区">广西壮族自治区</option>
+                                    <option value="内蒙古自治区">内蒙古自治区</option>
+                                    <option value="西藏自治区">西藏自治区</option>
+                                    <option value="宁夏回族自治区">宁夏回族自治区</option>
+                                    <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                                    <option value="香港特别行政区">香港特别行政区</option>
+                                    <option value="澳门特别行政区">澳门特别行政区</option>
                                 </select></div>
-                                <div class="oneTwo"> <select name="city" id="city">
-                                    <option value ="请选择市区">请选择市区</option>
+                                <div class="oneTwo"><select name="city" id="city">
+                                    <option value="请选择市区">请选择市区</option>
                                 </select>
                                 </div>
                             </div>

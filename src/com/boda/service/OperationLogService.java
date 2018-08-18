@@ -19,10 +19,23 @@ public class OperationLogService {
     }
 
     public List<OperationLog> getOperationLogs(String date, String empId) throws Exception {
-        return operationMapper.findOperationLogs(date, empId);
+
+        List<OperationLog> operationLogs = null;
+
+
+        if ("".equals(date) && "".equals(empId)) { //日期与员工号均为空，查找全部记录
+            operationLogs = operationMapper.findOperation();
+        } else if (!"".equals(date) && "".equals(empId)) { //员工号为空，根据日期查找记录
+            operationLogs = operationMapper.findOperationByDate(date);
+        } else if ("".equals(date) && !"".equals(empId)) { //日期为空，根据员工号查找记录
+            operationLogs = operationMapper.findOperationByEmpId(empId);
+        } else { //日期与员工号均不为空
+            operationLogs = operationMapper.findOperationLogsBoth(date, empId);
+        }
+        System.out.println(date + "  " + empId);
+        System.out.println(operationLogs);
+
+        return operationLogs;
     }
 
-//    public List<OperationLog> getOperationLogsByEmpId(String empId) throws Exception {
-//        return operationMapper.findOperationByEmpId(empId);
-//    }
 }

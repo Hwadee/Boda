@@ -9,15 +9,23 @@ import com.boda.pojo.OperationLog;
 import org.apache.ibatis.annotations.Param;
 
 public interface OperationMapper {
-	
+
 	/**
 	 * 根据操作记录id查询操作记录
 	 * @param id
 	 * @return 某条操作记录
 	 * @throws IOException
 	 */
-	public OperationLog findoperationById(Integer operationId) throws IOException;
-	
+	public OperationLog findOperationById(Integer operationId) throws IOException;
+
+	/**
+	 * 查找全部操作记录
+	 *
+	 * @return
+	 * @throws IOException
+	 */
+	public List<OperationLog> findOperation() throws IOException;
+
 	/**
 	 * 根据日期查询操作记录
 	 * @param empName
@@ -43,7 +51,7 @@ public interface OperationMapper {
 	 * @return
 	 * @throws IOException
 	 */
-	public List<OperationLog> findOperationLogs(@Param("date") String date, @Param("empId") String empId) throws IOException;
+	public List<OperationLog> findOperationLogsBoth(@Param("date") String date, @Param("empId") String empId) throws IOException;
 
 	/**
 	 * 插入操作记录

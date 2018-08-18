@@ -9,10 +9,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>逾期情况报表</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script>
         function myFunction() {
             alert("已催收");
@@ -104,13 +104,14 @@
     <!-- Main 表格 -->
     <div class="wrapper">
         <form action="" class="searchWidget">
-            <input type="text" name="search" placeholder="搜索用户名..." id="" />
-            <input type="submit" value="" />
+            <input type="text" name="search" placeholder="搜索用户名..." id=""/>
+            <input type="submit" value=""/>
         </form>
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget rightTabs">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>逾期情况报表</h6></div>
+                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>逾期情况报表</h6>
+                </div>
                 <div class="topIcons">
                     <a href="#" class="tipS" title="打印该表格">
                         <img src="./images/icons/downloadTop.png" alt>

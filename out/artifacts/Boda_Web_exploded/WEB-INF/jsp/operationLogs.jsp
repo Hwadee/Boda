@@ -8,11 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>操作记录</title>
+    <title>查询操作记录</title>
 </head>
 <body>
-<div>
-    ${operationlogs}<br>
-</div>
+    <div>
+        ${operationlogs}<br>
+    </div>
+
+    <form action="OperationLogs.do" method="post">
+        日 期：<input type="text" name="date"><br>
+        员工号：<input type="text" name="empId"><br>
+        <input type="submit" value="查询">
+    </form>
 </body>
 </html>

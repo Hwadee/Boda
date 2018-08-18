@@ -6,6 +6,7 @@
     <title>登录测试</title>
 </head>
 <body>
-<a href="IntoLogin.do">进入登录页面</a>
+<a href="IntoLogin.do">进入登录页面</a><br>
+<a href="IntoOperationLogs.do">查看操作记录</a>
 </body>
 </html>

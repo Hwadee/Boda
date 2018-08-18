@@ -40,5 +40,9 @@ public class OperationLog {
         this.operationType = operationType;
     }
 
-
+    @Override
+    public String toString() {
+        return "OperationLog [OperationID=" + operationId + ", EmpID=" + empId + ", OperationDate=" +
+                operationDate + ", OperationType=" + operationType + "]";
+    }
 }
