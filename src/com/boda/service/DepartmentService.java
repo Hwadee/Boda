@@ -27,10 +27,16 @@ public class DepartmentService {
 //        if ((departments = departmentMapper.findDepartmentByName(deptSearchToken)) == null) {
 //            departments.add(departmentMapper.findDepartmentById(Integer.parseInt(deptSearchToken)));
 //        }
-        return departments;
+        return departments.isEmpty() ? null : departments;
     }
 
-    public static boolean isInteger(String str) {
+    public boolean updateDeptInfo(Department department) throws Exception {
+
+        return departmentMapper.updateDepartment(department) > 0;
+    }
+
+
+    private static boolean isInteger(String str) {
         if ("".equals(str)) return false;
         Pattern pattern = Pattern.compile("^[-+]?[\\d]*$");
         return pattern.matcher(str).matches();

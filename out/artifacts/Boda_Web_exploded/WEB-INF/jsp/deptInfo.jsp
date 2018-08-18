@@ -21,7 +21,7 @@
 </form>
 
 <form action="UpdateDeptInfo.do" method="post">
-    部 门 ID：<input type="text" name="deptId"><br>
+    部  门  ID：<input type="text" name="deptId"><br>
     部 门 名 称：<input type="text" name="deptName"><br>
     部门员工数： <input type="text" name="deptEmpNum"><br>
     部门创建日期：<input type="text" name="deptBuildTime"><br>
