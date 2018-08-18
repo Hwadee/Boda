@@ -47,6 +47,7 @@ public class UserDetailManager {
 
         if (uds.updateUserDetail(empDetail)) {
 //        uds.updateUserDetail(empDetail);
+            request.getSession().setAttribute("currentUserInfo", empDetail);
             model.addAttribute("MSG", empDetail.getEmpName());
             model.addAttribute("detailInfo", empDetail);
             return "detailPage";

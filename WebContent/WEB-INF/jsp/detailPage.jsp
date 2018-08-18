@@ -19,7 +19,7 @@
 <br>
 <form action="UpdateUserInfo.do" method="post">
     姓名：<input type="text" name="name"><br>
-    电话：<input type="text" name="phone">
+    电话：<input type="text" name="phone"><br>
     <input type="submit" value="修改个人资料">
 </form>
 </body>

@@ -38,14 +38,13 @@
 
 	</bean>
 
-	<!-- 创建sqlSessinFactory -->
+	<!-- 创建sqlSessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 数据源 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- 加载mybatis的配置文件 -->
 		<property name="configLocation" value="classpath:mybatis/MyBatisConfig.xml" />
 	</bean>
-
 
 
 	<!-- 事务管理器 对mybatis操作数据库事务控制，spring使用jdbc的事务控制类 -->
@@ -101,7 +100,7 @@
 		<!-- 指定扫描的包名，如有多个包，每个包中间使用逗号分隔 -->
 		<property name="basePackage" value="com.boda.mapper" />
 
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 
 		<!-- <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/> -->
 	</bean>

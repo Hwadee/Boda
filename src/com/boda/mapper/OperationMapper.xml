@@ -14,20 +14,27 @@
 		<result column="operation_type" property="operationType"/>
 	</resultMap>
 
-<!-- 通过操作记录id查询操作记录；-->	 
+	<!-- 通过操作记录id查询操作记录；-->
 	<select id="findoperationById" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
 		select * from operation_log where operation_id = #{value}
 	</select>
-<!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返会-->	
-	<select id="findOperationByDate" parameterType="Date" resultType="com.boda.pojo.OperationLog">
+	<!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返回-->
+	<select id="findOperationByDate" parameterType="String" resultMap="com.boda.pojo.OperationLog">
 		select * from operation_log where operation_date = #{value}
 	</select>
-<!-- 根据员工id查询某员工操作记录-->		
-	<select id="findOperationByEmpId" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
+	<!-- 根据员工id查询某员工操作记录-->
+	<select id="findOperationByEmpId" parameterType="String" resultMap="com.boda.pojo.OperationLog">
 		select * from operation_log where emp_id = #{value}
 	</select>
-	
-<!-- 插入数据到数据库-->
+
+	<!-- 根据日期和员工id查询操作记录 -->
+	<select id="findOperationLogs" resultMap="com.boda.pojo.OperationLog">
+		SELECT *
+		FROM operation_log
+		WHERE operation_date = #{date} AND emp_id = #{empId}
+	</select>
+
+	<!-- 插入数据到数据库-->
 	<insert id="addOperationLog" parameterType="com.boda.pojo.OperationLog">
 		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
 	 	<selectKey keyProperty="empId" order="AFTER" resultType="Integer">
