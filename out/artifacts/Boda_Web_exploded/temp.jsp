@@ -7,7 +7,8 @@
 </head>
 <body>
 <a href="IntoLogin.do">进入登录页面</a><br>
-<a href="IntoOperationLogs.do">查看操作记录</a>
-<a href="IntoDeptInfo.do">搜索部门信息</a>
+<a href="IntoOperationLogs.do">查看操作记录</a><br>
+<a href="IntoDeptInfo.do">搜索部门信息</a><br>
+<a href="IntoLoanInfo.do">搜索贷款信息</a><br>
 </body>
 </html>

@@ -29,18 +29,19 @@ public class UserDetailManager {
             request.getSession().setAttribute("currentUserInfo", empDetail);
             model.addAttribute("MSG", empDetail.getEmpName());
             model.addAttribute("detailInfo", empDetail);
-            return "detailPageTest";
+            return "detailPage";
         } else {
             model.addAttribute("MSG", "无可用信息");
-            return "detailPageTest";
+            return "detailPage";
         }
     }
 
     @RequestMapping("/UpdateUserInfo.do")
-    public String updateUserDetail(@RequestParam("name") String name, @RequestParam("phone") String phone, HttpServletRequest request, Model model) throws Exception {
+    public String updateUserDetail(String name, String phone, HttpServletRequest request, Model model) throws Exception {
+
         EmpDetail empDetail = (EmpDetail) request.getSession().getAttribute("currentUserInfo");
 //        System.out.println(empDetail);
-        System.out.println(name + "  " + phone);
+//        System.out.println(name + "  " + phone);
 
         empDetail.setEmpName(name);
         empDetail.setEmpPhone(phone);
@@ -50,10 +51,10 @@ public class UserDetailManager {
             request.getSession().setAttribute("currentUserInfo", empDetail);
             model.addAttribute("MSG", empDetail.getEmpName());
             model.addAttribute("detailInfo", empDetail);
-            return "detailPageTest";
+            return "detailPage";
         } else {
             model.addAttribute("MSG", "更新失败");
-            return "detailPageTest";
+            return "detailPage";
         }
     }
 }

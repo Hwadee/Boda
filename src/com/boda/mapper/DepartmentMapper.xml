@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper 
-	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- 
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
 
 <mapper namespace="com.boda.mapper.DepartmentMapper">
 
-	<resultMap type="com.boda.pojo.Department" id="departmentResultMap">
-		<id column="dept_id" property="deptId"/>
-		<result column="dept_name" property="deptName"/>
-		<result column="dept_emp_num" property="deptEmpNum"/>
-		<result column="dept_build_time" property="deptBuildTime"/>
-	</resultMap>
+    <resultMap type="com.boda.pojo.Department" id="departmentResultMap">
+        <id column="dept_id" property="deptId"/>
+        <result column="dept_name" property="deptName"/>
+        <result column="dept_emp_num" property="deptEmpNum"/>
+        <result column="dept_build_time" property="deptBuildTime"/>
+    </resultMap>
 
-<!-- 通过id查询部门信息；-->	 
-	<select id="findDepartmentById" parameterType="Integer" resultType="com.boda.pojo.Department">
-		select * from department where dept_id = #{value}
-	</select>
-<!-- 根据部门名字查询部门信息-->	
-	<select id="findDepartmentByName" parameterType="String" resultType="com.boda.pojo.Department">
-		select * from department where dept_name like '%${value}%'
-	</select>
+    <!-- 通过id查询部门信息；-->
+    <select id="findDepartmentById" parameterType="Integer" resultType="com.boda.pojo.Department">
+        SELECT *
+        FROM department
+        WHERE dept_id = #{value}
+    </select>
+    <!-- 根据部门名字查询部门信息-->
+    <select id="findDepartmentByName" parameterType="String" resultType="com.boda.pojo.Department">
+        SELECT *
+        FROM department
+        WHERE dept_name LIKE '%${value}%'
+    </select>
 
-<!-- 根据员工id查询某员工操作记录-->		
-	<!-- <select id="findOperationByEmpId" parameterType="Integer" resultType="com.boda.pojo.Department">
-		select * from department where emp_id = #{value}
-	</select> -->
-	
-<!-- 插入数据到数据库-->
-	<insert id="addDepartment" parameterType="com.boda.pojo.Department">
-		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入dept里-->
-		<selectKey keyProperty="deptId" order="AFTER" resultType="Integer">
-	 		Select last_insert_id()
-	 	</selectKey>
-		insert into department (dept_id,dept_name,dept_emp_num,dept_build_time) 
-		values (#{deptId},#{deptName},#{deptEmpNum},#{deptBuildTime});
-	</insert>
+    <!-- 根据员工id查询某员工操作记录-->
+    <!-- <select id="findOperationByEmpId" parameterType="Integer" resultType="com.boda.pojo.Department">
+        select * from department where emp_id = #{value}
+    </select> -->
 
-	<!-- 根据部门id删除部门 -->
-	<delete id="delDepartmentById" parameterType="Integer">
-		DELETE from department where dept_id=#{value}
-	</delete>
+    <!-- 插入数据到数据库-->
+    <insert id="addDepartment" parameterType="com.boda.pojo.Department">
+        <!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入dept里-->
+        <selectKey keyProperty="deptId" order="AFTER" resultType="Integer">
+            Select last_insert_id()
+        </selectKey>
+        insert into department (dept_id,dept_name,dept_emp_num,dept_build_time)
+        values (#{deptId},#{deptName},#{deptEmpNum},#{deptBuildTime});
+    </insert>
 
-	<!-- 根据部门id更新部门信息 -->
-	<update id="updateDepartment" parameterType="com.boda.pojo.Department">
-		UPDATE department 
-		SET dept_id=#{deptId},dept_name=#{deptName},dept_emp_num=#{deptEmpNum},dept_build_time=#{deptBuildTime}
-		WHERE dept_id=#{deptId}
-	</update>
+    <!-- 根据部门id删除部门 -->
+    <delete id="delDepartmentById" parameterType="Integer">
+        DELETE FROM department
+        WHERE dept_id = #{value}
+    </delete>
+
+    <!-- 根据部门id更新部门信息 -->
+    <update id="updateDepartment" parameterType="com.boda.pojo.Department">
+        UPDATE department
+        SET dept_id = #{deptId}, dept_name = #{deptName}, dept_emp_num = #{deptEmpNum},
+        dept_build_time = #{deptBuildTime}
+        WHERE dept_id = #{deptId}
+    </update>
 </mapper>

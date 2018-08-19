@@ -204,8 +204,8 @@
 
                     // mode specific options
                     tickDecimals: null, // no. of decimals, null means auto
-                    tickSize: null, // number or [number, "unit"]
-                    minTickSize: null, // number or [number, "unit"]
+                    tickSize: null, // number or [number, "util"]
+                    minTickSize: null, // number or [number, "util"]
                     monthNames: null, // list of names of months
                     timeformat: null, // format string to use
                     twelveHourClock: false // 12 or 24 time in time mode

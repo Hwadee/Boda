@@ -2,12 +2,12 @@ package com.boda.service;
 
 import com.boda.mapper.DepartmentMapper;
 import com.boda.pojo.Department;
+import com.boda.util.Tool;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 @Service
 public class DepartmentService {
@@ -20,7 +20,7 @@ public class DepartmentService {
 
         List<Department> departments = new LinkedList<>();
 
-        if (isInteger(deptSearchToken)) { //优先以部门号搜索
+        if (Tool.isInteger(deptSearchToken)) { //优先以部门号搜索
             departments.add(departmentMapper.findDepartmentById(Integer.parseInt(deptSearchToken)));
         } else {
             departments.addAll(departmentMapper.findDepartmentByName(deptSearchToken));
@@ -44,10 +44,4 @@ public class DepartmentService {
         return departmentMapper.delDepartmentById(deptId) > 0;
     }
 
-    //判断搜索参数是否为整数
-    private static boolean isInteger(String str) {
-        if ("".equals(str)) return false;
-        Pattern pattern = Pattern.compile("^[-+]?[\\d]*$");
-        return pattern.matcher(str).matches();
-    }
 }

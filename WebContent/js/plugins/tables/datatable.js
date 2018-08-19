@@ -4980,7 +4980,7 @@
 
         /*
 		 * Function: _fnConvertToWidth
-		 * Purpose:  Convert a CSS unit width to pixels (e.g. 2em)
+		 * Purpose:  Convert a CSS util width to pixels (e.g. 2em)
 		 * Returns:  int:iWidth - width in pixels
 		 * Inputs:   string:sWidth - width to be converted
 		 *           node:nParent - parent to get the with for (required for
@@ -5254,7 +5254,7 @@
 
         /*
 		 * Function: _fnStringToCss
-		 * Purpose:  Append a CSS unit (only if required) to a string
+		 * Purpose:  Append a CSS util (only if required) to a string
 		 * Returns:  0 if match, 1 if length is different, 2 if no match
 		 * Inputs:   array:aArray1 - first array
 		 *           array:aArray2 - second array
