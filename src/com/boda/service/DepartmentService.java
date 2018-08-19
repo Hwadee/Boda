@@ -15,7 +15,8 @@ public class DepartmentService {
     @Resource
     private DepartmentMapper departmentMapper;
 
-    public List<Department> getDeptInfo(String deptSearchToken) throws Exception { //一个搜索框，包括部门号或部门名称
+    //一个搜索框，包括部门号或部门名称
+    public List<Department> getDeptInfo(String deptSearchToken) throws Exception {
 
         List<Department> departments = new LinkedList<>();
 
@@ -24,10 +25,8 @@ public class DepartmentService {
         } else {
             departments.addAll(departmentMapper.findDepartmentByName(deptSearchToken));
         }
-//        if ((departments = departmentMapper.findDepartmentByName(deptSearchToken)) == null) {
-//            departments.add(departmentMapper.findDepartmentById(Integer.parseInt(deptSearchToken)));
-//        }
-        return departments.isEmpty() ? null : departments;
+        departments.remove(null);
+        return departments;
     }
 
     public boolean updateDeptInfo(Department department) throws Exception {
@@ -35,7 +34,17 @@ public class DepartmentService {
         return departmentMapper.updateDepartment(department) > 0;
     }
 
+    public boolean addDeptInfo(Department department) throws Exception {
 
+        return departmentMapper.addDepartment(department) > 0;
+    }
+
+    public boolean delDeptInfo(int deptId) throws Exception {
+
+        return departmentMapper.delDepartmentById(deptId) > 0;
+    }
+
+    //判断搜索参数是否为整数
     private static boolean isInteger(String str) {
         if ("".equals(str)) return false;
         Pattern pattern = Pattern.compile("^[-+]?[\\d]*$");

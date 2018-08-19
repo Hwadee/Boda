@@ -25,7 +25,21 @@
     部 门 名 称：<input type="text" name="deptName"><br>
     部门员工数： <input type="text" name="deptEmpNum"><br>
     部门创建日期：<input type="text" name="deptBuildTime"><br>
-    <input type="submit" value="更新信息">
+    <input type="submit" value="更新部门信息">
+</form>
+<br>
+
+<form action="AddDeptInfo.do" method="post">
+    部 门 名 称：<input type="text" name="deptName"><br>
+    部门员工数： <input type="text" name="deptEmpNum"><br>
+    部门创建日期：<input type="text" name="deptBuildTime"><br>
+    <input type="submit" value="新增部门信息">
+</form>
+<br>
+
+<form action="DelDeptInfo.do" method="post">
+    部 门 ID：<input type="text" name="deptId"><br>
+    <input type="submit" value="删除部门信息">
 </form>
 </body>
 

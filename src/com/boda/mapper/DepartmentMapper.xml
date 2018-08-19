@@ -22,6 +22,7 @@
 	<select id="findDepartmentByName" parameterType="String" resultType="com.boda.pojo.Department">
 		select * from department where dept_name like '%${value}%'
 	</select>
+
 <!-- 根据员工id查询某员工操作记录-->		
 	<!-- <select id="findOperationByEmpId" parameterType="Integer" resultType="com.boda.pojo.Department">
 		select * from department where emp_id = #{value}
@@ -29,18 +30,20 @@
 	
 <!-- 插入数据到数据库-->
 	<insert id="addDepartment" parameterType="com.boda.pojo.Department">
-		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
-	 	<selectKey keyProperty="empId" order="AFTER" resultType="Integer">
+		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入dept里-->
+		<selectKey keyProperty="deptId" order="AFTER" resultType="Integer">
 	 		Select last_insert_id()
 	 	</selectKey>
 		insert into department (dept_id,dept_name,dept_emp_num,dept_build_time) 
 		values (#{deptId},#{deptName},#{deptEmpNum},#{deptBuildTime});
-	</insert>	
-<!-- 根据部门id删除部门 -->	
+	</insert>
+
+	<!-- 根据部门id删除部门 -->
 	<delete id="delDepartmentById" parameterType="Integer">
 		DELETE from department where dept_id=#{value}
 	</delete>
-<!-- 根据部门id更新部门信息 -->	
+
+	<!-- 根据部门id更新部门信息 -->
 	<update id="updateDepartment" parameterType="com.boda.pojo.Department">
 		UPDATE department 
 		SET dept_id=#{deptId},dept_name=#{deptName},dept_emp_num=#{deptEmpNum},dept_build_time=#{deptBuildTime}
