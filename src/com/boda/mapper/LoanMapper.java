@@ -3,6 +3,8 @@ package com.boda.mapper;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.boda.pojo.Loan;
 
 public interface LoanMapper {
@@ -52,7 +54,7 @@ public interface LoanMapper {
 	 * @return
 	 * @throws IOException
 	 */
-	public List<Loan> findAllOverTimeMessage() throws IOException;
+	public List<Loan> findAllOverTimeMessage(@Param("startRow")int startRow,@Param("pageSize")int pageSize) throws IOException;
 	
 	/**
 	 * 查询逾期信息总条数

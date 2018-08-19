@@ -7,7 +7,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户逾期信息</title>
+<title>逾期信息报表</title>
 <style type="text/css">
 html, body {
 	margin: 0;
@@ -60,14 +60,12 @@ html, body {
 
 		<fieldset>
 			<legend>查询条件</legend>
-			<form id="form1" action="overTimeAccountWork.do" method="post">
-				<input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}"> 
-				<input type="hidden" id="pageSize" name="pageSize" value="${page.pageSize}">
-				<input type="hidden" id="allPageNum" name="allPageNum" value="${page.allPageNum}">
+			<form id="form1" action="overTimeMessageTable.do" method="post">
+				<input type="hidden" id="currentPage" name="currentPage" value="${returnLoanPage.currentPage}"> 
+				<input type="hidden" id="pageSize" name="pageSize" value="${returnLoanPage.pageSize}">
+				<input type="hidden" id="allPageNum" name="allPageNum" value="${returnLoanPage.allPageNum}">
 				<div>
-					贷款id:<input id="accout" name="accout" value="${loan.loanId}" />&nbsp;
-					姓名:<input id="username" name="userDetail.name" value="${loan.customerMessage.customerName}" />&nbsp; 
-					身份证号:<input id="identifyId" name="userDetail.name" value="${loan.customerMessage.customerIdentifyId}" />&nbsp;
+					
 				</div>
 				&nbsp;
 				<div style="text-align: center;">
@@ -80,48 +78,39 @@ html, body {
 	&nbsp;
 	<div class="userqueryresult">
 		<fieldset>
-			<legend>逾期账户信息</legend>
+			<legend>逾期信息报表</legend>
 			<table id="customers">
 				<tr>
 					<th width="30px"><input type="checkbox" id="checkReverse" /></th>
+					<th>还款id</th>
 					<th>贷款id</th>
-					<th>姓名</th>
-					<th>性别</th>
-					<th>出生日期</th>
-					<th>电话</th>
-					<th>Email</th>
-					<th>信用</th>
-					<th>贷款金额</th>
-					<th>贷款日期</th>
-					<th>贷款状态</th>
-					<th>开始还款日期</th>
-					<th>贷款期限</th>
+					<th>催促员工id</th>
+					<th>还款金额</th>
+					<th>应还金额</th>
+					<th>还款日期</th>
+					<th>应还日期</th>
 					<th>分期数</th>
-					<th>贷款利率</th>
-					<th>还款信息</th>
+					<th>还款状态</th>
+					<th>最近催促日期</th>
+					<th>催促状态</th>
 				</tr>
-				<c:forEach items="${page.objList}" var="loan">
+				<c:forEach items="${returnLoanPage.objList}" var="returnLoans">
 					<tr>
 						<td align="center"><input type="checkbox" /></td>
-						<td>${loan.loanId}</td>
-						<td>${loan.customerMessage.customerName}</td>
-						<td>${loan.customerMessage.customerSex}</td>
-						<td><fmt:formatDate value="${loan.customerMessage.customerBirthday}"
+						<td>1</td>
+						<td>${returnLoans.loanId}</td>
+						<td>${returnLoans.urgeForReturn.empId}</td>
+						<td>${returnLoans.returnMoney}</td>
+						<td>${returnLoans.shouldReturnMoney}</td>
+						<td><fmt:formatDate value="${returnLoans.returnDate}"
 								pattern="yyyy-MM-dd" /></td>
-						<td>${loan.customerMessage.customerPhone}</td>
-						<td>${loan.customerMessage.customerEmail}</td>
-						<td>${loan.customerMessage.customerCredit}</td>
-						<td>${loan.loanMoney}</td>
-						<td><fmt:formatDate value="${loan.loanDate}"
+						<td><fmt:formatDate value="${returnLoans.shouldReturnDate}"
 								pattern="yyyy-MM-dd" /></td>
-						<td>${loan.loanState}</td>
-						<td><fmt:formatDate value="${loan.returnStartDate}"
+						<td>${returnLoans.whichStage}</td>
+						<td>${returnLoans.returnDate}</td>
+						<td><fmt:formatDate value="${returnLoans.urgeForReturn.lastUrgeDate}"
 								pattern="yyyy-MM-dd" /></td>
-						<td>${loan.returnYears}</td>
-						<td>${loan.numberOfStages}</td>
-						<td>${loan.rateOfInterest}</td>
-						<td><a href="${pageContext.request.contextPath}/returnLoanMessage.do?loanId=${loan.loanId}">
-						<input type="button" value="还款信息"></a></td>
+						<td>${returnLoans.urgeForReturn.urgeState}</td>
 					</tr>
 				</c:forEach>
 			</table>

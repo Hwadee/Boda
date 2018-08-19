@@ -14,11 +14,19 @@
 		<result column="should_return_money" property="shouldReturnMoney"/>
 		<result column="return_date" property="returnDate"/>
 		<result column="should_return_date" property="shouldReturnDate"/>
-		<result column="which_stage" property="which_stage"/>
-		<result column="return_state" property="return_state"/>
+		<result column="which_stage" property="whichStage"/>
+		<result column="return_state" property="returnState"/>
+		<!-- 每条逾期信息对应一条催促信息-->
+		<association property="urgeForReturn" javaType="com.boda.pojo.UrgeForReturn">
+			<result column="urge_id" property="urgeId"/>
+			<result column="return_id" property="returnId"/>
+			<result column="emp_id" property="empId"/>
+			<result column="last_urge_date" property="lastUrgeDate"/>
+			<result column="urge_state" property="urgeState"/>	
+		</association>
 	</resultMap>
 
-<!-- 通过还款idid查询还款信息-->	 
+<!-- 通过还款id查询还款信息-->	 
 	<select id="findReturnLoanById" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
 		select * from return_loan where return_id = #{value}
 	</select>
@@ -26,6 +34,20 @@
 	<select id="findReturnLoanByLoanId" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
 		select * from return_loan where loan_id = #{value}
 	</select>
+<!-- 查询所有逾期信息及催促信息-->	
+	<select id="findAllReturnAndUrgeMessage"  resultMap="returnLoanResultMap">
+		select * 
+		from return_loan r,urge_for_return u
+		WHERE r.return_state="逾期未还" and u.return_id=r.return_id
+		limit #{startRow},#{pageSize}
+	</select>	
+<!-- 查询所有逾期信息及催促信息总条数-->	
+	<select id="findAllReturnAndUrgeMessageCount" resultType="Integer">
+		select count(*) 
+		from return_loan r,urge_for_return u
+		WHERE r.return_state="逾期未还" and u.return_id=r.return_id
+	</select>	
+	
 	
 <!-- 插入数据到数据库-->
 	<insert id="addReturnLoan" parameterType="com.boda.pojo.ReturnLoan">
@@ -36,5 +58,7 @@
 		insert into return_loan (return_id,loan_id,return_money,should_return_money,return_date,should_return_date,which_stage,return_state) 
 		values (#{returnId},#{loanId},#{returnMoney},#{shouldReturnMoney},#{returnDate},#{shouldReturnDate},#{which_stage},#{return_state});
 	</insert>
+	
+
 	
 </mapper>

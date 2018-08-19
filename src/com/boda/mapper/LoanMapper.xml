@@ -65,23 +65,23 @@
 	</update>
 	
 	
-<!-- 查询贷款客户信息及还款情况  -->
+<!-- 根据贷款id查询贷款客户信息及还款情况  -->
 	<select id="findCustomerMessageAndReturnMessage" parameterType="Integer" resultMap="LoanResultMap">
 		select * 
 		from loan l, customer_message c, return_loan r
-		where l.loan_id=#{loanId} and c.customer_id=#{customerId} and r.loan_id=#{loanId}	
+		where l.loan_id=#{value} and c.customer_id=l.customer_id and r.loan_id=#{value}	
 	</select>
 <!-- 查询所有逾期贷款及客户详细信息  -->
 	<select id="findAllOverTimeMessage" resultMap="LoanResultMap">
 		select * 
 		from loan l, customer_message c
 		where l.loan_state="存在逾期" and l.customer_id=c.customer_id
+		order by l.loan_id asc limit #{startRow},#{pageSize}
 	</select>
 <!-- 查询所有逾期贷款及客户详细信息条数  -->
 	<select id="findAllOverTimeMessageNum" resultType="Integer">
 		select count(*) 
 		from loan l
 		where l.loan_state="存在逾期"
-	</select>
-	
+	</select>	
 </mapper>

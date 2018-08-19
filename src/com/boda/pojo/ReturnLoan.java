@@ -7,17 +7,25 @@ public class ReturnLoan {
 	private Integer returnId;
 	private Integer loanId;//外键，贷款id
 	private Float returnMoney;//归还金额
-	private Float shouldReturnMonry;
+	private Float shouldReturnMoney;
 	private Date returnDate;
 	private Date shouldReturnDate;
 	private Integer whichStage;
 	private String returnState;
 	
-	public Float getShouldReturnMonry() {
-		return shouldReturnMonry;
+	
+	private UrgeForReturn urgeForReturn;
+	public UrgeForReturn getUrgeForReturn() {
+		return urgeForReturn;
 	}
-	public void setShouldReturnMonry(Float shouldReturnMonry) {
-		this.shouldReturnMonry = shouldReturnMonry;
+	public void setUrgeForReturn(UrgeForReturn urgeForReturn) {
+		this.urgeForReturn = urgeForReturn;
+	}
+	public Float getShouldReturnMoney() {
+		return shouldReturnMoney;
+	}
+	public void setShouldReturnMoney(Float shouldReturnMoney) {
+		this.shouldReturnMoney = shouldReturnMoney;
 	}
 	public Date getShouldReturnDate() {
 		return shouldReturnDate;
@@ -60,6 +68,15 @@ public class ReturnLoan {
 	}
 	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
-	} 
+	}
+	@Override
+	public String toString() {
+		return "ReturnLoan [returnId=" + returnId + ", loanId=" + loanId + ", returnMoney=" + returnMoney
+				+ ", shouldReturnMoney=" + shouldReturnMoney + ", returnDate=" + returnDate + ", shouldReturnDate="
+				+ shouldReturnDate + ", whichStage=" + whichStage + ", returnState=" + returnState + ", urgeForReturn="
+				+ urgeForReturn + "]";
+	}
+	
+	
 
 }

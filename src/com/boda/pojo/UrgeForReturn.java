@@ -3,11 +3,19 @@ package com.boda.pojo;
 import java.util.Date;
 
 public class UrgeForReturn {
+	private Integer urgeId;
 	private Integer empId;
 	private Integer returnId;
 	private Date lastUrgeDate;
 	private String urgeState;
 	
+	
+	public Integer getUrgeId() {
+		return urgeId;
+	}
+	public void setUrgeId(Integer urgeId) {
+		this.urgeId = urgeId;
+	}
 	public Integer getEmpId() {
 		return empId;
 	}
@@ -32,6 +40,12 @@ public class UrgeForReturn {
 	public void setUrgeState(String urgeState) {
 		this.urgeState = urgeState;
 	}
+	@Override
+	public String toString() {
+		return "UrgeForReturn [urgeId=" + urgeId + ", empId=" + empId + ", returnId=" + returnId + ", lastUrgeDate="
+				+ lastUrgeDate + ", urgeState=" + urgeState + "]";
+	}
+	
 	
 
 }

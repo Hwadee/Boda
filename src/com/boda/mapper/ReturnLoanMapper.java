@@ -3,6 +3,8 @@ package com.boda.mapper;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.boda.pojo.ReturnLoan;
 
 public interface ReturnLoanMapper {
@@ -30,5 +32,20 @@ public interface ReturnLoanMapper {
 	 * @throws IOException
 	 */
 	public Integer addReturnLoan(ReturnLoan returnLoan) throws IOException;
+	
+	/**
+	 * 查询所有逾期信息及催促情况
+	 * @return
+	 * @throws IOException
+	 */
+	public List<ReturnLoan> findAllReturnAndUrgeMessage(@Param("startRow")int startRow,@Param("pageSize")int pageSize) throws IOException;
+	
+	/**
+	 * 查询所有逾期信息总条数
+	 * @return
+	 * @throws IOException
+	 */
+	public Integer findAllReturnAndUrgeMessageCount() throws IOException;
+	
 
 }

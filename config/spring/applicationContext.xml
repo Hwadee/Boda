@@ -89,6 +89,7 @@
 		定义在pointcutexp包和所有子包里的JoinPointObjP2类的任意方法的执行：
 		execution(* com.test.spring.aop.pointcutexp..JoinPointObjP2.*(..))")	
 	-->
+	
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ssm.demo.service.*.*(..))" />
 	</aop:config>

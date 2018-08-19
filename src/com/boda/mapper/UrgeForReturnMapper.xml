@@ -8,7 +8,8 @@
 <mapper namespace="com.boda.mapper.UrgeForReturnMapper">
 
 	<resultMap type="com.boda.pojo.UrgeForReturn" id="urgeForReturnResultMap">
-		<id column="emp_id" property="empId"/>
+		<id column="urge_id" property="urgeId"/>
+		<result column="emp_id" property="empId"/>
 		<result column="return_id" property="returnId"/>
 		<result column="last_urge_date" property="lastUrgeDate"/>
 		<result column="urge_state" property="urgeState"/>	

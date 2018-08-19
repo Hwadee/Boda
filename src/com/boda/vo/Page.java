@@ -7,13 +7,25 @@ public class Page<T> {
 	private Integer pageSize;			//每页行数
 	private Integer currentPage;		//当前页数
 	private List<T> objList;		//当前页显示的信息
+	
+	/**
+	 * 设置默认当前页及页面大小
+	 */
+	public Page()
+	{
+		this.allPageNum=0;
+		this.currentPage=1;
+		this.pageSize=3;
+	}
+
 	public Integer getAllPageNum() {
 		return allPageNum;
 	}
 	public void setAllPageNum(Integer allPageNum) {
 		this.allPageNum = allPageNum;
 	}
-	
+
+
 	public Integer getPageSize() {
 		return pageSize;
 	}
@@ -32,10 +44,17 @@ public class Page<T> {
 	public void setObjList(List<T> objList) {
 		this.objList = objList;
 	}
+	public int getStartRow() {
+		// TODO Auto-generated method stub
+		
+		return (currentPage-1)*pageSize;
+	}
+
 	@Override
 	public String toString() {
 		return "Page [allPageNum=" + allPageNum + ", pageSize=" + pageSize + ", currentPage=" + currentPage
 				+ ", objList=" + objList + "]";
 	}
+
 	
 }
