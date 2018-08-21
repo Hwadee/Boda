@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -98,11 +100,14 @@
 
     <div class="line"></div>
     <!-- Main 表格 -->
-    <div class="wrapper">
-        <form action="" class="searchWidget">
-            <input type="text" name="search" placeholder="搜索..." id=""/>
+    <div id="deptInfoTable" class="wrapper">
+        <form action="DeptInfo.do" class="searchWidget">
+            <input type="text" name="deptSearchToken" placeholder="搜索部门信息" id=""/>
             <input type="submit" value=""/>
         </form>
+
+        <div id="msgText" class="red">${MSG}</div>
+
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget">
@@ -113,47 +118,36 @@
                         </a>
                     </div>
                 </div>
+
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
                         <td width="180">部门ID</td>
                         <td>部门名称</td>
-                        <td>部门职能介绍</td>
-                        <td>工作</td>
+                        <td>部门员工数</td>
+                        <td>部门成立时间</td>
                         <td width="160">操作</td>
                     </tr>
                     </thead>
                     <tbody id="body">
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">人事部门</td>
-                        <td align="center">管理员工信息</td>
-                        <td align="center">emmm</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB" onclick="modify(this)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">人事部门</td>
-                        <td align="center">管理员工信息</td>
-                        <td align="center">emmm</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">人事部门</td>
-                        <td align="center">管理员工信息</td>
-                        <td align="center">emmm</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB"/>
-                        </td>
-                    </tr>
+
+                    <c:forEach items="${deptinfo}" var="deptinfo">
+                        <tr>
+                            <td align="center">${deptinfo.deptId}</td>
+                            <td align="center">${deptinfo.deptName}</td>
+                            <td align="center">${deptinfo.deptEmpNum}</td>
+                            <td align="center"><fmt:formatDate value="${deptinfo.deptBuildTime}"
+                                                               pattern="yyyy-MM-dd"/></td>
+                            <td align="center">
+                                <input type="button" value="修改" class="blueB"
+                                       onclick="updateDeptInfo(${deptinfo.deptId})"/>
+                                <input type="button" value="删除" class="redB"
+                                       onclick="delDeptInfo(${deptinfo.deptId})">
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+                    <!--
                     <tr>
                         <td align="center">00001</td>
                         <td align="center">人事部门</td>
@@ -164,6 +158,7 @@
                             <input type="button" value="修改" class="blueB"/>
                         </td>
                     </tr>
+                    -->
                     </tbody>
                 </table>
 
@@ -172,47 +167,49 @@
             <div class="clear"></div>
         </div>
     </div>
-    <!--预留空间-->
+
+    <!--更新部门信息-->
     <div class="line"></div>
-    <div class="wrapper">
+    <div id="updateInfo" class="wrapper" style="display: none">
         <div class="widgets">
             <div class="widget">
                 <div class="title">
                     <img src="./images/icons/dark/stats.png" alt class="titleIcon">
                     <h6 id="edit">部门信息编辑</h6>
                 </div>
-                <form id="validate" class="form" method="post" action>
+                <form action="UpdateDeptInfo.do" class="form" method="post">
                     <fieldset>
                         <div class="formRow">
-                            <label>员工ID<span class="req">*</span> </label>
+                            <label>部门ID<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" class="validate[required]" name="password1" id="password1"/>
+                                <input type="text" class="validate[required]" name="deptId" value=${deptId}/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>姓名<span class="req">*</span> </label>
+                            <label>部门名称<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="name"/>
+                                <input type="text" name="deptName"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>所属部门<span class="req">*</span> </label>
+                            <label>部门员工数<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="department"/>
+                                <input type="text" name="deptEmpNum"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>工作<span class="req">*</span> </label>
+                            <label>成立时间<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="job"/>
+                                <input type="text" name="deptBuildTime"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formSubmit">
-                            <input type="submit" value="更新" class="greenB" onclick="update(this)"/>
+                            <input type="submit" value="更新" class="greenB"/>
+                            <input type="button" value="取消" class="redB" onclick="history.back()"/>
                         </div>
                     </fieldset>
                 </form>
@@ -225,6 +222,29 @@
 </div>
 
 <div class="clear"></div>
+
+<script type="text/javascript">
+
+    function delDeptInfo(_deptId) {
+        location.href = "DelDeptInfo.do?deptId=" + _deptId;
+    }
+
+    function updateDeptInfo(_deptId) {
+        var att = document.createAttribute("deptId");
+        att.value = _deptId;
+        var updateInfo = document.getElementById("updateInfo");
+        updateInfo.style.display = "";
+        document.getElementById("deptInfoTable").replaceWith(updateInfo);
+    }
+
+</script>
+
+<%--<script type="text/javascript">--%>
+<%--var msg = "${MSG}";--%>
+<%--if (msg !== null &amp;&amp; msg !== "") {--%>
+<%--alert(msg);--%>
+<%--}--%>
+<%--</script>--%>
 
 </body>
 </html>
