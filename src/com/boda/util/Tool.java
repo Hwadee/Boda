@@ -75,6 +75,26 @@ public class Tool {
     }
 
     /**
+     * 检查Hashmap中的value是否均为空字符串
+     * 即检查是否没有搜索参数
+     *
+     * @param map
+     * @return
+     */
+    public static boolean hasNoPara(HashMap<String, String> map) {
+
+        Collection<String> paraLists = map.values();
+
+        for (String para : paraLists) {
+            System.out.println(para);
+            if (!"".equals(para)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * 移除List中的重复元素，需重写equals和hashcode方法
      *
      * @param list

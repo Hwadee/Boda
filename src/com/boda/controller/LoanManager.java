@@ -30,14 +30,6 @@ public class LoanManager {
                            String returnMinDate, String returnMaxDate,
                            String minAmount, String maxAmount,
                            Model model) throws Exception {
-        //若未指定最晚借贷日期，则设置为当前日期
-        if ("".equals(loanMaxDate)) {
-            loanMaxDate = Tool.formatDateToString(new Date());
-        }
-        //若未指定最早还贷日期，则设置为Date起始日期
-        if ("".equals(returnMinDate)) {
-            returnMinDate = Tool.formatDateToString(new Date());
-        }
 
         HashMap<String, String> map = new HashMap<>();
 

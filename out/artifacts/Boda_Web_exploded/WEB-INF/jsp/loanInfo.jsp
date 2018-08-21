@@ -17,14 +17,14 @@
 
 <form action="LoanInfo.do" method="post">
     搜索贷款信息：<br>
-    id：    <input type="text" name="id"><br>
-    姓名：   <input type="text" name="name"><br>
+    id： <input type="text" name="id"><br>
+    姓名： <input type="text" name="name"><br>
     借款日期：<input type="text" name="loanMinDate" placeholder="最早">
-            <input type="text" name="loanMaxDate" placeholder="最晚"><br>
+    <input type="text" name="loanMaxDate" placeholder="最晚"><br>
     还款日期：<input type="text" name="returnMinDate" placeholder="最早">
-            <input type="text" name="returnMaxDate" placeholder="最晚"><br>
-    金额：   <input type="text" name="minAmount" placeholder="最少">
-            <input type="text" name="maxAmount" placeholder="最多"><br>
+    <input type="text" name="returnMaxDate" placeholder="最晚"><br>
+    金额： <input type="text" name="minAmount" placeholder="最少">
+    <input type="text" name="maxAmount" placeholder="最多"><br>
     <input type="submit" value="搜索">
 </form>
 

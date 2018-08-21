@@ -51,8 +51,8 @@
     <!-- 根据部门id更新部门信息 -->
     <update id="updateDepartment" parameterType="com.boda.pojo.Department">
         UPDATE department
-        SET dept_id         = #{deptId}, dept_name = #{deptName}, dept_emp_num = #{deptEmpNum},
-            dept_build_time = #{deptBuildTime}
+        SET dept_id = #{deptId}, dept_name = #{deptName}, dept_emp_num = #{deptEmpNum},
+        dept_build_time = #{deptBuildTime}
         WHERE dept_id = #{deptId}
     </update>
 </mapper>
