@@ -16,7 +16,7 @@
 </div>
 
 <form action="DeptInfo.do" method="post">
-    搜索部门信息：<input type="text" name="deptSearchToken"><br>
+    搜索部门信息：<input type="text" name="deptSearchToken" placeholder="部门ID或名称"><br>
     <input type="submit" value="搜索">
 </form>
 

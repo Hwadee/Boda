@@ -26,8 +26,8 @@
 	</select>
 
 	<!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返回-->
-	<select id="findOperationByDate" parameterType="String" resultType="com.boda.pojo.OperationLog">
-		select * from operation_log where operation_date = #{value}
+	<select id="findOperationByDate" resultType="com.boda.pojo.OperationLog">
+		select * from operation_log where operation_date >= #{startDate} AND operation_date <![CDATA[<=]]> #{endDate}
 	</select>
 
 	<!-- 根据员工id查询某员工操作记录-->
@@ -39,7 +39,7 @@
 	<select id="findOperationLogsBoth" resultType="com.boda.pojo.OperationLog">
 		SELECT *
 		FROM operation_log
-		WHERE operation_date = #{date} AND emp_id = #{empId}
+		WHERE operation_date >= #{startDate} AND operation_date <![CDATA[<=]]> #{endDate} AND emp_id = #{empId}
 	</select>
 
 	<!-- 插入数据到数据库-->

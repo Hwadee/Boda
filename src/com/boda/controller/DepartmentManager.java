@@ -26,7 +26,7 @@ public class DepartmentManager {
 
         List<Department> departments = ds.getDeptInfo(deptSearchToken);
 //        departments.remove(null);
-        System.out.println(departments);
+//        System.out.println(departments);
         if (!departments.isEmpty()) {
             model.addAttribute("deptinfo", departments);
         } else {
@@ -41,9 +41,9 @@ public class DepartmentManager {
 
 //        System.out.println(deptName + "  " + deptBuildTime);
         Department department = new Department();
-        department.setDeptId(Integer.parseInt(deptId));
+        department.setDeptId(Tool.isInteger(deptId) ? Integer.parseInt(deptId) : 0);
         department.setDeptName(deptName);
-        department.setDeptEmpNum(Integer.parseInt(deptEmpNum));
+        department.setDeptEmpNum(Tool.isInteger(deptEmpNum) ? Integer.parseInt(deptEmpNum) : 0);
         department.setDeptBuildTime(Tool.formatStringToDate(deptBuildTime));
 
         if (ds.updateDeptInfo(department)) {
@@ -57,9 +57,15 @@ public class DepartmentManager {
     @RequestMapping("/AddDeptInfo.do")
     public String addDeptInfo(String deptName, String deptEmpNum, String deptBuildTime, Model model) throws Exception {
 
+        //暂时，应在前端判断输入
+        if ("".equals(deptName)) {
+            model.addAttribute("MSG", "新增失败，缺少部门名称");
+            return "deptInfo";
+        }
+
         Department department = new Department();
         department.setDeptName(deptName);
-        department.setDeptEmpNum(Integer.parseInt(deptEmpNum));
+        department.setDeptEmpNum(Tool.isInteger(deptEmpNum) ? Integer.parseInt(deptEmpNum) : 0);
         department.setDeptBuildTime(Tool.formatStringToDate(deptBuildTime));
 
         if (ds.addDeptInfo(department)) {
@@ -71,9 +77,9 @@ public class DepartmentManager {
     }
 
     @RequestMapping("/DelDeptInfo.do")
-    public String delDeptInfo(int deptId, Model model) throws Exception {
+    public String delDeptInfo(String deptId, Model model) throws Exception {
 
-        if (ds.delDeptInfo(deptId)) {
+        if (ds.delDeptInfo(Tool.isInteger(deptId) ? Integer.parseInt(deptId) : 0)) {
             model.addAttribute("MSG", "删除成功");
         } else {
             model.addAttribute("MSG", "删除失败");
