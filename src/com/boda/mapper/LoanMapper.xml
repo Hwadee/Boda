@@ -48,9 +48,17 @@
 		select * from loan where loan = #{value}
 	</select>
 <!-- 根据客户id查询客户所有贷款-->	
-	<select id="findLoanByEmpId" parameterType="Integer" resultType="com.boda.pojo.Loan">
+	<select id="findLoanByCustomerId" parameterType="Integer" resultType="com.boda.pojo.Loan">
 		select * from loan where customer_id = #{value}
-	</select>	
+	</select>
+<!-- 根据客户id查询客户贷款数量-->	
+	<select id="findLoanNumByCustomerId" parameterType="Integer" resultType="Integer">
+		select count(*) from loan where customer_id = #{value}
+	</select>
+<!-- 根据客户id查询客户贷款金额总量-->	
+	<select id="findLoanMoneyByCustomerId" parameterType="Integer" resultType="Integer">
+		select sum(loan_money) from loan where customer_id = #{value}
+	</select>			
 	
 <!-- 插入数据到数据库 -->
 	<insert id="addLoan" parameterType="com.boda.pojo.Loan">

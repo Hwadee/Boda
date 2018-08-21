@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.boda.pojo.ReturnLoan;
+import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 
 public interface ReturnLoanMapper {
 	
@@ -24,6 +25,14 @@ public interface ReturnLoanMapper {
 	 * @throws IOException
 	 */
 	public List<ReturnLoan> findReturnLoanByLoanId(Integer loanId) throws IOException;
+	
+	/**
+	 * 根据客户id查询逾期总次数
+	 * @param customerId
+	 * @return
+	 * @throws IOException
+	 */
+	public Integer findOverTimeNumByCustomerId(Integer customerId) throws IOException;
 	
 	/**
 	 * 添加还款信息

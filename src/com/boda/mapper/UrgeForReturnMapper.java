@@ -32,11 +32,19 @@ public interface UrgeForReturnMapper {
 	public Integer addUrgeMessage(UrgeForReturn urgeForReturn) throws IOException;
 	
 	/**
-	 * 根据员工id和应归还id更新查询信息
+	 * 根据应归还id更新催促信息
 	 * @param urgeForReturn
 	 * @return
 	 * @throws IOException
 	 */
 	public Integer updateUrgeMessage(UrgeForReturn urgeForReturn) throws IOException;
+	
+	/**
+	 * 查询催促信息是否存在
+	 * @param returnId
+	 * @return
+	 * @throws IOException
+	 */
+	public Integer findUrgeMessageIsExist(Integer returnId) throws IOException;
 
 }

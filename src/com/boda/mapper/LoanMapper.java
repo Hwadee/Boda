@@ -23,7 +23,23 @@ public interface LoanMapper {
 	 * @return 贷款信息列表
 	 * @throws IOException
 	 */
-	public List<Loan> findLoanByEmpId(Integer empId) throws IOException;
+	public List<Loan> findLoanByCustomerId(Integer customerId) throws IOException;
+	
+	/**
+	 * 根据客户id查询客户贷款总数
+	 * @param customerId
+	 * @return
+	 * @throws IOException
+	 */
+	public Integer findLoanNumByCustomerId(Integer customerId) throws IOException;
+	
+	/**
+	 * 查询用户贷款总金额
+	 * @param customerId
+	 * @return
+	 * @throws IOException
+	 */
+	public Integer findLoanMoneyByCustomerId(Integer customerId) throws IOException;
 	
 	/**
 	 * 新增一条贷款信息

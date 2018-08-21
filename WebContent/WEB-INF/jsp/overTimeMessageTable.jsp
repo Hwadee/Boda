@@ -117,7 +117,7 @@ html, body {
 			<div>
 				<input type="button" value="首页" onclick="pageTurning(1)">
 				<input type="button" value="上一页" onclick="pageTurning(2)">
-				<span id="pageInfo">第${page.currentPage}页/共${page.allPageNum}页</span> 
+				<span id="pageInfo">第${returnLoanPage.currentPage}页/共${returnLoanPage.allPageNum}页</span> 
 				<input type="button" value="下一页" onclick="pageTurning(3)"> 
 				<input type="button" value="末页" onclick="pageTurning(4)">
 			</div>
@@ -132,8 +132,8 @@ html, body {
 
 		//页面刷新的翻页
 		function pageTurning(num) {
-			var currentPage = parseInt("${page.currentPage}");
-			var allPageNum = parseInt("${page.allPageNum}");
+			var currentPage = parseInt("${returnLoanPage.currentPage}");
+			var allPageNum = parseInt("${returnLoanPage.allPageNum}");
 			switch (num) {
 			case 0:
 				currentPage = 1;

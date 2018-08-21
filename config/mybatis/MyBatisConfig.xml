@@ -3,12 +3,11 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	
 	<!--设置启用数据库字段下划线映射到java对象的驼峰式命名属性，默认为false-->
 	<settings>  
-          <setting name="mapUnderscoreToCamelCase" value="true" />  
-     </settings>  
-	
+          <setting name="mapUnderscoreToCamelCase" value="true" /> 
+          <setting name="jdbcTypeForNull" value="NULL" /> 
+     </settings> 
 	
 	<typeAliases>
 		<package name="com.boda.pojo"/>

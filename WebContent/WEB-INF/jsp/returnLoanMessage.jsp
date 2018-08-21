@@ -62,7 +62,6 @@ html, body {
 			<legend>还款信息</legend>
 			<table id="customers">
 				<tr>
-					<th width="30px"><input type="checkbox" id="checkReverse" /></th>
 					<th>还款id</th>
 					<th>贷款id</th>
 					<th>还款金额</th>
@@ -75,7 +74,6 @@ html, body {
 				</tr>
 				<c:forEach items="${returnLoans}" var="returnLoans">
 					<tr>
-						<td align="center"><input type="checkbox" /></td>
 						<td>${returnLoans.returnId}</td>
 						<td>${returnLoans.loanId}</td>
 						<td>${returnLoans.returnMoney}</td>
@@ -86,18 +84,12 @@ html, body {
 								pattern="yyyy-MM-dd" /></td>
 						<td>${returnLoans.whichStage}</td>
 						<td>${returnLoans.returnState}</td>
-						<td><input type="button" value="催促还款"></td>
+						<td><a href="${pageContext.request.contextPath}/urgeForReturn.do?returnId=${returnLoans.returnId}&empId=1">
+						<input type="button" value="催促还款"></a></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</fieldset>
 	</div>
-	<%-- --%>
-	<script type="text/javascript">
-		//设置复选框全选或全不选
-		$("#checkReverse").click(function() {
-			$("input:checkbox").prop("checked", this.checked);
-		});	
-	</script>
 </body>
 </html>

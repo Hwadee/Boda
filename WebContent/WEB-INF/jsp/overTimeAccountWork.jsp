@@ -83,7 +83,6 @@ html, body {
 			<legend>逾期账户信息</legend>
 			<table id="customers">
 				<tr>
-					<th width="30px"><input type="checkbox" id="checkReverse" /></th>
 					<th>贷款id</th>
 					<th>姓名</th>
 					<th>性别</th>
@@ -102,9 +101,9 @@ html, body {
 				</tr>
 				<c:forEach items="${page.objList}" var="loan">
 					<tr>
-						<td align="center"><input type="checkbox" /></td>
 						<td>${loan.loanId}</td>
-						<td>${loan.customerMessage.customerName}</td>
+						<td><a href="${pageContext.request.contextPath}/overTimeAccountDistribute.do?customerId=${loan.customerMessage.customerId}">
+						${loan.customerMessage.customerName}</a></td>
 						<td>${loan.customerMessage.customerSex}</td>
 						<td><fmt:formatDate value="${loan.customerMessage.customerBirthday}"
 								pattern="yyyy-MM-dd" /></td>
@@ -135,12 +134,7 @@ html, body {
 		</fieldset>
 	</div>
 	<%-- --%>
-	<script type="text/javascript">
-		//设置复选框全选或全不选
-		$("#checkReverse").click(function() {
-			$("input:checkbox").prop("checked", this.checked);
-		});
-
+	<script type="text/javascript">		
 		//页面刷新的翻页
 		function pageTurning(num) {
 			var currentPage = parseInt("${page.currentPage}");

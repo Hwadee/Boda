@@ -34,6 +34,12 @@
 	<select id="findReturnLoanByLoanId" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
 		select * from return_loan where loan_id = #{value}
 	</select>
+<!-- 通过客户id查询客户逾期总次数-->	 
+	<select id="findOverTimeNumByCustomerId" parameterType="Integer" resultType="Integer">
+		select count(*) 
+		from loan l,return_loan r
+		where l.customer_id = #{value} and r.loan_id=l.loan_id
+	</select>
 <!-- 查询所有逾期信息及催促信息-->	
 	<select id="findAllReturnAndUrgeMessage"  resultMap="returnLoanResultMap">
 		select * 
