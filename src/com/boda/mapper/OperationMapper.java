@@ -32,7 +32,7 @@ public interface OperationMapper {
 	 * @return 某天操作记录
 	 * @throws IOException
 	 */
-	public List<OperationLog> findOperationByDate(String date) throws IOException;
+	public List<OperationLog> findOperationByDate(@Param("startDate") String startDate, @Param("endDate") String endDate) throws IOException;
 	
 	
 	/**
@@ -51,7 +51,7 @@ public interface OperationMapper {
 	 * @return
 	 * @throws IOException
 	 */
-	public List<OperationLog> findOperationLogsBoth(@Param("date") String date, @Param("empId") String empId) throws IOException;
+	public List<OperationLog> findOperationLogsBoth(@Param("startDate") String startDate, @Param("endDate") String endDate, @Param("empId") String empId) throws IOException;
 
 	/**
 	 * 插入操作记录

@@ -23,10 +23,14 @@ public class OperationLogManager {
     }
 
     @RequestMapping("/OperationLogs.do")
-    public String operationLogs(@RequestParam("date") String date, @RequestParam("empId") String empId, Model model) throws Exception {
+    public String operationLogs(String startDate, String endDate, String empId, Model model) throws Exception {
 
-        List<OperationLog> operationLogs = ols.getOperationLogs(date, empId);
-        model.addAttribute("operationlogs", operationLogs);
+        List<OperationLog> operationLogs = ols.getOperationLogs(startDate, endDate, empId);
+        if (!operationLogs.isEmpty()) {
+            model.addAttribute("operationlogs", operationLogs);
+        } else {
+            model.addAttribute("MSG", "无符合结果");
+        }
         return "operationLogs";
     }
 }
