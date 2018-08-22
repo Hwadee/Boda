@@ -25,14 +25,25 @@ public class DepartmentManager {
     @RequestMapping("/DeptInfo.do")
     public String deptInfo(String deptSearchToken, Model model) throws Exception {
 
+        System.out.println("SearchToken = " + deptSearchToken);
         List<Department> departments = ds.getDeptInfo(deptSearchToken);
 //        System.out.println(departments);
         if (!departments.isEmpty()) {
             model.addAttribute("deptinfo", departments);
+            model.addAttribute("infotoupdate");
         } else {
             model.addAttribute("MSG", "无符合结果");
         }
         return "部门管理";
+    }
+
+    @RequestMapping("/QueryUpdateInfo.do")
+    public String queryUpdateInfo(String deptId, Model model) throws Exception {
+
+        Department department = ds.getDeptInfo(deptId).get(0);
+        model.addAttribute("infotoupdate", department);
+
+        return "UpdateDeptInfo";
     }
 
     @RequestMapping("/UpdateDeptInfo.do")

@@ -9,15 +9,12 @@
     <list default="true" id="ab945b38-605d-486a-8eb3-827f5f1bc1ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/DepartmentManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/DepartmentManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Boda.iml" afterPath="$PROJECT_DIR$/Boda.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/success.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/success.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/userLogin.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/userLogin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/index.jsp" afterPath="$PROJECT_DIR$/WebContent/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/部门管理.jsp" afterPath="$PROJECT_DIR$/WebContent/部门管理.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/springmvc/springmvc.xml" afterPath="$PROJECT_DIR$/config/springmvc/springmvc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/springmvc/springmvc.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/springmvc/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/jsp/deptInfo.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/jsp/deptInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/部门管理.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/部门管理.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" />
     </list>
@@ -56,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,8 +62,8 @@
       <file leaf-file-name="springmvc.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/springmvc/springmvc.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="680">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,8 +72,8 @@
       <file leaf-file-name="DepartmentService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/boda/service/DepartmentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="420">
+              <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,8 +84,8 @@
       <file leaf-file-name="DepartmentManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="-399">
+              <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,14 +93,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="部门管理.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="部门管理.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/部门管理.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding>
-                <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="364">
+              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateDeptInfo.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="242" column="0" lean-forward="true" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,8 +118,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -156,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/detailPage.jsp" />
         <option value="$PROJECT_DIR$/src/com/boda/service/OperationRecordService.java" />
         <option value="$PROJECT_DIR$/WebContent/login.jsp" />
         <option value="$PROJECT_DIR$/WebContent/index.jsp" />
@@ -207,6 +211,7 @@
         <option value="$PROJECT_DIR$/WebContent/css/main.css" />
         <option value="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" />
         <option value="$PROJECT_DIR$/WebContent/部门管理.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp" />
       </list>
     </option>
   </component>
@@ -327,27 +332,14 @@
               <item name="WebContent" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Boda" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Boda" type="462c0819:PsiDirectoryNode" />
-              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Boda" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Boda" type="462c0819:PsiDirectoryNode" />
-              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,21 +353,21 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\WEB-INF\jsp" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\TestPage\jsp" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\TestPage" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.boda.vo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wuming\Desktop\Boda\WebContent" />
       <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\WEB-INF\jsp" />
       <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\WEB-INF" />
       <recent name="C:\Users\Wuming\Desktop\Boda" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.boda.vo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\WEB-INF\jsp" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\TestPage\jsp" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\TestPage" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -605,7 +597,9 @@
       <workItem from="1534595644523" duration="3405000" />
       <workItem from="1534640926894" duration="9874000" />
       <workItem from="1534660072146" duration="9496000" />
-      <workItem from="1534814053528" duration="18581000" />
+      <workItem from="1534814053528" duration="19119000" />
+      <workItem from="1534899914959" duration="9552000" />
+      <workItem from="1534918673140" duration="10467000" />
     </task>
     <task id="LOCAL-00001" summary="SSM frame">
       <created>1534403608446</created>
@@ -712,7 +706,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534822860907</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="部门信息整合前端页面">
+      <created>1534842752852</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1534842752852</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -724,7 +725,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89630000" />
+    <option name="totallyTimeSpent" value="110187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -756,14 +757,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33512932" sideWeight="0.49517167" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33728448" sideWeight="0.49517167" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19073276" sideWeight="0.4946352" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.49785408" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28218883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30495688" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -771,6 +770,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30495688" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -793,12 +794,13 @@
     <MESSAGE value="借贷信息查询完善及测试" />
     <MESSAGE value="操作记录查询修改" />
     <MESSAGE value="参数判断细节，未完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="参数判断细节，未完成" />
+    <MESSAGE value="部门信息整合前端页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="部门信息整合前端页面" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -807,14 +809,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebContent/还款名单.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="111" column="51" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/逾期情况报表.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="553">
@@ -847,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -943,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,11 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-600">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1534470036561" expanded="true" signature="1074:1129" ph="select * fro... emp_detail" />
-            <marker date="1534470036561" expanded="true" signature="1280:1337" ph="select * fro... emp_detail" />
-            <marker date="1534470036561" expanded="true" signature="1908:2252" ph="UPDATE emp_d... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="487" column="0" lean-forward="false" selection-start-line="487" selection-start-column="0" selection-end-line="487" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,10 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <element signature="e#2120#2121#0" expanded="false" />
-            <element signature="e#2160#2161#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,7 +1016,7 @@
         <state relative-caret-position="121">
           <caret line="31" column="58" lean-forward="false" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1046,7 +1026,7 @@
         <state relative-caret-position="-300">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1064,7 +1044,7 @@
         <state relative-caret-position="1400">
           <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1073,17 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1534648701589" expanded="true" signature="962:988" ph="SELECT * FRO... loan" />
-            <marker date="1534648701589" expanded="true" signature="1121:1236" ph="SELECT DISTI... loan" />
-            <marker date="1534648701589" expanded="true" signature="1373:1514" ph="SELECT DISTI... loan" />
-            <marker date="1534648701589" expanded="true" signature="1633:1737" ph="SELECT * FRO... loan" />
-            <marker date="1534648701589" expanded="true" signature="1633:1744" ph="SELECT * FRO... loan" />
-            <marker date="1534648701589" expanded="true" signature="1858:1966" ph="SELECT * FRO... loan" />
-            <marker date="1534648701589" expanded="true" signature="2082:2192" ph="SELECT * FRO... loan" />
-            <marker date="1534648701589" expanded="true" signature="2299:2598" ph="INSERT INTO loan... " />
-            <marker date="1534648701589" expanded="true" signature="2713:2796" ph="UPDATE loan " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1099,12 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding>
-            <marker date="1534669747618" expanded="true" signature="728:793" ph="select * fro... department" />
-            <marker date="1534669747618" expanded="true" signature="941:1015" ph="select * fro... department" />
-            <marker date="1534669747618" expanded="true" signature="1812:1867" ph="DELETE from " />
-            <marker date="1534669747618" expanded="true" signature="1993:2175" ph="UPDATE depar... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1120,24 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
           <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding>
-            <marker date="1534819651744" expanded="true" signature="688:745" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="848:877" ph="SELECT * FRO... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1014:1078" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1014:1097" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1014:1109" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1014:1111" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1014:1123" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1014:1127" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1127:1163" ph="select&gt; &lt;!--... " />
-            <marker date="1534819651744" expanded="true" signature="1163:1259" ph="select id=&quot;f... " />
-            <marker date="1534819651744" expanded="true" signature="1262:1313" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1262:1354" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1354:1428" ph="select id=&quot;f... " />
-            <marker date="1534819651744" expanded="true" signature="1431:1566" ph="select * fro... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1431:1820" ph="SELECT * FRO... operation_log" />
-            <marker date="1534819651744" expanded="true" signature="1825:2014" ph="Select last_... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1169,17 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/DepartmentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1187,33 +1121,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="344" column="18" lean-forward="true" selection-start-line="344" selection-start-column="18" selection-end-line="344" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/springmvc/springmvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="680">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/js/table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1534561515661" expanded="true" signature="2943:2958" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1252,10 +1175,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/js/table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <marker date="1534561515661" expanded="true" signature="2943:2958" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/service/DepartmentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="-399">
+          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1264,11 +1207,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/部门管理.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="364">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="242" column="0" lean-forward="true" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -13,7 +13,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <title>部门信息管理</title>
+    <title>部门信息更新</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -71,6 +71,10 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
     <%--<script type="text/javascript" src="js/mootools.js"></script>--%>
     <%--<script type="text/javascript" src="js/calendar.rc4.js"></script>--%>
     <%--<script type="text/javascript">--%>
@@ -121,55 +125,86 @@
         </form>
 
         <div id="msgText" class="red">${MSG}</div>
-
-        <!-- Widgets -->
-        <div class="widgets">
-            <div class="widget">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看部门</h6>
-                    <div class="topIcons">
-                        <a href="#" class="tipS" title="打印该表格">
-                            <img src="./images/icons/downloadTop.png" alt>
-                        </a>
-                    </div>
-                </div>
-
-                <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
-                    <thead>
-                    <tr>
-                        <td width="180">部门ID</td>
-                        <td>部门名称</td>
-                        <td>部门员工数</td>
-                        <td>部门成立时间</td>
-                        <td width="160">操作</td>
-                    </tr>
-                    </thead>
-                    <tbody id="body">
-
-                    <c:forEach items="${deptinfo}" var="deptinfo">
-                        <tr>
-                            <td id="id" align="center">${deptinfo.deptId}</td>
-                            <td id="name" align="center">${deptinfo.deptName}</td>
-                            <td id="empnum" align="center">${deptinfo.deptEmpNum}</td>
-                            <td id="buildtime" align="center"><fmt:formatDate value="${deptinfo.deptBuildTime}"
-                                                               pattern="yyyy-MM-dd"/></td>
-                            <td align="center">
-                                <input type="button" value="修改" class="blueB"
-                                       onclick="updateDeptInfo(${deptinfo.deptId})"/>
-                                <input type="button" value="删除" class="redB"
-                                       onclick="delDeptInfo(${deptinfo.deptId})">
-                            </td>
-                        </tr>
-                    </c:forEach>
-
-                    </tbody>
-                </table>
-
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
     </div>
 
+    <!--更新部门信息-->
+    <div class="line"></div>
+    <div id="updateInfo" class="wrapper">
+        <div class="widgets">
+            <div class="widget">
+                <div class="title">
+                    <img src="./images/icons/dark/stats.png" class="titleIcon">
+                    <h6 id="edit">部门信息编辑</h6>
+                </div>
+                <form action="UpdateDeptInfo.do" class="form" method="post">
+                    <fieldset>
+                        <div class="formRow">
+                            <label>部门ID<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="updateId" name="deptId" value="${infotoupdate.deptId}"
+                                       readonly="readonly"/>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="formRow">
+                            <label>部门名称<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="updateName" name="deptName" value="${infotoupdate.deptName}"/>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="formRow">
+                            <label>部门员工数<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="updateEmpNum" name="deptEmpNum"
+                                       value="${infotoupdate.deptEmpNum}"/>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="formRow">
+                            <label>成立时间<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="updateBuildTime" name="deptBuildTime"
+                                       value=
+                                       <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.deptBuildTime}"/>
+                                />
+                            </div>
+
+                            <!--
+                                <div class="formRow dnone">
+                                    <label>生日：</label>
+                                    <div class="formRight">
+                                        <select name="YYYY" onchange="YYYYDD(this.value)">
+                                            <option value="">请选择 年</option>
+                                        </select>
+                                        <select name="MM" onchange="MMDD(this.value)">
+                                            <option value="">请选择 月</option>
+                                        </select>
+                                        <select name="DD">
+                                            <option value="">请选择 日</option>
+                                        </select>
+                                    </div>
+                                    <script language="JavaScript">
+                                        if (document.attachEvent)
+                                            window.attachEvent("onload", YYYYMMDDstart);
+                                        else if (window.addEventListener)
+                                            window.addEventListener("load", YYYYMMDDstart, false);
+                                    </script>
+                                    -->
+                            <div class="clear"></div>
+                        </div>
+
+
+                        <div class="formSubmit">
+                            <input type="submit" value="更新" class="greenB"/>
+                            <input type="button" value="取消" class="redB" onclick="history.back()"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Footer line -->
     <jsp:include page="foot.jsp"></jsp:include>
 
@@ -179,33 +214,20 @@
 
 <script type="text/javascript">
 
-    function delDeptInfo(_id) {
-        location.href = "DelDeptInfo.do?deptId=" + _id;
-    }
+    $(function () {
+        $("#updateBuildTime").datepicker({
+            //限制日期范围
+//            minDate: -20,
+//            maxDate: "+1M +10D",
 
-    //    $("#update").on('click', function () {
-    //        //按照id获取值
-    ////        alert($(this));
-    //        var _id = $(this).parent("tr").find("#id").text();
-    //        var _name = $(this).parent("tr").find("#name").text();
-    //        var _empnum = $(this).parent("tr").find("#empnum").text();
-    //        var _buildtime = $(this).parent("tr").find("#buildtime").text();
-    //        alert("ID=" + _id + ", name=" + _name);
-    //
-    //        document.getElementById("updateId").value = _id;
-    //        document.getElementById("updateName").value = _name;
-    //        document.getElementById("updateEmpNum").value = _empnum;
-    //        document.getElementById("updateBuildTime").value = _buildtime;
-    //
-    //        var updateInfo = document.getElementById("updateInfo");
-    //        updateInfo.style.display = "";
-    //        document.getElementById("deptInfoTable").replaceWith(updateInfo);
-    //    });
+            //月份、年份下拉框
+            changeMonth: true,
+            changeYear: true,
 
-    function updateDeptInfo(_id) {
-//        alert("Id=" + _id);
-        location.href = "QueryUpdateInfo.do?deptId=" + _id;
-    }
+            //日期格式
+            dateFormat: "yymmdd"
+        });
+    });
 
 </script>
 
