@@ -32,6 +32,9 @@ public class Tool {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         Date date = new Date();
+        //日期处理为yyyyMMdd格式
+        dateStr = dateStr.replaceAll("-", "");
+        dateStr = dateStr.replaceAll("/", "");
         try {
             date = dateFormat.parse(dateStr);
         } catch (ParseException e) {

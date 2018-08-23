@@ -30,7 +30,7 @@ public class DepartmentManager {
 //        System.out.println(departments);
         if (!departments.isEmpty()) {
             model.addAttribute("deptinfo", departments);
-            model.addAttribute("infotoupdate");
+//            model.addAttribute("infotoupdate");
         } else {
             model.addAttribute("MSG", "无符合结果");
         }

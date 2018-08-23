@@ -71,23 +71,11 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
-    <%--<script type="text/javascript" src="js/mootools.js"></script>--%>
-    <%--<script type="text/javascript" src="js/calendar.rc4.js"></script>--%>
-    <%--<script type="text/javascript">--%>
-    <%--//<![CDATA[--%>
-    <%--window.addEvent('domready', function() {--%>
-    <%--myCal = new Calendar({ updateBuildTime: 'Y/m/d' }, { direction: 1, tweak: {x: 6, y: 0} });--%>
-    <%--});--%>
-    <%--//]]>--%>
-    <%--</script>--%>
-    <%--<link rel="stylesheet" type="text/css" href="css/iframe.css" media="screen" />--%>
-    <%--<link rel="stylesheet" type="text/css" href="css/calendar.css" media="screen" />--%>
-    <%--<link rel="stylesheet" type="text/css" href="css/dashboard.css" media="screen" />--%>
-    <%--<link rel="stylesheet" type="text/css" href="css/i-heart-ny.css" media="screen" />--%>
-
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 </head>
-<body>
+<body onload="init()">
 
 <!-- Left side content -->
 <jsp:include page="left.jsp"></jsp:include>
@@ -101,7 +89,7 @@
             <div class="pageTitle">
                 <h5>系统设置</h5><br>
                 <h6>部门管理</h6>
-                <span>建立各个部门的基本资料，可定义多层的部门设置</span>
+                <span>管理各个部门的基本资料</span>
             </div>
             <div class="middleNav">
 
@@ -126,6 +114,7 @@
         <div class="widgets">
             <div class="widget">
                 <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看部门</h6>
+                    <<input type="button" id="addinfobtn" value="新增部门信息" class="greenB">
                     <div class="topIcons">
                         <a href="#" class="tipS" title="打印该表格">
                             <img src="./images/icons/downloadTop.png" alt>
@@ -154,9 +143,9 @@
                                                                pattern="yyyy-MM-dd"/></td>
                             <td align="center">
                                 <input type="button" value="修改" class="blueB"
-                                       onclick="updateDeptInfo(${deptinfo.deptId})"/>
+                                       onclick="updateInfo(${deptinfo.deptId})"/>
                                 <input type="button" value="删除" class="redB"
-                                       onclick="delDeptInfo(${deptinfo.deptId})">
+                                       onclick="delInfo(${deptinfo.deptId})">
                             </td>
                         </tr>
                     </c:forEach>
@@ -170,6 +159,58 @@
         </div>
     </div>
 
+    <!--新增部门信息-->
+    <div id="addInfo" class="wrapper" style="display: none">
+        <div class="widgets">
+            <div class="widget">
+                <div class="title">
+                    <img src="./images/icons/dark/stats.png" alt="" class="titleIcon">
+                    <h6 id="edit">新增部门信息</h6>
+                </div>
+                <form action="AddDeptInfo.do" class="form" method="post">
+                    <fieldset>
+                        <%--<div class="formRow">--%>
+                        <%--<label>部门ID<span class="req">*</span> </label>--%>
+                        <%--<div class="formRight">--%>
+                        <%--<input type="text" id="updateId" name="deptId" value="${infotoupdate.deptId}"--%>
+                        <%--readonly="readonly"/>--%>
+                        <%--</div>--%>
+                        <%--<div class="clear"></div>--%>
+                        <%--</div>--%>
+                        <div class="formRow">
+                            <label>部门名称<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="addName" name="deptName"/>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="formRow">
+                            <label>部门员工数<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="addEmpNum" name="deptEmpNum"/>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="formRow">
+                            <label>成立时间<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="addBuildTime" name="deptBuildTime"/>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="formSubmit">
+                            <input type="submit" value="确定" class="greenB"/>
+                            <input type="button" value="取消" class="redB" onclick="history.back()"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer line -->
     <jsp:include page="foot.jsp"></jsp:include>
 
@@ -179,32 +220,48 @@
 
 <script type="text/javascript">
 
-    function delDeptInfo(_id) {
+    $(function () {
+        $("#addBuildTime").datepicker({
+            //限制日期范围
+//            minDate: -20,
+//            maxDate: "+1M +10D",
+
+            //月份、年份下拉框
+            changeMonth: true,
+            changeYear: true,
+
+            //日期格式
+            dateFormat: "yy-mm-dd"
+        });
+    });
+
+    function delInfo(_id) {
         location.href = "DelDeptInfo.do?deptId=" + _id;
     }
 
-    //    $("#update").on('click', function () {
-    //        //按照id获取值
-    ////        alert($(this));
-    //        var _id = $(this).parent("tr").find("#id").text();
-    //        var _name = $(this).parent("tr").find("#name").text();
-    //        var _empnum = $(this).parent("tr").find("#empnum").text();
-    //        var _buildtime = $(this).parent("tr").find("#buildtime").text();
-    //        alert("ID=" + _id + ", name=" + _name);
-    //
-    //        document.getElementById("updateId").value = _id;
-    //        document.getElementById("updateName").value = _name;
-    //        document.getElementById("updateEmpNum").value = _empnum;
-    //        document.getElementById("updateBuildTime").value = _buildtime;
-    //
-    //        var updateInfo = document.getElementById("updateInfo");
-    //        updateInfo.style.display = "";
-    //        document.getElementById("deptInfoTable").replaceWith(updateInfo);
-    //    });
-
-    function updateDeptInfo(_id) {
+    function updateInfo(_id) {
 //        alert("Id=" + _id);
         location.href = "QueryUpdateInfo.do?deptId=" + _id;
+    }
+
+    //    $("#addinfobtn").onclick = function () {
+    //        document.getElementById("addInfo").style.display = "";
+    //        $('body').animate({scrollTop: $("#addInfo").offset().top}, 1000);
+    //    };
+    $("#addinfobtn").click(function () {
+        var infodiv = document.getElementById("addInfo");
+        infodiv.style.display = "";
+        $('html, body').animate({
+            scrollTop: $("#addInfo").offset().top
+        }, 1000);
+    });
+
+    function init() {
+        var msg = document.getElementById("msgText").innerHTML;
+//        console.log(msg);
+        if ((msg === "" || msg === null) && !document.getElementById("id")) {
+            location.href = "DeptInfo.do?deptSearchToken=";
+        }
     }
 
 </script>
