@@ -31,7 +31,7 @@ public class UserManager {
         if ((employee = ums.userLogin(account, password)) != null) {
             model.addAttribute("MSG", account);
             request.getSession().setAttribute("currentUser", employee);
-            return "success";
+            return "index2";
         } else {
             model.addAttribute("MSG", "账号或密码错误！");
             return "userLogin";

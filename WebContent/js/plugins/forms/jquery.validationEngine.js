@@ -41,7 +41,7 @@
          * ie. jQuery("#formID1").validationEngine('attach', {promptPosition : "centerRight"});
          */
         attach: function (userOptions) {
-
+			
             var form = this;
             var options;
 
@@ -51,7 +51,7 @@
                 options = form.data('jqv');
 
             var validateAttribute = (form.find("[data-validation-engine*=validate]")) ? "data-validation-engine" : "class";
-
+			
             if (!options.binded) {
                 if (options.bindMethod == "bind") {
 
@@ -246,7 +246,7 @@
                     options.onFailure();
                 }
             }, (event.data) ? event.data.delay : 0);
-
+            
         },
         /**
          * Called when the form is submited, shows prompts accordingly
@@ -261,7 +261,7 @@
 
             // validate each field (- skip field ajax validation, no necessary since we will perform an ajax form validation)
             var r = methods._validateFields(form, true);
-
+		
             if (r && options.ajaxFormValidation) {
                 methods._validateFormWithAjax(form, options);
                 return false;
@@ -1023,7 +1023,7 @@
                     sum += parseInt(luhn.charAt(i));
                 }
                 valid = sum % 10 == 0;
-            }
+            } 
             if (!valid) return options.allrules.creditCard.alertText;
         },
         /**
@@ -1037,7 +1037,7 @@
          * @return nothing! the ajax validator handles the prompts itself
          */
         _ajax: function (field, rules, i, options) {
-
+			
             var errorSelector = rules[i + 1];
             var rule = options.allrules[errorSelector];
             var extraData = rule.extraData;
@@ -1083,7 +1083,7 @@
                         methods._ajaxError(data, transport);
                     },
                     success: function (json) {
-
+						
                         // asynchronously called on success, data is the json answer from the server
                         var errorFieldId = json[0];
                         var errorField = $($("#" + errorFieldId)[0]);
@@ -1198,7 +1198,7 @@
          * @param {Map} options user options
          */
         _buildPrompt: function (field, promptText, type, ajaxed, options) {
-
+			
             // create the prompt
             var prompt = $('<div>');
             prompt.addClass(methods._getClassName(field.attr("id")) + "formError");
@@ -1237,7 +1237,7 @@
                 }
                 ;
 
-
+				
                 switch (positionType) {
                     case "bottomLeft":
                     case "bottomRight":
@@ -1281,7 +1281,7 @@
                         prompt.closest('.formErrorOuter').remove();
                         prompt.remove();
                     })
-                }, options.autoHideDelay)
+                }, options.autoHideDelay)                			
                 return prompt.animate({
                     "opacity": 0.87
                 })
@@ -1289,7 +1289,7 @@
                 return prompt.animate({
                     "opacity": 0.87
                 });
-            }
+            }				
         },
         /**
          * Updates the prompt text field - the field for which the prompt
@@ -1300,7 +1300,7 @@
          * @param {Map} options user options
          */
         _updatePrompt: function (field, prompt, promptText, type, ajaxed, options, noAnimation) {
-
+			
             if (prompt) {
                 if (typeof type !== "undefined") {
                     if (type == "pass")
@@ -1317,7 +1317,7 @@
                     prompt.addClass("ajaxed");
                 else
                     prompt.removeClass("ajaxed");
-
+		
                 prompt.find(".formErrorContent").html(promptText);
 
                 var pos = methods._calculatePosition(field, prompt, options);
@@ -1587,7 +1587,7 @@
         _getClassName: function (className) {
             if (className) {
                 return className.replace(/:/g, "_").replace(/\./g, "_");
-            }
+            }    
         }
     };
 
@@ -1604,7 +1604,7 @@
 
         var form = $(this);
         if (!form[0]) return false;  // stop here if the form does not exist
-
+		  
         if (typeof(method) == 'string' && method.charAt(0) != '_' && methods[method]) {
 
             // make sure init is called once

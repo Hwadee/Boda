@@ -444,8 +444,6 @@ $(function () {
 
     //===== Sortable columns =====//
 
-    $("table").tablesorter();
-
 
     //===== Dynamic data table =====//
 
@@ -507,6 +505,15 @@ $(function () {
         dateFormat: 'dd-mm-yy',
         numberOfMonths: 1
     });
+
+
+	
+
+
+
+
+
+
 
 
 //===== Progress bars =====//
@@ -860,5 +867,5 @@ $(function () {
 
     $("select, input:checkbox, input:radio, input:file").uniform();
 
-
+	
 });

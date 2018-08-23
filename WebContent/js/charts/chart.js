@@ -52,7 +52,7 @@ $(function () {
             }
             else {
                 $("#tooltip").remove();
-                previousPoint = null;
+                previousPoint = null;            
             }
         }
     });

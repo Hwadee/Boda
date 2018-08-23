@@ -204,8 +204,8 @@
 
                     // mode specific options
                     tickDecimals: null, // no. of decimals, null means auto
-                    tickSize: null, // number or [number, "util"]
-                    minTickSize: null, // number or [number, "util"]
+                    tickSize: null, // number or [number, "unit"]
+                    minTickSize: null, // number or [number, "unit"]
                     monthNames: null, // list of names of months
                     timeformat: null, // format string to use
                     twelveHourClock: false // 12 or 24 time in time mode
@@ -841,7 +841,7 @@
 
             if (!skipPositioning)
                 $(c).css({position: 'absolute', left: 0, top: 0});
-
+                
             $(c).appendTo(placeholder);
 
             if (!c.getContext) // excanvas hack
@@ -890,7 +890,7 @@
                 placeholder.html(""); // make sure placeholder is clear
 
                 placeholder.css({padding: 0}); // padding messes up the positioning
-
+                
                 if (placeholder.css("position") == 'static')
                     placeholder.css("position", "relative"); // for positioning labels and overlay
 
@@ -967,7 +967,7 @@
             function identity(x) {
                 return x;
             }
-
+            
             var s, m, t = axis.options.transform || identity,
                 it = axis.options.inverseTransform;
 
@@ -1291,9 +1291,9 @@
                 // an integer algorithm
                 var spec = [
                     [1, "second"], [2, "second"], [5, "second"], [10, "second"],
-                    [30, "second"],
+                    [30, "second"], 
                     [1, "minute"], [2, "minute"], [5, "minute"], [10, "minute"],
-                    [30, "minute"],
+                    [30, "minute"], 
                     [1, "hour"], [2, "hour"], [4, "hour"],
                     [8, "hour"], [12, "hour"],
                     [1, "day"], [2, "day"], [3, "day"],

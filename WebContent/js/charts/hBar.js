@@ -14,14 +14,14 @@ $(function () {
     var d3_h = [];
     for (var i = 0; i <= 4; i += 1)
         d3_h.push([parseInt(Math.random() * 30), i]);
-
+                
     var ds_h = new Array();
     ds_h.push({
         data: d1_h,
         bars: {
             horizontal: true,
             show: true,
-            barWidth: 0.2,
+            barWidth: 0.2, 
             order: 1,
         }
     });
@@ -101,5 +101,5 @@ $(function () {
 
     });
 
-
+ 
 });

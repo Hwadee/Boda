@@ -32,7 +32,7 @@ public class DepartmentManager {
             model.addAttribute("deptinfo", departments);
 //            model.addAttribute("infotoupdate");
         } else {
-            model.addAttribute("MSG", "无符合结果");
+            model.addAttribute("searchMSG", "无符合结果");
         }
         return "部门管理";
     }

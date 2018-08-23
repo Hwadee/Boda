@@ -1,5 +1,7 @@
 package com.boda.pojo;
 
+import com.boda.util.Tool;
+
 import java.util.Date;
 
 public class EmpDetail {
@@ -110,6 +112,11 @@ public class EmpDetail {
 
     public void setEmpPhotoUrl(String empPhotoUrl) {
         this.empPhotoUrl = empPhotoUrl;
+    }
+
+    public String printEmpBirthday() {
+        return Tool.formatDateToString(this.getEmpBirthday());
+//        return String.valueOf(this.empBirthday.getYear()+1900)+"-"+ String.valueOf(this.empBirthday.getMonth()+1)+"-"+String.valueOf(this.empBirthday.getDate());
     }
 
     @Override

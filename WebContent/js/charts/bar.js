@@ -19,7 +19,7 @@ $(function () {
         data: d1,
         bars: {
             show: true,
-            barWidth: 0.2,
+            barWidth: 0.2, 
             order: 1,
         }
     });
@@ -27,7 +27,7 @@ $(function () {
         data: d2,
         bars: {
             show: true,
-            barWidth: 0.2,
+            barWidth: 0.2, 
             order: 2
         }
     });
@@ -35,7 +35,7 @@ $(function () {
         data: d3,
         bars: {
             show: true,
-            barWidth: 0.2,
+            barWidth: 0.2, 
             order: 3
         }
     });
@@ -65,7 +65,7 @@ $(function () {
             hoverable: true
         },
         legend: true,
-
+                
 
     });
 
@@ -101,6 +101,6 @@ $(function () {
         }
 
     });
-
-
+ 
+    
 });

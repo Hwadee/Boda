@@ -4,7 +4,7 @@
 // releated under the MIT license
 
 (function ($) {
-
+    
     function fixTitle($ele) {
         if ($ele.attr('title') || typeof($ele.attr('original-title')) != 'string') {
             $ele.attr('original-title', $ele.attr('title') || '').removeAttr('title');
@@ -37,7 +37,7 @@
                 var gravity = (typeof this.options.gravity == 'function')
                     ? this.options.gravity.call(this.$element[0])
                     : this.options.gravity;
-
+                
                 var tp;
                 switch (gravity.charAt(0)) {
                     case 'n':
@@ -138,7 +138,7 @@
     };
 
     $.fn.tipsy = function (options) {
-
+        
         if (options === true) {
             return this.data('tipsy');
         } else if (typeof options == 'string') {
@@ -183,7 +183,7 @@
         if (!options.live) this.each(function () {
             get(this);
         });
-
+        
         if (options.trigger != 'manual') {
             var binder = options.live ? 'live' : 'bind',
                 eventIn = options.trigger == 'hover' ? 'mouseenter' : 'focus',

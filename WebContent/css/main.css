@@ -5465,7 +5465,7 @@ ul.breadcrumbs li ul li a:hover {
         width: auto;
         float: none;
         margin: 0;
-        clear: both;
+        /*clear: both;*/
         width: 100%;
     }
 
@@ -5474,6 +5474,11 @@ ul.breadcrumbs li ul li a:hover {
     }
 
     .formRow {
+        padding: 14px 14px 18px 14px;
+    }
+
+    .formRowShort {
+        width: 80%;
         padding: 14px 14px 18px 14px;
     }
 
@@ -6165,4 +6170,18 @@ ul.breadcrumbs li ul li a:hover {
         width: 92% !important;
     }
 
+    .divAll {
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .divInfo {
+        width: 80%;
+        /*float: left;*/
+    }
+
+    .divImg {
+        width: 10%;
+        /*float: right;*/
+    }
 }

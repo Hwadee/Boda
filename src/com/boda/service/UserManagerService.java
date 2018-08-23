@@ -18,8 +18,12 @@ public class UserManagerService {
 
     public Employee userLogin(String account, String password) throws IOException {
 
+//        SqlSession sqlSession = SessionFactory.getSession();
+//        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
         Employee employee = employeeMapper.findEmpByAccount(account);
-//        System.out.println(employee);
+        System.out.println(employee);
+//        sqlSession.commit();
+//        sqlSession.close();
         if (employee != null && employee.getEmpPassword().equals(password)) {
             return employee;
         }

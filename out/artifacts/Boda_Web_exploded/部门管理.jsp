@@ -108,16 +108,21 @@
             <input type="submit" value=""/>
         </form>
 
-        <div id="msgText" class="red">${MSG}</div>
+        <!-- 显示搜索结果提示信息 -->
+        <div id="searchMsgText" class="red">${searchMSG}</div>
+        <%--<div id="msgText" class="red">${MSG}</div>--%>
 
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget">
                 <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看部门</h6>
-                    <<input type="button" id="addinfobtn" value="新增部门信息" class="greenB">
+                    <%--<input type="button" id="addinfobtn" value="新增部门信息" class="greenB">--%>
                     <div class="topIcons">
+                        <a href="#" class="tipS" title="新增记录" id="addinfobtn">
+                            <img src="./images/icons/editTop.png" alt="">
+                        </a>
                         <a href="#" class="tipS" title="打印该表格">
-                            <img src="./images/icons/downloadTop.png" alt>
+                            <img src="./images/icons/downloadTop.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -140,7 +145,7 @@
                             <td id="name" align="center">${deptinfo.deptName}</td>
                             <td id="empnum" align="center">${deptinfo.deptEmpNum}</td>
                             <td id="buildtime" align="center"><fmt:formatDate value="${deptinfo.deptBuildTime}"
-                                                               pattern="yyyy-MM-dd"/></td>
+                                                                              pattern="yyyy-MM-dd"/></td>
                             <td align="center">
                                 <input type="button" value="修改" class="blueB"
                                        onclick="updateInfo(${deptinfo.deptId})"/>
@@ -170,12 +175,12 @@
                 <form action="AddDeptInfo.do" class="form" method="post">
                     <fieldset>
                         <%--<div class="formRow">--%>
-                            <%--<label>部门ID<span class="req">*</span> </label>--%>
-                            <%--<div class="formRight">--%>
-                                <%--<input type="text" id="updateId" name="deptId" value="${infotoupdate.deptId}"--%>
-                                       <%--readonly="readonly"/>--%>
-                            <%--</div>--%>
-                            <%--<div class="clear"></div>--%>
+                        <%--<label>部门ID<span class="req">*</span> </label>--%>
+                        <%--<div class="formRight">--%>
+                        <%--<input type="text" id="updateId" name="deptId" value="${infotoupdate.deptId}"--%>
+                        <%--readonly="readonly"/>--%>
+                        <%--</div>--%>
+                        <%--<div class="clear"></div>--%>
                         <%--</div>--%>
                         <div class="formRow">
                             <label>部门名称<span class="req">*</span> </label>
@@ -195,7 +200,9 @@
                         <div class="formRow">
                             <label>成立时间<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addBuildTime" name="deptBuildTime"/>
+                                <c:set var="now" value="<%=new java.util.Date()%>"/>
+                                <input type="text" id="addBuildTime" name="deptBuildTime"
+                                       value="<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>"/>
                             </div>
 
                             <div class="clear"></div>
@@ -236,42 +243,49 @@
     });
 
     function delInfo(_id) {
-        location.href = "DelDeptInfo.do?deptId=" + _id;
+        if (confirm("确认删除记录？")) {
+            location.href = "DelDeptInfo.do?deptId=" + _id;
+        }
     }
 
     function updateInfo(_id) {
 //        alert("Id=" + _id);
         location.href = "QueryUpdateInfo.do?deptId=" + _id;
     }
-    
-//    $("#addinfobtn").onclick = function () {
-//        document.getElementById("addInfo").style.display = "";
-//        $('body').animate({scrollTop: $("#addInfo").offset().top}, 1000);
-//    };
-        $("#addinfobtn").click(function() {
-            var infodiv = document.getElementById("addInfo");
-            infodiv.style.display = "";
-            $('html, body').animate({
-                scrollTop: $("#addInfo").offset().top
-            }, 1000);
-        });
+
+    $("#addinfobtn").click(function () {
+        var infodiv = document.getElementById("addInfo");
+        infodiv.style.display = "";
+        $('html, body').animate({
+            scrollTop: $("#addInfo").offset().top
+        }, 500);
+    });
 
     function init() {
-        var msg = document.getElementById("msgText").innerHTML;
+        var msg = document.getElementById("searchMsgText").innerHTML;
 //        console.log(msg);
         if ((msg === "" || msg === null) && !document.getElementById("id")) {
             location.href = "DeptInfo.do?deptSearchToken=";
         }
     }
 
-</script>
+    var msg = "${MSG}";
+    if (msg !== null && msg !== "") {
+        alert(msg);
+    }
 
-<%--<script type="text/javascript">--%>
-<%--var msg = "${MSG}";--%>
-<%--if (msg !== null &amp;&amp; msg !== "") {--%>
-<%--alert(msg);--%>
-<%--}--%>
-<%--</script>--%>
+//    $(function () {
+//        var msg = document.getElementById("msgText").innerHTML;
+//        if (msg !== null && msg !== "") {
+//            $("#msgText").dialog();
+//        }
+//    });
+//
+//    setTimeOut(function() {
+//        $("#msgText").dialog( "close" )
+//    }, 5000);
+
+</script>
 
 </body>
 </html>

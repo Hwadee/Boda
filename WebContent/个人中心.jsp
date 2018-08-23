@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: dell
   Date: 2018/8/11
@@ -10,12 +10,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>个人中心</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
+
     <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/table.js"></script>
-    <script type="text/javascript" src="./js/place.js"></script>
+
     <script type="text/javascript" src="./js/plugins/spinner/ui.spinner.js"></script>
     <script type="text/javascript" src="./js/plugins/spinner/jquery.mousewheel.js"></script>
 
@@ -68,9 +67,8 @@
     <script type="text/javascript" src="./js/custom.js"></script>
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
-
+    <script type="text/javascript" src="./js/personalCenter.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
-
 <body>
 
 <!-- Left side content -->
@@ -90,7 +88,7 @@
             </div>
             <div class="middleNav">
 
-                <img src="./images/erweicode-2.jpg" alt="官网二维码"/>
+                <img src="images/erweicode-2.jpg" alt="官网二维码"/>
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>
@@ -100,7 +98,7 @@
     <!-- Main content wrapper -->
     <div class="wrapper">
         <div class="widget rightTabs">
-            <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>我的资料</h6></div>
+            <div class="title"><img src="images/icons/dark/stats.png" alt="" class="titleIcon"><h6>我的资料</h6></div>
             <ul class="tabs">
                 <li><a href="#tab1">基本信息</a></li>
                 <li><a href="#tab2">账户密码</a></li>
@@ -108,56 +106,81 @@
             </ul>
             <div class="tab_container">
                 <div id="tab1" class="tab_content np" style="display: block;">
-                    <form id="validate" class="form" method="post" action="">
+                    <form class="form" method="post" action="UpdateUserInfo.do">
                         <fieldset>
-                            <div class="formRow">
-                                <div class="oneThree"><label>姓名</label>
-                                    <div class="formRight"><input type="text" value="aaa" class="validate[required]"
-                                                                  readonly="readonly" name="change"/></div>
+                            <div>
+                                <nobr>
+                                    <div style="width: 80%;">
+                                        <div class="formRow">
+                                            <div class="oneThree"><label>姓名</label>
+                                                <div class="formRight"><input type="text" value="${detailInfo.empName}"
+                                                                              class="validate[required]"
+                                                                              readonly="readonly"
+                                                                              name="name" id="name"/></div>
+                                            </div>
+                                            <div class="oneThree"><label>性别</label>
+                                                <div class="formRight"><input type="text" value="${detailInfo.empSex}"
+                                                                              readonly="readonly" name="sex" id="sex"/>
+                                                </div>
+                                            </div>
+                                            <div class="oneThree"><label>生日</label>
+                                                <div class="formRight"><input type="text"
+                                                                              value="${detailInfo.printEmpBirthday()}"
+                                                                              readonly="readonly" name="birthday"
+                                                                              id="birthday"/></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="formRow">
+                                            <div class="oneThree"><label>体重</label>
+                                                <div class="formRight"><input type="text"
+                                                                              value="${detailInfo.empWeight}"
+                                                                              readonly="readonly" name="weight"
+                                                                              id="weight"/></div>
+                                            </div>
+                                            <div class="oneThree"><label>身高</label>
+                                                <div class="formRight"><input type="text"
+                                                                              value="${detailInfo.empHeight}"
+                                                                              readonly="readonly" name="height"
+                                                                              id="height"/></div>
+                                            </div>
+                                            <div class="oneThree"><label>教育度</label>
+                                                <div class="formRight"><input type="text"
+                                                                              value="${detailInfo.empEducation}"
+                                                                              readonly="readonly" name="education"
+                                                                              id="education"/></div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="formRow">
+                                        <span class="oneThree"><label>员工ID</label><div class="formRight"> <input
+                                                type="text" value="${detailInfo.empDetailId}" readonly="readonly"></div></span>
+                                            <span class="oneThree"><label>部门</label><div class="formRight"> <input
+                                                    type="text" value="人事部门" readonly="readonly"></div></span>
+                                            <span class="oneThree"><label>职位</label><div class="formRight"> <input
+                                                    type="text" value="普通员工" readonly="readonly"></div></span>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </nobr>
+
+                                <div style="width: 10%;">
+                                    <img src="images/images.jpg" alt=""/>
+                                    <%--<p>TEST</p>--%>
                                 </div>
-                                <div class="oneThree"><label>性别</label>
-                                    <div class="formRight"><input type="text" value="男" readonly="readonly"
-                                                                  name="change"/></div>
-                                </div>
-                                <div class="oneThree"><label>民族</label>
-                                    <div class="formRight"><input type="text" value="汉族" readonly="readonly"
-                                                                  name="change"/></div>
-                                </div>
-                                <div class="clear"></div>
+
                             </div>
-                            <div class="formRow">
-                                <div class="oneThree"><label>体重</label>
-                                    <div class="formRight"><input type="text" value="11kg" readonly="readonly"
-                                                                  name="change"/></div>
-                                </div>
-                                <div class="oneThree"><label>身高</label>
-                                    <div class="formRight"><input type="text" value="22cm" readonly="readonly"
-                                                                  name="change"/></div>
-                                </div>
-                                <div class="oneThree"><label>教育度</label>
-                                    <div class="formRight"><input type="text" value="bbb" readonly="readonly"
-                                                                  name="change"/></div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="formRow">
-                                <span class="oneThree"><label>员工ID</label><div class="formRight"> <input type="text"
-                                                                                                         value="123456"
-                                                                                                         readonly="readonly"></div></span>
-                                <span class="oneThree"><label>部门</label><div class="formRight"> <input type="text"
-                                                                                                       value="人事部门"
-                                                                                                       readonly="readonly"></div></span>
-                                <span class="oneThree"><label>职位</label><div class="formRight"> <input type="text"
-                                                                                                       value="普通员工"
-                                                                                                       readonly="readonly"></div></span>
-                                <div class="clear"></div>
-                            </div>
+                        </fieldset>
+                        <fieldset>
                             <div class="formRow">
                                 <div class="oneTwo"><label>籍贯</label>
                                     <div class="formRight">
                                         <div class="oneTwo">
                                             <select name="sel" disabled="disabled"
-                                                    onchange="chinaChange(this,document.getElementById('city1'))">
+                                                    onchange="chinaChange(this,document.getElementById('city1'))"
+                                                    style="opacity: 0;">
                                                 <option value="请选择市区">请选择省份</option>
                                                 <option value="北京市">北京市</option>
                                                 <option value="天津市">天津市</option>
@@ -196,14 +219,16 @@
                                             </select>
                                         </div>
                                         <div class="oneTwo">
-                                            <select name="city" id="city1" disabled="disabled">
+                                            <select name="city" id="city1" disabled="disabled" style="opacity: 0;">
                                                 <option value="请选择市区">请选择市区</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="oneTwo"><label>国籍</label>
-                                    <div class="formRight"><input type="text" readonly="readonly" name="change"></div>
+                                    <div class="formRight"><input type="text" value="${detailInfo.empNation}"
+                                                                  readonly="readonly" name="change"></div>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -213,7 +238,7 @@
                                     <div class="formRight">
                                         <div class="oneTwo"><select name="sel"
                                                                     onchange="chinaChange(this,document.getElementById('city2'))"
-                                                                    disabled="disabled">
+                                                                    disabled="disabled" style="opacity: 0;">
                                             <option value="请选择市区">请选择省份</option>
                                             <option value="北京市">北京市</option>
                                             <option value="天津市">天津市</option>
@@ -251,7 +276,7 @@
                                             <option value="澳门特别行政区">澳门特别行政区</option>
                                         </select></div>
                                         <div class="oneTwo">
-                                            <select name="city" id="city2" disabled="disabled">
+                                            <select name="city" id="city2" disabled="disabled" style="opacity: 0;">
                                                 <option value="请选择市区">请选择市区</option>
                                             </select>
                                         </div>
@@ -268,22 +293,11 @@
 
                             <div class="formRow">
                                 <label>手机号码：</label>
-                                <div class="formRight"><input type="text" value="123456789" name="change"
-                                                              readonly="readonly"></div>
+                                <div class="formRight"><input type="text" value="${detailInfo.empPhone}" name="phone"
+                                                              id="phone" readonly="readonly"></div>
                                 <div class="clear"></div>
                             </div>
-                            <div class="formRow">
-                                <label>邮箱：</label>
-                                <div class="formRight"><input type="text" value="123@12.com" name="change"
-                                                              readonly="readonly"></div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="formRow">
-                                <label>工资卡号：</label>
-                                <div class="formRight"><input type="text" value="123456789" name="change"
-                                                              readonly="readonly"></div>
-                                <div class="clear"></div>
-                            </div>
+
                             <div class="formSubmit"><input id="b1" type="button" value="修改" class="greenB"
                                                            onclick="edit()"><input id="b2" type="submit" value="完成"
                                                                                    class="redB" disabled="disabled">
@@ -293,7 +307,7 @@
                     </form>
                 </div>
                 <div id="tab2" class="tab_content np" style="display: none;">
-                    <form id="validate" class="form" method="post" action="">
+                    <form id="validate" class="form" method="post" action="UpdatePassword.do">
                         <fieldset>
                             <div class="formRow">
                                 <label>原密码：<span class="req">*</span></label>
@@ -320,7 +334,7 @@
                     </form>
                 </div>
                 <div id="tab3" class="tab_content np" style="display: none;">
-                    <form id="validate" class="form" method="post" action="">
+                    <form id="validateP" class="form" method="post" action="UpdateHeadPortrait.do">
                         <fieldset>
                             <div class="formRow">
                                 <label>上传头像<span class="req">*</span></label>
@@ -339,10 +353,14 @@
 
     <!-- Footer line -->
     <jsp:include page="foot.jsp"></jsp:include>
-
 </div>
 
 <div class="clear"></div>
-
+<script type="text/javascript">
+    var msg = "${PSW}";
+    if (msg !== null && msg !== "") {
+        alert(msg);
+    }
+</script>
 </body>
 </html>
