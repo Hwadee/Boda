@@ -19,7 +19,7 @@ public class DepartmentManager {
 
     @RequestMapping("/IntoDeptInfo.do")
     public String intoDeptInfo() {
-        return "deptInfo";
+        return "部门管理";
     }
 
     @RequestMapping("/DeptInfo.do")

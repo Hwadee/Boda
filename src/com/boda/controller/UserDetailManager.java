@@ -4,14 +4,21 @@ import com.boda.pojo.EmpDetail;
 import com.boda.pojo.Employee;
 import com.boda.service.UserDetailService;
 
+import com.boda.util.Tool;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
+import java.util.UUID;
 
 @Controller
 public class UserDetailManager {
@@ -50,15 +57,12 @@ public class UserDetailManager {
         empDetail.setEmpHeight(height);
         empDetail.setEmpEducation(education);
         empDetail.setEmpPhone(phone);
-        //修改生日
-
-        String dateStr[] = birthday.split("-");
-        int year = Integer.valueOf(dateStr[0]) - 1900;
-        int month = Integer.valueOf(dateStr[1]) - 1;
-        int day = Integer.valueOf(dateStr[2]);
-        Date date = new Date(year, month, day);
-        empDetail.setEmpBirthday(date);
-
+        empDetail.setEmpBirthday(Tool.formatStringToDate(birthday.replaceAll("-", "")));
+//        String dateStr[] = birthday.split("-");
+//        int year = Integer.valueOf(dateStr[0]) - 1900;
+//        int month = Integer.valueOf(dateStr[1]) - 1;
+//        int day = Integer.valueOf(dateStr[2]);
+//        Date date = new Date(year, month, day);
 
         if (uds.updateUserDetail(empDetail)) {
 //        uds.updateUserDetail(empDetail);
@@ -84,5 +88,25 @@ public class UserDetailManager {
             model.addAttribute("detailInfo", empDetail);
             return "个人中心";
         }
+    }
+
+    @RequestMapping("UpdateHeadPortrait.do")
+    public String updateHeadPortrait(@RequestParam("image") CommonsMultipartFile image, HttpServletRequest request, Model model) throws IOException {
+
+//        System.out.println(System.getProperty("user.dir"));
+        final String fileDic = "C:\\Users\\Wuming\\Desktop\\Boda\\WebContent\\images\\avatar\\";
+        EmpDetail empDetail = (EmpDetail) request.getSession().getAttribute("currentUserInfo");
+        String empDetailId = String.valueOf(empDetail.getEmpDetailId());
+
+//        String empDetailId = "1";
+        File temp = new File(fileDic + "temp");
+        image.transferTo(temp);
+        if (uds.updateHeadPortrait(empDetailId, temp)) {
+            model.addAttribute("avatarMSG", "更新头像成功");
+        } else {
+            model.addAttribute("avatarMSG", "更新头像失败");
+        }
+        return "个人中心";
+//        return "temp";
     }
 }

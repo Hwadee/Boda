@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     jQuery.fn.anim_progressbar = function (aOptions) {
         // def values
         var iCms = 1000;
@@ -17,7 +17,7 @@ $(document).ready(function(){
 
         // each progress bar
         return this.each(
-            function() {
+            function () {
                 var iDuration = aOpts.finish - aOpts.start;
 
                 // calling original progressbar
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
                 // looping process
                 var vInterval = setInterval(
-                    function(){
+                    function () {
                         var iLeftMs = aOpts.finish - new Date(); // left time in MS
                         var iElapsedMs = new Date() - aOpts.start, // elapsed time in MS
                             iDays = parseInt(iLeftMs / iDms), // elapsed days
@@ -35,9 +35,9 @@ $(document).ready(function(){
                             iPerc = (iElapsedMs > 0) ? iElapsedMs / iDuration * 100 : 0; // percentages
 
                         // display current positions and progress
-                        $(vPb).children('.percent').html('<b>'+iPerc.toFixed(1)+'%</b>');
-                        $(vPb).children('.elapsed').html(iDays+' days '+iHours+'h:'+iMin+'m:'+iSec+'s</b>');
-                        $(vPb).children('.pbar').children('.ui-progressbar-value').css('width', iPerc+'%');
+                        $(vPb).children('.percent').html('<b>' + iPerc.toFixed(1) + '%</b>');
+                        $(vPb).children('.elapsed').html(iDays + ' days ' + iHours + 'h:' + iMin + 'm:' + iSec + 's</b>');
+                        $(vPb).children('.pbar').children('.ui-progressbar-value').css('width', iPerc + '%');
 
                         // in case of Finish
                         if (iPerc >= 100) {
@@ -45,7 +45,7 @@ $(document).ready(function(){
                             $(vPb).children('.percent').html('<b>100%</b>');
                             $(vPb).children('.elapsed').html('Finished');
                         }
-                    } ,aOpts.interval
+                    }, aOpts.interval
                 );
             }
         );

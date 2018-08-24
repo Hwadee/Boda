@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import com.boda.pojo.EmpDetail;
+import org.apache.ibatis.annotations.Param;
 
 public interface EmpDetailMapper {
 	
@@ -30,6 +31,14 @@ public interface EmpDetailMapper {
 	 * @throws IOException
 	 */
 	public Integer updateEmpDetail(EmpDetail empDetail) throws IOException;
-	
+
+    /**
+     * 更新员工头像信息
+     *
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    public Integer updateEmpPhoto(@Param("empDetailId") String empDetailId, @Param("url") String url) throws IOException;
 
 }

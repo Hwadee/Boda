@@ -20,7 +20,7 @@ public class LoanManager {
 
     @RequestMapping("/IntoLoanInfo.do")
     public String intoLoanInfo() {
-        return "loanInfo";
+        return "放款名单";
     }
 
     @RequestMapping("/LoanInfo.do")
@@ -33,6 +33,12 @@ public class LoanManager {
 
         HashMap<String, String> map = new HashMap<>();
 
+        if (loanMinDate == null) {
+            loanMinDate = "";
+        }
+        if (loanMaxDate == null) {
+            loanMaxDate = "";
+        }
         map.put("id", id);
         map.put("name", name);
         map.put("loanMinDate", loanMinDate);
@@ -51,7 +57,7 @@ public class LoanManager {
             model.addAttribute("MSG", "无符合结果");
         }
 
-        return "loanInfo";
+        return "放款名单";
     }
 
 }

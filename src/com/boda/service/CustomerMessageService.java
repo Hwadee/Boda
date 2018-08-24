@@ -2,11 +2,11 @@ package com.boda.service;
 
 import com.boda.mapper.CustomerMapper;
 import com.boda.pojo.CustomerMessage;
+import com.boda.util.Tool;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import java.util.regex.Pattern;
 import javax.annotation.Resource;
 
 public class CustomerMessageService {
@@ -19,7 +19,7 @@ public class CustomerMessageService {
 
         List<CustomerMessage> customermessages = new LinkedList<>();
 
-        if (isInteger(customerId)) { //优先以customerId号搜索
+        if (Tool.isInteger(customerId)) { //优先以customerId号搜索
             customermessages.add(customerMapper.findCustomerById(Integer.parseInt(customerId)));
         } else {
             customermessages.addAll(customerMapper.findCustomerByName(customerId));
@@ -41,12 +41,5 @@ public class CustomerMessageService {
     public boolean delCusInfo(int customerId) throws Exception {
 
         return customerMapper.delCustomerById(customerId) > 0;
-    }
-
-    //判断搜索参数是否为整数
-    private static boolean isInteger(String str) {
-        if ("".equals(str)) return false;
-        Pattern pattern = Pattern.compile("^[-+]?[\\d]*$");
-        return pattern.matcher(str).matches();
     }
 }

@@ -3331,6 +3331,7 @@ table thead td.headerSortDown span {
     border-bottom: 1px solid #E2E2E2;
     border-top: 1px solid white;
     position: relative;
+    /*height: auto;*/
 }
 
 .formRow:first-child {
@@ -6184,4 +6185,5 @@ ul.breadcrumbs li ul li a:hover {
         width: 10%;
         /*float: right;*/
     }
+
 }

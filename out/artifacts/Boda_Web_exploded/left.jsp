@@ -5,9 +5,9 @@
   Time: 19:08
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <div id="leftSide">
-    <div class="logo"><a href="#"><img src="images/logo.png" alt="" /></a></div>
+    <div class="logo"><a href="#"><img src="images/logo.png" alt=""/></a></div>
 
     <div class="sidebarSep mt0"></div>
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -11,7 +12,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <title>客户贷款审批</title>
+    <title>放款名单</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -99,23 +100,31 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form action="" class="searchWidget">
-            <input type="text" name="search" placeholder="搜索..." id=""/>
+        <form action="LoanInfo.do" class="searchWidget">
+            <div class="formRow">
+                <input class="oneFour" type="text" name="id" placeholder="id" id=""/>
+                <input class="oneFour" type="text" name="name" placeholder="姓名"/>
+                <input class="oneFour" type="text" name="minAmount" placeholder="最少金额"/>
+                <input class="oneFour" type="text" name="maxAmount" placeholder="最多金额"/>
+            </div>
             <input type="submit" value=""/>
+
         </form>
+
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看人员</h6>
+                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>放款名单</h6>
                     <div class="topIcons">
                         <a href="#" class="tipS" title="打印该表格">
-                            <img src="./images/icons/downloadTop.png" alt>
+                            <img src="./images/icons/downloadTop.png" alt="">
                         </a>
                     </div>
                 </div>
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
+                        <td>金额</td>
                         <td>客户ID</td>
                         <td>姓名</td>
                         <td>性别</td>
@@ -128,62 +137,36 @@
                     </tr>
                     </thead>
                     <tbody id="body">
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
-                        </td>
-                    </tr>
+
+                    <c:forEach items="${loaninfo}" var="loaninfo">
+                        <tr>
+                            <td id="id" align="center">${loaninfo.loanMoney}</td>
+                            <td id="name" align="center"></td>
+                            <td id="empnum" align="center"></td>
+                            <td id="buildtime" align="center"></td>
+                                <%--<td align="center">--%>
+                                <%--<input type="button" value="修改" class="blueB"--%>
+                                <%--onclick="updateInfo(${deptinfo.deptId})"/>--%>
+                                <%--<input type="button" value="删除" class="redB"--%>
+                                <%--onclick="delInfo(${deptinfo.deptId})">--%>
+                                <%--</td>--%>
+                        </tr>
+                    </c:forEach>
+                    <%--<tr>--%>
+                    <%----%>
+                    <%--<td align="center">00001</td>--%>
+                    <%--<td align="center">张三</td>--%>
+                    <%--<td align="center">男</td>--%>
+                    <%--<td align="center">1900-01-12</td>--%>
+                    <%--<td align="center">qwe@126.com</td>--%>
+                    <%--<td align="center">130000000</td>--%>
+                    <%--<td align="center">aabb</td>--%>
+                    <%--<td align="center">xxxx</td>--%>
+                    <%--<td align="center">--%>
+                    <%--<input type="button" value="拒绝" class="redB" onclick="del(this)"/>--%>
+                    <%--<input type="button" value="批准" class="blueB" onclick=""/>--%>
+                    <%--</td>--%>
+                    <%--</tr>--%>
                     </tbody>
                 </table>
 

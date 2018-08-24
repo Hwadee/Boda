@@ -46,9 +46,9 @@ public class LoanService {
                     loanSearchToken.get("loanMinDate"), loanSearchToken.get("loanMaxDate")));
             loans = Tool.combineMutualRecord(loans, temp);
             //Step4: 根据还款日期搜索
-            temp.addAll(loanMapper.findLoanByReturnDate(
-                    loanSearchToken.get("returnMinDate"), loanSearchToken.get("returnMaxDate")));
-            loans = Tool.combineMutualRecord(loans, temp);
+//            temp.addAll(loanMapper.findLoanByReturnDate(
+//                    loanSearchToken.get("returnMinDate"), loanSearchToken.get("returnMaxDate")));
+//            loans = Tool.combineMutualRecord(loans, temp);
             //Step5: 根据贷款金额搜索，可能需要判断是否为数字
             temp.addAll(loanMapper.findLoanByMoney(
                     0, 10000)); //测试用
