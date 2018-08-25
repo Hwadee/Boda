@@ -38,7 +38,13 @@ public interface LoanMapper {
 	 * @return
 	 * @throws IOException
 	 */
-	public List<Loan> findLoanByLoanDate(@Param("minDate") String minDate, @Param("maxDate") String maxDate) throws IOException;
+	public List<Loan> findLoanByLoanDate(
+			@Param("minDate") String minDate,
+			@Param("maxDate") String maxDate,
+			@Param("startRow") int startRow,
+			@Param("length") int length) throws IOException;
+
+	public int findLoanCount() throws IOException;
 
 	/**
 	 * 根据还款日期段查询贷款信息

@@ -10,9 +10,37 @@ public class Loan {
     private Integer loanMoney;//贷款金额
     private Date loanDate;
     private String loanState;
-    private Date returnDate;//归还日期
+    private Date returnStartDate;
+    private Date shouldReturnDate;//归还日期
     private Integer numOfStages;//贷款期数（分几期归还）
     private Float rateOfInterest;//贷款利率
+    private Integer whichStage;//期数
+
+    public Date getReturnStartDate() {
+        return returnStartDate;
+    }
+
+    public void setReturnStartDate(Date returnStartDate) {
+        this.returnStartDate = returnStartDate;
+    }
+
+    public Date getShouldReturnDate() {
+        return shouldReturnDate;
+    }
+
+    public void setShouldReturnDate(Date shouldReturnDate) {
+        this.shouldReturnDate = shouldReturnDate;
+    }
+
+
+    public Integer getWhichStage() {
+        return whichStage;
+    }
+
+    public void setWhichStage(Integer whichStage) {
+        this.whichStage = whichStage;
+    }
+
 
     public Integer getLoanId() {
         return loanId;
@@ -62,14 +90,6 @@ public class Loan {
         this.loanState = loanState;
     }
 
-    public Date getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(Date returnDate) {
-        this.returnDate = returnDate;
-    }
-
     public Integer getNumOfStages() {
         return numOfStages;
     }
@@ -87,6 +107,23 @@ public class Loan {
     }
 
     @Override
+    public String toString() {
+        return "Loan{" +
+                "loanId=" + loanId +
+                ", customerId=" + customerId +
+                ", empId=" + empId +
+                ", loanMoney=" + loanMoney +
+                ", loanDate=" + loanDate +
+                ", loanState='" + loanState + '\'' +
+                ", returnStartDate=" + returnStartDate +
+                ", shouldReturnDate=" + shouldReturnDate +
+                ", numOfStages=" + numOfStages +
+                ", rateOfInterest=" + rateOfInterest +
+                ", whichStage=" + whichStage +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Loan)) return false;
@@ -101,18 +138,4 @@ public class Loan {
         return loanId.hashCode();
     }
 
-    @Override
-    public String toString() {
-        return "Loan [" +
-                "loanId=" + loanId +
-                ", customerId=" + customerId +
-                ", empId=" + empId +
-                ", loanMoney=" + loanMoney +
-                ", loanDate=" + loanDate +
-                ", loanState='" + loanState + '\'' +
-                ", returnDate=" + returnDate +
-                ", numOfStages=" + numOfStages +
-                ", rateOfInterest=" + rateOfInterest +
-                "]";
-    }
 }

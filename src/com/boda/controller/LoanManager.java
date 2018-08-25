@@ -3,6 +3,7 @@ package com.boda.controller;
 import com.boda.pojo.Loan;
 import com.boda.service.LoanService;
 import com.boda.util.Tool;
+import com.boda.vo.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,38 +25,25 @@ public class LoanManager {
     }
 
     @RequestMapping("/LoanInfo.do")
-    public String loanInfo(String id,
-                           String name,
-                           String loanMinDate, String loanMaxDate,
-                           String returnMinDate, String returnMaxDate,
-                           String minAmount, String maxAmount,
-                           Model model) throws Exception {
+    public String loanInfo(String loanMinDate, String loanMaxDate, Page<Loan> page, Model model) throws Exception {
 
-        HashMap<String, String> map = new HashMap<>();
-
-        if (loanMinDate == null) {
-            loanMinDate = "";
+        if (page.getCurrentPage() == null || page.getCurrentPage() == 0) {
+            page.setCurrentPage(1);
+            page.setPageSize(2);
         }
-        if (loanMaxDate == null) {
-            loanMaxDate = "";
-        }
-        map.put("id", id);
-        map.put("name", name);
-        map.put("loanMinDate", loanMinDate);
-        map.put("loanMaxDate", loanMaxDate);
-        map.put("returnMinDate", returnMinDate);
-        map.put("returnMaxDate", returnMaxDate);
-        map.put("minAmount", minAmount);
-        map.put("maxAmount", maxAmount);
 
-        List<Loan> loans = ls.getLoanInfo(map);
+        page = ls.getLoanInfo(loanMinDate, loanMaxDate, page);
 
-        if (!loans.isEmpty()) {
-            model.addAttribute("loaninfo", loans);
-
-        } else {
-            model.addAttribute("MSG", "无符合结果");
-        }
+        model.addAttribute("loanPage", page);
+//
+//        Page<Loan> loans = ls.getLoanInfo(loanMinDate, loanMaxDate, page);
+//
+//        if (!loans.isEmpty()) {
+//            model.addAttribute("loaninfo", loans);
+//
+//        } else {
+//            model.addAttribute("MSG", "无符合结果");
+//        }
 
         return "放款名单";
     }

@@ -3,6 +3,7 @@ package com.boda.service;
 import com.boda.mapper.LoanMapper;
 import com.boda.pojo.Loan;
 import com.boda.util.Tool;
+import com.boda.vo.Page;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,11 +15,9 @@ public class LoanService {
     @Resource
     private LoanMapper loanMapper;
 
-    //多个搜索框，依次为id、姓名、贷款日期、还款日期、金额，其中日期和金额可以设置上下限
-    //所有搜索参数已依次整合为一个hashmap
-    public List<Loan> getLoanInfo(HashMap<String, String> loanSearchToken) throws Exception {
-
-        List<Loan> loans = new LinkedList<>();
+    //根据贷款日期搜索
+    public Page<Loan> getLoanInfo(String minDate, String maxDate, Page<Loan> page) throws Exception {
+        /*
         List<Loan> temp = new LinkedList<>();
 
         //查找贷款信息
@@ -55,8 +54,25 @@ public class LoanService {
 //                Float.parseFloat(loanSearchToken.get("minAmount")), Float.parseFloat(loanSearchToken.get("maxAmount"))));
             loans = Tool.combineMutualRecord(loans, temp);
         }
+        */
 
-        return loans;
+        List<Loan> loans = new LinkedList<>();
+
+        loans.remove(null);
+
+        int pageMAXRow = page.getPageSize();
+        int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
+
+//        List<User> userList = userManagerMapper.queryUser(user,startrow,page.getPageRowNum());
+        loans.addAll(loanMapper.findLoanByLoanDate(minDate, maxDate, startRow, page.getPageSize()));
+
+        page.setObjList(loans);
+
+        int allRowNum = loanMapper.findLoanCount();
+        int allPageNum = allRowNum % pageMAXRow == 0 ? allRowNum / pageMAXRow : allRowNum / pageMAXRow + 1;
+        page.setAllPageNum(allPageNum);
+        System.out.println(loans);
+        return page;
     }
 
 }

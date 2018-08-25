@@ -4,9 +4,15 @@ import java.util.List;
 
 public class Page<T> {
     private Integer allPageNum;            //总行数
-    private Integer pageRowNum;            //每页行数
+    private Integer pageSize;            //每页行数
     private Integer currentPage;        //当前页数
     private List<T> objList;        //当前页显示的信息
+
+    public Page() {
+        this.allPageNum = 0;
+        this.currentPage = 1;
+        this.pageSize = 3;
+    }
 
     public Integer getAllPageNum() {
         return allPageNum;
@@ -16,12 +22,12 @@ public class Page<T> {
         this.allPageNum = allPageNum;
     }
 
-    public Integer getPageRowNum() {
-        return pageRowNum;
+    public Integer getPageSize() {
+        return pageSize;
     }
 
-    public void setPageRowNum(Integer pageRowNum) {
-        this.pageRowNum = pageRowNum;
+    public void setPageSize(Integer pageRowNum) {
+        this.pageSize = pageRowNum;
     }
 
     public Integer getCurrentPage() {
@@ -42,7 +48,7 @@ public class Page<T> {
 
     @Override
     public String toString() {
-        return "Page [allPageNum=" + allPageNum + ", pageRowNum=" + pageRowNum + ", currentPage=" + currentPage
+        return "Page [allPageNum=" + allPageNum + ", pageRowNum=" + pageSize + ", currentPage=" + currentPage
                 + ", objList=" + objList + "]";
     }
 }

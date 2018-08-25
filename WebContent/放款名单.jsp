@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -70,6 +71,8 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
 
 <body>
@@ -100,14 +103,18 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form action="LoanInfo.do" class="searchWidget">
+        <form id="form1" action="LoanInfo.do" class="searchWidget">
+            <div style="width: 95%;">
             <div class="formRow">
-                <input class="oneFour" type="text" name="id" placeholder="id" id=""/>
-                <input class="oneFour" type="text" name="name" placeholder="姓名"/>
-                <input class="oneFour" type="text" name="minAmount" placeholder="最少金额"/>
-                <input class="oneFour" type="text" name="maxAmount" placeholder="最多金额"/>
+                <div class="oneTwo"><input type="text" name="loanMinDate" id="loanMinDate" placeholder="最早贷款时间"/></div>
+                <div class="oneTwo"><input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间"/></div>
             </div>
-            <input type="submit" value=""/>
+            </div>
+            <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
+
+            <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
+            <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
+            <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
 
         </form>
 
@@ -124,26 +131,35 @@
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
-                        <td>金额</td>
+                        <td>ID</td>
                         <td>客户ID</td>
-                        <td>姓名</td>
-                        <td>性别</td>
-                        <td>生日</td>
-                        <td>邮箱</td>
-                        <td>电话</td>
-                        <td>地址</td>
-                        <td>信用</td>
-                        <td>操作</td>
+                        <td>员工ID</td>
+                        <td>贷款金额</td>
+                        <td>贷款日期</td>
+                        <td>当前状态</td>
+                        <%--<td>还款开始日期</td>--%>
+                        <td>利率</td>
+                        <td>期数</td>
+                        <td>应还日期</td>
                     </tr>
                     </thead>
                     <tbody id="body">
 
-                    <c:forEach items="${loaninfo}" var="loaninfo">
+                    <c:forEach items="${loanPage.objList}" var="loaninfo">
                         <tr>
-                            <td id="id" align="center">${loaninfo.loanMoney}</td>
-                            <td id="name" align="center"></td>
-                            <td id="empnum" align="center"></td>
-                            <td id="buildtime" align="center"></td>
+                            <td id="id" align="center">${loaninfo.loanId}</td>
+                            <td id="customerid" align="center">${loaninfo.customerId}</td>
+                            <td id="empid" align="center">${loaninfo.empId}</td>
+                            <td id="money" align="center">${loaninfo.loanMoney}</td>
+                            <td id="loandate" align="center"><fmt:formatDate value="${loaninfo.loanDate}"
+                                                                             pattern="yyyy-MM-dd"/></td>
+                            <td id="stage" align="center">${loaninfo.loanState}</td>
+                                <%--<td id="returnstartdate" align="center">${loaninfo.returnStartDate}</td>--%>
+                            <td id="rate" align="center">${loaninfo.rateOfInterest}</td>
+                            <td id="whichstage" align="center">${loaninfo.whichStage}</td>
+                            <td id="returndate" align="center"><fmt:formatDate value="${loaninfo.shouldReturnDate}"
+                                                                               pattern="yyyy-MM-dd"/></td>
+
                                 <%--<td align="center">--%>
                                 <%--<input type="button" value="修改" class="blueB"--%>
                                 <%--onclick="updateInfo(${deptinfo.deptId})"/>--%>
@@ -152,21 +168,20 @@
                                 <%--</td>--%>
                         </tr>
                     </c:forEach>
-                    <%--<tr>--%>
-                    <%----%>
-                    <%--<td align="center">00001</td>--%>
-                    <%--<td align="center">张三</td>--%>
-                    <%--<td align="center">男</td>--%>
-                    <%--<td align="center">1900-01-12</td>--%>
-                    <%--<td align="center">qwe@126.com</td>--%>
-                    <%--<td align="center">130000000</td>--%>
-                    <%--<td align="center">aabb</td>--%>
-                    <%--<td align="center">xxxx</td>--%>
-                    <%--<td align="center">--%>
-                    <%--<input type="button" value="拒绝" class="redB" onclick="del(this)"/>--%>
-                    <%--<input type="button" value="批准" class="blueB" onclick=""/>--%>
-                    <%--</td>--%>
-                    <%--</tr>--%>
+
+                    <c:if test="${loanPage.objList!=null}">
+                        <tr>
+                            <td colspan="6" align="center">
+                                <button onclick="pageTurn(1)">首页</button> &nbsp;
+                                <button onclick="pageTurn(2)">上一页</button>&nbsp;
+                                &nbsp;第${loanPage.currentPage }页&nbsp;/&nbsp;共${loanPage.allPageNum}页&nbsp;
+                                <button onclick="pageTurn(3)">下一页</button>&nbsp;
+                                <button onclick="pageTurn(4)">末页</button>&nbsp;
+
+                            </td>
+                        </tr>
+                    </c:if>
+
                     </tbody>
                 </table>
 
@@ -182,5 +197,63 @@
 
 <div class="clear"></div>
 
+<script type="text/javascript">
+    $(function () {
+        $("#loanMinDate, #loanMaxDate").datepicker({
+            //限制日期范围
+//            minDate: -20,
+//            maxDate: "+1M +10D",
+
+            //月份、年份下拉框
+            changeMonth: true,
+            changeYear: true,
+
+            //日期格式
+            dateFormat: "yy-mm-dd"
+        });
+    });
+
+    //定义查询按钮事件
+    $("#querybtn").click(function () {
+        pageTurn(0);
+    });
+    //当条件输入框发生改变时翻页信息从新初始化
+    $("input:text").change(function () {
+        $('#currentPage').val("0");
+        $('#pageSize').val("0");
+        $('#allPageNum').val("0");
+    });
+
+    function pageTurn(num) {
+        var currentPage = $('#currentPage').val();//('${page.currentPage}' == ''?0:'${page.currentPage}');
+        var pageSize = $('#pageSize').val();//('${page.pageSize}' == ''?0:'${page.pageSize}');
+        var allPageNum = $('#allPageNum').val();//('${page.allPageNum}' == ''?0:'${page.allPageNum}');
+        switch (num) {
+            case 0:
+                $('#currentPage').val("0");
+                $('#pageSize').val("0");
+                $('#allPageNum').val("0");
+                break;
+            case 1:
+                if (currentPage > 1) $('#currentPage').val("1");
+                else return;
+                break;
+            case 2:
+                if (currentPage > 1) $('#currentPage').val(currentPage - 1);
+                else return;
+                break;
+            case 3:
+                if (currentPage < allPageNum) $('#currentPage').val(currentPage + 1);
+                else return;
+                break;
+            case 4:
+                if (currentPage < allPageNum) $('#currentPage').val(allPageNum);
+                else return;
+                break;
+        }
+        document.getElementById("form1").submit();
+    }
+
+</script>
 </body>
 </html>

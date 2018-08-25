@@ -1,8 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
   Date: 2018/8/17
-  Time: 9:24
+  Time: 9:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +13,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <title>人员管理</title>
+    <title>操作记录查询</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -69,9 +71,11 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
-    <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
-
-<body>
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
+</head>
+<body onload="init()">
 
 <!-- Left side content -->
 <jsp:include page="left.jsp"></jsp:include>
@@ -84,8 +88,8 @@
         <div class="wrapper">
             <div class="pageTitle">
                 <h5>系统设置</h5><br>
-                <h6>操作记录查询</h6>
-                <span>对每个使用人员的操作记录进行查询</span>
+                <h6>操作记录</h6>
+                <span>查看系统操作记录</span>
             </div>
             <div class="middleNav">
 
@@ -98,72 +102,52 @@
 
     <div class="line"></div>
     <!-- Main 表格 -->
-    <div class="wrapper">
-        <form action="" class="searchWidget">
-            <input type="text" name="search" placeholder="搜索..." id=""/>
+    <div id="operationLogsTable" class="wrapper">
+        <form action="OperationLogs.do" class="searchWidget">
+            <input type="text" name="empName" placeholder="员工ID或员工姓名" id=""/>
+            <input type="text" name="startDate" id="startDate"/>
+            <<input type="text" name="endDate" id="endDate">
             <input type="submit" value=""/>
         </form>
+
+        <!-- 显示搜索结果提示信息 -->
+        <div id="searchMsgText" class="red">${searchMSG}</div>
+        <%--<div id="msgText" class="red">${MSG}</div>--%>
+
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看人员</h6>
+                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看操作记录</h6>
+                    <%--<input type="button" id="addinfobtn" value="新增部门信息" class="greenB">--%>
                     <div class="topIcons">
                         <a href="#" class="tipS" title="打印该表格">
-                            <img src="./images/icons/downloadTop.png" alt>
+                            <img src="./images/icons/downloadTop.png" alt="">
                         </a>
                     </div>
                 </div>
+
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
-                        <td width="180">员工ID</td>
-                        <td>姓名</td>
-                        <td>所属部门</td>
-                        <td>工作</td>
-                        <td width="160">操作</td>
+                        <td width="180">操作记录ID</td>
+                        <td>操作员工ID</td>
+                        <td>操作时间</td>
+                        <td>详情</td>
+                        <%--<td width="160">操作</td>--%>
                     </tr>
                     </thead>
                     <tbody id="body">
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">xx部门</td>
-                        <td align="center">普通员工</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB" onclick="modify(this)"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00007</td>
-                        <td align="center">李四</td>
-                        <td align="center">yy部门</td>
-                        <td align="center">普通员工</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00007</td>
-                        <td align="center">李四</td>
-                        <td align="center">yy部门</td>
-                        <td align="center">普通员工</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00007</td>
-                        <td align="center">李四</td>
-                        <td align="center">yy部门</td>
-                        <td align="center">普通员工</td>
-                        <td align="center">
-                            <input type="button" value="删除" class="redB" onclick="del(this)"/>
-                            <input type="button" value="修改" class="blueB"/>
-                        </td>
-                    </tr>
+
+                    <c:forEach items="${operationlogs}" var="operationlog">
+                        <tr>
+                            <td id="id" align="center">${operationlog.operationId}</td>
+                            <td id="empid" align="center">${operationlog.empId}</td>
+                            <td id="date" align="center"><fmt:formatDate value="${operationlog.operationDate}"
+                                                                         pattern="yyyy-MM-dd"/></td>
+                            <td id="type" align="center">${operationlog.operationType}"</td>
+                        </tr>
+                    </c:forEach>
+
                     </tbody>
                 </table>
 
@@ -172,54 +156,6 @@
             <div class="clear"></div>
         </div>
     </div>
-    <!--预留空间-->
-    <div class="line"></div>
-    <div class="wrapper">
-        <div class="widgets">
-            <div class="widget">
-                <div class="title">
-                    <img src="./images/icons/dark/stats.png" alt class="titleIcon">
-                    <h6 id="edit">人员信息编辑</h6>
-                </div>
-                <form id="validate" class="form" method="post" action>
-                    <fieldset>
-                        <div class="formRow">
-                            <label>员工ID<span class="req">*</span> </label>
-                            <div class="formRight">
-                                <input type="text" class="validate[required]" name="password1" id="password1"/>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="formRow">
-                            <label>姓名<span class="req">*</span> </label>
-                            <div class="formRight">
-                                <input type="text" id="name"/>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="formRow">
-                            <label>所属部门<span class="req">*</span> </label>
-                            <div class="formRight">
-                                <input type="text" id="department"/>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="formRow">
-                            <label>工作<span class="req">*</span> </label>
-                            <div class="formRight">
-                                <input type="text" id="job"/>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="formSubmit">
-                            <input type="submit" value="更新" class="greenB" onclick="update(this)"/>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Footer line -->
     <jsp:include page="foot.jsp"></jsp:include>
@@ -227,6 +163,38 @@
 </div>
 
 <div class="clear"></div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#startDate, #endDate").datepicker({
+//            限制日期范围
+            minDate: -60,
+            maxDate: 0,
+
+            //月份、年份下拉框
+            changeMonth: true,
+            changeYear: true,
+
+            //日期格式
+            dateFormat: "yy-mm-dd"
+        });
+    });
+
+    function init() {
+        var msg = document.getElementById("searchMsgText").innerHTML;
+//        console.log(msg);
+        if ((msg === "" || msg === null) && !document.getElementById("id")) {
+            location.href = "OperationLogs.do?empId=";
+        }
+    }
+
+    <%--var msg = "${MSG}";--%>
+    <%--if (msg !== null && msg !== "") {--%>
+    <%--alert(msg);--%>
+    <%--}--%>
+
+</script>
 
 </body>
 </html>
