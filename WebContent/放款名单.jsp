@@ -8,8 +8,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.01 Transitional//EN">
+<%--<html xmlns="http://www.w3.org/1999/xhtml">--%>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
@@ -110,12 +111,12 @@
                 <div class="oneTwo"><input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间"/></div>
             </div>
             </div>
-            <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
+
 
             <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
             <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
-
+            <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
         </form>
 
         <!-- Widgets -->
@@ -174,7 +175,7 @@
                             <td colspan="6" align="center">
                                 <button onclick="pageTurn(1)">首页</button> &nbsp;
                                 <button onclick="pageTurn(2)">上一页</button>&nbsp;
-                                &nbsp;第${loanPage.currentPage }页&nbsp;/&nbsp;共${loanPage.allPageNum}页&nbsp;
+                                &nbsp;第${loanPage.currentPage}页&nbsp;/&nbsp;共${loanPage.allPageNum}页&nbsp;
                                 <button onclick="pageTurn(3)">下一页</button>&nbsp;
                                 <button onclick="pageTurn(4)">末页</button>&nbsp;
 
@@ -219,15 +220,16 @@
     });
     //当条件输入框发生改变时翻页信息从新初始化
     $("input:text").change(function () {
+
         $('#currentPage').val("0");
         $('#pageSize').val("0");
         $('#allPageNum').val("0");
     });
 
     function pageTurn(num) {
-        var currentPage = $('#currentPage').val();//('${page.currentPage}' == ''?0:'${page.currentPage}');
-        var pageSize = $('#pageSize').val();//('${page.pageSize}' == ''?0:'${page.pageSize}');
-        var allPageNum = $('#allPageNum').val();//('${page.allPageNum}' == ''?0:'${page.allPageNum}');
+        var currentPage = $('#currentPage').val();
+        var pageSize = $('#pageSize').val();
+        var allPageNum = $('#allPageNum').val();
         switch (num) {
             case 0:
                 $('#currentPage').val("0");
@@ -239,15 +241,22 @@
                 else return;
                 break;
             case 2:
-                if (currentPage > 1) $('#currentPage').val(currentPage - 1);
+                if (currentPage > 1) {
+                    --currentPage;
+                    $('#currentPage').val(currentPage);
+                }
                 else return;
                 break;
             case 3:
-                if (currentPage < allPageNum) $('#currentPage').val(currentPage + 1);
+                if (allPageNum > currentPage) {
+                    ++currentPage;
+                    $('#currentPage').val(currentPage);
+                }
                 else return;
+//                alert($('#currentPage').val());
                 break;
             case 4:
-                if (currentPage < allPageNum) $('#currentPage').val(allPageNum);
+                if (allPageNum > currentPage) $('#currentPage').val(allPageNum);
                 else return;
                 break;
         }

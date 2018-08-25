@@ -27,9 +27,11 @@ public class LoanManager {
     @RequestMapping("/LoanInfo.do")
     public String loanInfo(String loanMinDate, String loanMaxDate, Page<Loan> page, Model model) throws Exception {
 
+        final int PAGE_SIZE = 10;
+        System.out.println(page.getCurrentPage());
         if (page.getCurrentPage() == null || page.getCurrentPage() == 0) {
             page.setCurrentPage(1);
-            page.setPageSize(2);
+            page.setPageSize(PAGE_SIZE);
         }
 
         page = ls.getLoanInfo(loanMinDate, loanMaxDate, page);

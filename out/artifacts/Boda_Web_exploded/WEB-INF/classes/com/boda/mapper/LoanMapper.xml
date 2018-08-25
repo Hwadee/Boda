@@ -20,6 +20,12 @@
 
     </resultMap>
 
+    <sql id="where">
+        <where>
+            <![CDATA[l.loan_id = rl.loan_id AND loan_state <> "待审批" AND loan_date >= #{minDate} AND loan_date <= #{maxDate}]]>
+        </where>
+    </sql>
+
     <!--查询所有贷款信息-->
     <select id="findLoan" resultType="com.boda.pojo.Loan">
         SELECT *
@@ -42,16 +48,27 @@
 
     <!-- 根据贷款日期查询贷款信息 -->
     <select id="findLoanByLoanDate" resultType="com.boda.pojo.Loan">
-        SELECT *
-        FROM loan
-        WHERE loan_date >= #{minDate} AND loan_date <![CDATA[<=]]> #{maxDate}
+        SELECT l.*, rl.which_stage, rl.should_return_date
+        FROM loan l, return_loan rl
+        <include refid="where"/>
+        ORDER BY loan_date DESC LIMIT #{startRow}, #{length}
+    </select>
+
+    <!-- 查找贷款信息总数 -->
+    <select id="findLoanCount" resultType="int">
+        SELECT count(*)
+        FROM return_loan
     </select>
 
     <!-- 根据还款日期查询贷款信息 -->
     <select id="findLoanByReturnDate" resultType="com.boda.pojo.Loan">
-        SELECT *
-        FROM loan
-        WHERE return_date >= #{minDate} AND return_date <![CDATA[<=]]> #{maxDate}
+        SELECT
+        l.*,
+        rl.which_stage,
+        rl.should_return_date
+        FROM loan l, return_loan rl
+        WHERE l.loan_id = rl.loan_id AND rl.should_return_date >= #{minDate} AND rl.should_return_date <![CDATA[<=]]>
+        #{maxDate}
     </select>
 
     <!-- 根据贷款金额查询贷款信息 -->

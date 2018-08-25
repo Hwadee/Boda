@@ -274,17 +274,6 @@
         alert(msg);
     }
 
-    //    $(function () {
-    //        var msg = document.getElementById("msgText").innerHTML;
-    //        if (msg !== null && msg !== "") {
-    //            $("#msgText").dialog();
-    //        }
-    //    });
-    //
-    //    setTimeOut(function() {
-    //        $("#msgText").dialog( "close" )
-    //    }, 5000);
-
 </script>
 
 </body>

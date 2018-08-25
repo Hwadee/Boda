@@ -1,5 +1,7 @@
 package com.boda.util;
 
+import org.junit.Test;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -48,6 +50,15 @@ public class Tool {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         return dateFormat.format(date);
+    }
+
+    // 获取随机账号
+    public static String getRandomAccount() {
+
+//        int uid = 26;
+        int uid = new Random(System.currentTimeMillis()).nextInt(99999);
+//    System.out.println("Boda" + String.valueOf(uid));
+        return "Boda" + String.valueOf(uid);
     }
 
     /**

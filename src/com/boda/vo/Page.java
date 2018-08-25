@@ -3,7 +3,7 @@ package com.boda.vo;
 import java.util.List;
 
 public class Page<T> {
-    private Integer allPageNum;            //总行数
+    private Integer allPageNum;            //总页数
     private Integer pageSize;            //每页行数
     private Integer currentPage;        //当前页数
     private List<T> objList;        //当前页显示的信息
@@ -11,7 +11,7 @@ public class Page<T> {
     public Page() {
         this.allPageNum = 0;
         this.currentPage = 1;
-        this.pageSize = 3;
+        this.pageSize = 10;
     }
 
     public Integer getAllPageNum() {

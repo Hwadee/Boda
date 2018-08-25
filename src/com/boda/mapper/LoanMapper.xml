@@ -21,8 +21,6 @@
     </resultMap>
 
     <sql id="where">
-        <if test="minDate == null or minDate == ''">#{minDate} = '19700101'</if>
-        <if test="maxDate == null or maxDate == ''">#{maxDate} = '20501231'</if>
         <where>
             <![CDATA[l.loan_id = rl.loan_id AND loan_state <> "待审批" AND loan_date >= #{minDate} AND loan_date <= #{maxDate}]]>
         </where>

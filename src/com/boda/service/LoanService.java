@@ -25,15 +25,17 @@ public class LoanService {
         if (Tool.hasNoPara(loanSearchToken)) {
             loans.addAll(loanMapper.findLoan());
         } else {
-            //若未指定最晚借贷日期，则设置为当前日期
-            if ("".equals(loanSearchToken.get("loanMaxDate"))) {
-                loanSearchToken.replace("loanMaxDate", Tool.formatDateToString(new Date()));
-            }
-            //若未指定最早还贷日期，则设置为1970
-            if ("".equals(loanSearchToken.get("returnMinDate"))) {
-                loanSearchToken.replace("returnMinDate", Tool.formatDateToString(new Date(1970)));
-            }
+        */
 
+        //若未指定最早还贷日期，则设置为1970
+        if ("".equals(minDate) || minDate == null) {
+            minDate = Tool.formatDateToString(new Date(1970));
+        }
+        //若未指定最晚借贷日期，则设置为当前日期
+        if ("".equals(maxDate) || maxDate == null) {
+            maxDate = Tool.formatDateToString(new Date());
+        }
+            /*
             //Step1: 根据id搜索
             loans.addAll(loanMapper.findLoanById(
                     Integer.parseInt(Tool.isInteger(loanSearchToken.get("id")) ? loanSearchToken.get("id") : "0")));
@@ -57,8 +59,6 @@ public class LoanService {
         */
 
         List<Loan> loans = new LinkedList<>();
-
-        loans.remove(null);
 
         int pageMAXRow = page.getPageSize();
         int startRow = (page.getCurrentPage() - 1) * page.getPageSize();

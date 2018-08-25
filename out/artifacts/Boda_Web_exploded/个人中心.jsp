@@ -113,16 +113,20 @@
                                 <div class="oneTwo" style="width: 80%;">
                                     <div class="formRow" style="height: 40px;">
                                         <div class="oneThree"><label>姓名</label>
-                                            <div class="formRight"><input type="text" value="${detailInfo.empName}" class="validate[required]" readonly="readonly" name="name" id="name"/></div>
+                                            <div class="formRight"><input type="text" value="${detailInfo.empName}"
+                                                                          class="validate[required]" readonly="readonly"
+                                                                          name="name" id="name"/></div>
                                         </div>
                                         <div class="oneThree"><label>性别</label>
                                             <div class="formRight">
-                                                <input type="text" value="${detailInfo.empSex}" readonly="readonly" name="sex" id="sex"/>
+                                                <input type="text" value="${detailInfo.empSex}" readonly="readonly"
+                                                       name="sex" id="sex"/>
                                             </div>
                                         </div>
                                         <div class="oneThree"><label>生日</label>
                                             <div class="formRight">
-                                                <input type="text" value="${detailInfo.printEmpBirthday()}" readonly="readonly" name="birthday" id="birthday"/>
+                                                <input type="text" value="${detailInfo.printEmpBirthday()}"
+                                                       readonly="readonly" name="birthday" id="birthday"/>
                                             </div>
                                         </div>
                                         <div class="clear"></div>
@@ -131,23 +135,29 @@
                                     <div class="formRow" style="height: 40px;">
                                         <div class="oneThree"><label>体重</label>
                                             <div class="formRight">
-                                                <input type="text" value="${detailInfo.empWeight}" readonly="readonly" name="weight" id="weight"/>
+                                                <input type="text" value="${detailInfo.empWeight}" readonly="readonly"
+                                                       name="weight" id="weight"/>
                                             </div>
                                         </div>
                                         <div class="oneThree"><label>身高</label>
                                             <div class="formRight">
-                                                <input type="text" value="${detailInfo.empHeight}" readonly="readonly" name="height" id="height"/>
+                                                <input type="text" value="${detailInfo.empHeight}" readonly="readonly"
+                                                       name="height" id="height"/>
                                             </div>
                                         </div>
                                         <div class="oneThree" style="display: flex"><label>教育度</label>
-                                            <div class="formRight"><input type="text" value="${detailInfo.empEducation}" readonly="readonly" name="education" id="education"/></div>
+                                            <div class="formRight"><input type="text" value="${detailInfo.empEducation}"
+                                                                          readonly="readonly" name="education"
+                                                                          id="education"/></div>
                                         </div>
                                         <div class="clear"></div>
                                     </div>
 
                                     <div class="formRow" style="height: 40px;">
-                                        <span class="oneThree" style="display: flex"><label>员工ID</label><div class="formRight">
-                                            <input type="text" value="${detailInfo.empDetailId}" readonly="readonly"></div></span>
+                                        <span class="oneThree" style="display: flex"><label>员工ID</label><div
+                                                class="formRight">
+                                            <input type="text" value="${detailInfo.empDetailId}"
+                                                   readonly="readonly"></div></span>
                                         <span class="oneThree"><label>部门</label><div class="formRight"> <input
                                                 type="text" value="人事部门" readonly="readonly"></div></span>
                                         <span class="oneThree"><label>职位</label><div class="formRight"> <input
@@ -253,7 +263,8 @@
                                 <div class="oneThree">
                                     <label>国籍</label>
                                     <div class="formRight">
-                                        <input type="text" value="${detailInfo.empNation}" name="nation" id="nation" readonly="readonly">
+                                        <input type="text" value="${detailInfo.empNation}" name="nation" id="nation"
+                                               readonly="readonly">
                                     </div>
                                 </div>
                                 <div class="clear"></div>
@@ -268,7 +279,8 @@
 
                             <div class="formSubmit"><input id="b1" type="button" value="修改" class="greenB"
                                                            onclick="edit()"><input id="b2" type="submit" value="完成"
-                                                                                   class="redB" disabled="disabled" onclick="getPlace()">
+                                                                                   class="redB" disabled="disabled"
+                                                                                   onclick="getPlace()">
                             </div>
                             <div class="clear"></div>
                         </fieldset>
@@ -287,7 +299,8 @@
                             <div class="formRow">
                                 <label>新密码：<span class="req">*</span></label>
                                 <div class="formRight">
-                                    <input type="password" class="validate[required,minSize[6]]" name="password1" id="password1">
+                                    <input type="password" class="validate[required,minSize[6]]" name="password1"
+                                           id="password1">
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -304,7 +317,8 @@
                     </form>
                 </div>
                 <div id="tab3" class="tab_content np" style="display: none;">
-                    <form id="validateP" class="form" method="post" action="UpdateHeadPortrait.do" enctype="multipart/form-data">
+                    <form id="validateP" class="form" method="post" action="UpdateHeadPortrait.do"
+                          enctype="multipart/form-data">
                         <fieldset>
                             <div class="formRow">
                                 <label>上传头像<span class="req">*</span></label>
@@ -329,9 +343,9 @@
 <div class="clear"></div>
 <script type="text/javascript">
     var homeTown = "${detailInfo.empHometown}";
-    document.getElementById(homeTown+"1").selected=true;
+    document.getElementById(homeTown + "1").selected = true;
     var address = "${detailInfo.empAddress}";
-    document.getElementById(address+"2").selected=true;
+    document.getElementById(address + "2").selected = true;
 </script>
 <script type="text/javascript">
     var psw = "${PSW}";
