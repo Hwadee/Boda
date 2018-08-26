@@ -26,15 +26,6 @@ public class LoanService {
             loans.addAll(loanMapper.findLoan());
         } else {
         */
-
-        //若未指定最早还贷日期，则设置为1970
-        if ("".equals(minDate) || minDate == null) {
-            minDate = Tool.formatDateToString(new Date(1970));
-        }
-        //若未指定最晚借贷日期，则设置为当前日期
-        if ("".equals(maxDate) || maxDate == null) {
-            maxDate = Tool.formatDateToString(new Date());
-        }
             /*
             //Step1: 根据id搜索
             loans.addAll(loanMapper.findLoanById(

@@ -74,7 +74,9 @@
     <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
+
 </head>
+
 <body onload="init()">
 
 <!-- Left side content -->
@@ -151,9 +153,9 @@
                     <c:forEach items="${empPage.objList}" var="empinfo">
                         <tr>
                             <td id="id" align="center">${empinfo.empId}</td>
-                            <td id="name" align="center">${empinfo.empName}</td>
-                            <td id="empdept" align="center">${empinfo.deptName}</td>
-                            <td id="emppos" align="center">${empinfo.postName}</td>
+                            <td id="name" align="center">${empinfo.empDetail.empName}</td>
+                            <td id="empdept" align="center">${empinfo.department.deptName}</td>
+                            <td id="emppos" align="center">${empinfo.post.postName}</td>
                             <td align="center">
                                 <input type="button" value="删除" class="redB"
                                        onclick="delInfo(${empinfo.empId})">

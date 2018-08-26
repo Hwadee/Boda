@@ -66,6 +66,16 @@ public interface EmployeeMapper {
     public Employee findEmpDetailByAccount(String account) throws IOException;
 
     /**
+     * 更改密码
+     *
+     * @param employee
+     * @return
+     * @throws IOException
+     */
+    public Integer updatePassword(Employee employee) throws IOException;
+
+
+    /**
      * 根据部门名称和职位名称得到职位id
      *
      * @param deptName
@@ -93,14 +103,7 @@ public interface EmployeeMapper {
      */
     public Integer addEmployee(Employee employee) throws IOException;
 
-    /**
-     * 新增员工账号后自动更新姓名
-     *
-     * @param empName
-     * @return
-     * @throws IOException
-     */
-    public Integer autoUpdateEmpName(@Param("empName") String empName, @Param("empId") String empId) throws IOException;
+
 
     /**
      * 根据id更新用户信息

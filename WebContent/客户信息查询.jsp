@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.boda.pojo.CustomerMessage" %><%--
   Created by IntelliJ IDEA.
   User: dell
   Date: 2018/8/11
@@ -101,19 +101,29 @@
     <!-- Main 表格 -->
 
     <div class="wrapper">
-        <div class="searchWidget">
-            <form action="客户信息查询.do" method="post" id="form1">
-                <input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}"/>
-                <input type="text" name="search" placeholder="搜索..." id="lookfor"/>
-                <input type="button" id="test"/>
+        <div class="formRight">
+            <form action="CusInfo.do" method="post" class="searchWidget">
+                <div style="width: 95%;">
+                    <div class="formRow">
+                        <div class="oneThree"><input type="text" name="customerName" placeholder="客户名"/></div>
+                        <div class="oneThree"><input type="text" name="customerPhone" placeholder="电话"/></div>
+                        <div class="oneThree"><input type="text" name="customerIdentityId" placeholder="身份证"/></div>
+                    </div>
+                </div>
+                <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
+
             </form>
         </div>
+
         <!-- Widgets -->
         <!--startprint1-->
         <div class="widgets">
             <div class="widget">
                 <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看人员</h6>
                     <div class="topIcons">
+                        <a href="#" class="tipS" title="新增记录" id="addinfobtn">
+                            <img src="./images/icons/editTop.png" alt="">
+                        </a>
                         <input type="image" src="./images/icons/downloadTop.png" class="tipS" title="打印该表格"
                                onclick="preview(1)"/>
                     </div>
@@ -130,7 +140,7 @@
                         <td>电话</td>
                         <td>地址</td>
                         <td>信用</td>
-                        <td>当前状态</td>
+                        <td>操作</td>
                     </tr>
                     </thead>
                     <tbody id="body">
@@ -145,21 +155,28 @@
                             <td align="center">${customer.customer_phone}</td>
                             <td align="center">${customer.customer_address}</td>
                             <td align="center">${customer.customer_credit}</td>
-                            <td align="center">${customer.loan_state}</td>
+                            <td align="center">
+                                <input type="button" value="修改" class="blueB"
+                                       onclick="updateInfo(${cusInfo.customerId})"/>
+                                <input type="button" value="删除" class="redB"
+                                       onclick="delInfo(${cusInfo.customerId})">
+                            </td>
                         </tr>
                     </c:forEach>
-                    <tr>
 
-                    </tr>
-                    <tr>
-                        <td colspan="10" align="center">
-                            <a href="#">首页</a>&nbsp;&nbsp;
-                            <a href="#">上一页</a>&nbsp;&nbsp;
-                            <a href="#">下一页</a>&nbsp;&nbsp;
-                            <a href="#">尾页</a>&nbsp;&nbsp;
-                            <a>转到</a><input type="text" size="1" maxlength="4"/><a>页</a>&nbsp;<a href="#">跳转</a>
-                        </td>
-                    </tr>
+                    <c:if test="${cusPage.objList!=null}">
+                        <tr>
+                            <td colspan="6" align="center">
+                                <button onclick="pageTurn(1)">首页</button> &nbsp;
+                                <button onclick="pageTurn(2)">上一页</button>&nbsp;
+                                &nbsp;第${cusPage.currentPage}页&nbsp;/&nbsp;共${cusPage.allPageNum}页&nbsp;
+                                <button onclick="pageTurn(3)">下一页</button>&nbsp;
+                                <button onclick="pageTurn(4)">末页</button>&nbsp;
+
+                            </td>
+                        </tr>
+                    </c:if>
+
                     </tbody>
                 </table>
 
@@ -168,14 +185,125 @@
             <div class="clear"></div>
         </div>
         <!--endprint1-->
-    </div>
 
+    </div>
+        <!--新增部门信息-->
+        <div id="addInfo" class="wrapper" style="display: none">
+            <div class="widgets">
+                <div class="widget">
+                    <div class="title">
+                        <img src="./images/icons/dark/stats.png" alt="" class="titleIcon">
+                        <h6 id="edit">新增客户信息</h6>
+                    </div>
+                    <form action="AddCusInfo.do" class="form" method="post">
+                        <fieldset>
+                            <div class="formRow">
+                                <label>客户Id<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addId" name="customerId"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>客户名字<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addName" name="customerName"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>客户性别<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addSex" name="customerSex"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>身份证号<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addIdentityId" name="customerIdentityId"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>生日<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addBirthday" name="customerBirthday"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>邮箱<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addEmail" name="customerEmail"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>电话<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addPhone" name="customerPhone"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>地址<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addAddress" name="customerAddress"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>信誉度<span class="req">*</span> </label>
+                                <div class="formRight">
+                                    <input type="text" id="addCredit" name="customerCredit"/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="formSubmit">
+                                <input type="submit" value="确定" class="greenB"/>
+                                <input type="button" value="取消" class="redB" onclick="history.back()"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
     <!-- Footer line -->
     <jsp:include page="foot.jsp"></jsp:include>
 
-</div>
+        <div>
 
-<div class="clear"></div>
+            <div class="clear"></div>
 
-</body>
+        </div>
+        <div class="clear"></div>
+        <script type="text/javascript">
+            function delInfo(_id) {
+                if (confirm("确认删除记录？")) {
+                    location.href = "DelCusInfo.do?customerId=" + _id;
+                }
+            }
+
+            function updateInfo(_id) {
+//       alert("Id=" + _id);
+                location.href = "QueryUpdateInfo.do?customerId=" + _id;
+            }
+
+            $("#addinfobtn").click(function () {
+                var infodiv = document.getElementById("addInfo");
+                infodiv.style.display = "";
+                $('html, body').animate({
+                    scrollTop: $("#addInfo").offset().top
+                }, 500);
+            });
+
+            var msg = "${MSG}";
+            if (msg !== null && msg !== "") {
+                alert(msg);
+            }
+
+        </script>
+        </boby>
 </html>

@@ -58,11 +58,6 @@ public class UserDetailManager {
         empDetail.setEmpEducation(education);
         empDetail.setEmpPhone(phone);
         empDetail.setEmpBirthday(Tool.formatStringToDate(birthday.replaceAll("-", "")));
-//        String dateStr[] = birthday.split("-");
-//        int year = Integer.valueOf(dateStr[0]) - 1900;
-//        int month = Integer.valueOf(dateStr[1]) - 1;
-//        int day = Integer.valueOf(dateStr[2]);
-//        Date date = new Date(year, month, day);
 
         if (uds.updateUserDetail(empDetail)) {
 //        uds.updateUserDetail(empDetail);
@@ -71,21 +66,6 @@ public class UserDetailManager {
             return "个人中心";
         } else {
             model.addAttribute("MSG", "更新失败");
-            return "个人中心";
-        }
-    }
-
-    @RequestMapping("/UpdatePassword.do")
-    public String updatePassword(@RequestParam("req") String req, @RequestParam("password1") String password1, HttpServletRequest request, Model model) throws Exception {
-        Employee emp = (Employee) request.getSession().getAttribute("currentUser");
-        if (emp.getEmpPassword().equals(req)) {
-            emp.setEmpPassword(password1);
-            model.addAttribute("MSG", "密码修改成功！请重新登录");
-            return "userLogin";
-        } else {
-            model.addAttribute("PSW", "修改失败！输入密码错误！");
-            EmpDetail empDetail = (EmpDetail) request.getSession().getAttribute("currentUserInfo");
-            model.addAttribute("detailInfo", empDetail);
             return "个人中心";
         }
     }
@@ -106,7 +86,8 @@ public class UserDetailManager {
         } else {
             model.addAttribute("avatarMSG", "更新头像失败");
         }
+        EmpDetail empDetailUpdated = (EmpDetail) request.getSession().getAttribute("currentUserInfo");
+        model.addAttribute("detailInfo", empDetailUpdated);
         return "个人中心";
-//        return "temp";
     }
 }

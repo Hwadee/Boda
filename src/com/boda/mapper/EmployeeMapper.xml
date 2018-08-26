@@ -28,6 +28,27 @@
         </association>
     </resultMap>
 
+    <resultMap id="empInfoMap" type="com.boda.pojo.Employee">
+        <id column="emp_id" property="empId"/>
+        <!--<result column="emp_account" property="empAccount"/>-->
+        <!--<result column="emp_password" property="empPassword"/>-->
+        <result column="post_id" property="postId"/>
+
+        <association property="empDetail" javaType="com.boda.pojo.EmpDetail">
+            <id column="emp_detail_id" property="empDetailId"/>
+            <result column="emp_name" property="empName"/>
+        </association>
+        <association property="post" javaType="com.boda.pojo.Post">
+            <id column="post_id" property="postId"/>
+            <result column="dept_id" property="deptId"/>
+            <result column="post_name" property="postName"/>
+        </association>
+        <association property="department" javaType="com.boda.pojo.Department">
+            <id column="dept_id" property="deptId"/>
+            <result column="dept_name" property="deptName"/>
+        </association>
+    </resultMap>
+
     <sql id="where">
         <where>
             d.dept_id = p.dept_id AND p.post_id = e.post_id AND ed.emp_detail_id = e.emp_id
@@ -38,8 +59,8 @@
     </sql>
 
     <!-- 通过指定信息查询员工 -->
-    <select id="findEmp" resultType="com.boda.pojo.Employee">
-        SELECT e.emp_id, ed.emp_name, p.post_name, d.dept_name
+    <select id="findEmp" resultMap="empInfoMap">
+        SELECT *
         FROM employee e, emp_detail ed, post p, department d
         <include refid="where"/>
         ORDER BY e.emp_id LIMIT #{startRow}, #{length}
@@ -87,6 +108,13 @@
         WHERE emp_account = #{value} AND a.emp_id = b.emp_detail_id
     </select>
 
+    <!-- 更改密码 -->
+    <update id="updatePassword" parameterType="com.boda.pojo.Employee">
+        UPDATE employee
+        SET emp_password = #{empPassword}
+        WHERE emp_id = #{empId}
+    </update>
+
     <!-- 插入数据到数据库-->
     <insert id="addEmployee" parameterType="com.boda.pojo.Employee">
         <!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
@@ -96,13 +124,6 @@
         insert into employee (emp_id,post_id,emp_account,emp_password) values
         (#{empId},#{postId},#{empAccount},#{empPassword});
     </insert>
-
-    <!-- 更新姓名 -->
-    <update id="autoUpdateEmpName">
-        UPDATE emp_detail ed, employee e
-        SET ed.emp_name = #{empName}
-        WHERE e.emp_id = #{empId} AND ed.emp_detail_id = e.emp_id
-    </update>
 
     <!-- 根据员工id更新员工信息-->
     <update id="updateUserById" parameterType="com.boda.pojo.Employee">

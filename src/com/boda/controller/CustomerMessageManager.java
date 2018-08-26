@@ -3,6 +3,8 @@ package com.boda.controller;
 import com.boda.pojo.CustomerMessage;
 import com.boda.service.CustomerMessageService;
 
+import com.boda.vo.Page;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 import javax.annotation.Resource;
 
-
+@Controller
 public class CustomerMessageManager {
 
     @Resource
@@ -18,29 +20,34 @@ public class CustomerMessageManager {
 
     @RequestMapping("/IntoCusInfo.do")
     public String intoCusInfo() {
-        return "cusInfo";
+        return "客户信息查询";
     }
 
     @RequestMapping("/CusInfo.do")
-    public String cusInfo(String customerId, Model model) throws Exception {
+    public String cusInfo(String customerName, String customerPhone, String customerIdentityId, Page<CustomerMessage> page, Model model) throws Exception {
 
-        List<CustomerMessage> customerMessages = ds.getCusInfo(customerId);
-        customerMessages.remove(null);
-        System.out.println(customerMessages);
-        if (!customerMessages.isEmpty()) {
-            model.addAttribute("cusInfo", customerMessages);
-        } else {
-            System.out.println("Else");
-            model.addAttribute("MSG", "无符合结果");
+        final int PAGE_SIZE = 10;
+        System.out.println(page.getCurrentPage());
+        if (page.getCurrentPage() == null || page.getCurrentPage() == 0) {
+            page.setCurrentPage(1);
+            page.setPageSize(PAGE_SIZE);
         }
-        return "cusInfo";
+
+        page = ds.getCusInfo(customerName, customerPhone, customerIdentityId, page);
+
+        if (page.getObjList().isEmpty()) {
+            model.addAttribute("searchMSG", "无符合结果");
+        } else {
+            model.addAttribute("cusPage", page);
+        }
+        return "客户信息查询";
     }
 
     @RequestMapping("/UpdateCusInfo.do")
     public String updateCusInfo(Integer customerId, String customerName, String customerSex, String customerIdentityId, Date customerBirthday, String customerEmail, String customerPhone, String customerAddress, Integer customerCredit, Model model) throws Exception {
 
         System.out.println(customerName);
-        com.boda.pojo.CustomerMessage customer = new com.boda.pojo.CustomerMessage();
+        CustomerMessage customer = new CustomerMessage();
         customer.setCustomerId((customerId));
         customer.setCustomerName(customerName);
         customer.setCustomerSex(customerSex);
@@ -55,14 +62,14 @@ public class CustomerMessageManager {
         } else {
             model.addAttribute("MSG", "更新失败");
         }
-        return "cusInfo";
+        return "客户信息查询";
     }
 
     @RequestMapping("/AddCusInfo.do")
     public String addCusInfo(Integer customerId, String customerName, String customerSex, String customerIdentityId, Date customerBirthday, String customerEmail, String customerPhone, String customerAddress, Integer customerCredit, Model model) throws Exception {
 
         CustomerMessage customer = new CustomerMessage();
-        customer.setCustomerId((customerId));
+        customer.setCustomerId(customerId);
         customer.setCustomerName(customerName);
         customer.setCustomerSex(customerSex);
         customer.setCustomerIdentityId(customerIdentityId);
@@ -77,7 +84,7 @@ public class CustomerMessageManager {
         } else {
             model.addAttribute("MSG", "新增失败");
         }
-        return "cusInfo";
+        return "客户信息录入";
     }
 
     @RequestMapping("/DelCusInfo.do")
@@ -88,6 +95,6 @@ public class CustomerMessageManager {
         } else {
             model.addAttribute("MSG", "删除失败");
         }
-        return "cusInfo";
+        return "客户信息查询";
     }
 }

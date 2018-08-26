@@ -5,35 +5,26 @@ public class Employee {
 	private Integer postId;
 	private String empAccount;
 	private String empPassword;
-	private String empName;
-	private String deptName;
-	private String postName;
 
 	private EmpDetail empDetail;
+    private Post post;
+    private Department department;
 
-	public String getEmpName() {
-		return empName;
-	}
+    public Post getPost() {
+        return post;
+    }
 
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
+    public void setPost(Post post) {
+        this.post = post;
+    }
 
-	public String getDeptName() {
-		return deptName;
-	}
+    public Department getDepartment() {
+        return department;
+    }
 
-	public void setDeptName(String deptName) {
-		this.deptName = deptName;
-	}
-
-	public String getPostName() {
-		return postName;
-	}
-
-	public void setPostName(String postName) {
-		this.postName = postName;
-	}
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
 	public EmpDetail getEmpDetail() {
 		return empDetail;
@@ -73,9 +64,6 @@ public class Employee {
 				", postId=" + postId +
 				", empAccount='" + empAccount + '\'' +
 				", empPassword='" + empPassword + '\'' +
-				", empName='" + empName + '\'' +
-				", deptName='" + deptName + '\'' +
-				", postName='" + postName + '\'' +
 				", empDetail=" + empDetail +
 				'}';
 	}

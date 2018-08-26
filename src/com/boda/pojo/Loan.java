@@ -11,10 +11,18 @@ public class Loan {
     private Date loanDate;
     private String loanState;
     private Date returnStartDate;
-    private Date shouldReturnDate;//归还日期
     private Integer numOfStages;//贷款期数（分几期归还）
     private Float rateOfInterest;//贷款利率
-    private Integer whichStage;//期数
+
+    private CustomerMessage customerMessage;
+
+    public CustomerMessage getCustomerMessage() {
+        return customerMessage;
+    }
+
+    public void setCustomerMessage(CustomerMessage customerMessage) {
+        this.customerMessage = customerMessage;
+    }
 
     public Date getReturnStartDate() {
         return returnStartDate;
@@ -23,24 +31,6 @@ public class Loan {
     public void setReturnStartDate(Date returnStartDate) {
         this.returnStartDate = returnStartDate;
     }
-
-    public Date getShouldReturnDate() {
-        return shouldReturnDate;
-    }
-
-    public void setShouldReturnDate(Date shouldReturnDate) {
-        this.shouldReturnDate = shouldReturnDate;
-    }
-
-
-    public Integer getWhichStage() {
-        return whichStage;
-    }
-
-    public void setWhichStage(Integer whichStage) {
-        this.whichStage = whichStage;
-    }
-
 
     public Integer getLoanId() {
         return loanId;
@@ -116,10 +106,8 @@ public class Loan {
                 ", loanDate=" + loanDate +
                 ", loanState='" + loanState + '\'' +
                 ", returnStartDate=" + returnStartDate +
-                ", shouldReturnDate=" + shouldReturnDate +
                 ", numOfStages=" + numOfStages +
                 ", rateOfInterest=" + rateOfInterest +
-                ", whichStage=" + whichStage +
                 '}';
     }
 

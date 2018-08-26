@@ -112,7 +112,6 @@
             </div>
             </div>
 
-
             <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
             <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
@@ -140,8 +139,6 @@
                         <td>当前状态</td>
                         <%--<td>还款开始日期</td>--%>
                         <td>利率</td>
-                        <td>期数</td>
-                        <td>应还日期</td>
                     </tr>
                     </thead>
                     <tbody id="body">
@@ -149,7 +146,7 @@
                     <c:forEach items="${loanPage.objList}" var="loaninfo">
                         <tr>
                             <td id="id" align="center">${loaninfo.loanId}</td>
-                            <td id="customerid" align="center">${loaninfo.customerId}</td>
+                            <td id="customeriname" align="center">${loaninfo.customerMessage.customerName}</td>
                             <td id="empid" align="center">${loaninfo.empId}</td>
                             <td id="money" align="center">${loaninfo.loanMoney}</td>
                             <td id="loandate" align="center"><fmt:formatDate value="${loaninfo.loanDate}"
@@ -157,16 +154,7 @@
                             <td id="stage" align="center">${loaninfo.loanState}</td>
                                 <%--<td id="returnstartdate" align="center">${loaninfo.returnStartDate}</td>--%>
                             <td id="rate" align="center">${loaninfo.rateOfInterest}</td>
-                            <td id="whichstage" align="center">${loaninfo.whichStage}</td>
-                            <td id="returndate" align="center"><fmt:formatDate value="${loaninfo.shouldReturnDate}"
-                                                                               pattern="yyyy-MM-dd"/></td>
 
-                                <%--<td align="center">--%>
-                                <%--<input type="button" value="修改" class="blueB"--%>
-                                <%--onclick="updateInfo(${deptinfo.deptId})"/>--%>
-                                <%--<input type="button" value="删除" class="redB"--%>
-                                <%--onclick="delInfo(${deptinfo.deptId})">--%>
-                                <%--</td>--%>
                         </tr>
                     </c:forEach>
 

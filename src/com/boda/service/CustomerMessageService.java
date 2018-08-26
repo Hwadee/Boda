@@ -2,30 +2,41 @@ package com.boda.service;
 
 import com.boda.mapper.CustomerMapper;
 import com.boda.pojo.CustomerMessage;
+import com.boda.vo.Page;
+
+import org.springframework.stereotype.Service;
 import com.boda.util.Tool;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.io.IOException;
 
+import java.util.regex.Pattern;
 import javax.annotation.Resource;
 
+@Service
 public class CustomerMessageService {
 
     @Resource
     private CustomerMapper customerMapper;
 
-    //一个搜索框，包括customer号或custoemr名称
-    public List<CustomerMessage> getCusInfo(String customerId) throws Exception {
+    //3个搜索框，包括customerphone或customerName或身份证
+    public Page<CustomerMessage> getCusInfo(String customerName, String customerPhone, String customerIdentityId, Page<CustomerMessage> page) throws IOException {
 
-        List<CustomerMessage> customermessages = new LinkedList<>();
+        List<CustomerMessage> customerMessages = new LinkedList<>();
 
-        if (Tool.isInteger(customerId)) { //优先以customerId号搜索
-            customermessages.add(customerMapper.findCustomerById(Integer.parseInt(customerId)));
-        } else {
-            customermessages.addAll(customerMapper.findCustomerByName(customerId));
-        }
-        customermessages.remove(null);
-        return customermessages;
+        int pageMAXRow = page.getPageSize();
+        int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
+
+        customerMessages.addAll(customerMapper.findCustomer(customerName, customerPhone, customerIdentityId, startRow, page.getPageSize()));
+
+        page.setObjList(customerMessages);
+
+        int allRowNum = customerMapper.findCusCount(customerName, customerPhone, customerIdentityId);
+        int allPageNum = allRowNum % pageMAXRow == 0 ? allRowNum / pageMAXRow : allRowNum / pageMAXRow + 1;
+        page.setAllPageNum(allPageNum);
+        System.out.println(customerMessages);
+        return page;
     }
 
     public boolean updateCusInfo(CustomerMessage customerMessage) throws Exception {
@@ -42,4 +53,5 @@ public class CustomerMessageService {
 
         return customerMapper.delCustomerById(customerId) > 0;
     }
+
 }

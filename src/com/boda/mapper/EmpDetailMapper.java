@@ -33,6 +33,15 @@ public interface EmpDetailMapper {
 	public Integer updateEmpDetail(EmpDetail empDetail) throws IOException;
 
     /**
+     * 新增员工账号后自动更新姓名
+     *
+     * @param empName
+     * @return
+     * @throws IOException
+     */
+    public Integer autoUpdateEmpName(@Param("empName") String empName, @Param("empId") String empId) throws IOException;
+
+    /**
      * 更新员工头像信息
      *
      * @param url

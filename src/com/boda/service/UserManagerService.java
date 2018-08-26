@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.boda.mapper.EmpDetailMapper;
 import com.boda.pojo.Loan;
 import com.boda.util.Tool;
 import com.boda.vo.Page;
@@ -19,6 +20,8 @@ public class UserManagerService {
 
     @Resource
     private EmployeeMapper employeeMapper;
+    @Resource
+    private EmpDetailMapper empDetailMapper;
 
     public Employee userLogin(String account, String password) throws IOException {
 
@@ -32,6 +35,11 @@ public class UserManagerService {
             return employee;
         }
         return null;
+    }
+
+    public boolean updatePassword(Employee employee) throws IOException {
+
+        return employeeMapper.updatePassword(employee) > 0;
     }
 
     public Page<Employee> getEmpInfo(String empId, String empName, String empDept, Page<Employee> page) throws IOException {
@@ -64,7 +72,7 @@ public class UserManagerService {
 
         if (employeeMapper.addEmployee(employee) > 0) {
             String empAccount = employee.getEmpAccount();
-            if (employeeMapper.autoUpdateEmpName(empName, String.valueOf(employeeMapper.getIdByAccount(empAccount))) > 0) {
+            if (empDetailMapper.autoUpdateEmpName(empName, String.valueOf(employeeMapper.getIdByAccount(empAccount))) > 0) {
                 return empAccount;
             } else {
                 //todo: 删除插入的记录

@@ -1,61 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper 
-	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- 
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
 
 <mapper namespace="com.boda.mapper.EmployeeMapper">
 
-	<resultMap type="com.boda.pojo.Employee" id="empResultMap">
-		<id column="emp_id" property="empId"/>
-		<result column="emp_account" property="empAccount"/>
-		<result column="emp_password" property="empPassword"/>
-		<result column="post_id" property="postId"/>
-		<!--账户与用户详细信息一对一关系 映射-->
-		<association property="empDetail" javaType="com.boda.pojo.EmpDetail">
-			<id column="emp_detail_id" property="empDetailId"/>
-			<result column="emp_name" property="empName"/>
-			<result column="emp_weight" property="empWeight"/>
-			<result column="emp_height" property="empHeight"/>
-			<result column="emp_address" property="empAddress"/>
-			<result column="emp_hometown" property="empHometown"/>
-			<result column="emp_nation" property="empNation"/>
-			<result column="emp_sex" property="empSex"/>
-			<result column="emp_birthday" property="empBirthday"/>
-			<result column="emp_phone" property="empPhone"/>
-			<result column="emp_photo_url" property="empPhotoUrl"/>
-		</association>
-	</resultMap>
+    <resultMap type="com.boda.pojo.Employee" id="empResultMap">
+        <id column="emp_id" property="empId"/>
+        <result column="emp_account" property="empAccount"/>
+        <result column="emp_password" property="empPassword"/>
+        <result column="post_id" property="postId"/>
+        <!--账户与用户详细信息一对一关系 映射-->
+        <association property="empDetail" javaType="com.boda.pojo.EmpDetail">
+            <id column="emp_detail_id" property="empDetailId"/>
+            <result column="emp_name" property="empName"/>
+            <result column="emp_weight" property="empWeight"/>
+            <result column="emp_height" property="empHeight"/>
+            <result column="emp_address" property="empAddress"/>
+            <result column="emp_hometown" property="empHometown"/>
+            <result column="emp_nation" property="empNation"/>
+            <result column="emp_sex" property="empSex"/>
+            <result column="emp_birthday" property="empBirthday"/>
+            <result column="emp_phone" property="empPhone"/>
+            <result column="emp_photo_url" property="empPhotoUrl"/>
+        </association>
+    </resultMap>
 
-<!-- 通过员工id查询员工：查询结果封装成Employee类返回；-->	 
-	<select id="findEmpById" parameterType="Integer" resultType="com.boda.pojo.Employee">
-		select * from employee where emp_id = #{value}
-	</select>
-<!-- 通过账户查询员工：查询结果封装成Employee类返回；-->	
-	<select id="findEmpByAccount" parameterType="String" resultType="com.boda.pojo.Employee">
-		select * from employee where emp_account = #{value}
-	</select>
-<!-- 通过账户查询员工详细信息：查询结果封装成映射类型的EmpResultMap返回；-->		
-	<select id="findEmpDetailByAccount" parameterType="String" resultMap="empResultMap">
-		select * from employee a,emp_detail b where emp_account = #{value} and a.emp_id = b.emp_detail_id
-	</select>
-	
-<!-- 插入数据到数据库-->
-	<insert id="addEmployee" parameterType="com.boda.pojo.Employee">
-		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
-	 	<selectKey keyProperty="empId" order="AFTER" resultType="Integer">
-	 		Select last_insert_id()
-	 	</selectKey>
-		insert into employee (emp_id,post_id,emp_account,emp_password) values (#{empId},#{postId},#{empAccount},#{empPassword});
-	</insert>
-<!-- 根据员工id更新员工信息-->	
-	<update id="updateUserById" parameterType="com.boda.pojo.Employee">
-		UPDATE employee SET post_id=#{postId},emp_account=#{empAccount},emp_password=#{empPassword} WHERE emp_id=#{empId}
-	</update>
-<!-- 根据员工id删除员工 -->	
-	<delete id="delUserById" parameterType="int">
-		DELETE from employee where emp_id=#{value}
-	</delete>
-	
+    <resultMap id="empInfoMap" type="com.boda.pojo.Employee">
+        <id column="emp_id" property="empId"/>
+        <!--<result column="emp_account" property="empAccount"/>-->
+        <!--<result column="emp_password" property="empPassword"/>-->
+        <result column="post_id" property="postId"/>
+
+        <association property="empDetail" javaType="com.boda.pojo.EmpDetail">
+            <id column="emp_detail_id" property="empDetailId"/>
+            <result column="emp_name" property="empName"/>
+        </association>
+        <association property="post" javaType="com.boda.pojo.Post">
+            <id column="post_id" property="postId"/>
+            <result column="dept_id" property="deptId"/>
+            <result column="post_name" property="postName"/>
+        </association>
+        <association property="department" javaType="com.boda.pojo.Department">
+            <id column="dept_id" property="deptId"/>
+            <result column="dept_name" property="deptName"/>
+        </association>
+    </resultMap>
+
+    <sql id="where">
+        <where>
+            d.dept_id = p.dept_id AND p.post_id = e.post_id AND ed.emp_detail_id = e.emp_id
+            <if test="empId != null and empId != ''">AND e.emp_id = #{empId}</if>
+            <if test="empName != null and empName != ''">AND ed.emp_name LIKE '%${empName}%'</if>
+            <if test="empDept != null and empDept != ''">AND d.dept_name LIKE '%${empDept}%'</if>
+        </where>
+    </sql>
+
+    <!-- 通过指定信息查询员工 -->
+    <select id="findEmp" resultMap="empInfoMap">
+        SELECT *
+        FROM employee e, emp_detail ed, post p, department d
+        <include refid="where"/>
+        ORDER BY e.emp_id LIMIT #{startRow}, #{length}
+    </select>
+
+    <!-- 通过指定信息查询符合条件的员工数量 -->
+    <select id="findEmpCount" resultType="int">
+        select count(e.emp_id)
+        from employee e, emp_detail ed, post p, department d
+        <include refid="where"/>
+    </select>
+
+    <!-- 通过部门名称和职位名称得到职位id -->
+    <select id="getPostId" resultType="int">
+        SELECT p.post_id
+        FROM post p, department d
+        WHERE p.dept_id = d.dept_id AND p.post_name = #{postName} AND d.dept_name = #{deptName}
+    </select>
+
+    <!-- 通过账号获得id -->
+    <select id="getIdByAccount" resultType="int">
+        SELECT emp_id
+        FROM employee
+        WHERE emp_account = #{empAccount}
+    </select>
+
+    <!-- 通过员工id查询员工：查询结果封装成Employee类返回；-->
+    <select id="findEmpById" parameterType="Integer" resultType="com.boda.pojo.Employee">
+        SELECT *
+        FROM employee
+        WHERE emp_id = #{value}
+    </select>
+
+    <!-- 通过账户查询员工：查询结果封装成Employee类返回；-->
+    <select id="findEmpByAccount" parameterType="String" resultType="com.boda.pojo.Employee">
+        SELECT *
+        FROM employee
+        WHERE emp_account = #{value}
+    </select>
+
+    <!-- 通过账户查询员工详细信息：查询结果封装成映射类型的EmpResultMap返回；-->
+    <select id="findEmpDetailByAccount" parameterType="String" resultMap="empResultMap">
+        SELECT *
+        FROM employee a, emp_detail b
+        WHERE emp_account = #{value} AND a.emp_id = b.emp_detail_id
+    </select>
+
+    <!-- 更改密码 -->
+    <update id="updatePassword" parameterType="com.boda.pojo.Employee">
+        UPDATE employee
+        SET emp_password = #{empPassword}
+        WHERE emp_id = #{empId}
+    </update>
+
+    <!-- 插入数据到数据库-->
+    <insert id="addEmployee" parameterType="com.boda.pojo.Employee">
+        <!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
+        <selectKey keyProperty="empId" order="AFTER" resultType="Integer">
+            Select last_insert_id()
+        </selectKey>
+        insert into employee (emp_id,post_id,emp_account,emp_password) values
+        (#{empId},#{postId},#{empAccount},#{empPassword});
+    </insert>
+
+    <!-- 根据员工id更新员工信息-->
+    <update id="updateUserById" parameterType="com.boda.pojo.Employee">
+        UPDATE employee
+        SET post_id = #{postId}, emp_account = #{empAccount}, emp_password = #{empPassword}
+        WHERE emp_id = #{empId}
+    </update>
+
+    <!-- 根据员工id删除员工 -->
+    <delete id="delUserById" parameterType="int">
+        DELETE FROM employee
+        WHERE emp_id = #{value}
+    </delete>
 </mapper>

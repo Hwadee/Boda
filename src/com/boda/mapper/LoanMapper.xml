@@ -14,15 +14,20 @@
         <result column="loan_money" property="loanMoney"/>
         <result column="loan_date" property="loanDate"/>
         <result column="loan_state" property="loanState"/>
-        <result column="return_date" property="returnDate"/>
         <result column="num_of_stages" property="numOfStages"/>
         <result column="rate_of_interest" property="rateOfInterest"/>
 
+        <association property="customerMessage" javaType="com.boda.pojo.CustomerMessage">
+            <id column="customer_id" property="customerId"/>
+            <result column="customer_name" property="customerName"/>
+        </association>
     </resultMap>
 
     <sql id="where">
         <where>
-            <![CDATA[l.loan_id = rl.loan_id AND loan_state <> "待审批" AND loan_date >= #{minDate} AND loan_date <= #{maxDate}]]>
+            <![CDATA[l.customer_id = c.customer_id AND loan_state <> "待审批"]]>
+            <if test="minDate != null and minDate != ''">AND l.loan_date >= #{minDate}</if>
+            <if test="maxDate != null and maxDate != ''">AND #{maxDate} >= l.loan_date</if>
         </where>
     </sql>
 
@@ -47,28 +52,17 @@
     </select>
 
     <!-- 根据贷款日期查询贷款信息 -->
-    <select id="findLoanByLoanDate" resultType="com.boda.pojo.Loan">
-        SELECT l.*, rl.which_stage, rl.should_return_date
-        FROM loan l, return_loan rl
+    <select id="findLoanByLoanDate" resultMap="LoanResultMap">
+        SELECT *
+        FROM loan l, customer_message c
         <include refid="where"/>
-        ORDER BY loan_date DESC LIMIT #{startRow}, #{length}
+        ORDER BY l.loan_date DESC LIMIT #{startRow}, #{length}
     </select>
 
     <!-- 查找贷款信息总数 -->
     <select id="findLoanCount" resultType="int">
         SELECT count(*)
         FROM return_loan
-    </select>
-
-    <!-- 根据还款日期查询贷款信息 -->
-    <select id="findLoanByReturnDate" resultType="com.boda.pojo.Loan">
-        SELECT
-        l.*,
-        rl.which_stage,
-        rl.should_return_date
-        FROM loan l, return_loan rl
-        WHERE l.loan_id = rl.loan_id AND rl.should_return_date >= #{minDate} AND rl.should_return_date <![CDATA[<=]]>
-        #{maxDate}
     </select>
 
     <!-- 根据贷款金额查询贷款信息 -->

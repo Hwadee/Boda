@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.boda.pojo.EmpDetail;
 import com.boda.vo.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boda.pojo.Employee;
 import com.boda.service.UserManagerService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class UserManager {
@@ -37,6 +39,23 @@ public class UserManager {
             model.addAttribute("MSG", "账号或密码错误！");
             return "userLogin";
         }
+    }
+
+    @RequestMapping("/UpdatePassword.do")
+    public String updatePassword(@RequestParam("req") String req, @RequestParam("password1") String password1, HttpServletRequest request, Model model) throws Exception {
+
+        Employee emp = (Employee) request.getSession().getAttribute("currentUser");
+        if (emp.getEmpPassword().equals(req)) {
+            emp.setEmpPassword(password1);
+            if (ums.updatePassword(emp)) {
+                model.addAttribute("MSG", "密码修改成功！请重新登录");
+                return "userLogin";
+            }
+        }
+        model.addAttribute("PSW", "修改失败！输入密码错误！");
+        EmpDetail empDetail = (EmpDetail) request.getSession().getAttribute("currentUserInfo");
+        model.addAttribute("detailInfo", empDetail);
+        return "个人中心";
     }
 
     @RequestMapping("/EmpInfo.do")
