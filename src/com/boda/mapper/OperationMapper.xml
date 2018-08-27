@@ -1,54 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper 
-	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- 
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
 
 <mapper namespace="com.boda.mapper.OperationMapper">
 
-	<resultMap type="com.boda.pojo.OperationLog" id="operationResultMap">
-		<id column="operation_id" property="operationId"/>
-		<result column="emp_id" property="empId"/>
-		<result column="operation_date" property="operationDate"/>
-		<result column="operation_type" property="operationType"/>
-	</resultMap>
+    <resultMap type="com.boda.pojo.OperationLog" id="operationResultMap">
+        <id column="operation_id" property="operationId"/>
+        <result column="emp_id" property="empId"/>
+        <result column="operation_date" property="operationDate"/>
+        <result column="operation_type" property="operationType"/>
+    </resultMap>
 
-	<!-- 通过操作记录id查询操作记录；-->
-	<select id="findOperationById" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
-		select * from operation_log where operation_id = #{value}
-	</select>
+    <!-- 查询员工操作记录-->
+    <sql id="findOperationLog_where">
+        <if test="startDate!=null and loanId!=''">
+            and operation_date >= #{startDate}
+        </if>
+        <if test="endDate!=null and endDate!=''">
+            and operation_date &lt;= #{endDate}
+        </if>
+        <if test="empId!=null and empId!=''">
+            and emp_id=#{empId}
+        </if>
+    </sql>
 
-	<!-- 查找全部操作记录 -->
-	<select id="findOperation" resultType="com.boda.pojo.OperationLog">
-		SELECT *
-		FROM operation_log
-	</select>
+    <!-- 通过操作记录id查询操作记录；-->
+    <select id="findoperationById" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
+        SELECT *
+        FROM operation_log
+        WHERE operation_id = #{value}
+    </select>
+    <!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返会-->
+    <select id="findOperationByDate" parameterType="Date" resultType="com.boda.pojo.OperationLog">
+        SELECT *
+        FROM operation_log
+        WHERE operation_date = #{value}
+    </select>
+    <!-- 根据员工id查询某员工操作记录-->
+    <select id="findOperationByEmpId" parameterType="Integer" resultType="com.boda.pojo.OperationLog">
+        SELECT *
+        FROM operation_log
+        WHERE emp_id = #{value}
+    </select>
 
-	<!-- 根据操作记录日期查询操作记录，将结构封装为OperationLog列表返回-->
-	<select id="findOperationByDate" resultType="com.boda.pojo.OperationLog">
-		select * from operation_log where operation_date >= #{startDate} AND operation_date <![CDATA[<=]]> #{endDate}
-	</select>
+    <!--查询操作记录信息-->
+    <select id="findOperationLog" resultType="com.boda.pojo.OperationLog">
+        select * from operation_log
+        <where>
+            <include refid="findOperationLog_where"/>
+        </where>
+        limit #{startRow},#{pageSize}
+    </select>
 
-	<!-- 根据员工id查询某员工操作记录-->
-	<select id="findOperationByEmpId" parameterType="String" resultType="com.boda.pojo.OperationLog">
-		select * from operation_log where emp_id = #{value}
-	</select>
+    <!--查询操作记录信息条数-->
+    <select id="findOperationLogNum" resultType="Integer">
+        select count(* )from operation_log
+        <where>
+            <include refid="findOperationLog_where"/>
+        </where>
+    </select>
 
-	<!-- 根据日期和员工id查询操作记录 -->
-	<select id="findOperationLogsBoth" resultType="com.boda.pojo.OperationLog">
-		SELECT *
-		FROM operation_log
-		WHERE operation_date >= #{startDate} AND operation_date <![CDATA[<=]]> #{endDate} AND emp_id = #{empId}
-	</select>
 
-	<!-- 插入数据到数据库-->
-	<insert id="addOperationLog" parameterType="com.boda.pojo.OperationLog">
-		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
-	 	<selectKey keyProperty="empId" order="AFTER" resultType="Integer">
-	 		Select last_insert_id()
-	 	</selectKey>
-		insert into operation_log (operation_id,emp_id,operation_date,operation_type) 
-		values (#{operationId},#{empId},#{operationDate},#{operationType});
-	</insert>	
+    <!-- 插入数据到数据库-->
+    <insert id="addOperationLog" parameterType="com.boda.pojo.OperationLog">
+        <!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
+        <selectKey keyProperty="empId" order="AFTER" resultType="Integer">
+            Select last_insert_id()
+        </selectKey>
+        insert into operation_log (operation_id,emp_id,operation_date,operation_type)
+        values (#{operationId},#{empId},#{operationDate},#{operationType});
+    </insert>
 </mapper>

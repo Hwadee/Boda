@@ -36,7 +36,7 @@
             <h1>欢迎登录</h1>
             <div class="alert-close"></div>
         </div>
-        <form action="UserLogin.do" method="post">
+        <form action="login.do" method="post">
             <li>
                 <input type="text" class="text" name="account" value="Username" onfocus="this.value = '';"
                        onblur="if (this.value === '') {this.value = 'Username';}"><a href="#" class=" icon user"></a>

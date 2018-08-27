@@ -1,64 +1,69 @@
 package com.boda.mapper;
 
+import com.boda.pojo.OperationLog;
+import org.apache.ibatis.annotations.Param;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import com.boda.pojo.EmpDetail;
-import com.boda.pojo.OperationLog;
-import org.apache.ibatis.annotations.Param;
-
 public interface OperationMapper {
 
-	/**
+    /**
 	 * 根据操作记录id查询操作记录
-	 * @param id
-	 * @return 某条操作记录
+     * @param operationId
+     * @return 某条操作记录
 	 * @throws IOException
 	 */
-	public OperationLog findOperationById(Integer operationId) throws IOException;
+    public OperationLog findoperationById(Integer operationId) throws IOException;
 
-	/**
-	 * 查找全部操作记录
-	 *
-	 * @return
-	 * @throws IOException
-	 */
-	public List<OperationLog> findOperation() throws IOException;
-
-	/**
+    /**
 	 * 根据日期查询操作记录
-	 * @param empName
-	 * @return 某天操作记录
+     * @param date
+     * @return 某天操作记录
 	 * @throws IOException
 	 */
-	public List<OperationLog> findOperationByDate(@Param("startDate") String startDate, @Param("endDate") String endDate) throws IOException;
-	
-	
-	/**
+    public List<OperationLog> findOperationByDate(Date date) throws IOException;
+
+
+    /**
 	 * 根据员工员工id查询操作记录
-	 * @param empDetailId
+     * @param empId
+     * @return
+	 * @throws IOException
+	 */
+    public List<OperationLog> findOperationByEmpId(Integer empId) throws IOException;
+
+	/**
+     * 根据传入参数查询操作记录
+     * @param startDate
+     * @param endDate
+     * @param empId
 	 * @return
 	 * @throws IOException
 	 */
-	public List<OperationLog> findOperationByEmpId(String empId) throws IOException;
+    public List<OperationLog> findOperationLog(@Param("startDate") Date startDate, @Param("endDate") Date endDate,
+                                               @Param("startRow") Integer startRow, @Param("pageSize") Integer pageSize,
+                                               @Param("empId") Integer empId) throws IOException;
 
-	/**
-	 * 根据日期及员工id查询操作记录
-	 *
-	 * @param date
-	 * @param empId
-	 * @return
-	 * @throws IOException
-	 */
-	public List<OperationLog> findOperationLogsBoth(@Param("startDate") String startDate, @Param("endDate") String endDate, @Param("empId") String empId) throws IOException;
+    /**
+     * 查询操作记录条数
+     *
+     * @param startDate
+     * @param endDate
+     * @param empId
+     * @return
+     * @throws IOException
+     */
+    public Integer findOperationLogNum(@Param("startDate") Date startDate, @Param("endDate") Date endDate,
+                                       @Param("empId") Integer empId) throws IOException;
 
-	/**
-	 * 插入操作记录
-	 *
-	 * @param operationLog
+    /**
+     * 添加一条操作记录
+     * @param operationLog
 	 * @return
 	 * @throws IOException
 	 */
 	public Integer addOperationLog(OperationLog operationLog) throws IOException;
+
 }

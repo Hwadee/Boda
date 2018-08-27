@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.ReturnLoanMapper">
+
+	<resultMap type="com.boda.pojo.ReturnLoan" id="returnLoanResultMap">
+		<id column="return_id" property="returnId"/>
+		<result column="loan_id" property="loanId"/>
+		<result column="return_money" property="returnMoney"/>
+		<result column="should_return_money" property="shouldReturnMoney"/>
+		<result column="return_date" property="returnDate"/>
+		<result column="should_return_date" property="shouldReturnDate"/>
+		<result column="which_stage" property="whichStage"/>
+		<result column="return_state" property="returnState"/>
+		<!-- 每条逾期信息对应一条催促信息-->
+		<association property="urgeForReturn" javaType="com.boda.pojo.UrgeForReturn">
+			<result column="urge_id" property="urgeId"/>
+			<result column="return_id" property="returnId"/>
+			<result column="emp_id" property="empId"/>
+			<result column="last_urge_date" property="lastUrgeDate"/>
+			<result column="urge_state" property="urgeState"/>	
+		</association>
+	</resultMap>
+
+<!-- 通过还款id查询还款信息-->	 
+	<select id="findReturnLoanById" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
+		select * from return_loan where return_id = #{value}
+	</select>
+<!-- 根据贷款id查询还款信息-->	
+	<select id="findReturnLoanByLoanId" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
+		select * from return_loan where loan_id = #{value}
+	</select>
+<!-- 通过客户id查询客户逾期总次数-->	 
+	<select id="findOverTimeNumByCustomerId" parameterType="Integer" resultType="Integer">
+		select count(*) 
+		from loan l,return_loan r
+		where l.customer_id = #{value} and r.loan_id=l.loan_id
+	</select>
+<!-- 查询所有逾期信息及催促信息-->	
+	<select id="findAllReturnAndUrgeMessage"  resultMap="returnLoanResultMap">
+		select * 
+		from return_loan r,urge_for_return u
+		WHERE r.return_state='逾期未还' and u.return_id=r.return_id
+		limit #{startRow},#{pageSize}
+	</select>	
+<!-- 查询所有逾期信息及催促信息总条数-->	
+	<select id="findAllReturnAndUrgeMessageCount" resultType="Integer">
+		select count(*) 
+		from return_loan r,urge_for_return u
+		WHERE r.return_state='逾期未还' and u.return_id=r.return_id
+	</select>	
+
+<!-- 插入数据到数据库-->
+	<update id="updateReturnLoan" parameterType="com.boda.pojo.ReturnLoan">
+		<!-- 更新还款信息-->
+		update return_loan
+		set return_id=#{returnId},loan_id=#{loanId},return_money=#{returnMoney},should_return_money=#{shouldReturnMoney},
+		return_date=#{returnDate},should_return_date=#{shouldReturnDate},which_stage=#{which_stage},return_state=#{return_state}
+		where return_id=#{returnId}
+	</update>
+
+	<!--查询今日的还款信息 -->
+	<select id="findTodayReturn" resultMap="returnLoanResultMap">
+		select *
+		from return_loan
+		WHERE
+			return_date=CURRENT_DATE
+         limit #{startRow},#{pageSize}
+	</select>
+
+	<!-- 查询今日还款信息总条数-->
+	<select id="findTodayReturnCount" resultType="Integer">
+		select count(*)
+		from return_loan
+		WHERE return_date=CURRENT_DATE
+	</select>
+
+	<!-- 查询还款信息总条数-->
+	<select id="findReturnLoanCount" resultType="Integer">
+        select count(*)
+        from return_loan
+        WHERE loan_id=#{value}
+    </select>
+	
+
+	
+</mapper>

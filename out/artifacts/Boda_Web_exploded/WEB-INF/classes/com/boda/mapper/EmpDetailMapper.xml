@@ -53,6 +53,13 @@
         WHERE emp_detail_id = #{empDetailId}
     </update>
 
+    <!-- 更新姓名 -->
+    <update id="autoUpdateEmpName">
+        UPDATE emp_detail ed, employee e
+        SET ed.emp_name = #{empName}
+        WHERE e.emp_id = #{empId} AND ed.emp_detail_id = e.emp_id
+    </update>
+
     <!-- 更新头像功能 -->
     <update id="updateEmpPhoto">
         UPDATE emp_detail

@@ -7,7 +7,7 @@
 
 <mapper namespace="com.boda.mapper.LoanMapper">
 
-    <resultMap type="com.boda.pojo.Loan" id="LoanResultMap">
+    <resultMap type="com.boda.pojo.Loan" id="LoanInfoMap">
         <id column="loan_id" property="loanId"/>
         <result column="customer_id" property="customerId"/>
         <result column="emp_id" property="empId"/>
@@ -23,6 +23,42 @@
         </association>
     </resultMap>
 
+    <resultMap type="com.boda.pojo.Loan" id="LoanResultMap">
+        <id column="loan_id" property="loanId"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="emp_id" property="empId"/>
+        <result column="loan_money" property="loanMoney"/>
+        <result column="loan_date" property="loanDate"/>
+        <result column="loan_state" property="loanState"/>
+        <result column="return_start_date" property="returnStartDate"/>
+        <result column="return_years" property="returnYears"/>
+        <result column="number_of_stages" property="numberOfStages"/>
+        <result column="rate_of_interest" property="rateOfInterest"/>
+        <!-- 客户信息与贷款信息一对一关系 -->
+        <association property="customerMessage" javaType="com.boda.pojo.CustomerMessage">
+            <id column="customer_id" property="customerId"/>
+            <result column="customer_name" property="customerName"/>
+            <result column="customer_sex" property="customerSex"/>
+            <result column="customer_identity_id" property="customerIdentityId"/>
+            <result column="customer_birthday" property="customerBirthday"/>
+            <result column="customer_email" property="customerEmail"/>
+            <result column="customer_phone" property="customerPhone"/>
+            <result column="customer_address" property="customerAddress"/>
+            <result column="customer_credit" property="customerCredit"/>
+        </association>
+        <!-- 贷款信息与还款信息一对多关系 -->
+        <collection property="returnLoans" ofType="com.boda.pojo.ReturnLoan">
+            <id column="return_id" property="returnId"/>
+            <result column="loan_id" property="loanId"/>
+            <result column="return_money" property="returnMoney"/>
+            <result column="should_return_money" property="shouldReturnMoney"/>
+            <result column="return_date" property="returnDate"/>
+            <result column="should_return_date" property="shouldReturnDate"/>
+            <result column="which_stage" property="which_stage"/>
+            <result column="return_state" property="return_state"/>
+        </collection>
+    </resultMap>
+
     <sql id="where">
         <where>
             <![CDATA[l.customer_id = c.customer_id AND loan_state <> "待审批"]]>
@@ -31,10 +67,56 @@
         </where>
     </sql>
 
+    <sql id="findCustomer_where">
+        <if test="loanId!=null and loanId!=''">
+            and l.loan_id=#{loanId}
+        </if>
+        <if test="customerName!=null and customerName!=''">
+            and c.customer_name like '%${customerName}%'
+        </if>
+        <if test="customerIdentityId!=null and customerIdentityId!=''">
+            and c.customer_identity_id=#{customerIdentityId}
+        </if>
+    </sql>
+
     <!--查询所有贷款信息-->
     <select id="findLoan" resultType="com.boda.pojo.Loan">
         SELECT *
         FROM loan
+    </select>
+
+    <!-- 根据贷款id查询贷款客户信息及还款情况  -->
+    <select id="findCustomerMessageAndReturnMessage" parameterType="Integer" resultMap="LoanResultMap">
+        select *
+        from loan l, customer_message c, return_loan r
+        where l.loan_id=#{value} and c.customer_id=l.customer_id and r.loan_id=#{value}
+    </select>
+    <!-- 查询所有逾期贷款及客户详细信息  -->
+    <select id="findAllOverTimeMessage" resultMap="LoanResultMap">
+        select *
+        from loan l, customer_message c
+        <where>
+            l.loan_state="存在逾期" and l.customer_id=c.customer_id
+            <include refid="findCustomer_where"/>
+        </where>
+        order by l.loan_id asc limit #{startRow},#{pageSize}
+    </select>
+    <!-- 查询所有逾期贷款及客户详细信息条数  -->
+    <select id="findAllOverTimeMessageNum" resultType="Integer">
+        select count(*)
+        from loan l, customer_message c
+        <where>
+            l.loan_state="存在逾期" and l.customer_id=c.customer_id
+            <include refid="findCustomer_where"/>
+        </where>
+    </select>
+    <!-- 根据客户id查询客户贷款数量-->
+    <select id="findLoanNumByCustomerId" parameterType="Integer" resultType="Integer">
+        select count(*) from loan where customer_id = #{value}
+    </select>
+    <!-- 根据客户id查询客户贷款金额总量-->
+    <select id="findLoanMoneyByCustomerId" parameterType="Integer" resultType="Integer">
+        select sum(loan_money) from loan where customer_id = #{value}
     </select>
 
     <!--根据id查询贷款信息-->
@@ -52,7 +134,7 @@
     </select>
 
     <!-- 根据贷款日期查询贷款信息 -->
-    <select id="findLoanByLoanDate" resultMap="LoanResultMap">
+    <select id="findLoanByLoanDate" resultMap="LoanInfoMap">
         SELECT *
         FROM loan l, customer_message c
         <include refid="where"/>

@@ -85,14 +85,6 @@ public interface EmployeeMapper {
      */
     public Integer getPostId(@Param("deptName") String deptName, @Param("postName") String postName) throws IOException;
 
-    /**
-     * 根据员工账号获取id
-     *
-     * @return
-     * @throws IOException
-     */
-
-    public Integer getIdByAccount(@Param("empAccount") String empAccount) throws IOException;
 
     /**
      * 新增一个员工账户

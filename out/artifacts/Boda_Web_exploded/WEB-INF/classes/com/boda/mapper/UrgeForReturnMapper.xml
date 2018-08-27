@@ -8,14 +8,20 @@
 <mapper namespace="com.boda.mapper.UrgeForReturnMapper">
 
 	<resultMap type="com.boda.pojo.UrgeForReturn" id="urgeForReturnResultMap">
-		<id column="emp_id" property="empId"/>
-		<result column="ove_time_id" property="overTimeId"/>
-		<result column="last_urge_date" property="lastUrgeDate"/>	
+		<id column="urge_id" property="urgeId"/>
+		<result column="emp_id" property="empId"/>
+		<result column="return_id" property="returnId"/>
+		<result column="last_urge_date" property="lastUrgeDate"/>
+		<result column="urge_state" property="urgeState"/>	
 	</resultMap>
 
-<!-- 根据逾期id查询所有催促信息-->	 
-	<select id="findUrgeMessageByOverTimeId" parameterType="Integer" resultType="com.boda.pojo.UrgeForReturn">
-		select * from urge_for_return where over_time_id = #{value}
+<!-- 根据应还款id查询所有催促-->	 
+	<select id="findUrgeMessageByReturnId" parameterType="Integer" resultType="com.boda.pojo.UrgeForReturn">
+		select * from urge_for_return where return_id = #{returnId}
+	</select>
+<!-- 根据应还款id查询是否存在催促信息-->	 
+	<select id="findUrgeMessageIsExist" parameterType="Integer" resultType="Integer">
+		select count(*) from urge_for_return where return_id = #{returnId}
 	</select>
 <!-- 根据员工id查询员工催促的所有逾期信息-->	
 	<select id="findUrgeMessageByEmpId" parameterType="Integer" resultType="com.boda.pojo.UrgeForReturn">
@@ -24,13 +30,13 @@
 	
 <!-- 新增一条催促信息 -->
 	<insert id="addUrgeMessage" parameterType="com.boda.pojo.UrgeForReturn">
-		insert into post (emp_id,over_time_id,last_urge_date) 
-		values (#{empId},#{overTimeId},#{lastUrgeDate});	
+		insert into urge_for_return (emp_id,return_id,last_urge_date,urge_state) 
+		values (#{empId},#{returnId},#{lastUrgeDate},#{urgeState});	
 	</insert>
-<!-- 根据催促信息员工id和逾期id更新催促时间-->	
+<!-- 根据应归还id更新催促信息-->	
 	<update id="updateUrgeMessage" parameterType="com.boda.pojo.UrgeForReturn">
 		UPDATE urge_for_return 
-		SET empId=#{empId},over_time_id=#{overTimeId},last_urge_date=#{lastUrgeDate}
-		WHERE empId=#{empId} and over_time_id=#{overTimeId}
+		SET emp_id=#{empId},return_id=#{returnId},last_urge_date=#{lastUrgeDate},urge_state=#{urgeState}
+		WHERE return_id=#{returnId}
 	</update>	
 </mapper>

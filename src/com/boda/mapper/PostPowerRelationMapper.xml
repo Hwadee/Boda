@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--	namespace:mapper的命名空间，一般使用mapper文件的全路径		 -->
+
+<mapper namespace="com.boda.mapper.PostPowerRelationMapper">
+
+    <resultMap type="com.boda.pojo.PostPowerRelation" id="postPowerRelationResultMap">
+        <id column="post_id" property="postId"/>
+        <result column="power_id" property="powerId"/>
+    </resultMap>
+
+    <!-- 根据职务id查询其权限id，返回其所拥有的所有权限-->
+    <select id="findPowerByPostId" parameterType="Integer" resultType="com.boda.pojo.PostPowerRelation">
+        select * from post_power_relation where post_id = #{value}
+    </select>
+    <!-- 根据权限id查询拥有这项权限的所有职务-->
+    <select id="findPostByPowerId" parameterType="Integer" resultType="com.boda.pojo.PostPowerRelation">
+        select * from post_power_relation where power_id = #{value}
+    </select>
+
+    <!-- 插入职务权限关系到数据库-->
+    <insert id="addPostPowerRelation" parameterType="com.boda.pojo.PostPowerRelation">
+        insert into post_power_relation (post_id,power_id)
+        values (#{postId},#{powerId});
+    </insert>
+    <!-- 根据职务id更新职务权限信息-->
+    <!-- <update id="updatePostPowerRelation" parameterType="com.boda.pojo.EmpPowerRelation">
+        UPDATE emp_power_relation
+        SET post_id=#{postId},power_id=#{powerId}
+        WHERE post_id=#{postId}
+    </update> -->
+    <!-- 根据职务id删除相应权限 -->
+    <delete id="delPostPowerRelation" parameterType="com.boda.pojo.PostPowerRelation">
+        DELETE from post_power_relation where post_id=#{postId} and power_id=#{powerId}
+    </delete>
+
+</mapper>

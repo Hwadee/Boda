@@ -82,4 +82,49 @@ public interface LoanMapper {
 	 */
 	public Integer updateLoanState(Loan loan) throws IOException;
 
+    /**
+     * 根据贷款id查询客户信息及还款信息
+     *
+     * @param loanId
+     * @return
+     * @throws IOException
+     */
+    public Loan findCustomerMessageAndReturnMessage(Integer loanId) throws IOException;
+
+    /**
+     * 查询所有存在逾期的账户详细信息
+     *
+     * @return
+     * @throws IOException
+     */
+    public List<Loan> findAllOverTimeMessage(@Param("startRow") int startRow, @Param("pageSize") int pageSize,
+                                             @Param("loanId") Integer loanId, @Param("customerName") String customerName,
+                                             @Param("customerIdentityId") String customerIdentityId) throws IOException;
+
+    /**
+     * 查询逾期信息总条数
+     *
+     * @return
+     * @throws IOException
+     */
+    public Integer findAllOverTimeMessageNum(@Param("loanId") Integer loanId, @Param("customerName") String customerName,
+                                             @Param("customerIdentityId") String customerIdentityId) throws IOException;
+
+    /**
+     * 根据客户id查询客户贷款总数
+     *
+     * @param customerId
+     * @return
+     * @throws IOException
+     */
+    public Integer findLoanNumByCustomerId(Integer customerId) throws IOException;
+
+    /**
+     * 查询用户贷款总金额
+     *
+     * @param customerId
+     * @return
+     * @throws IOException
+     */
+    public Integer findLoanMoneyByCustomerId(Integer customerId) throws IOException;
 }

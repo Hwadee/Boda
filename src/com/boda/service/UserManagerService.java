@@ -23,20 +23,6 @@ public class UserManagerService {
     @Resource
     private EmpDetailMapper empDetailMapper;
 
-    public Employee userLogin(String account, String password) throws IOException {
-
-//        SqlSession sqlSession = SessionFactory.getSession();
-//        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
-        Employee employee = employeeMapper.findEmpByAccount(account);
-        System.out.println(employee);
-//        sqlSession.commit();
-//        sqlSession.close();
-        if (employee != null && employee.getEmpPassword().equals(password)) {
-            return employee;
-        }
-        return null;
-    }
-
     public boolean updatePassword(Employee employee) throws IOException {
 
         return employeeMapper.updatePassword(employee) > 0;
@@ -70,16 +56,13 @@ public class UserManagerService {
         employee.setEmpAccount(Tool.getRandomAccount());
         employee.setEmpPassword("123456");
 
-        if (employeeMapper.addEmployee(employee) > 0) {
-            String empAccount = employee.getEmpAccount();
-            if (empDetailMapper.autoUpdateEmpName(empName, String.valueOf(employeeMapper.getIdByAccount(empAccount))) > 0) {
-                return empAccount;
-            } else {
-                //todo: 删除插入的记录
-            }
+        employeeMapper.addEmployee(employee);
+        if (empDetailMapper.autoUpdateEmpName(empName, String.valueOf(employee.getEmpId())) > 0) {
+            return employee.getEmpAccount();
+        } else {
+            //todo: 删除插入的记录
         }
         return null;
-
     }
 
     public boolean delEmpInfo(String empId) throws IOException {

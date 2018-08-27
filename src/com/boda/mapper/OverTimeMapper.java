@@ -1,10 +1,10 @@
 package com.boda.mapper;
 
+import com.boda.pojo.OverTime;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-
-import com.boda.pojo.OverTime;
 
 public interface OverTimeMapper {
 	
@@ -26,8 +26,8 @@ public interface OverTimeMapper {
 	
 	/**
 	 * 根据逾期时间查询逾期信息
-	 * @param overTimeDays
-	 * @return 逾期时间超过某一天数限制
+     * @param shouldReturnDate
+     * @return 逾期时间超过某一天数限制
 	 * @throws IOException
 	 */
 	public List<OverTime> findOverMessageByShouldReturnDate(Date shouldReturnDate) throws IOException;

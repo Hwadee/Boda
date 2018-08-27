@@ -11,7 +11,17 @@ public class ReturnLoan {
     private Date returnDate;
     private Date shouldReturnDate;
     private Integer whichStage;
-    private String returnStage;
+    private String returnState;
+
+    private UrgeForReturn urgeForReturn;
+
+    public UrgeForReturn getUrgeForReturn() {
+        return urgeForReturn;
+    }
+
+    public void setUrgeForReturn(UrgeForReturn urgeForReturn) {
+        this.urgeForReturn = urgeForReturn;
+    }
 
     public Float getShouldReturnMoney() {
         return shouldReturnMoney;
@@ -37,12 +47,12 @@ public class ReturnLoan {
         this.whichStage = whichStage;
     }
 
-    public String getReturnStage() {
-        return returnStage;
+    public String getReturnState() {
+        return returnState;
     }
 
-    public void setReturnStage(String returnStage) {
-        this.returnStage = returnStage;
+    public void setReturnState(String returnState) {
+        this.returnState = returnState;
     }
 
     public Integer getReturnId() {
@@ -79,15 +89,11 @@ public class ReturnLoan {
 
     @Override
     public String toString() {
-        return "ReturnLoan{" +
-                "retuenId=" + returnId +
-                ", loanId=" + loanId +
-                ", returnMoney=" + returnMoney +
-                ", shouldReturnMoney=" + shouldReturnMoney +
-                ", returnDate=" + returnDate +
-                ", shouldReturnDate=" + shouldReturnDate +
-                ", whichStage=" + whichStage +
-                ", returnStage='" + returnStage + '\'' +
-                '}';
+        return "ReturnLoan [returnId=" + returnId + ", loanId=" + loanId + ", returnMoney=" + returnMoney
+                + ", shouldReturnMoney=" + shouldReturnMoney + ", returnDate=" + returnDate + ", shouldReturnDate="
+                + shouldReturnDate + ", whichStage=" + whichStage + ", returnState=" + returnState + ", urgeForReturn="
+                + urgeForReturn + "]";
     }
+
+
 }

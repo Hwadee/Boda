@@ -3,21 +3,26 @@ package com.boda.pojo;
 import java.util.Date;
 
 public class UrgeForReturn {
-	private Integer empId;
-	private Integer overTimeId;
-	private Date lastUrgeDate;
-	
-	public Integer getEmpId() {
+    private Integer urgeId;
+    private Integer empId;
+    private Integer returnId;
+    private Date lastUrgeDate;
+    private String urgeState;
+
+
+    public Integer getUrgeId() {
+        return urgeId;
+    }
+
+    public void setUrgeId(Integer urgeId) {
+        this.urgeId = urgeId;
+    }
+
+    public Integer getEmpId() {
 		return empId;
 	}
 	public void setEmpId(Integer empId) {
 		this.empId = empId;
-	}
-	public Integer getOverTimeId() {
-		return overTimeId;
-	}
-	public void setOverTimeId(Integer overTimeId) {
-		this.overTimeId = overTimeId;
 	}
 	public Date getLastUrgeDate() {
 		return lastUrgeDate;
@@ -25,7 +30,28 @@ public class UrgeForReturn {
 	public void setLastUrgeDate(Date lastUrgeDate) {
 		this.lastUrgeDate = lastUrgeDate;
 	}
-	
-	
+
+    public Integer getReturnId() {
+        return returnId;
+    }
+
+    public void setReturnId(Integer returnId) {
+        this.returnId = returnId;
+    }
+
+    public String getUrgeState() {
+        return urgeState;
+    }
+
+    public void setUrgeState(String urgeState) {
+        this.urgeState = urgeState;
+    }
+
+    @Override
+    public String toString() {
+        return "UrgeForReturn [urgeId=" + urgeId + ", empId=" + empId + ", returnId=" + returnId + ", lastUrgeDate="
+                + lastUrgeDate + ", urgeState=" + urgeState + "]";
+    }
+
 
 }

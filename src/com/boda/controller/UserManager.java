@@ -26,30 +26,34 @@ public class UserManager {
         return "userLogin";
     }
 
-    @RequestMapping("/UserLogin.do")
-    public String UserLoginController(String account, String password, HttpServletRequest request, Model model) throws IOException {
-
-        Employee employee = null;
-
-        if ((employee = ums.userLogin(account, password)) != null) {
-            model.addAttribute("MSG", account);
-            request.getSession().setAttribute("currentUser", employee);
-            return "index2";
-        } else {
-            model.addAttribute("MSG", "账号或密码错误！");
-            return "userLogin";
-        }
-    }
+//    @RequestMapping("/UserLogin.do")
+//    public String UserLoginController(String account, String password, HttpServletRequest request, Model model) throws IOException {
+//
+//        Employee employee = null;
+//
+//        if ((employee = ums.userLogin(account, password)) != null) {
+//            model.addAttribute("MSG", account);
+//            request.getSession().setAttribute("currentUser", employee);
+//            return "index2";
+//        } else {
+//            model.addAttribute("MSG", "账号或密码错误！");
+//            return "userLogin";
+//        }
+//    }
 
     @RequestMapping("/UpdatePassword.do")
-    public String updatePassword(@RequestParam("req") String req, @RequestParam("password1") String password1, HttpServletRequest request, Model model) throws Exception {
+    public String updatePassword(@RequestParam("req") String req, @RequestParam("password1") String password1, HttpServletRequest request, Model model) {
 
-        Employee emp = (Employee) request.getSession().getAttribute("currentUser");
+        Employee emp = (Employee) request.getSession().getAttribute("employee");
         if (emp.getEmpPassword().equals(req)) {
             emp.setEmpPassword(password1);
-            if (ums.updatePassword(emp)) {
-                model.addAttribute("MSG", "密码修改成功！请重新登录");
-                return "userLogin";
+            try {
+                if (ums.updatePassword(emp)) {
+                    model.addAttribute("MSG", "密码修改成功！请重新登录");
+                    return "userLogin";
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
         model.addAttribute("PSW", "修改失败！输入密码错误！");

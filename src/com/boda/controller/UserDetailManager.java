@@ -29,7 +29,7 @@ public class UserDetailManager {
     @RequestMapping("/UserDetail.do")
     public String UserDetail(HttpServletRequest request, Model model) throws Exception {
 
-        Employee emp = (Employee) request.getSession().getAttribute("currentUser");
+        Employee emp = (Employee) request.getSession().getAttribute("employee");
         EmpDetail empDetail;
 
         //查询用户信息，"detailInfo"
@@ -47,7 +47,17 @@ public class UserDetailManager {
     }
 
     @RequestMapping("/UpdateUserInfo.do")
-    public String updateUserDetail(@RequestParam("name") String name, @RequestParam("sex") String sex, @RequestParam("weight") int weight, @RequestParam("height") int height, @RequestParam("education") String education, @RequestParam("phone") String phone, @RequestParam("birthday") String birthday, HttpServletRequest request, Model model) throws Exception {
+    public String updateUserDetail(@RequestParam("name") String name,
+                                   @RequestParam("sex") String sex,
+                                   @RequestParam("weight") int weight,
+                                   @RequestParam("height") int height,
+                                   @RequestParam("education") String education,
+                                   @RequestParam("phone") String phone,
+                                   @RequestParam("birthday") String birthday,
+                                   @RequestParam("ht") String homeTown,
+                                   @RequestParam("adr") String address,
+                                   @RequestParam("nation") String nation,
+                                   HttpServletRequest request, Model model) throws Exception {
         EmpDetail empDetail = (EmpDetail) request.getSession().getAttribute("currentUserInfo");
 //        System.out.println(empDetail);
 
@@ -58,6 +68,9 @@ public class UserDetailManager {
         empDetail.setEmpEducation(education);
         empDetail.setEmpPhone(phone);
         empDetail.setEmpBirthday(Tool.formatStringToDate(birthday.replaceAll("-", "")));
+        empDetail.setEmpHometown(homeTown);
+        empDetail.setEmpAddress(address);
+        empDetail.setEmpNation(nation);
 
         if (uds.updateUserDetail(empDetail)) {
 //        uds.updateUserDetail(empDetail);

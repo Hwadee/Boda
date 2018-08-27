@@ -137,7 +137,6 @@
                         <td>贷款金额</td>
                         <td>贷款日期</td>
                         <td>当前状态</td>
-                        <%--<td>还款开始日期</td>--%>
                         <td>利率</td>
                     </tr>
                     </thead>
@@ -152,7 +151,6 @@
                             <td id="loandate" align="center"><fmt:formatDate value="${loaninfo.loanDate}"
                                                                              pattern="yyyy-MM-dd"/></td>
                             <td id="stage" align="center">${loaninfo.loanState}</td>
-                                <%--<td id="returnstartdate" align="center">${loaninfo.returnStartDate}</td>--%>
                             <td id="rate" align="center">${loaninfo.rateOfInterest}</td>
 
                         </tr>

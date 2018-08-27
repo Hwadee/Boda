@@ -75,7 +75,7 @@
     <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 </head>
-<body onload="init()">
+<body>
 
 <!-- Left side content -->
 <jsp:include page="left.jsp"></jsp:include>
@@ -102,17 +102,18 @@
 
     <div class="line"></div>
     <!-- Main 表格 -->
-    <div id="operationLogsTable" class="wrapper">
-        <form action="OperationLogs.do" class="searchWidget">
-            <input type="text" name="empName" placeholder="员工ID或员工姓名" id=""/>
-            <input type="text" name="startDate" id="startDate"/>
-            <<input type="text" name="endDate" id="endDate">
-            <input type="submit" value=""/>
+    <div class="wrapper">
+        <form id="form1" action="OperationLogs.do" method="post" class="searchWidget">
+            <input type="hidden" id="currentPage" name="currentPage" value="${operationLogPage.currentPage}">
+            <input type="hidden" id="pageSize" name="pageSize" value="${operationLogPage.pageSize}">
+            <input type="hidden" id="allPageNum" name="allPageNum" value="${operationLogPage.allPageNum}">
+            <div>
+                <input id="employeeId" name="empId" placeholder="员工ID"/>&nbsp;
+                <input id="startDate" name="startDate" placeholder="开始日期"/>&nbsp;
+                <input id="endDate" name="endDate" placeholder="结束日期"/>&nbsp;
+                <button type="button" onclick="pageTurning(0)">搜索</button>
+            </div>
         </form>
-
-        <!-- 显示搜索结果提示信息 -->
-        <div id="searchMsgText" class="red">${searchMSG}</div>
-        <%--<div id="msgText" class="red">${MSG}</div>--%>
 
         <!-- Widgets -->
         <div class="widgets">
@@ -133,23 +134,30 @@
                         <td>操作员工ID</td>
                         <td>操作时间</td>
                         <td>详情</td>
-                        <%--<td width="160">操作</td>--%>
                     </tr>
                     </thead>
                     <tbody id="body">
 
-                    <c:forEach items="${operationlogs}" var="operationlog">
+                    <c:forEach items="${operationLogPage.objList}" var="operationlog">
                         <tr>
                             <td id="id" align="center">${operationlog.operationId}</td>
                             <td id="empid" align="center">${operationlog.empId}</td>
                             <td id="date" align="center"><fmt:formatDate value="${operationlog.operationDate}"
-                                                                         pattern="yyyy-MM-dd"/></td>
+                                                                         pattern="yyyy-MM-dd HH:mm"/></td>
                             <td id="type" align="center">${operationlog.operationType}"</td>
                         </tr>
                     </c:forEach>
 
                     </tbody>
                 </table>
+                <div>
+                    <input type="button" value="首页" onclick="pageTurning(1)">
+                    <input type="button" value="上一页" onclick="pageTurning(2)">
+                    <span id="pageInfo">第${operationLogPage.currentPage}页/共${operationLogPage.allPageNum}页</span>
+                    <input type="button" value="下一页" onclick="pageTurning(3)">
+                    <input type="button" value="末页" onclick="pageTurning(4)">
+                </div>
+            </div>
 
                 <div class="clear"></div>
             </div>
@@ -168,7 +176,7 @@
 
     $(function () {
         $("#startDate, #endDate").datepicker({
-//            限制日期范围
+            //限制日期范围
             minDate: -60,
             maxDate: 0,
 
@@ -181,18 +189,38 @@
         });
     });
 
-    function init() {
-        var msg = document.getElementById("searchMsgText").innerHTML;
-//        console.log(msg);
-        if ((msg === "" || msg === null) && !document.getElementById("id")) {
-            location.href = "OperationLogs.do?empId=";
+    //页面刷新的翻页
+    function pageTurning(num) {
+        var currentPage = parseInt("${operationLogPage.currentPage}");
+        var allPageNum = parseInt("${operationLogPage.allPageNum}");
+        switch (num) {
+            case 0:
+                currentPage = 1;
+                break;
+            case 1:
+                if (currentPage == 1)
+                    return;
+                currentPage = 1;
+                break;
+            case 2:
+                if (currentPage == 1)
+                    return;
+                currentPage--;
+                break;
+            case 3:
+                if (currentPage == allPageNum)
+                    return;
+                currentPage++;
+                break;
+            case 4:
+                if (currentPage == allPageNum)
+                    return;
+                currentPage = allPageNum;
+                break;
         }
+        document.getElementById("currentPage").value = currentPage;
+        document.getElementById("form1").submit();
     }
-
-    <%--var msg = "${MSG}";--%>
-    <%--if (msg !== null && msg !== "") {--%>
-    <%--alert(msg);--%>
-    <%--}--%>
 
 </script>
 

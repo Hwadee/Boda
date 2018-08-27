@@ -11,7 +11,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <title>客户贷款审批</title>
+    <title>权限设置</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -99,10 +99,10 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form action="" class="searchWidget">
-            <input type="text" name="search" placeholder="搜索..." id=""/>
-            <input type="submit" value=""/>
-        </form>
+        <%--<form action="" class="searchWidget">--%>
+        <%--<input type="text" name="search" placeholder="搜索..." id=""/>--%>
+        <%--<input type="submit" value=""/>--%>
+        <%--</form>--%>
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget">

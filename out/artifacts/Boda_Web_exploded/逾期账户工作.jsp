@@ -5,73 +5,76 @@
   Time: 9:34
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <title>逾期情况报表</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
     <script>
         function myFunction() {
             alert("已催收");
         }
     </script>
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/table.js"></script>
-    <script type="text/javascript" src="./js/plugins/spinner/ui.spinner.js"></script>
-    <script type="text/javascript" src="./js/plugins/spinner/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript" src="js/plugins/spinner/ui.spinner.js"></script>
+    <script type="text/javascript" src="js/plugins/spinner/jquery.mousewheel.js"></script>
 
-    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/charts/excanvas.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.orderBars.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.pie.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.resize.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/excanvas.min.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.orderBars.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.resize.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.sparkline.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/forms/uniform.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.cleditor.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.validationEngine-en.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.validationEngine.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.tagsinput.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/autogrowtextarea.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.dualListBox.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.inputlimiter.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/uniform.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.cleditor.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.validationEngine-en.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/autogrowtextarea.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.dualListBox.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.inputlimiter.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/chosen.jquery.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/wizard/jquery.form.js"></script>
-    <script type="text/javascript" src="./js/plugins/wizard/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/wizard/jquery.form.wizard.js"></script>
+    <script type="text/javascript" src="js/plugins/wizard/jquery.form.js"></script>
+    <script type="text/javascript" src="js/plugins/wizard/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/wizard/jquery.form.wizard.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/uploader/plupload.js"></script>
-    <script type="text/javascript" src="./js/plugins/uploader/plupload.html5.js"></script>
-    <script type="text/javascript" src="./js/plugins/uploader/plupload.html4.js"></script>
-    <script type="text/javascript" src="./js/plugins/uploader/jquery.plupload.queue.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.html5.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.html4.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/jquery.plupload.queue.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/tables/datatable.js"></script>
-    <script type="text/javascript" src="./js/plugins/tables/tablesort.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/tables/resizable.min.js"></script>
+    <script type="text/javascript" src="js/plugins/tables/datatable.js"></script>
+    <script type="text/javascript" src="js/plugins/tables/tablesort.min.js"></script>
+    <script type="text/javascript" src="js/plugins/tables/resizable.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/ui/jquery.tipsy.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.collapsible.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.progress.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.timeentry.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.colorpicker.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.jgrowl.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.breadcrumbs.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.sourcerer.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.collapsible.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.progress.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.timeentry.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.colorpicker.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.breadcrumbs.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.sourcerer.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/calendar.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/elfinder.min.js"></script>
+    <script type="text/javascript" src="js/plugins/calendar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/elfinder.min.js"></script>
 
-    <script type="text/javascript" src="./js/custom.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 
-    <script type="text/javascript" src="./js/charts/chart.js"></script>
+    <script type="text/javascript" src="js/charts/chart.js"></script>
 
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
 
@@ -93,7 +96,7 @@
             </div>
             <div class="middleNav">
 
-                <img src="./images/erweicode-2.jpg" alt="官网二维码"/>
+                <img src="images/erweicode-2.jpg" alt="官网二维码"/>
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>
@@ -103,62 +106,78 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form action="" class="searchWidget">
-            <input type="text" name="search" placeholder="搜索用户名..." id=""/>
-            <input type="submit" value=""/>
+        <form id="form1" action="overTimeAccountWork.do" method="post" class="searchWidget">
+            <input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}">
+            <input type="hidden" id="pageSize" name="pageSize" value="${page.pageSize}">
+            <input type="hidden" id="allPageNum" name="allPageNum" value="${page.allPageNum}">
+
+            <div>
+                贷款id:<input id="loanId" name="loanId" value="${loanId}"/>&nbsp;
+                姓名:<input id="customerName" name="customerName" value="${customerName}"/>&nbsp;
+                身份证号:<input id="customerIdentityId" name="customerIdentityId" value="${customerIdentityId}"/>&nbsp;
+                <button type="button" onclick="pageTurning(0)">搜索</button>
+            </div>
         </form>
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget rightTabs">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>逾期情况报表</h6>
-                </div>
-
-                <div class="tab_container">
-                    <div id="tab1" class="tab_content np" style="display: none;">
-                        <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
-                            <thead>
-                            <tr>
-                                <td width="180">姓名</td>
-                                <td>电话</td>
-                                <td>贷款金额</td>
-                                <td>已还金额</td>
-                                <td>逾期金额</td>
-                                <td>逾期天数</td>
-                                <td width="60">是否催收</td>
-                                <td width="60">是否还款</td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td align="center"><a href="#" title="" class="webStatsLink">张三</a></td>
-                                <td align="center">123456</td>
-                                <td align="center">100</td>
-                                <td align="center">10</td>
-                                <td align="center">7</td>
-                                <td align="center">7</td>
-                                <td align="center">
-                                    <input type="button" value="催收" class="redB" onclick="myFunction()" value="弹窗"/>
-                                </td>
-                                <td align="center">
-                                    <input type="button" value="已还款" class="blueB" onclick="del(this)"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center"><a href="#" title="" class="webStatsLink">李四</a></td>
-                                <td align="center">123456</td>
-                                <td align="center">0</td>
-                                <td align="center">10</td>
-                                <td align="center">7</td>
-                                <td align="center">7</td>
-                                <td align="center">
-                                    <input type="button" value="催收" class="redB" onclick="myFunction()" value="弹窗"/>
-                                </td>
-                                <td align="center">
-                                    <input type="button" value="已还款" class="blueB" onclick="del(this)"/>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                <div class="title"><img src="images/icons/dark/stats.png" alt="" class="titleIcon"><h6>逾期账户工作</h6></div>
+                        <fieldset>
+                            <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
+                                <thead>
+                                <tr>
+                                    <th>贷款id</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>出生日期</th>
+                                    <th>电话</th>
+                                    <th>Email</th>
+                                    <th>信用</th>
+                                    <th>贷款金额</th>
+                                    <th>贷款日期</th>
+                                    <th>贷款状态</th>
+                                    <th>开始还款日期</th>
+                                    <th>贷款期限</th>
+                                    <th>分期数</th>
+                                    <th>贷款利率</th>
+                                    <th>还款信息</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${page.objList}" var="loan">
+                                    <tr>
+                                        <td align="center">${loan.loanId}</td>
+                                        <td align="center"><a href="${pageContext.request.contextPath}/overTimeAccountDistribute.do?customerId=${loan.customerMessage.customerId}">
+                                                ${loan.customerMessage.customerName}</a></td>
+                                        <td align="center">${loan.customerMessage.customerSex}</td>
+                                        <td align="center"><fmt:formatDate value="${loan.customerMessage.customerBirthday}"
+                                                            pattern="yyyy-MM-dd" /></td>
+                                        <td align="center">${loan.customerMessage.customerPhone}</td>
+                                        <td align="center">${loan.customerMessage.customerEmail}</td>
+                                        <td align="center">${loan.customerMessage.customerCredit}</td>
+                                        <td align="center">${loan.loanMoney}</td>
+                                        <td align="center"><fmt:formatDate value="${loan.loanDate}"
+                                                            pattern="yyyy-MM-dd" /></td>
+                                        <td align="center">${loan.loanState}</td>
+                                        <td align="center"><fmt:formatDate value="${loan.returnStartDate}"
+                                                            pattern="yyyy-MM-dd" /></td>
+                                        <td align="center">${loan.returnYears}</td>
+                                        <td align="center">${loan.numberOfStages}</td>
+                                        <td align="center">${loan.rateOfInterest}</td>
+                                        <td align="center"><a href="${pageContext.request.contextPath}/returnLoanMessage.do?loanId=${loan.loanId}">
+                                            <input type="button" value="还款信息"></a></td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                            <div>
+                                <input type="button" value="首页" onclick="pageTurning(1)">
+                                <input type="button" value="上一页" onclick="pageTurning(2)">
+                                <span id="pageInfo">第${page.currentPage}页/共${page.allPageNum}页</span>
+                                <input type="button" value="下一页" onclick="pageTurning(3)">
+                                <input type="button" value="末页" onclick="pageTurning(4)">
+                            </div>
+                        </fieldset>
                     </div>
 
                 </div>
@@ -176,6 +195,41 @@
 </div>
 
 <div class="clear"></div>
+<script type="text/javascript">
+    //页面刷新的翻页
+    function pageTurning(num) {
+        var currentPage = parseInt("${page.currentPage}");
+        var allPageNum = parseInt("${page.allPageNum}");
+        switch (num) {
+            case 0:
+                currentPage = 1;
+                break;
+            case 1:
+                if (currentPage == 1)
+                    return;
+                currentPage = 1;
+                break;
+            case 2:
+                if (currentPage == 1)
+                    return;
+                currentPage--;
+                break;
+            case 3:
+                if (currentPage == allPageNum)
+                    return;
+                currentPage++;
+                break;
+            case 4:
+                if (currentPage == allPageNum)
+                    return;
+                currentPage = allPageNum;
+                break;
+        }
+        document.getElementById("currentPage").value = currentPage;
+        document.getElementById("form1").submit();
+    }
+
+</script>
 
 </body>
 </html>

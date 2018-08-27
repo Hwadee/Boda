@@ -38,6 +38,10 @@ public class Tool {
      */
     public static Date formatStringToDate(String dateStr) {
 
+        if (dateStr == null || "".equals(dateStr)) {
+            return null;
+        }
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         Date date = new Date();
         //日期处理为yyyyMMdd格式
