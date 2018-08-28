@@ -22,46 +22,54 @@
 			<result column="return_id" property="returnId"/>
 			<result column="emp_id" property="empId"/>
 			<result column="last_urge_date" property="lastUrgeDate"/>
-			<result column="urge_state" property="urgeState"/>	
+			<result column="urge_state" property="urgeState"/>
 		</association>
 	</resultMap>
 
-<!-- 通过还款id查询还款信息-->	 
+<!-- 通过还款id查询还款信息-->
 	<select id="findReturnLoanById" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
 		select * from return_loan where return_id = #{value}
 	</select>
-<!-- 根据贷款id查询还款信息-->	
+<!-- 根据贷款id查询还款信息-->
 	<select id="findReturnLoanByLoanId" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
 		select * from return_loan where loan_id = #{value}
 	</select>
-<!-- 通过客户id查询客户逾期总次数-->	 
+<!-- 通过客户id查询客户逾期总次数-->
 	<select id="findOverTimeNumByCustomerId" parameterType="Integer" resultType="Integer">
 		select count(*) 
 		from loan l,return_loan r
 		where l.customer_id = #{value} and r.loan_id=l.loan_id
 	</select>
-<!-- 查询所有逾期信息及催促信息-->	
+<!-- 查询所有逾期信息及催促信息-->
 	<select id="findAllReturnAndUrgeMessage"  resultMap="returnLoanResultMap">
 		select * 
 		from return_loan r,urge_for_return u
-		WHERE r.return_state='逾期未还' and u.return_id=r.return_id
+		WHERE r.return_state="逾期未还" and u.return_id=r.return_id
 		limit #{startRow},#{pageSize}
-	</select>	
-<!-- 查询所有逾期信息及催促信息总条数-->	
+	</select>
+<!-- 查询所有逾期信息及催促信息总条数-->
 	<select id="findAllReturnAndUrgeMessageCount" resultType="Integer">
 		select count(*) 
 		from return_loan r,urge_for_return u
-		WHERE r.return_state='逾期未还' and u.return_id=r.return_id
-	</select>	
+		WHERE r.return_state="逾期未还" and u.return_id=r.return_id
+	</select>
+
 
 <!-- 插入数据到数据库-->
 	<update id="updateReturnLoan" parameterType="com.boda.pojo.ReturnLoan">
-		<!-- 更新还款信息-->
-		update return_loan
-		set return_id=#{returnId},loan_id=#{loanId},return_money=#{returnMoney},should_return_money=#{shouldReturnMoney},
-		return_date=#{returnDate},should_return_date=#{shouldReturnDate},which_stage=#{which_stage},return_state=#{return_state}
-		where return_id=#{returnId}
+		<!-- 通过order="AFTER"先执行插入操作后，用Select last_insert_id()语句查询出新插入数据的id值放入user里-->
+
+	   UPDATE return_loan
+		SET return_money=should_return_money,return_date=CURRENT_DATE,return_state="已归还"
+        		WHERE  return_id = #{returnId}
 	</update>
+
+    <!-- 查询还款信息总条数-->
+    <select id="findReturnLoanCount" resultType="Integer">
+        select count(*)
+        from return_loan
+        WHERE loan_id=#{value}
+    </select>
 
 	<!--查询今日的还款信息 -->
 	<select id="findTodayReturn" resultMap="returnLoanResultMap">
@@ -79,13 +87,9 @@
 		WHERE return_date=CURRENT_DATE
 	</select>
 
-	<!-- 查询还款信息总条数-->
-	<select id="findReturnLoanCount" resultType="Integer">
-        select count(*)
-        from return_loan
-        WHERE loan_id=#{value}
-    </select>
-	
+	<select id="findAll" resultMap="returnLoanResultMap">
+		select *
+		from return_loan
 
-	
+	</select>
 </mapper>

@@ -115,7 +115,7 @@
                 <div class="title"><img src="images/icons/dark/stats.png" alt="" class="titleIcon"><h6>今日还款</h6>
                     <div class="topIcons">
                         <a href="#" class="tipS" title="打印该表格">
-                            <img src="images/icons/downloadTop.png" alt>
+                            <img src="images/icons/downloadTop.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                 currentPage--;
                 break;
             case 3:
-                if (currentPage == allPageNum)
+                if (currentPage >= allPageNum)
                     return;
                 currentPage++;
                 break;
@@ -210,6 +210,7 @@
         document.getElementById("form1").submit();
     }
 </script>
+
 
 </body>
 </html>

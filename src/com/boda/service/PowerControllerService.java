@@ -7,6 +7,7 @@ import com.boda.pojo.PostPowerRelation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,19 @@ public class PowerControllerService {
 
     public List<PostPowerRelation> findPowerByPostId(Integer postId) throws IOException {
         return postPowerRelationMapper.findPowerByPostId(postId);
+    }
+
+    public boolean editPower(List<PostPowerRelation> powerList) throws Exception {
+
+        // 先删除该职位所有权限
+        postPowerRelationMapper.delPostPowerRelation(powerList.get(0).getPostId());
+
+        for (PostPowerRelation postPowerRelation : powerList) {
+            if (postPowerRelationMapper.addPostPowerRelation(postPowerRelation) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void logoutControlService(HttpServletRequest request, Model model) {

@@ -143,7 +143,7 @@
                             <td id="id" align="center">${operationlog.operationId}</td>
                             <td id="empid" align="center">${operationlog.empId}</td>
                             <td id="date" align="center"><fmt:formatDate value="${operationlog.operationDate}"
-                                                                         pattern="yyyy-MM-dd HH:mm"/></td>
+                                                                         pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <td id="type" align="center">${operationlog.operationType}"</td>
                         </tr>
                     </c:forEach>

@@ -1,15 +1,18 @@
 package com.boda.controller;
 
 import com.boda.pojo.OperationLog;
+import com.boda.pojo.Post;
 import com.boda.service.SystemSettingService;
 import com.boda.util.Tool;
 import com.boda.vo.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class SystemSettingController {
@@ -39,6 +42,11 @@ public class SystemSettingController {
         }
         return "操作记录查询";
     }
+
+    @RequestMapping("/PostOfDept.do")
+    @ResponseBody
+    public List<Post> getPost(String deptId) throws Exception {
+
+        return systemSettingService.getPost(deptId);
+    }
 }
-
-

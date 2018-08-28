@@ -373,7 +373,7 @@
     </div>
 
     <!-- Footer line -->
-    <jsp:include page="foot.jsp"></jsp:include>
+    <jsp:include page="foot.jsp"/>
 </div>
 
 <div class="clear"></div>

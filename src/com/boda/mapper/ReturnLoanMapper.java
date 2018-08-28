@@ -1,10 +1,13 @@
 package com.boda.mapper;
 
-import com.boda.pojo.ReturnLoan;
-import org.apache.ibatis.annotations.Param;
-
 import java.io.IOException;
 import java.util.List;
+
+import com.boda.pojo.Loan;
+import org.apache.ibatis.annotations.Param;
+
+import com.boda.pojo.ReturnLoan;
+import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 
 public interface ReturnLoanMapper {
 	
@@ -34,12 +37,15 @@ public interface ReturnLoanMapper {
     public Integer findOverTimeNumByCustomerId(Integer customerId) throws IOException;
 
     /**
-	 * 添加还款信息
+     * 添加还款信息
 	 * @param returnLoan
 	 * @return
-	 * @throws IOException
+     * @throws IOException
      */
+
     public Integer updateReturnLoan(ReturnLoan returnLoan) throws IOException;
+
+    public Integer findReturnLoanCount(Integer loanId) throws IOException;
 
     /**
      * 查询所有逾期信息及催促情况
@@ -72,9 +78,6 @@ public interface ReturnLoanMapper {
      * @throws IOException
      */
     public Integer findTodayReturnCount() throws IOException;
-
-
-    public Integer findReturnLoanCount(Integer loanId) throws IOException;
 
 
 }

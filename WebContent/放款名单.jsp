@@ -111,11 +111,11 @@
                 <div class="oneTwo"><input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间"/></div>
             </div>
             </div>
-
+            <div style="width: 5%; float: left;" align="center"><input type="submit" name="querybtn" value=""/></div>
             <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
             <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
-            <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
+
         </form>
 
         <!-- Widgets -->

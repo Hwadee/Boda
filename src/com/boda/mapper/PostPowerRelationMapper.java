@@ -1,5 +1,6 @@
 package com.boda.mapper;
 
+import com.boda.pojo.Post;
 import com.boda.pojo.PostPowerRelation;
 
 import java.io.IOException;
@@ -41,6 +42,6 @@ public interface PostPowerRelationMapper {
      * @return
      * @throws IOException
      */
-    public Integer delPostPowerRelation(PostPowerRelation empPowerRelation) throws IOException;
+    public Integer delPostPowerRelation(Integer postId) throws IOException;
 
 }

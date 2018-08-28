@@ -14,7 +14,16 @@ public interface PostMapper {
 	 * @throws IOException
 	 */
 	public Post findPostById(Integer postId) throws IOException;
-	
+
+	/**
+	 * 根据部门id查询所有职务信息
+	 *
+	 * @param deptId
+	 * @return
+	 * @throws IOException
+	 */
+	public List<Post> findPostByDeptId(Integer deptId) throws IOException;
+
 	/**
 	 * 根据职务名字模糊查询职务信息
 	 * @param postName

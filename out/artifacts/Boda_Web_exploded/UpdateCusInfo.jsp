@@ -104,13 +104,12 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form action="CusInfo.do" method="post" customerName="form1">
-            <input type="hidden" customerName="currentPage" name="currentPage" value="${page.currentPage}"/>
-            <input type="text" name="customerName" placeholder="name..." customerName="lookfor"/>
+        <form action="CusInfo.do" class="searchWidget">
+            <input type="text" name="customerName" placeholder="搜索客户信息" id=""/>
+            <input type="submit" value=""/>
         </form>
     </div>
-
-    <!--更新部门信息-->
+    <!--更新客户信息-->
     <div id="updateInfo" class="wrapper">
         <div class="widgets">
             <div class="widget">
@@ -123,13 +122,11 @@
                         <div class="formRow">
                             <label>客户ID<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateId" name="customerId" value="${infotoupdate.customerId}"
-                                       readonly="readonly"/>
+                                <<input type="text" id="updateId" name="customerId" value="${infotoupdate.customerId}" readonly="readonly">
                             </div>
-                            <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户名字<span class="req">*</span> </label>
+                            <label>客户姓名<span class="req">*</span> </label>
                             <div class="formRight">
                                 <input type="text" id="updateName" name="customerName" value="${infotoupdate.customerName}"/>
                             </div>
@@ -138,56 +135,52 @@
                         <div class="formRow">
                             <label>客户性别<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateSex" name="customeSex" value="${infotoupdate.customerSex}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updateSex" name="customerSex" value="${infotoupdate.customerSex}"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户身份证<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateIdentityId" name="customerIdentityId" value="${infotoupdate.customerIdentityId}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updateIdentityId" name="customerIdentityId" value="${infotoupdate.customerIdentityId}"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户生日<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateBirthday" name="customerBirthday" value="${infotoupdate.customerBirthday}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updateBirthday" name="customerBirthday"
+                                       value=
+                                       <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.customerBirthday}" />
+                                />
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户邮箱<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateEmail" name="customerEmail" value="${infotoupdate.customerEmail}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updateEmail" name="customerEmail" value="${infotoupdate.customerEmail}"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户电话<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updatePhone" name="customerPhone" value="${infotoupdate.customerPhone}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updatePhone" name="customerPhone" value="${infotoupdate.customerPhone}"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户地址<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateAddress" name="customerAddress" value="${infotoupdate.customerAddress}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updateAddress" name="customerAddress" value="${infotoupdate.customerAddress}"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>信誉度<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateCredit" name="customerCredit" value="${infotoupdate.customerCredit}"
-                                       readonly="readonly"/>
+                                <input type="text" id="updateCredit" name="customerCredit" value="${infotoupdate.customerCredit}"/>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -210,12 +203,23 @@
 
 <div class="clear"></div>
 
-<%--<script type="text/javascript">--%>
-<%--var msg = "${MSG}";--%>
-<%--if (msg !== null &amp;&amp; msg !== "") {--%>
-<%--alert(msg);--%>
-<%--}--%>
-<%--</script>--%>
+<script type="text/javascript">
+
+    $(function () {
+        $("#updateBirthday").datepicker({
+            //限制日期范围
+//            minDate: -20,
+            maxDate: 0,
+
+            //月份、年份下拉框
+            changeMonth: true,
+            changeYear: true,
+
+            //日期格式
+            dateFormat: "yy-mm-dd"
+        });
+    });
+</script>
 
 </body>
 </html>

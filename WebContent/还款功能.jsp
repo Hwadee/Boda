@@ -107,14 +107,11 @@
     <!-- Main 表格 -->
     <div class="wrapper">
         <form id="form1" action="returnAccountWork.do" method="post" class="searchWidget">
-            <input type="hidden" id="currentPage" name="currentPage" value="${returnPage.currentPage}">
-            <input type="hidden" id="pageSize" name="pageSize" value="${returnPage.pageSize}">
-            <input type="hidden" id="allPageNum" name="allPageNum" value="${returnPage.allPageNum}">
 
             <div>
-                贷款id:<input id="loanId" name="loanId" value="${loanId}"/>&nbsp;
+                <input type="text" placeholder="贷款id" id="loanId" name="loanId" value="${loanId}"/>&nbsp;
 
-                <input type="button" value="" onclick="pageTurning(0)">
+                <input type="submit" value="">
             </div>
         </form>
         <!-- Widgets -->
@@ -137,7 +134,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${returnPage.objList}" var="returnLoan">
+                        <c:forEach items="${returnLoan}" var="returnLoan">
                             <tr>
                                 <td>${returnLoan.returnId}</td>
                                 <td>${returnLoan.loanId}</td>
@@ -156,13 +153,7 @@
                         </c:forEach>
                         </tbody>
                     </table>
-                    <div>
-                        <input type="button" value="首页" onclick="pageTurning(1)">
-                        <input type="button" value="上一页" onclick="pageTurning(2)">
-                        <span id="pageInfo">第${returnPage.currentPage}页/共${returnPage.allPageNum}页</span>
-                        <input type="button" value="下一页" onclick="pageTurning(3)">
-                        <input type="button" value="末页" onclick="pageTurning(4)">
-                    </div>
+
                 </fieldset>
             </div>
 
@@ -183,39 +174,20 @@
 <div class="clear"></div>
 <script type="text/javascript">
     //页面刷新的翻页
-    function pageTurning(num) {
-        var currentPage = parseInt("${returnPage.currentPage}");
-        var allPageNum = parseInt("${returnPage.allPageNum}");
-        switch (num) {
-            case 0:
-                currentPage = 1;
-                break;
-            case 1:
-                if (currentPage == 1)
-                    return;
-                currentPage = 1;
-                break;
-            case 2:
-                if (currentPage == 1)
-                    return;
-                currentPage--;
-                break;
-            case 3:
-                if (currentPage == allPageNum)
-                    return;
-                currentPage++;
-                break;
-            case 4:
-                if (currentPage == allPageNum)
-                    return;
-                currentPage = allPageNum;
-                break;
-        }
-        document.getElementById("currentPage").value = currentPage;
-        document.getElementById("form1").submit();
-    }
+
 
 </script>
-
+<div class="clear"></div>
+<script type="text/javascript">
+    var msg = "${MSG}";
+    if (msg != null && msg != "") {
+        if (msg == "OK") {
+            alert("成功");
+        }
+        else {
+            alert("失败");
+        }
+    }
+</script>
 </body>
 </html>

@@ -21,9 +21,8 @@ public interface DepartmentMapper {
 	 * @throws IOException
 	 */
 	public List<Department> findDepartmentByName(String deptName) throws IOException;
-	
-	
-	/**
+
+    /**
 	 * 新增一个部门信息
 	 * @param department
 	 * @return

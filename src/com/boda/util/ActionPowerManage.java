@@ -40,6 +40,7 @@ public class ActionPowerManage {
         actionPower.put("/DelDeptInfo.do", 1);
 
         actionPower.put("/IntoEmployeeManager.do", 1);
+        actionPower.put("/IntoEmpInfo.do", 1);
         actionPower.put("/EmpInfo.do", 1);
         actionPower.put("/DelEmpInfo.do", 1);
         actionPower.put("/AddEmpInfo.do", 1);
@@ -47,7 +48,14 @@ public class ActionPowerManage {
         actionPower.put("/IntoLoanInfo.do", 1);
         actionPower.put("/LoanInfo.do", 1);
 
+        actionPower.put("/EditPower.do", 1);
 
+        actionPower.put("/IntoCusInfo.do", 1);
+        actionPower.put("/CusInfo.do", 1);
+        actionPower.put("/AddCusInfo.do", 1);
+        actionPower.put("/QueryUpdatecustomerInfo.do", 1);
+        actionPower.put("/UpdateCusInfo.do", 1);
+        actionPower.put("/DelCusInfo.do", 1);
     }
 
     public static boolean hasPower(HttpServletRequest request) throws IOException {
@@ -61,6 +69,5 @@ public class ActionPowerManage {
         }
         return false;
     }
-
 
 }

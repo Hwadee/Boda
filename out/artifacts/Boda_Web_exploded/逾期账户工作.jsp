@@ -6,16 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>逾期情况报表</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <script>
         function myFunction() {
             alert("已催收");
@@ -122,62 +122,64 @@
         <div class="widgets">
             <div class="widget rightTabs">
                 <div class="title"><img src="images/icons/dark/stats.png" alt="" class="titleIcon"><h6>逾期账户工作</h6></div>
-                        <fieldset>
-                            <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
-                                <thead>
-                                <tr>
-                                    <th>贷款id</th>
-                                    <th>姓名</th>
-                                    <th>性别</th>
-                                    <th>出生日期</th>
-                                    <th>电话</th>
-                                    <th>Email</th>
-                                    <th>信用</th>
-                                    <th>贷款金额</th>
-                                    <th>贷款日期</th>
-                                    <th>贷款状态</th>
-                                    <th>开始还款日期</th>
-                                    <th>贷款期限</th>
-                                    <th>分期数</th>
-                                    <th>贷款利率</th>
-                                    <th>还款信息</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${page.objList}" var="loan">
-                                    <tr>
-                                        <td align="center">${loan.loanId}</td>
-                                        <td align="center"><a href="${pageContext.request.contextPath}/overTimeAccountDistribute.do?customerId=${loan.customerMessage.customerId}">
-                                                ${loan.customerMessage.customerName}</a></td>
-                                        <td align="center">${loan.customerMessage.customerSex}</td>
-                                        <td align="center"><fmt:formatDate value="${loan.customerMessage.customerBirthday}"
-                                                            pattern="yyyy-MM-dd" /></td>
-                                        <td align="center">${loan.customerMessage.customerPhone}</td>
-                                        <td align="center">${loan.customerMessage.customerEmail}</td>
-                                        <td align="center">${loan.customerMessage.customerCredit}</td>
-                                        <td align="center">${loan.loanMoney}</td>
-                                        <td align="center"><fmt:formatDate value="${loan.loanDate}"
-                                                            pattern="yyyy-MM-dd" /></td>
-                                        <td align="center">${loan.loanState}</td>
-                                        <td align="center"><fmt:formatDate value="${loan.returnStartDate}"
-                                                            pattern="yyyy-MM-dd" /></td>
-                                        <td align="center">${loan.returnYears}</td>
-                                        <td align="center">${loan.numberOfStages}</td>
-                                        <td align="center">${loan.rateOfInterest}</td>
-                                        <td align="center"><a href="${pageContext.request.contextPath}/returnLoanMessage.do?loanId=${loan.loanId}">
-                                            <input type="button" value="还款信息"></a></td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
-                            <div>
-                                <input type="button" value="首页" onclick="pageTurning(1)">
-                                <input type="button" value="上一页" onclick="pageTurning(2)">
-                                <span id="pageInfo">第${page.currentPage}页/共${page.allPageNum}页</span>
-                                <input type="button" value="下一页" onclick="pageTurning(3)">
-                                <input type="button" value="末页" onclick="pageTurning(4)">
-                            </div>
-                        </fieldset>
+                <fieldset>
+                    <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
+                        <thead>
+                        <tr>
+                            <th>贷款id</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>出生日期</th>
+                            <th>电话</th>
+                            <th>Email</th>
+                            <th>信用</th>
+                            <th>贷款金额</th>
+                            <th>贷款日期</th>
+                            <th>贷款状态</th>
+                            <th>开始还款日期</th>
+                            <th>贷款期限</th>
+                            <th>分期数</th>
+                            <th>贷款利率</th>
+                            <th>还款信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${page.objList}" var="loan">
+                            <tr>
+                                <td align="center">${loan.loanId}</td>
+                                <td align="center"><a
+                                        href="${pageContext.request.contextPath}/overTimeAccountDistribute.do?customerId=${loan.customerMessage.customerId}">
+                                        ${loan.customerMessage.customerName}</a></td>
+                                <td align="center">${loan.customerMessage.customerSex}</td>
+                                <td align="center"><fmt:formatDate value="${loan.customerMessage.customerBirthday}"
+                                                                   pattern="yyyy-MM-dd"/></td>
+                                <td align="center">${loan.customerMessage.customerPhone}</td>
+                                <td align="center">${loan.customerMessage.customerEmail}</td>
+                                <td align="center">${loan.customerMessage.customerCredit}</td>
+                                <td align="center">${loan.loanMoney}</td>
+                                <td align="center"><fmt:formatDate value="${loan.loanDate}"
+                                                                   pattern="yyyy-MM-dd"/></td>
+                                <td align="center">${loan.loanState}</td>
+                                <td align="center"><fmt:formatDate value="${loan.returnStartDate}"
+                                                                   pattern="yyyy-MM-dd"/></td>
+                                <td align="center">${loan.returnYears}</td>
+                                <td align="center">${loan.numberOfStages}</td>
+                                <td align="center">${loan.rateOfInterest}</td>
+                                <td align="center"><a
+                                        href="${pageContext.request.contextPath}/returnLoanMessage.do?loanId=${loan.loanId}">
+                                    <input type="button" value="还款信息"></a></td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <div>
+                        <input type="button" value="首页" onclick="pageTurning(1)">
+                        <input type="button" value="上一页" onclick="pageTurning(2)">
+                        <span id="pageInfo">第${page.currentPage}页/共${page.allPageNum}页</span>
+                        <input type="button" value="下一页" onclick="pageTurning(3)">
+                        <input type="button" value="末页" onclick="pageTurning(4)">
+                    </div>
+                </fieldset>
                     </div>
 
                 </div>

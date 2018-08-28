@@ -19,6 +19,31 @@
 		<result column="customer_credit" property="customerCredit"/>		
 	</resultMap>
 
+	<sql id="where">
+		<where>
+			<if test="customerName != null and customerName != ''">AND c.customer_name LIKE '%${customerName}%'</if>
+			<if test="customerPhone != null and customerPhone != ''">AND c.customer_phone LIKE '%${customerPhone}%'</if>
+			<if test="customerIdentityId != null and customerIdentityId != ''">AND c.customer_identity_id LIKE
+				'%${customerIdentityId}%'
+			</if>
+		</where>
+	</sql>
+
+	<!-- 通过指定信息查询客户 -->
+	<select id="findCustomer" resultType="com.boda.pojo.CustomerMessage">
+		SELECT *
+		FROM customer_message c
+		<include refid="where"/>
+		ORDER BY c.customer_id LIMIT #{startRow}, #{length}
+	</select>
+
+	<!-- 通过指定信息查询符合条件的员工数量 -->
+	<select id="findCusCount" resultType="int">
+		select count(c.customer_name)
+		from customer_message c
+		<include refid="where"/>
+	</select>
+
 	<!-- 通过客户id查询客户详细信息：查询结果封装成CustomerMessage类返回；-->
 	<select id="findCustomerById" parameterType="Integer" resultType="com.boda.pojo.CustomerMessage">
 		select * from customer_message where customer_id = #{value}

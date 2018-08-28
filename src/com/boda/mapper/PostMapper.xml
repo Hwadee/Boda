@@ -17,7 +17,15 @@
 	<select id="findPostById" parameterType="Integer" resultType="com.boda.pojo.Post">
 		select * from post where post_id = #{value}
 	</select>
-<!-- 根据职务名字查询职务信息；-->	
+
+	<!-- 根据部门id查询职务信息 -->
+	<select id="findPostByDeptId" parameterType="Integer" resultType="com.boda.pojo.Post">
+		SELECT *
+		FROM post
+		WHERE dept_id = #{value}
+	</select>
+
+	<!-- 根据职务名字查询职务信息；-->
 	<select id="findPostByName" parameterType="String" resultType="com.boda.pojo.Post">
 		select * from post where post_name like '%${value}%'
 	</select>	

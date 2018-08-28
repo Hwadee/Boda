@@ -6,6 +6,8 @@ import com.boda.util.Tool;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Method;
@@ -44,6 +46,15 @@ public class DepartmentManager {
         model.addAttribute("infotoupdate", department);
 
         return "UpdateDeptInfo";
+    }
+
+    @RequestMapping(value = "/QueryAllDept.do", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Department> queryAllDept() throws Exception {
+
+        List<Department> departments = ds.getDeptInfo("");
+        System.out.println(departments);
+        return departments;
     }
 
     @RequestMapping("/UpdateDeptInfo.do")

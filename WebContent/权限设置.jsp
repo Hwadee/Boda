@@ -12,67 +12,86 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>权限设置</title>
-    <link href="./css/main.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="./js/table.js"></script>
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/spinner/ui.spinner.js"></script>
-    <script type="text/javascript" src="./js/plugins/spinner/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/plugins/spinner/ui.spinner.js"></script>
+    <script type="text/javascript" src="js/plugins/spinner/jquery.mousewheel.js"></script>
 
-    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/charts/excanvas.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.orderBars.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.pie.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.flot.resize.js"></script>
-    <script type="text/javascript" src="./js/plugins/charts/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/excanvas.min.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.orderBars.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.flot.resize.js"></script>
+    <script type="text/javascript" src="js/plugins/charts/jquery.sparkline.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/forms/uniform.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.cleditor.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.validationEngine-en.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.validationEngine.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.tagsinput.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/autogrowtextarea.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.dualListBox.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/jquery.inputlimiter.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/forms/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/uniform.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.cleditor.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.validationEngine-en.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/autogrowtextarea.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.dualListBox.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/jquery.inputlimiter.min.js"></script>
+    <script type="text/javascript" src="js/plugins/forms/chosen.jquery.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/wizard/jquery.form.js"></script>
-    <script type="text/javascript" src="./js/plugins/wizard/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/wizard/jquery.form.wizard.js"></script>
+    <script type="text/javascript" src="js/plugins/wizard/jquery.form.js"></script>
+    <script type="text/javascript" src="js/plugins/wizard/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/wizard/jquery.form.wizard.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/uploader/plupload.js"></script>
-    <script type="text/javascript" src="./js/plugins/uploader/plupload.html5.js"></script>
-    <script type="text/javascript" src="./js/plugins/uploader/plupload.html4.js"></script>
-    <script type="text/javascript" src="./js/plugins/uploader/jquery.plupload.queue.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.html5.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/plupload.html4.js"></script>
+    <script type="text/javascript" src="js/plugins/uploader/jquery.plupload.queue.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/tables/datatable.js"></script>
-    <script type="text/javascript" src="./js/plugins/tables/tablesort.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/tables/resizable.min.js"></script>
+    <script type="text/javascript" src="js/plugins/tables/datatable.js"></script>
+    <script type="text/javascript" src="js/plugins/tables/tablesort.min.js"></script>
+    <script type="text/javascript" src="js/plugins/tables/resizable.min.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/ui/jquery.tipsy.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.collapsible.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.progress.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.timeentry.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.colorpicker.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.jgrowl.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.breadcrumbs.js"></script>
-    <script type="text/javascript" src="./js/plugins/ui/jquery.sourcerer.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.collapsible.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.progress.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.timeentry.min.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.colorpicker.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.breadcrumbs.js"></script>
+    <script type="text/javascript" src="js/plugins/ui/jquery.sourcerer.js"></script>
 
-    <script type="text/javascript" src="./js/plugins/calendar.min.js"></script>
-    <script type="text/javascript" src="./js/plugins/elfinder.min.js"></script>
+    <script type="text/javascript" src="js/plugins/calendar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/elfinder.min.js"></script>
 
-    <script type="text/javascript" src="./js/custom.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 
-    <script type="text/javascript" src="./js/charts/chart.js"></script>
+    <script type="text/javascript" src="js/charts/chart.js"></script>
+    <script type="text/javascript" src="js/power.js"></script>
 
-    <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
+
+    <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
+</head>
+
 
 <body>
+<script type="text/javascript">
 
+    function position() {
+        const deptId = document.getElementById("department").selectedIndex + 1;
+
+        $.ajax({
+            url: "PostOfDept.do?" + deptId,
+            type: "POST",
+
+            success: function (data) {
+
+            }
+        });
+    }
+
+</script>
 <!-- Left side content -->
 <jsp:include page="left.jsp"></jsp:include>
 <!-- Right side -->
@@ -89,7 +108,7 @@
             </div>
             <div class="middleNav">
 
-                <img src="./images/erweicode-2.jpg" alt="官网二维码"/>
+                <img src="images/erweicode-2.jpg" alt="官网二维码"/>
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>
@@ -99,94 +118,59 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <%--<form action="" class="searchWidget">--%>
-        <%--<input type="text" name="search" placeholder="搜索..." id=""/>--%>
-        <%--<input type="submit" value=""/>--%>
-        <%--</form>--%>
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget">
-                <div class="title"><img src="./images/icons/dark/stats.png" alt="" class="titleIcon"><h6>查看人员</h6>
-                    <div class="topIcons">
-                        <a href="#" class="tipS" title="打印该表格">
-                            <img src="./images/icons/downloadTop.png" alt>
-                        </a>
-                    </div>
+                <div class="title"><img src="images/icons/dark/stats.png" alt="" class="titleIcon"><h6>权限设置</h6>
+
                 </div>
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
-                    <thead>
+                    <tbody>
+                    <form>
+                        <tr>
+                            <td align="center"><strong>部门</strong></td>
+                            <td align="center">
+                                <select id="department" onchange="position()">
+                                    <option>贷前部</option>
+                                    <option>贷后部</option>
+                                    <option>财务部</option>
+                                    <option>管理部</option>
+                                </select>
+                                <input type="hidden" id="dep">
+                            </td>
+                        </tr>
                     <tr>
-                        <td>客户ID</td>
-                        <td>姓名</td>
-                        <td>性别</td>
-                        <td>生日</td>
-                        <td>邮箱</td>
-                        <td>电话</td>
-                        <td>地址</td>
-                        <td>信用</td>
-                        <td>操作</td>
-                    </tr>
-                    </thead>
-                    <tbody id="body">
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
+                        <td align="center"><strong>职位</strong></td>
                         <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
+                            <select id="position" name="positions">
+                                <option>带钱职位1</option>
+                                <option>带钱职位2</option>
+                                <option>带钱职位3</option>
+                                <option>带钱职位4</option>
+                            </select>
+                            <input type="hidden" id="pos">
+                        </td>
+                    <tr>
+                        <td align="center"><strong>权限</strong></td>
+                        <td align="center">
+                            <div class="formRow"><input type="checkbox" id="power1" name="power"><label for="power1">权限1：贷款前</label><input
+                                    type="hidden" id="c1"></div>
+                            <div class="formRow"><input type="checkbox" id="power2" name="power"><label for="power2">权限2：贷款后</label><input
+                                    type="hidden" id="c2"></div>
+                            <div class="formRow"><input type="checkbox" id="power3" name="power"><label for="power3">权限3：财务相关</label><input
+                                    type="hidden" id="c3"></div>
+                            <div class="formRow"><input type="checkbox" id="power4" name="power"><label for="power4">权限4：系统设置</label><input
+                                    type="hidden" id="c4"></div>
                         </td>
                     </tr>
                     <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
+                        <td align="right" colspan="2">
+                            <input type="button" class="blueB" value="确认修改" onclick="getPosition()">
                         </td>
                     </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">00001</td>
-                        <td align="center">张三</td>
-                        <td align="center">男</td>
-                        <td align="center">1900-01-12</td>
-                        <td align="center">qwe@126.com</td>
-                        <td align="center">130000000</td>
-                        <td align="center">aabb</td>
-                        <td align="center">xxxx</td>
-                        <td align="center">
-                            <input type="button" value="拒绝" class="redB" onclick="del(this)"/>
-                            <input type="button" value="批准" class="blueB" onclick=""/>
-                        </td>
-                    </tr>
+                    </form>
                     </tbody>
                 </table>
-
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>

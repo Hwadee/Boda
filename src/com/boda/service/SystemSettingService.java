@@ -2,8 +2,11 @@ package com.boda.service;
 
 import com.boda.mapper.DepartmentMapper;
 import com.boda.mapper.OperationMapper;
+import com.boda.mapper.PostMapper;
 import com.boda.pojo.Department;
 import com.boda.pojo.OperationLog;
+import com.boda.pojo.Post;
+import com.boda.pojo.PostPowerRelation;
 import com.boda.util.Tool;
 import com.boda.vo.Page;
 import org.springframework.stereotype.Service;
@@ -16,9 +19,9 @@ import java.util.List;
 @Service
 public class SystemSettingService {
     @Resource
-    private DepartmentMapper departmentMapper;
-    @Resource
     private OperationMapper operationMapper;
+    @Resource
+    private PostMapper postMapper;
 
 //    //一个搜索框，包括部门号或部门名称
 //    public List<Department> getDeptInfo(String deptSearchToken) throws Exception {
@@ -69,5 +72,10 @@ public class SystemSettingService {
         List<OperationLog> returnLoans = operationMapper.findOperationLog(startDate, endDate, startRow, pageSize, empId);
         operationLogPage.setObjList(returnLoans);
         return operationLogPage;
+    }
+
+    public List<Post> getPost(String deptId) throws Exception {
+
+        return postMapper.findPostByDeptId(Integer.parseInt(deptId));
     }
 }

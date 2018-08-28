@@ -27,6 +27,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         try {
             OperationLogger.addLogger(request);
         } catch (Exception e) {
+            System.out.println("Add operation log failed.");
             e.printStackTrace();
         }
 

@@ -210,7 +210,7 @@
 
                         <div class="formSubmit">
                             <input type="submit" value="确定" class="greenB"/>
-                            <input type="button" value="取消" class="redB" onclick="history.back()"/>
+                            <input type="button" value="取消" class="redB" id="cancelbtn"/>
                         </div>
                     </fieldset>
                 </form>
@@ -252,6 +252,14 @@
 //        alert("Id=" + _id);
         location.href = "QueryUpdateInfo.do?deptId=" + _id;
     }
+
+    $("#cancelbtn").click(function () {
+        var infodiv = document.getElementById("addInfo");
+        infodiv.style.display = "none";
+        $('html, body').animate({
+            scrollTop: $("#body").offset().top
+        }, 500);
+    });
 
     $("#addinfobtn").click(function () {
         var infodiv = document.getElementById("addInfo");

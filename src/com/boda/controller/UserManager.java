@@ -62,6 +62,11 @@ public class UserManager {
         return "个人中心";
     }
 
+    @RequestMapping("/IntoEmpInfo.do")
+    public String intoEmpInfo() {
+        return "人员管理";
+    }
+
     @RequestMapping("/EmpInfo.do")
     public String empInfo(String empId, String empName, String empDept, Page<Employee> page, Model model) throws Exception {
 

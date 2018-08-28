@@ -150,6 +150,7 @@
                                 <input type="text" id="updateBuildTime" name="deptBuildTime"
                                        value=
                                        <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.deptBuildTime}"/>
+
                                 />
                             </div>
 
@@ -180,7 +181,7 @@
         $("#updateBuildTime").datepicker({
             //限制日期范围
 //            minDate: -20,
-//            maxDate: "+1M +10D",
+            maxDate: 0,
 
             //月份、年份下拉框
             changeMonth: true,

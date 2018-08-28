@@ -33,8 +33,8 @@
         WHERE post_id=#{postId}
     </update> -->
     <!-- 根据职务id删除相应权限 -->
-    <delete id="delPostPowerRelation" parameterType="com.boda.pojo.PostPowerRelation">
-        DELETE from post_power_relation where post_id=#{postId} and power_id=#{powerId}
+    <delete id="delPostPowerRelation" parameterType="Integer">
+        DELETE from post_power_relation where post_id=#{value}
     </delete>
 
 </mapper>

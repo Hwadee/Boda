@@ -6,9 +6,14 @@ import com.boda.service.PowerControllerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -44,5 +49,30 @@ public class PowerController {
     public String logoutController(HttpServletRequest request, Model model) {
         powerControllerService.logoutControlService(request, model);
         return "userLogin";
+    }
+
+    @RequestMapping(value = "/EditPower.do", method = RequestMethod.POST)
+    @ResponseBody
+    public String editPower(/*String postId,@RequestParam("power") String power,*/ Model model) throws Exception {
+
+        String postId = "3";
+        String power = "24";
+        char[] powerChar = power.toCharArray();
+        List<PostPowerRelation> powerList = new LinkedList<>();
+
+        for (char s : powerChar) {
+            System.out.println(s);
+            PostPowerRelation ppr = new PostPowerRelation();
+            ppr.setPostId(Integer.parseInt(postId));
+            ppr.setPowerId(Integer.parseInt(String.valueOf(s)));
+            powerList.add(ppr);
+        }
+        if (powerControllerService.editPower(powerList)) {
+            model.addAttribute("MSG", "更新权限成功");
+        } else {
+            model.addAttribute("MSG", "更新失败");
+        }
+
+        return "权限设置";
     }
 }

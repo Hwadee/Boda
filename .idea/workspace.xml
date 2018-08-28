@@ -7,83 +7,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab945b38-605d-486a-8eb3-827f5f1bc1ec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/CustomerMessageManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/OperationLogManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/CustomerMessageService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/OperationLogService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/images/avatar/803b18e3e4084a02b54e26402faf6f11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/boda/controller/CustomerMessageManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/boda/controller/OperationLogManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/boda/service/CustomerMessageService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/boda/service/OperationLogService.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_src_/schema/boda.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6/_src_/schema/boda.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/LoanManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/LoanManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/UserDetailManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/UserDetailManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmpDetailMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmpDetailMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/OperationMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/OperationMapper.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/AfterLoanManagerController.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/AfterLoanManagerController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/DepartmentManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/DepartmentManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/FinanceManageController.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/FinanceManageController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/PowerController.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/PowerController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/UserManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/UserManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/interceptor/LoginInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/CustomerMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/CustomerMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmployeeMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmployeeMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostPowerRelationMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostPowerRelationMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/ReturnLoanMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/ReturnLoanMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/UrgeForReturnMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/UrgeForReturnMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/EmpPowerRelation.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/EmpPowerRelation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/Loan.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/Loan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/ReturnLoan.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/ReturnLoan.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/PostPowerRelation.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/PostPowerRelation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/UrgeForReturn.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/UrgeForReturn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/LoanService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/LoanService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/UserDetailService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/UserDetailService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/Tool.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/Tool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/images/avatar/temp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/images/avatar/temp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/d5312738-f62e-4df7-bf95-8f3e98fd6ad6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/AfterLoanManagerService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/AfterLoanManagerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/FinanceManageService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/FinanceManageService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/PowerControllerService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/PowerControllerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/SystemSettingService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/SystemSettingService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/UserManagerService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/UserManagerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/ActionPowerManage.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/ActionPowerManage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/OperationLogger.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/OperationLogger.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/vo/OverTimeDistribute.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/vo/OverTimeDistribute.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/UpdateCusInfo.jsp" afterPath="$PROJECT_DIR$/WebContent/UpdateCusInfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp" afterPath="$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/success.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/success.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/userLogin.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/userLogin.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/index.jsp" afterPath="$PROJECT_DIR$/WebContent/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/js/personalCenter.js" afterPath="$PROJECT_DIR$/WebContent/js/personalCenter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/top.jsp" afterPath="$PROJECT_DIR$/WebContent/top.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/userLogin.jsp" afterPath="$PROJECT_DIR$/WebContent/userLogin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/left.jsp" afterPath="$PROJECT_DIR$/WebContent/left.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/个人中心.jsp" afterPath="$PROJECT_DIR$/WebContent/个人中心.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/人员管理.jsp" afterPath="$PROJECT_DIR$/WebContent/人员管理.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/客户信息查询.jsp" afterPath="$PROJECT_DIR$/WebContent/客户信息查询.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/操作记录查询.jsp" afterPath="$PROJECT_DIR$/WebContent/操作记录查询.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/放款名单.jsp" afterPath="$PROJECT_DIR$/WebContent/放款名单.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/权限设置.jsp" afterPath="$PROJECT_DIR$/WebContent/权限设置.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/还款功能.jsp" afterPath="$PROJECT_DIR$/WebContent/还款功能.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/还款名单.jsp" afterPath="$PROJECT_DIR$/WebContent/还款名单.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/逾期情况报表.jsp" afterPath="$PROJECT_DIR$/WebContent/逾期情况报表.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/逾期账户工作.jsp" afterPath="$PROJECT_DIR$/WebContent/逾期账户工作.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/还款详细信息.jsp" afterPath="$PROJECT_DIR$/WebContent/还款详细信息.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/部门管理.jsp" afterPath="$PROJECT_DIR$/WebContent/部门管理.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/springmvc/springmvc.xml" afterPath="$PROJECT_DIR$/config/springmvc/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmpDetailMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmpDetailMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateCusInfo.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateCusInfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateDeptInfo.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateDeptInfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/CustomerMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/EmployeeMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/OperationMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/OperationMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostPowerRelationMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostPowerRelationMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/ReturnLoanMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/ReturnLoanMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/UrgeForReturnMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/UrgeForReturnMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/springmvc/springmvc.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/springmvc/springmvc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/userLogin.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/userLogin.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/left.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/left.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/success.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/success.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/top.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/top.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/个人中心.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/个人中心.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/人员管理.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/人员管理.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/客户信息查询.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/客户信息查询.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/操作记录查询.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/操作记录查询.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/放款名单.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/放款名单.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/权限设置.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/权限设置.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款功能.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款功能.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款名单.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款名单.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/逾期情况报表.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/逾期情况报表.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/逾期账户工作.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/逾期账户工作.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/UserDetailManager.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/UserDetailManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/部门管理.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/部门管理.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/FinanceManageController.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/FinanceManageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/PowerController.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/PowerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/UserManager.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/UserManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/interceptor/LoginInterceptor.java" afterPath="$PROJECT_DIR$/src/com/boda/interceptor/LoginInterceptor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/DepartmentMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/DepartmentMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/OverTimeMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/OverTimeMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/PostMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/PostMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/PostMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/PostMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/UrgeForReturnMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/UrgeForReturnMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/UrgeForReturnMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/UrgeForReturnMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/pojo/ReturnLoan.java" afterPath="$PROJECT_DIR$/src/com/boda/pojo/ReturnLoan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/pojo/UrgeForReturn.java" afterPath="$PROJECT_DIR$/src/com/boda/pojo/UrgeForReturn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/service/UserManagerService.java" afterPath="$PROJECT_DIR$/src/com/boda/service/UserManagerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/util/Tool.java" afterPath="$PROJECT_DIR$/src/com/boda/util/Tool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/service/FinanceManageService.java" afterPath="$PROJECT_DIR$/src/com/boda/service/FinanceManageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/service/PowerControllerService.java" afterPath="$PROJECT_DIR$/src/com/boda/service/PowerControllerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java" afterPath="$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java" afterPath="$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,85 +122,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/boda/controller/UserManager.java">
+      <file leaf-file-name="ActionPowerManage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PowerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/boda/controller/PowerController.java">
+      <file leaf-file-name="CustomerMessageService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boda/service/CustomerMessageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="-440">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="人员管理.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/人员管理.jsp">
+      <file leaf-file-name="权限设置.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/权限设置.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="138" column="22" lean-forward="true" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
+            <state relative-caret-position="400">
+              <caret line="88" column="16" lean-forward="true" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.java">
+      <file leaf-file-name="power.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/js/power.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="140">
+              <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.xml">
+      <file leaf-file-name="SystemSettingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="117" column="20" lean-forward="true" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+            <state relative-caret-position="480">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
-                <marker date="1535340737443" expanded="true" signature="2944:3011" ph="SELECT e.emp... employee" />
-                <marker date="1535340737443" expanded="true" signature="2944:3101" ph="SELECT e.emp... employee" />
-                <marker date="1535340737443" expanded="true" signature="3204:3287" ph="select count... employee" />
-                <marker date="1535340737443" expanded="true" signature="3420:3566" ph="SELECT p.pos... post" />
-                <marker date="1535340737443" expanded="true" signature="3662:3739" ph="SELECT emp_i... employee" />
-                <marker date="1535340737443" expanded="true" signature="3896:3958" ph="select * fro... employee" />
-                <marker date="1535340737443" expanded="true" signature="4117:4184" ph="select * fro... employee" />
-                <marker date="1535340737443" expanded="true" signature="4350:4464" ph="select * fro... employee" />
-                <marker date="1535340737443" expanded="true" signature="4578:4667" ph="UPDATE emplo... " />
-                <marker date="1535340737443" expanded="true" signature="5083:5210" ph="insert into employee... " />
-                <marker date="1535340737443" expanded="true" signature="5332:5471" ph="UPDATE emplo... " />
-                <marker date="1535340737443" expanded="true" signature="5569:5621" ph="DELETE from " />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="个人中心.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/个人中心.jsp">
+      <file leaf-file-name="SystemSettingService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2221">
-              <caret line="345" column="9" lean-forward="true" selection-start-line="345" selection-start-column="9" selection-end-line="345" selection-end-column="9" />
+            <state relative-caret-position="422">
+              <caret line="78" column="69" lean-forward="false" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDetailManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/boda/controller/UserDetailManager.java">
+      <file leaf-file-name="PostMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <marker date="1535428245208" expanded="true" signature="575:618" ph="select * fro... post" />
+                <marker date="1535428245208" expanded="true" signature="744:791" ph="SELECT * FRO... post" />
+                <marker date="1535428245208" expanded="true" signature="914:966" ph="select * fro... post" />
+                <marker date="1535428245208" expanded="true" signature="1066:1154" ph="insert into post... " />
+                <marker date="1535428245208" expanded="true" signature="1258:1360" ph="UPDATE post " />
+                <marker date="1535428245208" expanded="true" signature="1446:1485" ph="DELETE from " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,6 +239,7 @@
       <find>pageRowNum</find>
       <find>empDept</find>
       <find>logout</find>
+      <find>mess</find>
     </findStrings>
     <replaceStrings>
       <replace>/WEB-INF</replace>
@@ -252,57 +265,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebContent/temp.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/CustomerMessageService.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/OperationLogManager.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/OperationLogService.java" />
-        <option value="/MySQL Fragment (LoanMapper.xml:1624).sql" />
-        <option value="$PROJECT_DIR$/src/com/boda/vo/Page.java" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class" />
-        <option value="$PROJECT_DIR$/WebContent/部门管理.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/test/TestAccountPattern.java" />
-        <option value="$PROJECT_DIR$/WebContent/权限设置.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/CustomerMessageManager.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/pojo/EmpPowerRelation.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/CustomerMessageManager.java" />
-        <option value="$PROJECT_DIR$/WebContent/客户信息查询.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/LoanManager.java" />
-        <option value="$PROJECT_DIR$/WebContent/人员管理.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/mapper/EmpDetailMapper.java" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/EmpDetailMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/boda/pojo/Employee.java" />
         <option value="$PROJECT_DIR$/src/com/boda/pojo/Loan.java" />
         <option value="$PROJECT_DIR$/src/com/boda/service/LoanService.java" />
         <option value="$PROJECT_DIR$/src/com/boda/service/UserDetailService.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/util/OperationLogger.java" />
         <option value="$PROJECT_DIR$/src/com/boda/vo/OverTimeDistribute.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/FinanceManageController.java" />
         <option value="$PROJECT_DIR$/WebContent/userLogin.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/interceptor/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java" />
         <option value="$PROJECT_DIR$/src/com/boda/service/AfterLoanManagerService.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/FinanceManageService.java" />
         <option value="$PROJECT_DIR$/WebContent/逾期情况报表.jsp" />
         <option value="$PROJECT_DIR$/src/com/boda/pojo/ReturnLoan.java" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.xml" />
-        <option value="$PROJECT_DIR$/WebContent/放款名单.jsp" />
         <option value="$PROJECT_DIR$/src/com/boda/util/Tool.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java" />
-        <option value="$PROJECT_DIR$/WebContent/操作记录查询.jsp" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/PowerController.java" />
-        <option value="$PROJECT_DIR$/config/springmvc/springmvc.xml" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/PowerControllerService.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/controller/UserManager.java" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.java" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/boda/service/UserManagerService.java" />
-        <option value="$PROJECT_DIR$/WebContent/个人中心.jsp" />
         <option value="$PROJECT_DIR$/src/com/boda/controller/UserDetailManager.java" />
+        <option value="$PROJECT_DIR$/WebContent/放款名单.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/还款功能.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/boda/interceptor/LoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/util/OperationLogger.java" />
+        <option value="$PROJECT_DIR$/WebContent/操作记录查询.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/部门管理.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/DepartmentMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/service/PowerControllerService.java" />
+        <option value="$PROJECT_DIR$/config/springmvc/springmvc.xml" />
+        <option value="$PROJECT_DIR$/src/com/boda/controller/PowerController.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/boda/service/FinanceManageService.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/controller/FinanceManageController.java" />
+        <option value="$PROJECT_DIR$/WebContent/还款名单.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boda/controller/UserManager.java" />
+        <option value="$PROJECT_DIR$/WebContent/left.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/个人中心.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/人员管理.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/controller/CustomerMessageManager.java" />
+        <option value="$PROJECT_DIR$/WebContent/客户信息查询.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/UpdateCusInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/PostMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/mapper/PostMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java" />
+        <option value="$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java" />
+        <option value="$PROJECT_DIR$/WebContent/权限设置.jsp" />
       </list>
     </option>
   </component>
@@ -343,10 +356,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -476,7 +489,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -485,24 +498,25 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\js" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\controller" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\service" />
-      <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\mapper" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.boda.pojo" />
-      <recent name="com.boda.vo" />
-      <recent name="com.boda.interceptor" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wuming\Desktop\Boda\WebContent" />
       <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\mapper" />
       <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\util" />
       <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\service" />
       <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.boda.util" />
+      <recent name="com.boda.pojo" />
+      <recent name="com.boda.vo" />
+      <recent name="com.boda.interceptor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\js" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\WebContent\js\plugins\forms" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\mapper" />
+      <recent name="C:\Users\Wuming\Desktop\Boda\src\com\boda\service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -798,7 +812,11 @@
       <workItem from="1535158992353" duration="11910000" />
       <workItem from="1535178880223" duration="18468000" />
       <workItem from="1535277261107" duration="12910000" />
-      <workItem from="1535331546415" duration="9080000" />
+      <workItem from="1535331546415" duration="9152000" />
+      <workItem from="1535350896036" duration="3771000" />
+      <workItem from="1535354682868" duration="10887000" />
+      <workItem from="1535372051842" duration="6533000" />
+      <workItem from="1535417811476" duration="10238000" />
     </task>
     <task id="LOCAL-00001" summary="SSM frame">
       <created>1534403608446</created>
@@ -961,7 +979,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535295770497</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="前端">
+      <created>1535341819815</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1535341819815</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -997,7 +1022,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209154000" />
+    <option name="totallyTimeSpent" value="240655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1022,7 +1047,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978448" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1030,10 +1055,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19073276" sideWeight="0.4946352" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24784483" sideWeight="0.49302575" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29310346" sideWeight="0.49302575" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.49785408" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2671674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25643778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1073,7 +1098,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1082,263 +1107,149 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.xml">
+    <entry file="file://$PROJECT_DIR$/WebContent/放款名单.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-1947">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/UrgeForReturnMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/pojo/OperationLog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="80">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/OverTimeMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/AfterLoanManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/还款名单.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/vo/OverTimeDistribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/FinanceManageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/pojo/UrgeForReturn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/LoanService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="752">
+          <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
           <folding>
-            <marker date="1534814454597" expanded="true" signature="1056:1115" ph="select * fro... customer_message" />
-            <marker date="1534814454597" expanded="true" signature="1277:1345" ph="select * fro... customer_message" />
-            <marker date="1534814454597" expanded="true" signature="1460:1807" ph="insert into customer_message... " />
-            <marker date="1534814454597" expanded="true" signature="1928:2301" ph="UPDATE custo... " />
-            <marker date="1534814454597" expanded="true" signature="2391:2446" ph="DELETE from " />
+            <marker date="1535352768939" expanded="true" signature="1128:1201" ph="SELECT * FRO... operation_log" />
+            <marker date="1535352768939" expanded="true" signature="1373:1448" ph="SELECT * FRO... operation_log" />
+            <marker date="1535352768939" expanded="true" signature="1602:1669" ph="SELECT * FRO... operation_log" />
+            <marker date="1535352768939" expanded="true" signature="1788:1967" ph="select * fro... operation_log" />
+            <marker date="1535352768939" expanded="true" signature="2072:2106" ph="select count... operation_log" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mybatis/MyBatisConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/spring/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1862">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/操作记录查询.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1184">
+          <caret line="147" column="29" lean-forward="true" selection-start-line="147" selection-start-column="29" selection-end-line="147" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="117" column="20" lean-forward="false" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+          <folding>
+            <marker date="1535341812355" expanded="true" signature="2944:3011" ph="SELECT e.emp... employee" />
+            <marker date="1535341812355" expanded="true" signature="2944:3101" ph="SELECT e.emp... employee" />
+            <marker date="1535341812355" expanded="true" signature="3204:3287" ph="select count... employee" />
+            <marker date="1535341812355" expanded="true" signature="3420:3566" ph="SELECT p.pos... post" />
+            <marker date="1535341812355" expanded="true" signature="3662:3739" ph="SELECT emp_i... employee" />
+            <marker date="1535341812355" expanded="true" signature="3896:3958" ph="select * fro... employee" />
+            <marker date="1535341812355" expanded="true" signature="4117:4184" ph="select * fro... employee" />
+            <marker date="1535341812355" expanded="true" signature="4350:4464" ph="select * fro... employee" />
+            <marker date="1535341812355" expanded="true" signature="4578:4667" ph="UPDATE emplo... " />
+            <marker date="1535341812355" expanded="true" signature="5091:5218" ph="insert into employee... " />
+            <marker date="1535341812355" expanded="true" signature="5340:5479" ph="UPDATE emplo... " />
+            <marker date="1535341812355" expanded="true" signature="5577:5629" ph="DELETE from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/UserDetailManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-382">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boda/util/OperationLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-548">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="4" />
-          <folding>
-            <marker date="1535335645045" expanded="true" signature="4043:4069" ph="SELECT * FRO... loan" />
-            <marker date="1535335645045" expanded="true" signature="4231:4382" ph="select * fro... loan" />
-            <marker date="1535335645045" expanded="true" signature="4502:4758" ph="select * fro... loan" />
-            <marker date="1535335645045" expanded="true" signature="5217:5271" ph="select count... loan" />
-            <marker date="1535335645045" expanded="true" signature="5412:5473" ph="select sum(l... loan" />
-            <marker date="1535335645045" expanded="true" signature="5606:5721" ph="SELECT DISTI... loan" />
-            <marker date="1535335645045" expanded="true" signature="5858:5999" ph="SELECT DISTI... loan" />
-            <marker date="1535335645045" expanded="true" signature="6110:6140" ph="SELECT * FRO... loan" />
-            <marker date="1535335645045" expanded="true" signature="6110:6254" ph="SELECT l.*, loan" />
-            <marker date="1535335645045" expanded="true" signature="6110:6261" ph="SELECT l.*, loan" />
-            <marker date="1535335645045" expanded="true" signature="6349:6389" ph="SELECT count... return_loan" />
-            <marker date="1535335645045" expanded="true" signature="6505:6615" ph="SELECT * FRO... loan" />
-            <marker date="1535335645045" expanded="true" signature="6722:7021" ph="INSERT INTO loan... " />
-            <marker date="1535335645045" expanded="true" signature="7136:7219" ph="UPDATE loan " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/FinanceManageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/OperationLogManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/OperationLogService.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/DepartmentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/CustomerMessageService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/service/DepartmentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="400">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/pojo/ReturnLoan.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/service/PowerControllerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="400">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-421">
-          <caret line="47" column="37" lean-forward="true" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-          <folding>
-            <marker date="1535337100843" expanded="true" signature="1305:1357" ph="select * fro... return_loan" />
-            <marker date="1535337100843" expanded="true" signature="1493:1543" ph="select * fro... return_loan" />
-            <marker date="1535337100843" expanded="true" signature="1671:1772" ph="select count... loan" />
-            <marker date="1535337100843" expanded="true" signature="1885:2023" ph="select * fro... return_loan" />
-            <marker date="1535337100843" expanded="true" signature="2133:2246" ph="select count... return_loan" />
-            <marker date="1535337100843" expanded="true" signature="2369:2656" ph="update retur... " />
-            <marker date="1535337100843" expanded="true" signature="2753:2855" ph="select * fro... return_loan" />
-            <marker date="1535337100843" expanded="true" signature="2948:3015" ph="select count... return_loan" />
-            <marker date="1535337100843" expanded="true" signature="3111:3182" ph="select count... return_loan" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/部门管理.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="241" column="11" lean-forward="true" selection-start-line="241" selection-start-column="11" selection-end-line="241" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <marker date="1535338014629" expanded="true" signature="1128:1201" ph="SELECT * FRO... operation_log" />
-            <marker date="1535338014629" expanded="true" signature="1373:1448" ph="SELECT * FRO... operation_log" />
-            <marker date="1535338014629" expanded="true" signature="1602:1669" ph="SELECT * FRO... operation_log" />
-            <marker date="1535338014629" expanded="true" signature="1788:1940" ph="select * fro... operation_log" />
-            <marker date="1535338014629" expanded="true" signature="2045:2079" ph="select count... operation_log" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/操作记录查询.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/util/Tool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/AfterLoanManagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="700">
+          <caret line="39" column="6" lean-forward="false" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1351,193 +1262,309 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/springmvc/springmvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/pojo/PowerGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java">
+    <entry file="file://$PROJECT_DIR$/config/springmvc/springmvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        <state relative-caret-position="900">
+          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostPowerRelationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1535360871815" expanded="true" signature="637:695" ph="select * fro... post_power_relation" />
+            <marker date="1535360871815" expanded="true" signature="855:914" ph="select * fro... post_power_relation" />
+            <marker date="1535360871815" expanded="true" signature="1050:1138" ph="insert into post_power_relation... " />
+            <marker date="1535360871815" expanded="true" signature="1506:1560" ph="DELETE from " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/放款名单.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/PowerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="155" column="29" lean-forward="true" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
+        <state relative-caret-position="232">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/逾期情况报表.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/DepartmentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2419">
-          <caret line="222" column="7" lean-forward="true" selection-start-line="222" selection-start-column="7" selection-end-line="222" selection-end-column="7" />
+        <state relative-caret-position="194">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/interceptor/LoginInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/PowerControllerService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="475">
+          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding>
+            <marker date="1535420233457" expanded="true" signature="1302:1354" ph="select * fro... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="1489:1539" ph="select * fro... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="1665:1766" ph="select count... loan" />
+            <marker date="1535420233457" expanded="true" signature="1878:2016" ph="select * fro... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="2124:2237" ph="select count... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="2426:2568" ph="UPDATE retur... " />
+            <marker date="1535420233457" expanded="true" signature="2670:2741" ph="select count... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="2841:2943" ph="select * fro... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="3036:3103" ph="select count... return_loan" />
+            <marker date="1535420233457" expanded="true" signature="3173:3200" ph="select * fro... return_loan" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/ReturnLoanMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/FinanceManageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="75" lean-forward="false" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/index2.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/service/FinanceManageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1320">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="338">
+          <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/top.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        <state relative-caret-position="439">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1535420727914" expanded="true" signature="1398:1513" ph="SELECT * FRO... customer_message" />
+            <marker date="1535420727914" expanded="true" signature="1601:1656" ph="select count... customer_message" />
+            <marker date="1535420727914" expanded="true" signature="1848:1907" ph="select * fro... customer_message" />
+            <marker date="1535420727914" expanded="true" signature="2069:2137" ph="select * fro... customer_message" />
+            <marker date="1535420727914" expanded="true" signature="2251:2598" ph="insert into customer_message... " />
+            <marker date="1535420727914" expanded="true" signature="2719:3092" ph="UPDATE custo... " />
+            <marker date="1535420727914" expanded="true" signature="3182:3237" ph="DELETE from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/CustomerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1040">
+        <state relative-caret-position="-1840">
           <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/OperationMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/LoanManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/userLogin.jsp">
+    <entry file="file://$PROJECT_DIR$/WebContent/left.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="815">
+          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/js/personalCenter.js">
+    <entry file="file://$PROJECT_DIR$/WebContent/还款名单.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="104" column="41" lean-forward="false" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmpDetailMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/util/Tool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="165" column="5" lean-forward="true" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/人员管理.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="138" column="22" lean-forward="true" selection-start-line="138" selection-start-column="22" selection-end-line="138" selection-end-column="22" />
+        <state relative-caret-position="409">
+          <caret line="221" column="48" lean-forward="true" selection-start-line="221" selection-start-column="48" selection-end-line="221" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/PowerController.java">
+    <entry file="file://$PROJECT_DIR$/WebContent/个人中心.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state relative-caret-position="-1922">
+          <caret line="47" column="105" lean-forward="true" selection-start-line="47" selection-start-column="105" selection-end-line="47" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boda/controller/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state relative-caret-position="-458">
+          <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/service/UserManagerService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/EmployeeMapper.xml">
+    <entry file="file://$PROJECT_DIR$/WebContent/部门管理.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="117" column="20" lean-forward="true" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+        <state relative-caret-position="-1140">
+          <caret line="207" column="53" lean-forward="true" selection-start-line="207" selection-start-column="53" selection-end-line="207" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/UpdateDeptInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/UpdateCusInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="206" column="0" lean-forward="true" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/CustomerMessageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="60" column="45" lean-forward="true" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/客户信息查询.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="323" column="0" lean-forward="true" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/service/CustomerMessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/pojo/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1535340737443" expanded="true" signature="2944:3011" ph="SELECT e.emp... employee" />
-            <marker date="1535340737443" expanded="true" signature="2944:3101" ph="SELECT e.emp... employee" />
-            <marker date="1535340737443" expanded="true" signature="3204:3287" ph="select count... employee" />
-            <marker date="1535340737443" expanded="true" signature="3420:3566" ph="SELECT p.pos... post" />
-            <marker date="1535340737443" expanded="true" signature="3662:3739" ph="SELECT emp_i... employee" />
-            <marker date="1535340737443" expanded="true" signature="3896:3958" ph="select * fro... employee" />
-            <marker date="1535340737443" expanded="true" signature="4117:4184" ph="select * fro... employee" />
-            <marker date="1535340737443" expanded="true" signature="4350:4464" ph="select * fro... employee" />
-            <marker date="1535340737443" expanded="true" signature="4578:4667" ph="UPDATE emplo... " />
-            <marker date="1535340737443" expanded="true" signature="5083:5210" ph="insert into employee... " />
-            <marker date="1535340737443" expanded="true" signature="5332:5471" ph="UPDATE emplo... " />
-            <marker date="1535340737443" expanded="true" signature="5569:5621" ph="DELETE from " />
+            <marker date="1535428245208" expanded="true" signature="575:618" ph="select * fro... post" />
+            <marker date="1535428245208" expanded="true" signature="744:791" ph="SELECT * FRO... post" />
+            <marker date="1535428245208" expanded="true" signature="914:966" ph="select * fro... post" />
+            <marker date="1535428245208" expanded="true" signature="1066:1154" ph="insert into post... " />
+            <marker date="1535428245208" expanded="true" signature="1258:1360" ph="UPDATE post " />
+            <marker date="1535428245208" expanded="true" signature="1446:1485" ph="DELETE from " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/个人中心.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/mapper/PostMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2221">
-          <caret line="345" column="9" lean-forward="true" selection-start-line="345" selection-start-column="9" selection-end-line="345" selection-end-column="9" />
+        <state relative-caret-position="240">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/UserDetailManager.java">
+    <entry file="file://$PROJECT_DIR$/src/com/boda/service/SystemSettingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="422">
+          <caret line="78" column="69" lean-forward="false" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/js/power.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/权限设置.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="88" column="16" lean-forward="true" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
           <folding />
         </state>
       </provider>

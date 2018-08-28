@@ -22,6 +22,7 @@
 	<!-- 开启spring的扫描器 -->
 	<context:component-scan base-package="com.boda.controller" />
 	<context:component-scan base-package="com.boda.service" />
+	<context:component-scan base-package="com.boda.util" />
 
 	<!-- 配置视图解析器 InternalResourceViewResolver：支持JSP视图解析。 viewClass：JstlView表示JSP模板页面需要使用JSTL标签库，所以classpath中必须包含jstl的相关jar包； 
 		prefix和suffix：查找视图页面的前缀和后缀，最终视图的址为：前缀+逻辑视图名+后缀， 逻辑视图名 需要在controller中返回ModelAndView指定，比如逻辑视图名为hello，则最终返回的jsp视图地址 
@@ -42,4 +43,26 @@
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 
+	<!-- Json文件传输 -->
+	<bean
+			class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json; charset=UTF-8</value>
+				<value>application/x-www-form-urlencoded; charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+
+    <!-- 配置拦截器-->
+    <mvc:interceptors>
+        <!--登陆拦截器-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*.do"/>
+            <mvc:exclude-mapping path="/**/login.do"/>
+            <mvc:exclude-mapping path="/**/toLogin.do"/>
+            <mvc:exclude-mapping path="/**/logout.do"/>
+            <bean class="com.boda.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

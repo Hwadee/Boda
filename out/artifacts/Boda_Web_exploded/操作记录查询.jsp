@@ -103,7 +103,7 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form  id="form1" action="OperationLogs.do" method="post" class="searchWidget">
+        <form id="form1" action="OperationLogs.do" method="post" class="searchWidget">
             <input type="hidden" id="currentPage" name="currentPage" value="${operationLogPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${operationLogPage.pageSize}">
             <input type="hidden" id="allPageNum" name="allPageNum" value="${operationLogPage.allPageNum}">
@@ -143,7 +143,7 @@
                             <td id="id" align="center">${operationlog.operationId}</td>
                             <td id="empid" align="center">${operationlog.empId}</td>
                             <td id="date" align="center"><fmt:formatDate value="${operationlog.operationDate}"
-                                                                         pattern="yyyy-MM-dd HH:mm"/></td>
+                                                                         pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <td id="type" align="center">${operationlog.operationType}"</td>
                         </tr>
                     </c:forEach>

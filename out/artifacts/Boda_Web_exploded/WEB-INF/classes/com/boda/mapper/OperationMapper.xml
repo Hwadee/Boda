@@ -52,7 +52,7 @@
         <where>
             <include refid="findOperationLog_where"/>
         </where>
-        limit #{startRow},#{pageSize}
+        ORDER BY operation_id DESC limit #{startRow},#{pageSize}
     </select>
 
     <!--查询操作记录信息条数-->
@@ -62,7 +62,6 @@
             <include refid="findOperationLog_where"/>
         </where>
     </select>
-
 
     <!-- 插入数据到数据库-->
     <insert id="addOperationLog" parameterType="com.boda.pojo.OperationLog">

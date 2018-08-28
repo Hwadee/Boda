@@ -198,7 +198,7 @@
                         <div class="formRow">
                             <label>员工姓名<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addName" name="empName"/>
+                                <input type="text" id="addName" name="empName" class="validate[required]"/>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -206,7 +206,7 @@
                         <div class="formRow">
                             <label>所属部门<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addDept" name="deptName"/>
+                                <input type="text" id="addDept" name="deptName" class="validate[required]"/>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -214,14 +214,14 @@
                         <div class="formRow">
                             <label>职位<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addEmpPos" name="postName"/>
+                                <input type="text" id="addEmpPos" name="postName" class="validate[required]"/>
                             </div>
                             <div class="clear"></div>
                         </div>
 
                         <div class="formSubmit">
                             <input type="submit" value="确定" class="greenB"/>
-                            <input type="button" value="取消" class="redB" onclick="history.back()"/>
+                            <input type="button" value="取消" class="redB" id="cancelbtn"/>
                         </div>
                     </fieldset>
                 </form>
@@ -258,6 +258,14 @@
             location.href = "DelEmpInfo.do?empId=" + _id;
         }
     }
+
+    $("#cancelbtn").click(function () {
+        var infodiv = document.getElementById("addInfo");
+        infodiv.style.display = "none";
+        $('html, body').animate({
+            scrollTop: $("#body").offset().top
+        }, 500);
+    });
 
     $("#addinfobtn").click(function () {
         var infodiv = document.getElementById("addInfo");
