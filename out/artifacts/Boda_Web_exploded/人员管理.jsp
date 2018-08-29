@@ -71,8 +71,6 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 
 </head>
@@ -105,20 +103,19 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div id="empInfoTable" class="wrapper">
-        <form id="form1" action="EmpInfo.do" class="searchWidget">
-            <div style="width: 95%;">
-                <div class="formRow">
-                    <div class="oneThree"><input type="text" name="empId" placeholder="员工号"/></div>
-                    <div class="oneThree"><input type="text" name="empName" placeholder="员工姓名"/></div>
-                    <div class="oneThree"><input type="text" name="empDept" placeholder="所在部门"/></div>
-                </div>
-            </div>
+        <div class="searchWidget">
+            <form id="form1" action="EmpInfo.do">
 
-            <input type="hidden" id="currentPage" name="currentPage" value="${empPage.currentPage}">
-            <input type="hidden" id="pageSize" name="pageSize" value="${empPage.pageSize}">
-            <input type="hidden" id="allPageNum" name="allPageNum" value="${empPage.allPageNum}">
-            <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
-        </form>
+                <input type="text" name="empId" placeholder="员工号" style="width: 29%"/>
+                <input type="text" name="empName" placeholder="员工姓名" style="width: 29%"/>
+                <input type="text" name="empDept" placeholder="所在部门" style="width: 29%"/>
+
+                <input type="hidden" id="currentPage" name="currentPage" value="${empPage.currentPage}">
+                <input type="hidden" id="pageSize" name="pageSize" value="${empPage.pageSize}">
+                <input type="hidden" id="allPageNum" name="allPageNum" value="${empPage.allPageNum}">
+                <input type="submit" name="querybtn" value=""/>
+            </form>
+        </div>
 
         <!-- 显示搜索结果提示信息 -->
         <div id="searchMsgText" class="red">${searchMSG}</div>

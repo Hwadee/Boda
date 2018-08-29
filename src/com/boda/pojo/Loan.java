@@ -11,10 +11,21 @@ public class Loan {
     private Date loanDate;
     private String loanState;
     private Date returnStartDate;
-    private Integer numOfStages;//贷款期数（分几期归还）
+    //    private Date shouldReturnDate;//归还日期/
+    private Integer numberOfStages;//贷款期数（分几期归还）
     private Float rateOfInterest;//贷款利率
-
+    //    private Integer whichStage;//期数
+    private Integer returnYears;//还款年限
     private CustomerMessage customerMessage;
+    private ReturnLoan returnLoans;
+
+    public ReturnLoan getReturnLoans() {
+        return returnLoans;
+    }
+
+    public void setReturnLoans(ReturnLoan returnLoans) {
+        this.returnLoans = returnLoans;
+    }
 
     public CustomerMessage getCustomerMessage() {
         return customerMessage;
@@ -80,12 +91,12 @@ public class Loan {
         this.loanState = loanState;
     }
 
-    public Integer getNumOfStages() {
-        return numOfStages;
+    public Integer getNumberOfStages() {
+        return numberOfStages;
     }
 
-    public void setNumOfStages(Integer numOfStages) {
-        this.numOfStages = numOfStages;
+    public void setNumberOfStages(Integer numberOfStages) {
+        this.numberOfStages = numberOfStages;
     }
 
     public Float getRateOfInterest() {
@@ -94,6 +105,14 @@ public class Loan {
 
     public void setRateOfInterest(Float rateOfInterest) {
         this.rateOfInterest = rateOfInterest;
+    }
+
+    public Integer getReturnYears() {
+        return returnYears;
+    }
+
+    public void setReturnYears(Integer returnYears) {
+        this.returnYears = returnYears;
     }
 
     @Override
@@ -106,8 +125,11 @@ public class Loan {
                 ", loanDate=" + loanDate +
                 ", loanState='" + loanState + '\'' +
                 ", returnStartDate=" + returnStartDate +
-                ", numOfStages=" + numOfStages +
+                ", numberOfStages=" + numberOfStages +
                 ", rateOfInterest=" + rateOfInterest +
+                ", returnYears=" + returnYears +
+                ", customerMessage=" + customerMessage +
+                ", returnLoans=" + returnLoans +
                 '}';
     }
 

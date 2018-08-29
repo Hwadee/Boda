@@ -102,19 +102,16 @@
 <!-- Main 表格 -->
 
 <div class="wrapper">
-    <div id="cusInfoTable">
-        <form action="CusInfo.do" id="form1" class="searchWidget">
-            <div style="width: 95%;">
-                <div class="formRow">
-                    <div class="oneThree"><input type="text" name="customerName" placeholder="客户名"/></div>
-                    <div class="oneThree"><input type="text" name="customerPhone" placeholder="电话"/></div>
-                    <div class="oneThree"><input type="text" name="customerIdentityId" placeholder="身份证"/></div>
-                </div>
-                <input type="hidden" id="currentPage" name="currentPage" value="${cusPage.currentPage}">
-                <input type="hidden" id="pageSize" name="pageSize" value="${cusPage.pageSize}">
-                <input type="hidden" id="allPageNum" name="allPageNum" value="${cusPage.allPageNum}">
-                <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
-            </div>
+    <div id="cusInfoTable" class="searchWidget">
+        <form action="CusInfo.do" id="form1">
+            <input type="text" name="customerName" placeholder="客户名" style="width: 29%"/>
+            <input type="text" name="customerPhone" placeholder="电话" style="width: 29%"/>
+            <input type="text" name="customerIdentityId" placeholder="身份证" style="width: 29%"/>
+
+            <input type="hidden" id="currentPage" name="currentPage" value="${cusPage.currentPage}">
+            <input type="hidden" id="pageSize" name="pageSize" value="${cusPage.pageSize}">
+            <input type="hidden" id="allPageNum" name="allPageNum" value="${cusPage.allPageNum}">
+            <input type="submit" name="querybtn" value=""/>
         </form>
         <!-- 显示搜索结果提示信息 -->
         <div id="searchMsgText" class="red">${searchMSG}</div>
@@ -172,7 +169,7 @@
 
                 <c:if test="${cusPage.objList!=null}">
                     <tr>
-                        <td colspan="6" align="center">
+                        <td colspan="10" align="center">
                             <button onclick="pageTurn(1)">首页</button> &nbsp;
                             <button onclick="pageTurn(2)">上一页</button>&nbsp;
                             &nbsp;第${cusPage.currentPage}页&nbsp;/&nbsp;共${cusPage.allPageNum}页&nbsp;
@@ -201,7 +198,7 @@
                 <img src="./images/icons/dark/stats.png" alt="" class="titleIcon">
                 <h6 id="edit">新增客户信息</h6>
             </div>
-            <form action="AddCusInfo.do" class="form" method="post">
+            <form action="AddCusInfo.do" class="form" method="post" id="validate">
                 <fieldset>
                     <%--<div class="formRow">--%>
                     <%--<label>客户ID<span class="req">*</span> </label>--%>
@@ -214,7 +211,7 @@
                     <div class="formRow">
                         <label>客户姓名<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addName" name="customerName"/>
+                            <input type="text" id="addName" name="customerName" class="validate[required]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -222,15 +219,18 @@
                         <label>客户性别<span class="req">*</span> </label>
                         <div class="formRight">
                             <%--<input type="text" id="addSex" name="customerSex"/>--%>
-                            男：<input type="radio" id="addSex" name="customerSex" value="男" checked="checked"/>
-                            女：<input type="radio" id="addSex" name="customerSex" value="女"/>
+                            <input type="radio" name="customerSex" id="male" data-prompt-position="topRight:102"
+                                   style="opacity: 0;" value="男" checked="checked"><label for="male">男</label>
+                            <input type="radio" name="customerSex" id="female" data-prompt-position="topRight:102"
+                                   style="opacity: 0;" value="女"><label for="female">女</label>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="formRow">
                         <label>身份证号<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addIdentityId" name="customerIdentityId"/>
+                            <input type="text" id="addIdentityId" name="customerIdentityId"
+                                   class="validate[required,custom[integer]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -238,35 +238,38 @@
                         <label>生日：</label>
                         <div class="formRight">
                             <c:set var="now" value="<%=new java.util.Date()%>"/>
-                            <input type="text" id="addBirthday" name="customerBirthday"/>
+                            <input type="text" id="addBirthday" name="customerBirthday" readonly="readonly"/>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="formRow">
                         <label>邮箱<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addEmail" name="customerEmail"/>
+                            <input type="text" id="addEmail" name="customerEmail"
+                                   class="validate[required,custom[email]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="formRow">
                         <label>电话<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addPhone" name="customerPhone"/>
+                            <input type="text" id="addPhone" name="customerPhone"
+                                   class="validate[required,custom[phone]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="formRow">
                         <label>地址<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addAddress" name="customerAddress"/>
+                            <input type="text" id="addAddress" name="customerAddress" class="validate[required]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="formRow">
                         <label>信誉度<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addCredit" name="customerCredit"/>
+                            <input type="text" id="addCredit" name="customerCredit"
+                                   class="validate[required,custom[integer]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>

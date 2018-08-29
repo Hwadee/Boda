@@ -156,9 +156,11 @@
 
     <!-- 插入数据到数据库 -->
     <insert id="addLoan" parameterType="com.boda.pojo.Loan">
-        INSERT INTO loan (loan_id, customer_id, emp_id, loan_money, loan_date, loan_state, return_date, number_of_stages, rate_of_interest)
+        INSERT INTO loan (loan_id, customer_id, emp_id, loan_money, loan_date, loan_state, return_start_date,
+        return_years, number_of_stages, rate_of_interest)
         VALUES
-            (#{loanId}, #{customerId}, #{empId}, #{loanMoney}, #{loanDate}, #{loanState}, #{returnDate}, #{numOfStages},
+        (#{loanId}, #{customerId}, #{empId}, #{loanMoney}, #{loanDate}, #{loanState}, #{returnStartDate},
+        #{returnYears}, #{numberOfStages},
              #{rateOfInterest});
     </insert>
 
@@ -169,4 +171,36 @@
         WHERE loan_id = #{loanId}
     </update>
 
+    <!-- 查询未审批客户信息 -->
+    <select id="findLoanByLoanState" resultType="com.boda.pojo.Loan">
+        SELECT *
+        FROM loan
+        WHERE loan_state ='未审批'
+    </select>
+
+    <!-- 通过指定信息查询符合条件的数量 -->
+    <select id="findLoanByLoanCount" resultType="int">
+        select count(l.loan_state)
+        from loan l
+        WHERE loan_state='未审批'
+    </select>
+
+    <!-- 根据员工id删除信息 -->
+    <delete id="delLoanByLoanId" parameterType="Integer">
+        DELETE from loan where loan_id=#{value}
+    </delete>
+
+    <!-- 通过loanid查询信息；-->
+    <select id="findLoanByLoanId" parameterType="Integer" resultType="com.boda.pojo.Loan">
+        SELECT *
+        FROM loan
+        WHERE loan_id = #{value}
+    </select>
+
+    <!-- 根据loanid更新客户信息-->
+    <update id="updateLoan" parameterType="com.boda.pojo.Loan">
+        UPDATE loan
+        SET loan_state=#{loanState}
+        WHERE loan_id=#{loanId}
+    </update>
 </mapper>

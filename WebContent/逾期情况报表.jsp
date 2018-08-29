@@ -16,13 +16,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>逾期情况报表</title>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
-    <script>
-        function myFunction() {
-            alert("已催收");
-        }
-    </script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-
     <script type="text/javascript" src="js/plugins/spinner/ui.spinner.js"></script>
     <script type="text/javascript" src="js/plugins/spinner/jquery.mousewheel.js"></script>
 
@@ -73,7 +67,7 @@
     <script type="text/javascript" src="js/plugins/elfinder.min.js"></script>
 
     <script type="text/javascript" src="js/custom.js"></script>
-
+    <script type="text/javascript" src="js/print.js"></script>
     <script type="text/javascript" src="js/charts/chart.js"></script>
 
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
@@ -113,11 +107,12 @@
             <input type="submit" value="" />--%>
         </form>
         <!-- Widgets -->
+        <!--startprint1-->
         <div class="widgets">
             <div class="widget">
                 <div class="title"><img src="images/icons/dark/stats.png" alt="" class="titleIcon"><h6>逾期情况报表</h6>
                     <div class="topIcons">
-                        <a href="#" class="tipS" title="打印该表格">
+                        <a href="#" class="tipS" title="打印该表格" onclick="preview(1)">
                             <img src="images/icons/downloadTop.png" alt="">
                         </a>
                     </div>
@@ -126,17 +121,17 @@
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
-                        <th>还款id</th>
-                        <th>贷款id</th>
-                        <th>催促员工id</th>
-                        <th>还款金额</th>
-                        <th>应还金额</th>
-                        <th>还款日期</th>
-                        <th>应还日期</th>
-                        <th>分期数</th>
-                        <th>还款状态</th>
-                        <th>最近催促日期</th>
-                        <th>催促状态</th>
+                        <td>还款id</td>
+                        <td>贷款id</td>
+                        <td>催促员工id</td>
+                        <td>还款金额</td>
+                        <td>应还金额</td>
+                        <td>还款日期</td>
+                        <td>应还日期</td>
+                        <td>分期数</td>
+                        <td>还款状态</td>
+                        <td>最近催促日期</td>
+                        <td>催促状态</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -152,23 +147,31 @@
                             <td align="center"><fmt:formatDate value="${returnLoans.shouldReturnDate}"
                                                                pattern="yyyy-MM-dd"/></td>
                             <td align="center">${returnLoans.whichStage}</td>
-                            <td align="center">${returnLoans.returnDate}</td>
+                            <td align="center">${returnLoans.returnState}</td>
                             <td align="center"><fmt:formatDate value="${returnLoans.urgeForReturn.lastUrgeDate}"
                                                                pattern="yyyy-MM-dd"/></td>
                             <td align="center">${returnLoans.urgeForReturn.urgeState}</td>
                         </tr>
                     </c:forEach>
+
+                    <c:if test="${returnLoanPage.objList!=null}">
+                        <tr>
+                            <td colspan="11" align="center">
+                                <input type="button" value="首页" onclick="pageTurning(1)">
+                                <input type="button" value="上一页" onclick="pageTurning(2)">
+                                <span id="pageInfo">第${returnLoanPage.currentPage}页/共${returnLoanPage.allPageNum}页</span>
+                                <input type="button" value="下一页" onclick="pageTurning(3)">
+                                <input type="button" value="末页" onclick="pageTurning(4)">
+                            </td>
+                        </tr>
+                    </c:if>
+
                     </tbody>
                 </table>
-                <div>
-                    <input type="button" value="首页" onclick="pageTurning(1)">
-                    <input type="button" value="上一页" onclick="pageTurning(2)">
-                    <span id="pageInfo">第${returnLoanPage.currentPage}页/共${returnLoanPage.allPageNum}页</span>
-                    <input type="button" value="下一页" onclick="pageTurning(3)">
-                    <input type="button" value="末页" onclick="pageTurning(4)">
-                </div>
+
             </div>
         </div>
+        <!--endprint1-->
         <div class="clear"></div>
 
 

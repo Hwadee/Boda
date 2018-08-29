@@ -6,6 +6,8 @@ import com.boda.util.Tool;
 import com.boda.vo.Page;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import java.util.*;
 
@@ -14,6 +16,57 @@ public class LoanService {
 
     @Resource
     private LoanMapper loanMapper;
+
+    //根据loan_state搜索
+    public Page<Loan> getQueryLoanInfo(String loanState, Page<Loan> page) throws IOException {
+
+        List<Loan> loans = new LinkedList<>();
+
+        int pageMAXRow = page.getPageSize();
+        int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
+
+        loans.addAll(loanMapper.findLoanByLoanState(loanState, startRow, page.getPageSize()));
+
+        page.setObjList(loans);
+
+        int allRowNum = loanMapper.findLoanByLoanCount(loanState);
+        int allPageNum = allRowNum % pageMAXRow == 0 ? allRowNum / pageMAXRow : allRowNum / pageMAXRow + 1;
+        page.setAllPageNum(allPageNum);
+        System.out.println(loans);
+        return page;
+    }
+
+    //根据loanId搜索
+    public List<Loan> getLoanIdInfo(int loanId) throws Exception {
+
+        List<Loan> loans = new LinkedList<>();
+        loans.addAll(loanMapper.findLoanById(loanId));
+        loans.remove(null);
+        return loans;
+    }
+
+    //根据loanId删除
+    public boolean delLoanIdInfo(Integer loanId) throws Exception {
+
+        return loanMapper.delLoanByLoanId(loanId) > 0;
+    }
+
+    //根据loanId搜索
+    public List<Loan> getLoanIdInfo(String loanId) throws Exception {
+
+        List<Loan> loans = new LinkedList<>();
+
+        if (Tool.isInteger(loanId)) {
+            loans.add(loanMapper.findLoanByLoanId(Integer.parseInt(loanId)));
+        }
+        loans.remove(null);
+        return loans;
+    }
+
+    public boolean updateLoanInfo(Loan loan) throws Exception {
+
+        return loanMapper.updateLoan(loan) > 0;
+    }
 
     //根据贷款日期搜索
     public Page<Loan> getLoanInfo(String minDate, String maxDate, Page<Loan> page) throws Exception {
@@ -26,6 +79,15 @@ public class LoanService {
             loans.addAll(loanMapper.findLoan());
         } else {
         */
+
+        //若未指定最早还贷日期，则设置为1970
+//        if ("".equals(minDate) || minDate == null) {
+//            minDate = Tool.formatDateToString(new Date(1970));
+//        }
+//        //若未指定最晚借贷日期，则设置为当前日期
+//        if ("".equals(maxDate) || maxDate == null) {
+//            maxDate = Tool.formatDateToString(new Date());
+//        }
             /*
             //Step1: 根据id搜索
             loans.addAll(loanMapper.findLoanById(
@@ -54,7 +116,7 @@ public class LoanService {
         int pageMAXRow = page.getPageSize();
         int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
 
-//        List<User> userList = userManagerMapper.queryUser(user,startrow,page.getPageRowNum());
+        //    List<User> userList = userManagerMapper.queryUser(user,startrow,page.getPageRowNum());
         loans.addAll(loanMapper.findLoanByLoanDate(minDate, maxDate, startRow, page.getPageSize()));
 
         page.setObjList(loans);
@@ -66,4 +128,8 @@ public class LoanService {
         return page;
     }
 
+    public boolean addLoanInfo(Loan loan) throws Exception {
+
+        return loanMapper.addLoan(loan) > 0;
+    }
 }

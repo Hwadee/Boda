@@ -18,13 +18,13 @@
             <ul class="sub">
                 <li><a href="IntoDeptInfo.do">部门管理</a></li>
                 <li><a href="IntoEmpInfo.do" title="">人员管理</a></li>
-                <li><a href="权限设置.jsp" title="">权限设置</a></li>
-                <li class="last"><a href="操作记录查询.jsp" title="">操作记录查询</a></li>
+                <li><a href="IntoPowerSetting.do" title="">权限设置</a></li>
+                <li class="last"><a href="OperationLogs.do" title="">操作记录查询</a></li>
             </ul>
         </li>
         <li class="forms"><a href="#" title="" class="exp"><span>贷前账户管理</span></a>
             <ul class="sub">
-                <li><a href="#" title="">客户信息录入</a></li>
+                <li><a href="IntoAddLoan.do" title="">贷款信息录入</a></li>
                 <li><a href="IntoCusInfo.do" title="">客户信息查询</a></li>
                 <li class="last"><a href="客户贷款审批.jsp" title="">客户贷款审批</a></li>
             </ul>
@@ -40,7 +40,7 @@
         <li class="widgets"><a href="#" title="" class="exp"><span>财务管理</span></a>
             <ul class="sub">
                 <li><a href="IntoLoanInfo.do" title="">放款名单</a></li>
-                <li class="last"><a href="还款名单.jsp" title="">还款名单</a></li>
+                <li class="last"><a href="returnOfToday.do" title="">还款名单</a></li>
             </ul>
         </li>
     </ul>

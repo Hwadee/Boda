@@ -6,16 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>还款操作</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <script>
         function myFunction() {
             alert("已催收");
@@ -109,9 +109,9 @@
         <form id="form1" action="returnAccountWork.do" method="post" class="searchWidget">
 
             <div>
-                <input type="text"  placeholder="贷款id" id="loanId" name="loanId" value="${loanId}"/>&nbsp;
+                <input type="text" placeholder="贷款id" id="loanId" name="loanId" value="${loanId}"/>&nbsp;
 
-                <input type="submit" value="" >
+                <input type="submit" value="">
             </div>
         </form>
         <!-- Widgets -->
@@ -141,13 +141,14 @@
                                 <td>${returnLoan.returnMoney}</td>
                                 <td>${returnLoan.shouldReturnMoney}</td>
                                 <td><fmt:formatDate value="${returnLoan.returnDate}"
-                                                    pattern="yyyy-MM-dd" /></td>
+                                                    pattern="yyyy-MM-dd"/></td>
                                 <td><fmt:formatDate value="${returnLoan.shouldReturnDate}"
-                                                    pattern="yyyy-MM-dd" /></td>
+                                                    pattern="yyyy-MM-dd"/></td>
                                 <td>${returnLoan.whichStage}</td>
                                 <td>${returnLoan.returnState}</td>
-                                <td><a href="${pageContext.request.contextPath}/updateReturnMoney.do?returnId=${returnLoan.returnId}">
-                                    <input type="button" value="确认还款"></a></td>
+                                <td>
+                                    <a href="${pageContext.request.contextPath}/updateReturnMoney.do?returnId=${returnLoan.returnId}">
+                                        <input type="button" value="确认还款"></a></td>
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -179,9 +180,13 @@
 <div class="clear"></div>
 <script type="text/javascript">
     var msg = "${MSG}";
-    if(msg!=null && msg!=""){
-        if(msg=="OK"){alert("成功");}
-        else {alert("失败");}
+    if (msg != null && msg != "") {
+        if (msg == "OK") {
+            alert("成功");
+        }
+        else {
+            alert("失败");
+        }
     }
 </script>
 </body>

@@ -1,10 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
-  Date: 2018/8/17
-  Time: 9:19
+  Date: 2018/8/11
+  Time: 9:15
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,11 +12,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <title>客户信息更新</title>
+    <title>客户贷款申请</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="./js/table.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
-
+    <script type="text/javascript" src="./js/birthday.js"></script>
+    <script type="text/javascript" src="./js/place.js"></script>
     <script type="text/javascript" src="./js/plugins/spinner/ui.spinner.js"></script>
     <script type="text/javascript" src="./js/plugins/spinner/jquery.mousewheel.js"></script>
 
@@ -71,12 +70,16 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
 
-    <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
-</head>
 <body>
+
+<script type="text/javascript">
+    var msg = "${MSG}";
+    if (msg !== null && msg !== "") {
+        alert(msg);
+    }
+</script>
 
 <!-- Left side content -->
 <jsp:include page="left.jsp"></jsp:include>
@@ -88,9 +91,9 @@
     <div class="titleArea">
         <div class="wrapper">
             <div class="pageTitle">
-                <h5>客户信息</h5><br>
-                <h6>客户信息更新</h6>
-                <span>管理客户信息</span>
+                <h5>贷前账户管理</h5><br>
+                <h6>客户贷款申请</h6>
+                <span>针对贷款用户个人贷款信息录入</span>
             </div>
             <div class="middleNav">
 
@@ -100,103 +103,84 @@
             <div class="clear"></div>
         </div>
     </div>
-
     <div class="line"></div>
-    <!-- Main 表格 -->
+    <!-- Main content wrapper -->
     <div class="wrapper">
-        <form action="CusInfo.do" class="searchWidget">
-            <input type="text" name="customerName" placeholder="搜索客户信息" id=""/>
-            <input type="submit" value=""/>
-        </form>
-    </div>
-    <!--更新客户信息-->
-    <div id="updateInfo" class="wrapper">
         <div class="widgets">
             <div class="widget">
                 <div class="title">
-                    <img src="./images/icons/dark/stats.png" alt="" class="titleIcon">
-                    <h6 id="edit">客户信息编辑</h6>
+                    <img src="./images/icons/dark/stats.png" alt class="titleIcon">
+                    <h6 id="edit">客户贷款申请信息</h6>
                 </div>
-                <form action="UpdateCusInfo.do" class="form" method="post">
+                <form id="validate" class="form" method="post" action="AddLoanInfo.do">
                     <fieldset>
                         <div class="formRow">
-                            <label>客户ID<span class="req">*</span> </label>
+                            <label>customerId<span class="req">*</span> </label>
                             <div class="formRight">
-                                <<input type="text" id="updateId" name="customerId" value="${infotoupdate.customerId}"
-                                        readonly="readonly">
-                            </div>
-                        </div>
-                        <div class="formRow">
-                            <label>客户姓名<span class="req">*</span> </label>
-                            <div class="formRight">
-                                <input type="text" id="updateName" name="customerName"
-                                       value="${infotoupdate.customerName}"/>
+                                <input type="text" id="addId" name="customerId"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户性别<span class="req">*</span> </label>
+                            <label>empId<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateSex" name="customerSex"
-                                       value="${infotoupdate.customerSex}"/>
+                                <input type="text" id="addEmpId" name="empId"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户身份证<span class="req">*</span> </label>
+                            <label>loanMoney<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateIdentityId" name="customerIdentityId"
-                                       value="${infotoupdate.customerIdentityId}"/>
+                                <input type="text" id="addLoanMoney" name="loanMoney"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户生日<span class="req">*</span> </label>
+                            <label>loanDate<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateBirthday" name="customerBirthday"
-                                       value=
-                                       <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.customerBirthday}"/>
-                                />
+                                <c:set var="now" value="<%=new java.util.Date()%>"/>
+                                <input type="text" id="addLoanDate" name="loanDate"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户邮箱<span class="req">*</span> </label>
+                            <label>loanState<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateEmail" name="customerEmail"
-                                       value="${infotoupdate.customerEmail}"/>
+                                <input type="text" id="addLoanState" name="loanState"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户电话<span class="req">*</span> </label>
+                            <label>returnStartDate<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updatePhone" name="customerPhone"
-                                       value="${infotoupdate.customerPhone}"/>
+                                <c:set var="now" value="<%=new java.util.Date()%>"/>
+                                <input type="text" id="addReturnStartDate" name="returnStartDate"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>客户地址<span class="req">*</span> </label>
+                            <label>returnYears<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateAddress" name="customerAddress"
-                                       value="${infotoupdate.customerAddress}"/>
+                                <input type="text" id="addReturnYears" name="returnYears"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>信誉度<span class="req">*</span> </label>
+                            <label>numbersOfStages<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateCredit" name="customerCredit"
-                                       value="${infotoupdate.customerCredit}"/>
+                                <input type="text" id="NumberOfStages" name="numberOfStages"/>
                             </div>
                             <div class="clear"></div>
                         </div>
-
-
+                        <div class="formRow">
+                            <label>rateOfInterest<span class="req">*</span> </label>
+                            <div class="formRight">
+                                <input type="text" id="addRateOfInterest" name="rateOfInterest"/>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
                         <div class="formSubmit">
-                            <input type="submit" value="更新" class="greenB"/>
-                            <input type="button" value="取消" class="redB" onclick="history.back()"/>
+                            <input type="submit" value="提交" class="greenB"/>
                         </div>
                     </fieldset>
                 </form>
@@ -211,23 +195,6 @@
 
 <div class="clear"></div>
 
-<script type="text/javascript">
-
-    $(function () {
-        $("#updateBirthday").datepicker({
-            //限制日期范围
-//            minDate: -20,
-            maxDate: 0,
-
-            //月份、年份下拉框
-            changeMonth: true,
-            changeYear: true,
-
-            //日期格式
-            dateFormat: "yy-mm-dd"
-        });
-    });
-</script>
 
 </body>
 </html>

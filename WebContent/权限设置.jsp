@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -69,29 +70,13 @@
 
     <script type="text/javascript" src="js/charts/chart.js"></script>
     <script type="text/javascript" src="js/power.js"></script>
-
-
+    <script type="text/javascript" src="js/jquery.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 </head>
 
 
 <body>
-<script type="text/javascript">
 
-    function position() {
-        const deptId = document.getElementById("department").selectedIndex + 1;
-
-        $.ajax({
-            url: "PostOfDept.do?" + deptId,
-            type: "POST",
-
-            success: function (data) {
-
-            }
-        });
-    }
-
-</script>
 <!-- Left side content -->
 <jsp:include page="left.jsp"></jsp:include>
 <!-- Right side -->
@@ -130,44 +115,46 @@
                         <tr>
                             <td align="center"><strong>部门</strong></td>
                             <td align="center">
-                                <select id="department" onchange="position()">
-                                    <option>贷前部</option>
-                                    <option>贷后部</option>
-                                    <option>财务部</option>
-                                    <option>管理部</option>
+                                <select id="department" onchange="findAllPost()">
+                                    <option value="">---请选择部门---</option>
+                                    <c:forEach items="${deptLists}" var="deptinfo">
+                                        <option value="${deptinfo.deptId}">${deptinfo.deptName}</option>
+                                    </c:forEach>
                                 </select>
                                 <input type="hidden" id="dep">
                             </td>
                         </tr>
-                    <tr>
-                        <td align="center"><strong>职位</strong></td>
-                        <td align="center">
-                            <select id="position" name="positions">
-                                <option>带钱职位1</option>
-                                <option>带钱职位2</option>
-                                <option>带钱职位3</option>
-                                <option>带钱职位4</option>
-                            </select>
-                            <input type="hidden" id="pos">
-                        </td>
-                    <tr>
-                        <td align="center"><strong>权限</strong></td>
-                        <td align="center">
-                            <div class="formRow"><input type="checkbox" id="power1" name="power"><label for="power1">权限1：贷款前</label><input
-                                    type="hidden" id="c1"></div>
-                            <div class="formRow"><input type="checkbox" id="power2" name="power"><label for="power2">权限2：贷款后</label><input
-                                    type="hidden" id="c2"></div>
-                            <div class="formRow"><input type="checkbox" id="power3" name="power"><label for="power3">权限3：财务相关</label><input
-                                    type="hidden" id="c3"></div>
-                            <div class="formRow"><input type="checkbox" id="power4" name="power"><label for="power4">权限4：系统设置</label><input
-                                    type="hidden" id="c4"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" colspan="2">
-                            <input type="button" class="blueB" value="确认修改" onclick="getPosition()">
-                        </td>
-                    </tr>
+                        <tr>
+                            <td align="center"><strong>职位</strong></td>
+                            <td align="center">
+                                <select id="position" name="positions">
+                                    <option>带钱职位1</option>
+                                </select>
+                                <input type="hidden" id="pos">
+                            </td>
+                        <tr>
+                            <td align="center"><strong>权限</strong></td>
+                            <td align="center">
+                                <div class="formRow"><input type="checkbox" id="power1" name="power" value="1"><label
+                                        for="power1">权限1：贷款前</label></div>
+                                <div class="formRow"><input type="checkbox" id="power2" name="power" value="2"><label
+                                        for="power2">权限2：贷款后</label></div>
+                                <div class="formRow"><input type="checkbox" id="power3" name="power" value="3"><label
+                                        for="power3">权限3：财务相关</label></div>
+                                <div class="formRow"><input type="checkbox" id="power4" name="power" value="4"><label
+                                        for="power4">权限4：系统设置</label></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2">
+                                <input type="button" class="blueB" value="确认修改" onclick="editPower()">
+                            </td>
+                        </tr>
+                    </form>
+                    <
+                    <form action="EditPower.do" id="actualForm" style="display: none;">
+                        <input id="postId" name="postId" type="text" value=""/>
+                        <input id="powerarg" name="powerarg" type="text" value=""/>
                     </form>
                     </tbody>
                 </table>
@@ -183,5 +170,57 @@
 
 <div class="clear"></div>
 
+<script type="text/javascript">
+
+    function findAllPost() {
+        var deptId = $("#department").find('option:selected').val();
+        $("#position").empty();     //清空二级目录
+        var classNext = $("#position");
+        alert(deptId);
+        $.ajax({
+            type: "Post",
+            url: "PostOfDept.do" + "?deptId=" + deptId,
+            dataType: 'text',
+            success: function (data) {
+//                alert(data.toString());
+                var obj = eval('(' + data + ')'); //接收json 数据并进行对象化
+                if (obj.length != "" && obj.length != null) {
+                    for (var i = 0; i < obj.length; i++) {
+                        classNext.append("<option value=" + obj[i].postId + ">" + obj[i].postName + "</option>");
+                    }
+                } else {
+                    classNext.append("<option value=" + 0 + ">---无---</option>");
+                }
+            },
+            error: function (request) {
+                alert("出现错误!")
+            }
+        });
+    }
+
+    function editPower() {
+        const postId = $("#position").find('option:selected').val();
+//        alert(postId);
+        $("#postId").val(postId);
+
+        var test = $("input[name='power']:checked");
+        var checkBoxValue = "";
+        test.each(function () {
+            checkBoxValue += $(this).val();
+        });
+//        alert(checkBoxValue);
+        $("#powerarg").val(checkBoxValue);
+
+        document.getElementById("actualForm").submit();
+    }
+
+</script>
+
+<script type="text/javascript">
+    var msg = ${MSG};
+    if (msg !== null && msg !== "") {
+        alert(msg);
+    }
+</script>
 </body>
 </html>

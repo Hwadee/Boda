@@ -47,8 +47,12 @@ public class ActionPowerManage {
 
         actionPower.put("/IntoLoanInfo.do", 1);
         actionPower.put("/LoanInfo.do", 1);
+        actionPower.put("/IntoAddLoan.do", 1);
+        actionPower.put("/AddLoanInfo.do", 1);
 
+        actionPower.put("/IntoPowerSetting.do", 1);
         actionPower.put("/EditPower.do", 1);
+        actionPower.put("/PostOfDept.do", 1);
 
         actionPower.put("/IntoCusInfo.do", 1);
         actionPower.put("/CusInfo.do", 1);
@@ -56,6 +60,10 @@ public class ActionPowerManage {
         actionPower.put("/QueryUpdatecustomerInfo.do", 1);
         actionPower.put("/UpdateCusInfo.do", 1);
         actionPower.put("/DelCusInfo.do", 1);
+
+        actionPower.put("/QueryLoanInfo.do", 1);
+        actionPower.put("/UpdateLoanInfoDel.do", 1);
+        actionPower.put("/UpdateLoanInfoAgree.do", 1);
     }
 
     public static boolean hasPower(HttpServletRequest request) throws IOException {
@@ -67,6 +75,7 @@ public class ActionPowerManage {
                 return true;
             }
         }
+        System.out.println("请求被拦截");
         return false;
     }
 

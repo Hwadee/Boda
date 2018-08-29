@@ -37,6 +37,7 @@ public class AfterLoanManagerController {
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("逾期账户工作出现异常");
+            e.printStackTrace();
         }
         return "逾期账户工作";
     }

@@ -149,7 +149,7 @@
                             <div class="formRight">
                                 <input type="text" id="updateBuildTime" name="deptBuildTime"
                                        value=
-                                       <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.deptBuildTime}" />
+                                       <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.deptBuildTime}"/>
 
                                 />
                             </div>

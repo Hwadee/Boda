@@ -103,17 +103,18 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form id="form1" action="OperationLogs.do" method="post" class="searchWidget">
-            <input type="hidden" id="currentPage" name="currentPage" value="${operationLogPage.currentPage}">
-            <input type="hidden" id="pageSize" name="pageSize" value="${operationLogPage.pageSize}">
-            <input type="hidden" id="allPageNum" name="allPageNum" value="${operationLogPage.allPageNum}">
-            <div>
-                <input id="employeeId" name="empId" placeholder="员工ID"/>&nbsp;
-                <input id="startDate" name="startDate" placeholder="开始日期"/>&nbsp;
-                <input id="endDate" name="endDate" placeholder="结束日期"/>&nbsp;
-                <button type="button" onclick="pageTurning(0)">搜索</button>
-            </div>
-        </form>
+        <div class="searchWidget">
+            <form id="form1" action="OperationLogs.do" method="post">
+                <input type="hidden" id="currentPage" name="currentPage" value="${operationLogPage.currentPage}">
+                <input type="hidden" id="pageSize" name="pageSize" value="${operationLogPage.pageSize}">
+                <input type="hidden" id="allPageNum" name="allPageNum" value="${operationLogPage.allPageNum}">
+
+                <input type="text" id="employeeId" name="empId" placeholder="员工ID" style="width: 29%"/>
+                <input type="text" id="startDate" name="startDate" placeholder="开始日期" style="width: 29%"/>
+                <input type="text" id="endDate" name="endDate" placeholder="结束日期" style="width: 29%"/>
+                <input type="button" onclick="pageTurning(0)"/>
+            </form>
+        </div>
 
         <!-- Widgets -->
         <div class="widgets">
@@ -150,7 +151,7 @@
 
                     </tbody>
                 </table>
-                <div>
+                <div align="center">
                     <input type="button" value="首页" onclick="pageTurning(1)">
                     <input type="button" value="上一页" onclick="pageTurning(2)">
                     <span id="pageInfo">第${operationLogPage.currentPage}页/共${operationLogPage.allPageNum}页</span>
@@ -159,14 +160,14 @@
                 </div>
             </div>
 
-                <div class="clear"></div>
-            </div>
             <div class="clear"></div>
         </div>
+        <div class="clear"></div>
     </div>
+</div>
 
-    <!-- Footer line -->
-    <jsp:include page="foot.jsp"></jsp:include>
+<!-- Footer line -->
+<jsp:include page="foot.jsp"></jsp:include>
 
 </div>
 

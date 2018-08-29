@@ -127,4 +127,52 @@ public interface LoanMapper {
      * @throws IOException
      */
     public Integer findLoanMoneyByCustomerId(Integer customerId) throws IOException;
+
+    /**
+     * @return
+     * @throws IOException
+     * @Param loanState
+     * @Param length
+     * @Param startRow
+     * 根据loanState
+     */
+    public List<Loan> findLoanByLoanState(@Param("loanState") String loanState,
+                                          @Param("startRow") int startRow,
+                                          @Param("length") int length) throws IOException;
+
+    /**
+     * 查询未审批数量
+     *
+     * @param loanState
+     * @return
+     * @throws IOException
+     */
+    public Integer findLoanByLoanCount(@Param("loanState") String loanState) throws IOException;
+
+    /**
+     * 根据用户id删除用户信息
+     *
+     * @param loanId
+     * @return
+     * @throws IOException
+     */
+    public Integer delLoanByLoanId(Integer loanId) throws IOException;
+
+    /**
+     * 根据部门id查询信息
+     *
+     * @param loanId
+     * @return 详细信息
+     * @throws IOException
+     */
+    public Loan findLoanByLoanId(Integer loanId) throws IOException;
+
+    /**
+     * 更新用户详细信息
+     *
+     * @param loan
+     * @return
+     * @throws IOException
+     */
+    public Integer updateLoan(Loan loan) throws IOException;
 }

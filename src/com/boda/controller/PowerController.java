@@ -51,13 +51,12 @@ public class PowerController {
         return "userLogin";
     }
 
-    @RequestMapping(value = "/EditPower.do", method = RequestMethod.POST)
-    @ResponseBody
-    public String editPower(/*String postId,@RequestParam("power") String power,*/ Model model) throws Exception {
+    @RequestMapping("/EditPower.do")
+    public String editPower(String postId, String powerarg, Model model) throws Exception {
 
-        String postId = "3";
-        String power = "24";
-        char[] powerChar = power.toCharArray();
+//        String postId = "3";
+//        String power = "24";
+        char[] powerChar = powerarg.toCharArray();
         List<PostPowerRelation> powerList = new LinkedList<>();
 
         for (char s : powerChar) {
@@ -73,6 +72,6 @@ public class PowerController {
             model.addAttribute("MSG", "更新失败");
         }
 
-        return "权限设置";
+        return "redirect:IntoPowerSetting.do";
     }
 }

@@ -2559,7 +2559,7 @@ html ul.tabs li.activeTab a {
 .searchWidget input[type=text] {
     border: 1px solid #d5d5d5;
     padding: 10px !important;
-    width: 93% !important;
+    width: 93%;
     height: 14px;
 }
 
