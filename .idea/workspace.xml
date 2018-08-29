@@ -7,58 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab945b38-605d-486a-8eb3-827f5f1bc1ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/AfterLoanManagerController.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/AfterLoanManagerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/LoanManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/LoanManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/PowerController.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/PowerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/SystemSettingController.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/SystemSettingController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/UserManager.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/controller/UserManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/Loan.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/pojo/Loan.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/FinanceManageService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/FinanceManageService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/LoanService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/LoanService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/SystemSettingService.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/service/SystemSettingService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/ActionPowerManage.class" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/util/ActionPowerManage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/success.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/success.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/userLogin.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/jsp/userLogin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/css/main.css" afterPath="$PROJECT_DIR$/WebContent/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/index.jsp" afterPath="$PROJECT_DIR$/WebContent/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/left.jsp" afterPath="$PROJECT_DIR$/WebContent/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/人员管理.jsp" afterPath="$PROJECT_DIR$/WebContent/人员管理.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/客户信息查询.jsp" afterPath="$PROJECT_DIR$/WebContent/客户信息查询.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/客户贷款审批.jsp" afterPath="$PROJECT_DIR$/WebContent/客户贷款审批.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/操作记录查询.jsp" afterPath="$PROJECT_DIR$/WebContent/操作记录查询.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/权限设置.jsp" afterPath="$PROJECT_DIR$/WebContent/权限设置.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/逾期情况报表.jsp" afterPath="$PROJECT_DIR$/WebContent/逾期情况报表.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateCusInfo.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateCusInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateDeptInfo.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/UpdateDeptInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/CustomerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/LoanMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/PostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/ReturnLoanMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/com/boda/mapper/ReturnLoanMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/springmvc/springmvc.xml" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/WEB-INF/classes/springmvc/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/css/main.css" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/left.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/人员管理.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/人员管理.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/客户信息查询.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/客户信息查询.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/客户贷款审批.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/客户贷款审批.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/操作记录查询.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/操作记录查询.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/权限设置.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/权限设置.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款功能.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款功能.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款名单.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款名单.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款详细信息.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/还款详细信息.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/逾期情况报表.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Boda_Web_exploded/逾期情况报表.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/AfterLoanManagerController.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/AfterLoanManagerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/LoanManager.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/LoanManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/PowerController.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/PowerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/SystemSettingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/controller/UserManager.java" afterPath="$PROJECT_DIR$/src/com/boda/controller/UserManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java" afterPath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml" afterPath="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/pojo/Loan.java" afterPath="$PROJECT_DIR$/src/com/boda/pojo/Loan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/service/LoanService.java" afterPath="$PROJECT_DIR$/src/com/boda/service/LoanService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java" afterPath="$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,8 +47,8 @@
       <file leaf-file-name="LoanService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/boda/service/LoanService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+            <state relative-caret-position="752">
+              <caret line="134" column="1" lean-forward="true" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -115,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/boda/controller/LoanManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2320">
-              <caret line="129" column="9" lean-forward="false" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+              <caret line="134" column="9" lean-forward="false" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -220,13 +173,13 @@
         <option value="$PROJECT_DIR$/WebContent/客户贷款审批.jsp" />
         <option value="$PROJECT_DIR$/WebContent/人员管理.jsp" />
         <option value="$PROJECT_DIR$/src/com/boda/controller/AfterLoanManagerController.java" />
-        <option value="$PROJECT_DIR$/src/com/boda/service/LoanService.java" />
         <option value="$PROJECT_DIR$/src/com/boda/util/ActionPowerManage.java" />
         <option value="$PROJECT_DIR$/WebContent/left.jsp" />
         <option value="$PROJECT_DIR$/src/com/boda/controller/LoanManager.java" />
         <option value="$PROJECT_DIR$/src/com/boda/mapper/LoanMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/boda/pojo/Loan.java" />
         <option value="$PROJECT_DIR$/WebContent/客户贷款信息录入.jsp" />
+        <option value="$PROJECT_DIR$/src/com/boda/service/LoanService.java" />
       </list>
     </option>
   </component>
@@ -737,7 +690,7 @@
       <workItem from="1535437805769" duration="13064000" />
       <workItem from="1535504553826" duration="3460000" />
       <workItem from="1535510311715" duration="4348000" />
-      <workItem from="1535524128902" duration="215000" />
+      <workItem from="1535524128902" duration="275000" />
     </task>
     <task id="LOCAL-00001" summary="SSM frame">
       <created>1534403608446</created>
@@ -914,7 +867,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535428267993</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="整合">
+      <created>1535524389066</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1535524389066</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -950,7 +910,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261802000" />
+    <option name="totallyTimeSpent" value="261862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1021,7 +981,8 @@
     <MESSAGE value="参数判断细节，未完成" />
     <MESSAGE value="部门信息整合前端页面" />
     <MESSAGE value="前端" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端" />
+    <MESSAGE value="整合" />
+    <option name="LAST_COMMIT_MESSAGE" value="整合" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1264,6 +1225,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,6 +1320,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="2564" column="0" lean-forward="true" selection-start-line="2564" selection-start-column="0" selection-end-line="2564" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,23 +1411,23 @@
         <state relative-caret-position="276">
           <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
-            <marker date="1535514284808" expanded="true" signature="4043:4069" ph="SELECT * FRO... loan" />
-            <marker date="1535514284808" expanded="true" signature="4231:4382" ph="select * fro... loan" />
-            <marker date="1535514284808" expanded="true" signature="4502:4758" ph="select * fro... loan" />
-            <marker date="1535514284808" expanded="true" signature="5217:5271" ph="select count... loan" />
-            <marker date="1535514284808" expanded="true" signature="5412:5473" ph="select sum(l... loan" />
-            <marker date="1535514284808" expanded="true" signature="5606:5721" ph="SELECT DISTI... loan" />
-            <marker date="1535514284808" expanded="true" signature="5858:5999" ph="SELECT DISTI... loan" />
-            <marker date="1535514284808" expanded="true" signature="6110:6254" ph="SELECT * FRO... loan" />
-            <marker date="1535514284808" expanded="true" signature="6349:6389" ph="SELECT count... return_loan" />
-            <marker date="1535514284808" expanded="true" signature="6505:6615" ph="SELECT * FRO... loan" />
-            <marker date="1535514284808" expanded="true" signature="6722:7065" ph="INSERT INTO loan... " />
-            <marker date="1535514284808" expanded="true" signature="7180:7263" ph="UPDATE loan " />
-            <marker date="1535514284808" expanded="true" signature="7380:7438" ph="SELECT * FRO... loan" />
-            <marker date="1535514284808" expanded="true" signature="7546:7623" ph="select count... loan" />
-            <marker date="1535514284808" expanded="true" signature="7729:7768" ph="DELETE from " />
-            <marker date="1535514284808" expanded="true" signature="7909:7968" ph="SELECT * FRO... loan" />
-            <marker date="1535514284808" expanded="true" signature="8083:8162" ph="UPDATE loan " />
+            <marker date="1535524378914" expanded="true" signature="4043:4069" ph="SELECT * FRO... loan" />
+            <marker date="1535524378914" expanded="true" signature="4231:4382" ph="select * fro... loan" />
+            <marker date="1535524378914" expanded="true" signature="4502:4758" ph="select * fro... loan" />
+            <marker date="1535524378914" expanded="true" signature="5217:5271" ph="select count... loan" />
+            <marker date="1535524378914" expanded="true" signature="5412:5473" ph="select sum(l... loan" />
+            <marker date="1535524378914" expanded="true" signature="5606:5721" ph="SELECT DISTI... loan" />
+            <marker date="1535524378914" expanded="true" signature="5858:5999" ph="SELECT DISTI... loan" />
+            <marker date="1535524378914" expanded="true" signature="6110:6254" ph="SELECT * FRO... loan" />
+            <marker date="1535524378914" expanded="true" signature="6349:6389" ph="SELECT count... return_loan" />
+            <marker date="1535524378914" expanded="true" signature="6505:6615" ph="SELECT * FRO... loan" />
+            <marker date="1535524378914" expanded="true" signature="6722:7077" ph="INSERT INTO loan... " />
+            <marker date="1535524378914" expanded="true" signature="7192:7275" ph="UPDATE loan " />
+            <marker date="1535524378914" expanded="true" signature="7392:7450" ph="SELECT * FRO... loan" />
+            <marker date="1535524378914" expanded="true" signature="7558:7635" ph="select count... loan" />
+            <marker date="1535524378914" expanded="true" signature="7741:7780" ph="DELETE from " />
+            <marker date="1535524378914" expanded="true" signature="7921:7980" ph="SELECT * FRO... loan" />
+            <marker date="1535524378914" expanded="true" signature="8095:8174" ph="UPDATE loan " />
           </folding>
         </state>
       </provider>
@@ -1488,15 +1451,15 @@
     <entry file="file://$PROJECT_DIR$/src/com/boda/controller/LoanManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2320">
-          <caret line="129" column="9" lean-forward="false" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+          <caret line="134" column="9" lean-forward="false" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/boda/service/LoanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        <state relative-caret-position="752">
+          <caret line="134" column="1" lean-forward="true" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
           <folding />
         </state>
       </provider>
