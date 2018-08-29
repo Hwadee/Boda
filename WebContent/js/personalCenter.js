@@ -7,8 +7,11 @@ function edit() {
     document.getElementById("weight").readOnly = false;
     document.getElementById("height").readOnly = false;
     document.getElementById("education").readOnly = false;
+    document.getElementById("adr").readOnly = false;
     document.getElementById("nation").readOnly = false;
     document.getElementById("phone").readOnly = false;
+    document.getElementById("email").readOnly = false;
+
 
     //下拉框可修改
     var select1 = document.getElementsByName("sel");
@@ -17,12 +20,7 @@ function edit() {
         select1[i].parentNode.className = "selector";
         //select1[i].style="color:black";
     }
-    var select2 = document.getElementsByName("city");
-    for (i = 0; i < select2.length; i++) {
-        select2[i].removeAttribute("disabled");
-        select2[i].parentNode.className = "selector";
-        //select2[i].style="color:black";
-    }
+
 
     //切换下面的按钮
     var b = document.getElementById("b1");

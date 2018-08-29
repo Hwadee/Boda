@@ -115,6 +115,13 @@
         WHERE emp_id = #{empId}
     </update>
 
+    <!-- 重置密码 -->
+    <update id="resetPassword" parameterType="String">
+        UPDATE employee
+        SET emp_password = '123456'
+        WHERE emp_account = #{value}
+    </update>
+
     <!-- 插入数据到数据库-->
     <insert id="addEmployee" parameterType="com.boda.pojo.Employee" useGeneratedKeys="true" keyProperty="empId"
             keyColumn="emp_id">

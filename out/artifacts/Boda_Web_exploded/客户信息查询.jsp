@@ -72,6 +72,7 @@
     <script type="text/javascript" src="./js/custom.js"></script>
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
+    <script type="text/javascript" src="js/birthday.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
 <body>
 
@@ -227,7 +228,9 @@
                     <div class="formRow">
                         <label>身份证号<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addIdentityId" name="customerIdentityId" class="validate[required,custom[integer]]"/>
+                            <input type="text" id="addIdentityId" name="customerIdentityId"
+                                   class="validate[required,custom[integer]]"
+                                   onkeyup="showBirth(this,'addBirthday')"/>
                         </div>
                         <div class="clear"></div>
                     </div>

@@ -15,7 +15,16 @@ public interface EmpDetailMapper {
 	 * @throws IOException
 	 */
 	public EmpDetail findEmpDetailById(Integer empDetailId) throws IOException;
-	
+
+    /**
+     * 根据员工账号查询员工信息
+     *
+     * @param empAccount
+     * @return
+     * @throws IOException
+     */
+    public EmpDetail findEmpDetailByAccount(String empAccount) throws IOException;
+
 	/**
 	 * 根据员工名字模糊查询员工信息
 	 * @param empName

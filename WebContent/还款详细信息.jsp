@@ -146,9 +146,15 @@
                                                                pattern="yyyy-MM-dd"/></td>
                             <td align="center">${returnLoans.whichStage}</td>
                             <td align="center">${returnLoans.returnState}</td>
-                            <td align="center"><a
-                                    href="${pageContext.request.contextPath}/urgeForReturn.do?returnId=${returnLoans.returnId}&loanId=${returnLoans.loanId}&empId=${sessionScope.get("employee").empId}">
-                                <input type="button" value="催促还款"></a></td>
+
+                            <c:if test="${returnLoans.returnState=='逾期未还'}">
+                                <td align="center"><a
+                                        href="${pageContext.request.contextPath}/urgeForReturn.do?returnId=${returnLoans.returnId}&loanId=${returnLoans.loanId}&empId=${sessionScope.get("employee").empId}">
+                                    <input type="button" value="催促还款" class="blueB"></a></td>
+                            </c:if>
+                                <%--<td align="center"><a--%>
+                                <%--href="${pageContext.request.contextPath}/urgeForReturn.do?returnId=${returnLoans.returnId}&loanId=${returnLoans.loanId}&empId=${sessionScope.get("employee").empId}">--%>
+                                <%--<input type="button" value="催促还款"></a></td>--%>
                         </tr>
                     </c:forEach>
                     </tbody>

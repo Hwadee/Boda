@@ -40,6 +40,11 @@ public class UserDetailService {
         return empDetail;
     }
 
+    public EmpDetail getUserDetailByAccount(String empAccount) throws Exception {
+
+        return empDetailMapper.findEmpDetailByAccount(empAccount);
+    }
+
     public boolean updateUserDetail(EmpDetail empDetail) throws Exception {
 //        System.out.println(empDetail);
         return empDetailMapper.updateEmpDetail(empDetail) > 0;

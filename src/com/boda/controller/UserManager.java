@@ -6,6 +6,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import com.boda.pojo.EmpDetail;
+import com.boda.service.UserDetailService;
+import com.boda.util.EmailSender;
+import com.boda.util.Tool;
 import com.boda.vo.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +23,18 @@ public class UserManager {
 
     @Resource
     UserManagerService ums;
+    @Resource
+    UserDetailService uds;
 
     @RequestMapping("/IntoLogin.do")
     public String IntoLoginController() {
         return "userLogin";
     }
 
+    @RequestMapping("/IntoForgetPasswd.do")
+    public String intoForgetPasswd() {
+        return "忘记密码";
+    }
 //    @RequestMapping("/UserLogin.do")
 //    public String UserLoginController(String account, String password, HttpServletRequest request, Model model) throws IOException {
 //
@@ -109,5 +118,48 @@ public class UserManager {
             model.addAttribute("MSG", "新增员工信息失败");
         }
         return "人员管理";
+    }
+
+    //找回密码发送验证邮件
+    @RequestMapping("SendValidationEmail.do")
+    public String sendValidationEmail(String empAccount, Model model, HttpServletRequest request) {
+
+        EmpDetail empDetail = null;
+        try {
+            empDetail = uds.getUserDetailByAccount(empAccount);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (empDetail == null) {
+            model.addAttribute("MSG", "账户不存在，请重试");
+            return "忘记密码";
+        }
+        String code = Tool.genValidationCode();
+        if (EmailSender.sendValidationEmail(empDetail.getEmpEmail(), code)) {
+            request.getSession().setAttribute("validationCode", code.toUpperCase());
+            model.addAttribute("successMSG", "验证码已发送");
+            model.addAttribute("account", empAccount);
+        } else {
+            model.addAttribute("MSG", "验证码发送出错，请重试");
+        }
+        return "忘记密码";
+    }
+
+    //重置密码
+    @RequestMapping("ForgetPasswd.do")
+    public String forgetPasswd(String empAccount, String code, HttpServletRequest request, Model model) throws Exception {
+
+        if (code.toUpperCase().equals(request.getSession().getAttribute("validationCode"))) {
+            if (ums.resetPasswd(empAccount)) {
+                model.addAttribute("MSG", "重置密码成功，将跳转至登录页面");
+                return "userLogin";
+            } else {
+                model.addAttribute("MSG", "重置密码失败，请重试");
+                return "忘记密码";
+            }
+        } else {
+            model.addAttribute("MSG", "验证码错误，请重试");
+            return "忘记密码";
+        }
     }
 }

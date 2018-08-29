@@ -74,6 +74,14 @@ public interface EmployeeMapper {
      */
     public Integer updatePassword(Employee employee) throws IOException;
 
+    /**
+     * 重置账户密码
+     *
+     * @param empAccount
+     * @return
+     * @throws IOException
+     */
+    public Integer resetPassword(String empAccount) throws IOException;
 
     /**
      * 根据部门名称和职位名称得到职位id

@@ -102,15 +102,11 @@
     <!-- Main 表格 -->
     <div class="wrapper">
         <form action="QueryLoanInfo.do" id="form1" class="searchWidget">
-            <div style="width: 95%;">
-                <div class="formRow">
-                    <input type="text" name="loanState" placeholder="贷款状态查询"/></div>
-                </div>
+            <input type="text" name="loanState" placeholder="贷款状态查询"/>
                 <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
                 <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
                 <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
-                <div style="width: 5%; float: left;"><input type="submit" name="querybtn" value=""/></div>
-            </div>
+                <input type="submit" name="querybtn" value=""/>
         </form>
         <!-- 显示搜索结果提示信息 -->
         <div id="searchMsgText" class="red">${searchMSG}</div>

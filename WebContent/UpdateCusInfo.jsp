@@ -70,9 +70,7 @@
     <script type="text/javascript" src="./js/custom.js"></script>
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
-
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/birthday.js"></script>
 
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 </head>
@@ -117,19 +115,20 @@
                     <img src="./images/icons/dark/stats.png" alt="" class="titleIcon">
                     <h6 id="edit">客户信息编辑</h6>
                 </div>
-                <form action="UpdateCusInfo.do" class="form" method="post">
+                <form action="UpdateCusInfo.do" class="form" method="post" id="validate">
                     <fieldset>
                         <div class="formRow">
                             <label>客户ID<span class="req">*</span> </label>
                             <div class="formRight">
-                                <<input type="text" id="updateId" name="customerId" value="${infotoupdate.customerId}"
-                                        readonly="readonly">
+                                <input type="text" id="updateId" name="customerId" value="${infotoupdate.customerId}"
+                                       readonly="readonly">
                             </div>
+                            <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户姓名<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateName" name="customerName"
+                                <input type="text" id="updateName" name="customerName" class="validate[required]"
                                        value="${infotoupdate.customerName}"/>
                             </div>
                             <div class="clear"></div>
@@ -137,7 +136,7 @@
                         <div class="formRow">
                             <label>客户性别<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateSex" name="customerSex"
+                                <input type="text" id="updateSex" name="customerSex" class="validate[required]"
                                        value="${infotoupdate.customerSex}"/>
                             </div>
                             <div class="clear"></div>
@@ -146,14 +145,16 @@
                             <label>客户身份证<span class="req">*</span> </label>
                             <div class="formRight">
                                 <input type="text" id="updateIdentityId" name="customerIdentityId"
-                                       value="${infotoupdate.customerIdentityId}"/>
+                                       class="validate[required,custom[integer]]"
+                                       value="${infotoupdate.customerIdentityId}"
+                                       onkeyup="showBirth(this,'updateBirthday')"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
                             <label>客户生日<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateBirthday" name="customerBirthday"
+                                <input type="text" id="updateBirthday" name="customerBirthday" readonly="readonly"
                                        value=
                                        <fmt:formatDate pattern="yyyy-MM-dd" value="${infotoupdate.customerBirthday}"/>
                                 />
@@ -164,6 +165,7 @@
                             <label>客户邮箱<span class="req">*</span> </label>
                             <div class="formRight">
                                 <input type="text" id="updateEmail" name="customerEmail"
+                                       class="validate[required,custom[email]]"
                                        value="${infotoupdate.customerEmail}"/>
                             </div>
                             <div class="clear"></div>
@@ -172,6 +174,7 @@
                             <label>客户电话<span class="req">*</span> </label>
                             <div class="formRight">
                                 <input type="text" id="updatePhone" name="customerPhone"
+                                       class="validate[required,custom[phone]]"
                                        value="${infotoupdate.customerPhone}"/>
                             </div>
                             <div class="clear"></div>
@@ -179,7 +182,7 @@
                         <div class="formRow">
                             <label>客户地址<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateAddress" name="customerAddress"
+                                <input type="text" id="updateAddress" name="customerAddress" class="validate[required]"
                                        value="${infotoupdate.customerAddress}"/>
                             </div>
                             <div class="clear"></div>
@@ -188,6 +191,7 @@
                             <label>信誉度<span class="req">*</span> </label>
                             <div class="formRight">
                                 <input type="text" id="updateCredit" name="customerCredit"
+                                       class="validate[required,custom[integer]]"
                                        value="${infotoupdate.customerCredit}"/>
                             </div>
                             <div class="clear"></div>

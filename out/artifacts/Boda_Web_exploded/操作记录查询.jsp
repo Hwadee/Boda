@@ -103,7 +103,7 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <div  class="searchWidget">
+        <div class="searchWidget">
             <form id="form1" action="OperationLogs.do" method="post">
                 <input type="hidden" id="currentPage" name="currentPage" value="${operationLogPage.currentPage}">
                 <input type="hidden" id="pageSize" name="pageSize" value="${operationLogPage.pageSize}">

@@ -28,6 +28,11 @@ public class UserManagerService {
         return employeeMapper.updatePassword(employee) > 0;
     }
 
+    public boolean resetPasswd(String empAccount) throws IOException {
+
+        return employeeMapper.resetPassword(empAccount) > 0;
+    }
+
     public Page<Employee> getEmpInfo(String empId, String empName, String empDept, Page<Employee> page) throws IOException {
 
         List<Employee> employees = new LinkedList<>();

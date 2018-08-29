@@ -24,6 +24,11 @@ public class AfterLoanManagerController {
         return "index";
     }
 
+    @RequestMapping("/IntoOverTimeWork.do")
+    public String intoOverTimeWork() {
+        return "逾期账户工作";
+    }
+
     @RequestMapping("/overTimeAccountWork.do")
     public String overTimeAccountWork(HttpServletRequest request, Model model, String currentPage,
                                       String pageSize, String loanId, String customerName, String customerIdentityId) {

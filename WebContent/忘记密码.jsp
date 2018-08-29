@@ -28,29 +28,50 @@
     });
     </script>
 
+    <script type="text/javascript">
+
+        function sendValidationEmail() {
+            const account = $("#empAccount").val();
+
+//            alert(account);
+            location.href = "SendValidationEmail.do?empAccount=" + account;
+        }
+
+        var smsg = "${successMSG}";
+        if (smsg !== null && smsg !== "") {
+            $("#sendCodebtn").val("已发送");
+            $("#sendCodebtn").attr('disabled', true);
+            $("#empAccount").val(${account});
+        }
+
+        var msg = "${MSG}";
+        if (msg !== null && msg !== "") {
+            alert(msg);
+        }
+    </script>
 </head>
 <body>
 <!-- contact-form -->
 <div class="message warning">
     <div class="inset">
         <div class="login-head">
-            <h1>欢迎登录</h1>
+            <h1>重置密码</h1>
             <div class="alert-close"></div>
         </div>
-        <form action="login.do" method="post">
+        <form action="ForgetPasswd.do" method="post">
             <li>
-                <input type="text" class="text" name="account" value="Username" onfocus="this.value = '';"
-                       onblur="if (this.value === '') {this.value = 'Username';}"><a href="#" class=" icon user"></a>
+                <input id="empAccount" type="text" class="text" name="empAccount" value="账号" onfocus="this.value = '';"
+                       onblur="if (this.value === '') {this.value = '账号';}"><a href="#" class=" icon user"></a>
+                <input id="sendCodebtn" type="button" value="发送验证码" onclick="sendValidationEmail()">
             </li>
             <div class="clear"></div>
             <li>
-                <input type="password" value="Password" name="password" onfocus="this.value = '';"
-                       onblur="if (this.value === '') {this.value = 'Password';}"> <a href="#" class="icon lock"></a>
+                <input id="code" type="text" value="验证码" name="code" onfocus="this.value = '';"
+                       onblur="if (this.value === '') {this.value = '验证码';}"> <a href="#" class="icon lock"></a>
             </li>
             <div class="clear"></div>
             <div class="submit">
-                <input type="submit" value="登 录">
-                <h4><a href="IntoForgetPasswd.do">忘记密码?</a></h4>
+                <input type="submit" value="重置密码">
                 <div class="clear"></div>
             </div>
         </form>
@@ -60,11 +81,5 @@
 </div>
 <div class="clear"></div>
 <!--- footer --->
-<script type="text/javascript">
-    var msg = "${MSG}";
-    if (msg !== null && msg !== "") {
-        alert(msg);
-    }
-</script>
 </body>
 </html>

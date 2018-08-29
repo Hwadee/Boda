@@ -18,6 +18,7 @@
         <result column="emp_sex" property="empSex"/>
         <result column="emp_birthday" property="empBirthday"/>
         <result column="emp_phone" property="empPhone"/>
+        <result column="emp_email" property="empEmail"/>
         <result column="emp_photo_url" property="empPhotoUrl"/>
 
     </resultMap>
@@ -28,6 +29,14 @@
         FROM emp_detail
         WHERE emp_detail_id = #{value}
     </select>
+
+    <!-- 通过账号名查询员工 -->
+    <select id="findEmpDetailByAccount" parameterType="String" resultType="com.boda.pojo.EmpDetail">
+        SELECT ed.*
+        FROM emp_detail ed, employee e
+        WHERE ed.emp_detail_id = e.emp_id AND e.emp_account = #{value}
+    </select>
+
     <!-- 通过名字查询员工：查询结果封装成EmpDetail类的列表返回；-->
     <select id="findEmpDetailByName" parameterType="String" resultType="com.boda.pojo.EmpDetail">
         SELECT *
@@ -49,7 +58,7 @@
         SET emp_name     = #{empName}, emp_weight = #{empWeight},
             emp_height   = #{empHeight}, emp_address = #{empAddress}, emp_education = #{empEducation},
             emp_hometown = #{empHometown}, emp_nation = #{empNation}, emp_sex = #{empSex},
-            emp_birthday = #{empBirthday}, emp_phone = #{empPhone}
+            emp_birthday = #{empBirthday}, emp_phone = #{empPhone}, emp_email = #{empEmail}
         WHERE emp_detail_id = #{empDetailId}
     </update>
 

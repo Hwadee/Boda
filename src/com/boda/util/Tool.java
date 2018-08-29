@@ -118,6 +118,27 @@ public class Tool {
         return "Boda" + String.valueOf(uid);
     }
 
+    public static String genValidationCode() {
+        char[] codeSequence = {'A', 'B', 'C', 'D', 'E', 'F', 'G', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        //动态字符串
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        int count = 0;
+        while (true) {
+            int index = random.nextInt(codeSequence.length); //定义随机数的范围并且产生一个随机的下标
+            //随机的取出一个数
+            char c = codeSequence[index];
+            if (sb.indexOf(c + "") == -1) { //不让字符重复,并且把一个字符变成字符串
+                sb.append(c);
+                count++;
+                if (count == 4) {
+                    break;
+                }
+            }
+        }
+        return sb.toString();
+    }
+
     /**
      * 取出两个List中的相同记录
      *

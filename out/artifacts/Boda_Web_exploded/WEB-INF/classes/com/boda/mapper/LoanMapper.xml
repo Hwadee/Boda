@@ -156,9 +156,11 @@
 
     <!-- 插入数据到数据库 -->
     <insert id="addLoan" parameterType="com.boda.pojo.Loan">
-        INSERT INTO loan (loan_id, customer_id, emp_id, loan_money, loan_date, loan_state, return_start_date, return_years, number_of_stages, rate_of_interest)
+        INSERT INTO loan (loan_id, customer_id, emp_id, loan_money, loan_date, loan_state, return_start_date,
+        return_years, number_of_stages, rate_of_interest)
         VALUES
-            (#{loanId}, #{customerId}, #{empId}, #{loanMoney}, #{loanDate}, #{loanState}, #{returnStartDate}, #{returnYears}, #{numberOfStages},
+        (#{loanId}, #{customerId}, #{empId}, #{loanMoney}, #{loanDate}, #{loanState}, #{returnStartDate},
+        #{returnYears}, #{numberOfStages},
              #{rateOfInterest});
     </insert>
 

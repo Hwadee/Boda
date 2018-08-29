@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>权限设置</title>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="js/table.js"></script>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
 
     <script type="text/javascript" src="js/plugins/spinner/ui.spinner.js"></script>
@@ -70,7 +70,6 @@
 
     <script type="text/javascript" src="js/charts/chart.js"></script>
     <script type="text/javascript" src="js/power.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 </head>
 
@@ -128,10 +127,11 @@
                             <td align="center"><strong>职位</strong></td>
                             <td align="center">
                                 <select id="position" name="positions">
-                                    <option>带钱职位1</option>
+                                    <option>---请选择部门---</option>
                                 </select>
                                 <input type="hidden" id="pos">
                             </td>
+                        </tr>
                         <tr>
                             <td align="center"><strong>权限</strong></td>
                             <td align="center">
@@ -151,10 +151,10 @@
                             </td>
                         </tr>
                     </form>
-                    <
+
                     <form action="EditPower.do" id="actualForm" style="display: none;">
-                        <input id="postId" name="postId" type="text" value=""/>
-                        <input id="powerarg" name="powerarg" type="text" value=""/>
+                        <input id="postId" name="postId" type="hidden" value=""/>
+                        <input id="powerarg" name="powerarg" type="hidden" value=""/>
                     </form>
                     </tbody>
                 </table>
@@ -185,6 +185,7 @@
 //                alert(data.toString());
                 var obj = eval('(' + data + ')'); //接收json 数据并进行对象化
                 if (obj.length != "" && obj.length != null) {
+                    document.getElementById("position").parentNode.firstChild.innerHTML = obj[0].postName;
                     for (var i = 0; i < obj.length; i++) {
                         classNext.append("<option value=" + obj[i].postId + ">" + obj[i].postName + "</option>");
                     }
@@ -222,5 +223,6 @@
         alert(msg);
     }
 </script>
+
 </body>
 </html>

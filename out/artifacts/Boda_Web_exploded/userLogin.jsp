@@ -27,6 +27,7 @@
         });
     });
     </script>
+
 </head>
 <body>
 <!-- contact-form -->
@@ -49,10 +50,11 @@
             <div class="clear"></div>
             <div class="submit">
                 <input type="submit" value="登 录">
-                <h4><a href="#">忘记密码?</a></h4>
+                <h4><a href="IntoForgetPasswd.do">忘记密码?</a></h4>
                 <div class="clear"></div>
             </div>
         </form>
+        
     </div>
 </div>
 </div>

@@ -26,13 +26,13 @@
             <ul class="sub">
                 <li><a href="IntoAddLoan.do" title="">贷款信息录入</a></li>
                 <li><a href="IntoCusInfo.do" title="">客户信息查询</a></li>
-                <li class="last"><a href="客户贷款审批.jsp" title="">客户贷款审批</a></li>
+                <li class="last"><a href="IntoLoanExamine.do" title="">客户贷款审批</a></li>
             </ul>
         </li>
         <li class="ui"><a href="#" title="" class="exp"><span>贷后账户管理</span></a>
             <ul class="sub">
                 <li><a href="逾期账户分配条件.jsp" title="">逾期账户分配条件</a></li>
-                <li><a href="逾期账户工作.jsp" title="">逾期账户工作</a></li>
+                <li><a href="IntoOverTimeWork.do" title="">逾期账户工作</a></li>
                 <li class="last"><a href="overTimeMessageTable.do" title="">逾期情况报表</a></li>
             </ul>
         </li>

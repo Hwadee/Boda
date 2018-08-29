@@ -29,6 +29,11 @@ public class LoanManager {
         return "客户贷款信息录入";
     }
 
+    @RequestMapping("/IntoLoanExamine.do")
+    public String intoLoanExam() {
+        return "客户贷款审批";
+    }
+
     @RequestMapping("/LoanInfo.do")
     public String loanInfo(String loanMinDate, String loanMaxDate, Page<Loan> page, Model model) throws Exception {
 

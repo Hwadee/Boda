@@ -62,6 +62,9 @@
             <mvc:exclude-mapping path="/**/login.do"/>
             <mvc:exclude-mapping path="/**/toLogin.do"/>
             <mvc:exclude-mapping path="/**/logout.do"/>
+			<mvc:exclude-mapping path="/**/IntoForgetPasswd.do"/>
+			<mvc:exclude-mapping path="/**/SendValidationEmail.do"/>
+			<mvc:exclude-mapping path="/**/ForgetPasswd.do"/>
             <bean class="com.boda.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

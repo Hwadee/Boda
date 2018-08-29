@@ -12,6 +12,7 @@ public class ActionPowerManage {
     private static final Map<String, Integer> actionPower = new HashMap<>();
 
     static {
+        actionPower.put("/IntoOverTimeWork.do", 1);
         actionPower.put("/overTimeAccountWork.do", 1);
         actionPower.put("/returnLoanMessage.do", 1);
         actionPower.put("/overTimeMessageTable.do", 1);
@@ -49,6 +50,7 @@ public class ActionPowerManage {
         actionPower.put("/LoanInfo.do", 1);
         actionPower.put("/IntoAddLoan.do", 1);
         actionPower.put("/AddLoanInfo.do", 1);
+        actionPower.put("/IntoLoanExamine.do", 1);
 
         actionPower.put("/IntoPowerSetting.do", 1);
         actionPower.put("/EditPower.do", 1);
@@ -64,6 +66,7 @@ public class ActionPowerManage {
         actionPower.put("/QueryLoanInfo.do", 1);
         actionPower.put("/UpdateLoanInfoDel.do", 1);
         actionPower.put("/UpdateLoanInfoAgree.do", 1);
+
     }
 
     public static boolean hasPower(HttpServletRequest request) throws IOException {

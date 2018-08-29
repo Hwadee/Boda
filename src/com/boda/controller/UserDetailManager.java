@@ -53,6 +53,7 @@ public class UserDetailManager {
                                    @RequestParam("height") int height,
                                    @RequestParam("education") String education,
                                    @RequestParam("phone") String phone,
+                                   @RequestParam("email") String email,
                                    @RequestParam("birthday") String birthday,
                                    @RequestParam("ht") String homeTown,
                                    @RequestParam("adr") String address,
@@ -66,6 +67,7 @@ public class UserDetailManager {
         empDetail.setEmpWeight(weight);
         empDetail.setEmpHeight(height);
         empDetail.setEmpEducation(education);
+        empDetail.setEmpEmail(email);
         empDetail.setEmpPhone(phone);
         empDetail.setEmpBirthday(Tool.formatStringToDate(birthday.replaceAll("-", "")));
         empDetail.setEmpHometown(homeTown);

@@ -116,7 +116,6 @@ public class LoanService {
         int pageMAXRow = page.getPageSize();
         int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
 
-        //    List<User> userList = userManagerMapper.queryUser(user,startrow,page.getPageRowNum());
         loans.addAll(loanMapper.findLoanByLoanDate(minDate, maxDate, startRow, page.getPageSize()));
 
         page.setObjList(loans);

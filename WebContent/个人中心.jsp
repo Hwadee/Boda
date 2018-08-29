@@ -234,44 +234,10 @@
                                         <div class="oneThree" style="display: flex">
                                             <label>居住地</label>
                                             <div class="formRight">
-                                                <select name="sel" disabled="disabled" style="opacity: 0;">
-                                                    <option value="北京市" id="北京市2">北京市</option>
-                                                    <option value="天津市" id="天津市2">天津市</option>
-                                                    <option value="上海市" id="上海市2">上海市</option>
-                                                    <option value="重庆市" id="重庆市2">重庆市</option>
-                                                    <option value="河北省" id="河北省2">河北省</option>
-                                                    <option value="山西省" id="山西省2">山西省</option>
-                                                    <option value="辽宁省" id="辽宁省2">辽宁省</option>
-                                                    <option value="吉林省" id="吉林省2">吉林省</option>
-                                                    <option value="黑龙江省" id="黑龙江省2">黑龙江省</option>
-                                                    <option value="江苏省" id="江苏省2">江苏省</option>
-                                                    <option value="浙江省" id="浙江省2">浙江省</option>
-                                                    <option value="安徽省" id="安徽省2">安徽省</option>
-                                                    <option value="福建省" id="福建省2">福建省</option>
-                                                    <option value="江西省" id="江西省2">江西省</option>
-                                                    <option value="山东省" id="山东省2">山东省</option>
-                                                    <option value="河南省" id="河南省2">河南省</option>
-                                                    <option value="湖北省" id="湖北省2">湖北省</option>
-                                                    <option value="湖南省" id="湖南省2">湖南省</option>
-                                                    <option value="广东省" id="广东省2">广东省</option>
-                                                    <option value="海南省" id="海南省2">海南省</option>
-                                                    <option value="四川省" id="四川省2">四川省</option>
-                                                    <option value="贵州省" id="贵州省2">贵州省</option>
-                                                    <option value="云南省" id="云南省2">云南省</option>
-                                                    <option value="陕西省" id="陕西省2">陕西省</option>
-                                                    <option value="甘肃省" id="甘肃省2">甘肃省</option>
-                                                    <option value="青海省" id="青海省2">青海省</option>
-                                                    <option value="台湾省" id="台湾省2">台湾省</option>
-                                                    <option value="广西壮族自治区" id="广西壮族自治区2">广西壮族自治区</option>
-                                                    <option value="内蒙古自治区" id="内蒙古自治区2">内蒙古自治区</option>
-                                                    <option value="西藏自治区" id="西藏自治区2">西藏自治区</option>
-                                                    <option value="宁夏回族自治区" id="宁夏回族自治区2">宁夏回族自治区</option>
-                                                    <option value="新疆维吾尔自治区" id="新疆维吾尔族自治区2">新疆维吾尔自治区</option>
-                                                    <option value="香港特别行政区" id="香港特别行政区2">香港特别行政区</option>
-                                                    <option value="澳门特别行政区" id="澳门特别行政区2">澳门特别行政区</option>
-                                                </select></div>
+                                                <input type="text" value="${detailInfo.empAddress}" name="adr" id="adr"
+                                                       readonly="readonly"/>
+                                            </div>
                                         </div>
-                                        <input name="adr" id="adr" type="hidden" value="">
                                         <div class="oneThree">
                                             <label>国籍</label>
                                             <div class="formRight">
@@ -304,7 +270,16 @@
                                 <label>手机号码：</label>
                                 <div class="formRight">
                                     <input type="text" value="${detailInfo.empPhone}" name="phone" id="phone"
+                                           class="validate[custom[phone]]"
                                            readonly="readonly">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="formRow">
+                                <label>邮箱：</label>
+                                <div class="formRight">
+                                    <input type="text" value="" name="email" id="email"
+                                           class="validate[custom[email]]" readonly="readonly">
                                 </div>
                                 <div class="clear"></div>
                             </div>

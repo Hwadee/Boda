@@ -16,7 +16,9 @@ public class EmpDetail {
     private String empSex;
     private Date empBirthday;
     private String empPhone;
+    private String empEmail;
     private String empPhotoUrl;
+
 
     public Integer getEmpDetailId() {
         return empDetailId;
@@ -106,6 +108,14 @@ public class EmpDetail {
         this.empPhone = empPhone;
     }
 
+    public String getEmpEmail() {
+        return empEmail;
+    }
+
+    public void setEmpEmail(String empEmail) {
+        this.empEmail = empEmail;
+    }
+
     public String getEmpPhotoUrl() {
         return empPhotoUrl;
     }
@@ -121,10 +131,21 @@ public class EmpDetail {
 
     @Override
     public String toString() {
-        return "EmpDetail [empDetailId=" + empDetailId + ", empName=" + empName + ", empWeight=" + empWeight
-                + ", empHeight=" + empHeight + ", empEducation=" + empEducation + ", empAddress=" + empAddress
-                + ", empHometown=" + empHometown + ", empNation=" + empNation + ", empSex=" + empSex + ", empBirthday="
-                + empBirthday + ", empPhone=" + empPhone + ", empPhotoUrl=" + empPhotoUrl + "]";
+        return "EmpDetail{" +
+                "empDetailId=" + empDetailId +
+                ", empName='" + empName + '\'' +
+                ", empWeight=" + empWeight +
+                ", empHeight=" + empHeight +
+                ", empEducation='" + empEducation + '\'' +
+                ", empAddress='" + empAddress + '\'' +
+                ", empHometown='" + empHometown + '\'' +
+                ", empNation='" + empNation + '\'' +
+                ", empSex='" + empSex + '\'' +
+                ", empBirthday=" + empBirthday +
+                ", empPhone='" + empPhone + '\'' +
+                ", empEmail='" + empEmail + '\'' +
+                ", empPhotoUrl='" + empPhotoUrl + '\'' +
+                '}';
     }
 
 }
