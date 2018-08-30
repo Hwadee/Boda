@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>权限设置</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
 
@@ -69,7 +69,7 @@
     <script type="text/javascript" src="js/custom.js"></script>
 
     <script type="text/javascript" src="js/charts/chart.js"></script>
-    <script type="text/javascript" src="js/power.js" ></script>
+    <script type="text/javascript" src="js/power.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  -->
 </head>
 
@@ -173,32 +173,32 @@
 <script type="text/javascript">
 
     function findAllPost() {
-        var deptId=$("#department").find('option:selected').val();
+        var deptId = $("#department").find('option:selected').val();
         $("#position").empty();     //清空二级目录
-        var classNext=$("#position");
-        alert(deptId);
+        var classNext = $("#position");
+//        alert(deptId);
         $.ajax({
-            type:"Post",
-            url:"PostOfDept.do"+"?deptId="+deptId,
-            dataType:'text',
-            success:function(data) {
+            type: "Post",
+            url: "PostOfDept.do" + "?deptId=" + deptId,
+            dataType: 'text',
+            success: function (data) {
 //                alert(data.toString());
                 var obj = eval('(' + data + ')'); //接收json 数据并进行对象化
-                if(obj.length!="" && obj.length!=null){
+                if (obj.length != "" && obj.length != null) {
                     document.getElementById("position").parentNode.firstChild.innerHTML = obj[0].postName;
-                    for ( var i = 0; i < obj.length; i++) {
-                        classNext.append("<option value="+obj[i].postId+">"+obj[i].postName+"</option>");
+                    for (var i = 0; i < obj.length; i++) {
+                        classNext.append("<option value=" + obj[i].postId + ">" + obj[i].postName + "</option>");
                     }
-                }else{
-                    classNext.append("<option value="+0+">---无---</option>");
+                } else {
+                    classNext.append("<option value=" + 0 + ">---无---</option>");
                 }
             },
-            error:function(request) {
-                alert("出现错误!")
+            error: function (request) {
+                alert("获取职位信息失败，请刷新页面后重试");
             }
         });
     }
-    
+
     function editPower() {
         const postId = $("#position").find('option:selected').val();
 //        alert(postId);
@@ -206,7 +206,7 @@
 
         var test = $("input[name='power']:checked");
         var checkBoxValue = "";
-        test.each(function(){
+        test.each(function () {
             checkBoxValue += $(this).val();
         });
 //        alert(checkBoxValue);

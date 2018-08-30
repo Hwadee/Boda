@@ -16,14 +16,14 @@
 
     <!-- 查询员工操作记录-->
     <sql id="findOperationLog_where">
-        <if test="startDate!=null and loanId!=''">
+        <if test="empId != null and empId != ''">
+            and emp_id = #{empId}
+        </if>
+        <if test="startDate != null and startDate != ''">
             and operation_date >= #{startDate}
         </if>
-        <if test="endDate!=null and endDate!=''">
-            and operation_date &lt;= #{endDate}
-        </if>
-        <if test="empId!=null and empId!=''">
-            and emp_id=#{empId}
+        <if test="endDate != null and endDate != ''">
+            and operation_date <![CDATA[<=]]> #{endDate}
         </if>
     </sql>
 

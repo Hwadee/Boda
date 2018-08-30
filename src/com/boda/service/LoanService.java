@@ -18,18 +18,18 @@ public class LoanService {
     private LoanMapper loanMapper;
 
     //根据loan_state搜索
-    public Page<Loan> getQueryLoanInfo(String loanState, Page<Loan> page) throws IOException {
+    public Page<Loan> getQueryLoanInfo(Page<Loan> page) throws IOException {
 
         List<Loan> loans = new LinkedList<>();
 
         int pageMAXRow = page.getPageSize();
         int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
 
-        loans.addAll(loanMapper.findLoanByLoanState(loanState, startRow, page.getPageSize()));
+        loans.addAll(loanMapper.findUnapprovedLoan(startRow, page.getPageSize()));
 
         page.setObjList(loans);
 
-        int allRowNum = loanMapper.findLoanByLoanCount(loanState);
+        int allRowNum = loanMapper.findLoanByLoanCount();
         int allPageNum = allRowNum % pageMAXRow == 0 ? allRowNum / pageMAXRow : allRowNum / pageMAXRow + 1;
         page.setAllPageNum(allPageNum);
         System.out.println(loans);

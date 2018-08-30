@@ -100,13 +100,14 @@ public class Tool {
 
         // 生成UUID作为文件名保存图片
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
-        String url = fileDic + uuid + ".png";
+//        String url = fileDic + uuid + ".png";
+        String fileName = uuid + ".png";
         try {
-            ImageIO.write(finalImage, "png", new File(url));
+            ImageIO.write(finalImage, "png", new File(fileDic + fileName));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return url;
+        return fileName;
     }
 
     // 获取随机账号

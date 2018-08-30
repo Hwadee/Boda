@@ -12,58 +12,52 @@ public class ActionPowerManage {
     private static final Map<String, Integer> actionPower = new HashMap<>();
 
     static {
-        actionPower.put("/IntoOverTimeWork.do", 1);
-        actionPower.put("/overTimeAccountWork.do", 1);
-        actionPower.put("/returnLoanMessage.do", 1);
-        actionPower.put("/overTimeMessageTable.do", 1);
-        actionPower.put("/urgeForReturn.do", 1);
-        actionPower.put("/overTimeAccountDistribute.do", 1);
-        actionPower.put("/savaDistributeMessage.do", 1);
+        // 贷后业务
+        actionPower.put("/IntoOverTimeWork.do", 2);
+        actionPower.put("/overTimeAccountWork.do", 2);
+        actionPower.put("/returnLoanMessage.do", 2);
+        actionPower.put("/overTimeMessageTable.do", 2);
+        actionPower.put("/urgeForReturn.do", 2);
+        actionPower.put("/overTimeAccountDistribute.do", 2);
+        actionPower.put("/savaDistributeMessage.do", 2);
 
-        actionPower.put("/IntoOperationLogs.do", 1);
-        actionPower.put("/OperationLogs.do", 1);
-        actionPower.put("/IntoDeptInfo.do", 1);
-        actionPower.put("/DeptInfo.do", 1);
-        actionPower.put("/QueryUpdateInfo.do", 1);
-        actionPower.put("/UpdateDeptInfo.do", 1);
-        actionPower.put("/AddDeptInfo.do", 1);
-        actionPower.put("/DelDeptInfo.do", 1);
+        // 系统设置
+        actionPower.put("/IntoOperationLogs.do", 4);
+        actionPower.put("/OperationLogs.do", 4);
+        actionPower.put("/IntoDeptInfo.do", 4);
+        actionPower.put("/DeptInfo.do", 4);
+        actionPower.put("/QueryUpdateInfo.do", 4);
+        actionPower.put("/UpdateDeptInfo.do", 4);
+        actionPower.put("/AddDeptInfo.do", 4);
+        actionPower.put("/DelDeptInfo.do", 4);
+        actionPower.put("/IntoEmployeeManager.do", 4);
+        actionPower.put("/IntoEmpInfo.do", 4);
+        actionPower.put("/EmpInfo.do", 4);
+        actionPower.put("/DelEmpInfo.do", 4);
+        actionPower.put("/AddEmpInfo.do", 4);
+        actionPower.put("/IntoPowerSetting.do", 4);
+        actionPower.put("/EditPower.do", 4);
+        actionPower.put("/PostOfDept.do", 4);
 
-        actionPower.put("/UserDetail.do", 1);
-        actionPower.put("/UpdateUserInfo.do", 1);
-        actionPower.put("/UpdatePassword.do", 1);
-        actionPower.put("UpdateHeadPortrait.do", 1);
-        actionPower.put("/DelDeptInfo.do", 1);
+        // 财务管理
+        actionPower.put("/returnOfToday.do", 3);
+        actionPower.put("/returnAccountWork.do", 3);
+        actionPower.put("/updateReturnMoney.do", 3);
+        actionPower.put("/IntoLoanInfo.do", 3);
+        actionPower.put("/LoanInfo.do", 3);
+        actionPower.put("/IntoAddLoan.do", 3);
+        actionPower.put("/AddLoanInfo.do", 3);
 
-        actionPower.put("/returnOfToday.do", 1);
-        actionPower.put("/returnAccountWork.do", 1);
-        actionPower.put("/updateReturnMoney.do", 1);
-        actionPower.put("/DelDeptInfo.do", 1);
-
-        actionPower.put("/IntoEmployeeManager.do", 1);
-        actionPower.put("/IntoEmpInfo.do", 1);
-        actionPower.put("/EmpInfo.do", 1);
-        actionPower.put("/DelEmpInfo.do", 1);
-        actionPower.put("/AddEmpInfo.do", 1);
-
-        actionPower.put("/IntoLoanInfo.do", 1);
-        actionPower.put("/LoanInfo.do", 1);
-        actionPower.put("/IntoAddLoan.do", 1);
-        actionPower.put("/AddLoanInfo.do", 1);
-        actionPower.put("/IntoLoanExamine.do", 1);
-
-        actionPower.put("/IntoPowerSetting.do", 1);
-        actionPower.put("/EditPower.do", 1);
-        actionPower.put("/PostOfDept.do", 1);
-
+        // 贷前业务
         actionPower.put("/IntoCusInfo.do", 1);
         actionPower.put("/CusInfo.do", 1);
         actionPower.put("/AddCusInfo.do", 1);
         actionPower.put("/QueryUpdatecustomerInfo.do", 1);
         actionPower.put("/UpdateCusInfo.do", 1);
         actionPower.put("/DelCusInfo.do", 1);
-
         actionPower.put("/QueryLoanInfo.do", 1);
+        actionPower.put("/IntoAddLoan.do", 1);
+        actionPower.put("/AddLoanInfo.do", 1);
         actionPower.put("/UpdateLoanInfoDel.do", 1);
         actionPower.put("/UpdateLoanInfoAgree.do", 1);
 

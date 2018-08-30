@@ -105,9 +105,10 @@
 <div class="wrapper">
     <div id="cusInfoTable" class="searchWidget">
         <form action="CusInfo.do" id="form1">
-            <input type="text" name="customerName" placeholder="客户名" style="width: 29%"/>
-            <input type="text" name="customerPhone" placeholder="电话" style="width: 29%"/>
-            <input type="text" name="customerIdentityId" placeholder="身份证" style="width: 29%"/>
+            <input type="text" name="customerName" placeholder="客户名" style="width: 29%" value="${customerName}"/>
+            <input type="text" name="customerPhone" placeholder="电话" style="width: 29%" value="${customerPhone}"/>
+            <input type="text" name="customerIdentityId" placeholder="身份证" style="width: 29%"
+                   value="${customerIdentityId}"/>
 
             <input type="hidden" id="currentPage" name="currentPage" value="${cusPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${cusPage.pageSize}">
@@ -191,7 +192,7 @@
     <!--endprint1-->
 
 </div>
-<!--新增部门信息-->
+<!--新增客户信息-->
 <div id="addInfo" class="wrapper" style="display: none">
     <div class="widgets">
         <div class="widget">
@@ -220,8 +221,10 @@
                         <label>客户性别<span class="req">*</span> </label>
                         <div class="formRight">
                             <%--<input type="text" id="addSex" name="customerSex"/>--%>
-                                <input type="radio" name="customerSex" id="male"data-prompt-position="topRight:102" style="opacity: 0;" value="男" checked="checked"><label for="male">男</label>
-                                <input type="radio" name="customerSex" id="female"data-prompt-position="topRight:102" style="opacity: 0;"value="女"><label for="female">女</label>
+                            <input type="radio" name="customerSex" id="male" data-prompt-position="topRight:102"
+                                   style="opacity: 0;" value="男" checked="checked"><label for="male">男</label>
+                            <input type="radio" name="customerSex" id="female" data-prompt-position="topRight:102"
+                                   style="opacity: 0;" value="女"><label for="female">女</label>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -245,14 +248,16 @@
                     <div class="formRow">
                         <label>邮箱<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addEmail" name="customerEmail" class="validate[required,custom[email]]"/>
+                            <input type="text" id="addEmail" name="customerEmail"
+                                   class="validate[required,custom[email]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="formRow">
                         <label>电话<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addPhone" name="customerPhone" class="validate[required,custom[phone]]"/>
+                            <input type="text" id="addPhone" name="customerPhone"
+                                   class="validate[required,custom[phone]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -266,7 +271,8 @@
                     <div class="formRow">
                         <label>信誉度<span class="req">*</span> </label>
                         <div class="formRight">
-                            <input type="text" id="addCredit" name="customerCredit" class="validate[required,custom[integer]]"/>
+                            <input type="text" id="addCredit" name="customerCredit"
+                                   class="validate[required,custom[integer]]"/>
                         </div>
                         <div class="clear"></div>
                     </div>

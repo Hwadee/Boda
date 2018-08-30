@@ -136,9 +136,8 @@ public interface LoanMapper {
      * @Param startRow
      * 根据loanState
      */
-    public List<Loan> findLoanByLoanState(@Param("loanState") String loanState,
-                                          @Param("startRow") int startRow,
-                                          @Param("length") int length) throws IOException;
+    public List<Loan> findUnapprovedLoan(@Param("startRow") int startRow,
+                                         @Param("length") int length) throws IOException;
 
     /**
      * 查询未审批数量
@@ -147,7 +146,7 @@ public interface LoanMapper {
      * @return
      * @throws IOException
      */
-    public Integer findLoanByLoanCount(@Param("loanState") String loanState) throws IOException;
+    public Integer findLoanByLoanCount() throws IOException;
 
     /**
      * 根据用户id删除用户信息

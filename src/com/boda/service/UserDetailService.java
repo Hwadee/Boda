@@ -53,26 +53,35 @@ public class UserDetailService {
     public boolean updateHeadPortrait(String empDetailId, File image) throws IOException {
 
         final String fileDic = "C:\\Users\\Wuming\\Desktop\\Boda\\WebContent\\images\\avatar\\";
-        String url = Tool.saveImage(fileDic, image);
+        final String relativeDic = "/images/avatar/";
+        String fileName = Tool.saveImage(fileDic, image);
+        String url = fileDic + fileName;
+        String relativeURL = relativeDic + fileName;
 
         System.out.println(url);
         EmpDetail detail = empDetailMapper.findEmpDetailById(Integer.parseInt(empDetailId));
-        String oldUrl = detail.getEmpPhotoUrl();
+        String oldUrl = fileDic + detail.getEmpPhotoUrl();
 
-        if (empDetailMapper.updateEmpPhoto(empDetailId, url) > 0) {
-            //更新信息成功，删除旧头像文件
-            File oldPhoto = new File(oldUrl);
-            if (oldPhoto.isFile() && oldPhoto.exists()) {
-                oldPhoto.delete();
+        try {
+            if (empDetailMapper.updateEmpPhoto(empDetailId, relativeURL) > 0) {
+                //更新信息成功，删除旧头像文件
+                File oldPhoto = new File(oldUrl);
+                if (oldPhoto.isFile() && oldPhoto.exists()) {
+                    oldPhoto.delete();
+                }
+                return true;
+            } else {
+                //更新信息失败，删除保存的新头像文件
+                File photo = new File(url);
+                if (photo.isFile() && photo.exists()) {
+                    photo.delete();
+                }
+                return false;
             }
-            return true;
-        } else {
-            //更新信息失败，删除保存的新头像文件
-            File photo = new File(url);
-            if (photo.isFile() && photo.exists()) {
-                photo.delete();
-            }
-            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR");
         }
+        return false;
     }
 }

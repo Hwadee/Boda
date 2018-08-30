@@ -26,12 +26,11 @@
             <ul class="sub">
                 <li><a href="IntoAddLoan.do" title="">贷款信息录入</a></li>
                 <li><a href="IntoCusInfo.do" title="">客户信息查询</a></li>
-                <li class="last"><a href="IntoLoanExamine.do" title="">客户贷款审批</a></li>
+                <li class="last"><a href="QueryLoanInfo.do" title="">客户贷款审批</a></li>
             </ul>
         </li>
         <li class="ui"><a href="#" title="" class="exp"><span>贷后账户管理</span></a>
             <ul class="sub">
-                <li><a href="逾期账户分配条件.jsp" title="">逾期账户分配条件</a></li>
                 <li><a href="IntoOverTimeWork.do" title="">逾期账户工作</a></li>
                 <li class="last"><a href="overTimeMessageTable.do" title="">逾期情况报表</a></li>
             </ul>
@@ -40,6 +39,7 @@
         <li class="widgets"><a href="#" title="" class="exp"><span>财务管理</span></a>
             <ul class="sub">
                 <li><a href="IntoLoanInfo.do" title="">放款名单</a></li>
+                <li><a href="returnAccountWork.do" title="">还款功能</a></li>
                 <li class="last"><a href="returnOfToday.do" title="">还款名单</a></li>
             </ul>
         </li>

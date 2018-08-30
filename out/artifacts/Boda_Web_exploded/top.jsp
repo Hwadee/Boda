@@ -9,11 +9,12 @@
 <!-- Top fixed navigation -->
 <div class="topNav">
     <div class="wrapper">
-        <div class="welcome"><a href="#" title=""><img src="images/userPic.png" alt=""/></a><span>你好。主人</span></div>
+        <div class="welcome"><a href="#" title=""><img src="images/userPic.png" alt=""/></a><span>欢迎</span></div>
         <div class="userNav">
             <ul>
                 <li><a href="UserDetail.do" title=""><img src="images/icons/topnav/profile.png"
                                                           alt=""/><span>个人中心</span></a></li>
+                <!--
                 <li><a href="#" title=""><img src="images/icons/topnav/tasks.png" alt=""/><span>任务</span></a></li>
                 <li class="dd"><a title=""><img src="images/icons/topnav/messages.png" alt=""/><span>消息</span><span
                         class="numberTop">8</span></a>
@@ -25,6 +26,7 @@
                     </ul>
                 </li>
                 <li><a href="#" title=""><img src="images/icons/topnav/settings.png" alt=""/><span>设置</span></a></li>
+                -->
                 <li><a href="logout.do" title=""><img src="images/icons/topnav/logout.png" alt=""/><span>退出</span></a>
                 </li>
             </ul>

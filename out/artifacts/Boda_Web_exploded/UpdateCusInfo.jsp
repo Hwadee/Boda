@@ -121,7 +121,7 @@
                             <label>客户ID<span class="req">*</span> </label>
                             <div class="formRight">
                                 <input type="text" id="updateId" name="customerId" value="${infotoupdate.customerId}"
-                                        readonly="readonly" >
+                                       readonly="readonly">
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -144,7 +144,8 @@
                         <div class="formRow">
                             <label>客户身份证<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateIdentityId" name="customerIdentityId" class="validate[required,custom[integer]]"
+                                <input type="text" id="updateIdentityId" name="customerIdentityId"
+                                       class="validate[required,custom[integer]]"
                                        value="${infotoupdate.customerIdentityId}"
                                        onkeyup="showBirth(this,'updateBirthday')"/>
                             </div>
@@ -163,7 +164,8 @@
                         <div class="formRow">
                             <label>客户邮箱<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateEmail" name="customerEmail" class="validate[required,custom[email]]"
+                                <input type="text" id="updateEmail" name="customerEmail"
+                                       class="validate[required,custom[email]]"
                                        value="${infotoupdate.customerEmail}"/>
                             </div>
                             <div class="clear"></div>
@@ -171,7 +173,8 @@
                         <div class="formRow">
                             <label>客户电话<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updatePhone" name="customerPhone" class="validate[required,custom[phone]]"
+                                <input type="text" id="updatePhone" name="customerPhone"
+                                       class="validate[required,custom[phone]]"
                                        value="${infotoupdate.customerPhone}"/>
                             </div>
                             <div class="clear"></div>
@@ -187,7 +190,8 @@
                         <div class="formRow">
                             <label>信誉度<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="updateCredit" name="customerCredit" class="validate[required,custom[integer]]"
+                                <input type="text" id="updateCredit" name="customerCredit"
+                                       class="validate[required,custom[integer]]"
                                        value="${infotoupdate.customerCredit}"/>
                             </div>
                             <div class="clear"></div>

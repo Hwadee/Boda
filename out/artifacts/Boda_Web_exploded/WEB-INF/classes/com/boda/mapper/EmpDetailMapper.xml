@@ -58,7 +58,7 @@
         SET emp_name     = #{empName}, emp_weight = #{empWeight},
             emp_height   = #{empHeight}, emp_address = #{empAddress}, emp_education = #{empEducation},
             emp_hometown = #{empHometown}, emp_nation = #{empNation}, emp_sex = #{empSex},
-            emp_birthday = #{empBirthday}, emp_phone = #{empPhone}, emp_email = #{empEmail}
+        emp_birthday = #{empBirthday}, emp_phone = #{empPhone}, emp_email = #{empEmail}
         WHERE emp_detail_id = #{empDetailId}
     </update>
 

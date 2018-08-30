@@ -157,11 +157,11 @@
                     <c:if test="${returnLoanPage.objList!=null}">
                         <tr>
                             <td colspan="11" align="center">
-                                <input type="button" value="首页" onclick="pageTurning(1)">
-                                <input type="button" value="上一页" onclick="pageTurning(2)">
+                                <a onclick="pageTurning(1)">首页</a>
+                                <a onclick="pageTurning(2)">上一页</a>
                                 <span id="pageInfo">第${returnLoanPage.currentPage}页/共${returnLoanPage.allPageNum}页</span>
-                                <input type="button" value="下一页" onclick="pageTurning(3)">
-                                <input type="button" value="末页" onclick="pageTurning(4)">
+                                <a onclick="pageTurning(3)">下一页</a>
+                                <a onclick="pageTurning(4)">末页</a>
                             </td>
                         </tr>
                     </c:if>
@@ -189,32 +189,69 @@
 
 <script type="text/javascript">
     //页面刷新的翻页
+    <%--function pageTurning(num) {--%>
+        <%--var currentPage = parseInt("${returnLoanPage.currentPage}");--%>
+        <%--var allPageNum = parseInt("${returnLoanPage.allPageNum}");--%>
+        <%--switch (num) {--%>
+            <%--case 0:--%>
+                <%--currentPage = 1;--%>
+                <%--break;--%>
+            <%--case 1:--%>
+                <%--if (currentPage == 1)--%>
+                    <%--return;--%>
+                <%--currentPage = 1;--%>
+                <%--break;--%>
+            <%--case 2:--%>
+                <%--if (currentPage == 1)--%>
+                    <%--return;--%>
+                <%--currentPage--;--%>
+                <%--break;--%>
+            <%--case 3:--%>
+                <%--if (currentPage == allPageNum)--%>
+                    <%--return;--%>
+                <%--currentPage++;--%>
+                <%--break;--%>
+            <%--case 4:--%>
+                <%--if (currentPage == allPageNum)--%>
+                    <%--return;--%>
+                <%--currentPage = allPageNum;--%>
+                <%--break;--%>
+        <%--}--%>
+        <%--document.getElementById("currentPage").value = currentPage;--%>
+        <%--document.getElementById("form1").submit();--%>
+    <%--}--%>
     function pageTurning(num) {
-        var currentPage = parseInt("${returnLoanPage.currentPage}");
-        var allPageNum = parseInt("${returnLoanPage.allPageNum}");
+        var currentPage = $('#currentPage').val();
+        var pageSize = $('#pageSize').val();
+        var allPageNum = $('#allPageNum').val();
         switch (num) {
             case 0:
-                currentPage = 1;
+                $('#currentPage').val("0");
+                $('#pageSize').val("0");
+                $('#allPageNum').val("0");
                 break;
             case 1:
-                if (currentPage == 1)
-                    return;
-                currentPage = 1;
+                if (currentPage > 1) $('#currentPage').val("1");
+                else return;
                 break;
             case 2:
-                if (currentPage == 1)
-                    return;
-                currentPage--;
+                if (currentPage > 1) {
+                    --currentPage;
+                    $('#currentPage').val(currentPage);
+                }
+                else return;
                 break;
             case 3:
-                if (currentPage == allPageNum)
-                    return;
-                currentPage++;
+                if (allPageNum > currentPage) {
+                    ++currentPage;
+                    $('#currentPage').val(currentPage);
+                }
+                else return;
+//               alert($('#currentPage').val());
                 break;
             case 4:
-                if (currentPage == allPageNum)
-                    return;
-                currentPage = allPageNum;
+                if (allPageNum > currentPage) $('#currentPage').val(allPageNum);
+                else return;
                 break;
         }
         document.getElementById("currentPage").value = currentPage;

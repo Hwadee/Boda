@@ -29,10 +29,11 @@ public class LoanManager {
         return "客户贷款信息录入";
     }
 
-    @RequestMapping("/IntoLoanExamine.do")
-    public String intoLoanExam() {
-        return "客户贷款审批";
-    }
+//    @RequestMapping("/IntoLoanExamine.do")
+//    public String intoLoanExam() {
+//
+//        return "客户贷款审批";
+//    }
 
     @RequestMapping("/LoanInfo.do")
     public String loanInfo(String loanMinDate, String loanMaxDate, Page<Loan> page, Model model) throws Exception {
@@ -54,7 +55,7 @@ public class LoanManager {
     }
 
     @RequestMapping("/QueryLoanInfo.do")
-    public String QueryLoanInfo(String loanState, Page<Loan> page, Model model) throws Exception {
+    public String QueryLoanInfo(Page<Loan> page, Model model) throws Exception {
 
         final int PAGE_SIZE = 10;
         System.out.println(page.getCurrentPage());
@@ -63,7 +64,7 @@ public class LoanManager {
             page.setPageSize(PAGE_SIZE);
         }
 
-        page = ls.getQueryLoanInfo(loanState, page);
+        page = ls.getQueryLoanInfo(page);
 
         if (page.getObjList().isEmpty()) {
             model.addAttribute("searchMSG", "无符合结果");
@@ -102,7 +103,7 @@ public class LoanManager {
                               String empId,
                               String loanMoney,
                               String loanDate,
-                              String loanState,
+//                              String loanState,
                               String returnStartDate,
                               String returnYears,
                               String numberOfStages,
@@ -120,7 +121,7 @@ public class LoanManager {
         loan.setEmpId(Integer.parseInt(empId));
         loan.setLoanMoney(Integer.parseInt(loanMoney));
         loan.setLoanDate(Tool.formatStringToDate(loanDate));
-        loan.setLoanState(loanState);
+        loan.setLoanState("未审批");
         loan.setReturnStartDate(Tool.formatStringToDate(returnStartDate));
         loan.setReturnYears(Integer.parseInt(returnYears));
         loan.setNumberOfStages(Integer.parseInt(numberOfStages));

@@ -176,7 +176,7 @@
         var deptId = $("#department").find('option:selected').val();
         $("#position").empty();     //清空二级目录
         var classNext = $("#position");
-        alert(deptId);
+//        alert(deptId);
         $.ajax({
             type: "Post",
             url: "PostOfDept.do" + "?deptId=" + deptId,

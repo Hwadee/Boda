@@ -16,11 +16,6 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>逾期情况报表</title>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
-    <script>
-        function myFunction() {
-            alert("已催收");
-        }
-    </script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/table.js"></script>
     <script type="text/javascript" src="js/plugins/spinner/ui.spinner.js"></script>
@@ -106,18 +101,21 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form id="form1" action="overTimeAccountWork.do" method="post" class="searchWidget">
-            <input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}">
-            <input type="hidden" id="pageSize" name="pageSize" value="${page.pageSize}">
-            <input type="hidden" id="allPageNum" name="allPageNum" value="${page.allPageNum}">
+        <div  class="searchWidget">
+            <form id="form1" action="overTimeAccountWork.do" method="post">
+                <input type="hidden" id="currentPage" name="currentPage" value="${page.currentPage}">
+                <input type="hidden" id="pageSize" name="pageSize" value="${page.pageSize}">
+                <input type="hidden" id="allPageNum" name="allPageNum" value="${page.allPageNum}">
 
-            <div>
-                贷款id:<input id="loanId" name="loanId" value="${loanId}"/>&nbsp;
-                姓名:<input id="customerName" name="customerName" value="${customerName}"/>&nbsp;
-                身份证号:<input id="customerIdentityId" name="customerIdentityId" value="${customerIdentityId}"/>&nbsp;
-                <button type="button" onclick="pageTurning(0)">搜索</button>
-            </div>
-        </form>
+
+                <input type="text" id="loanId" name="loanId" placeholder="贷款id" value="${loanId}" style="width: 29%"/>&nbsp;
+                <input type="text" id="customerName" name="customerName" placeholder="姓名" value="${customerName}"  style="width: 29%"/>&nbsp;
+                <input type="text" id="customerIdentityId" name="customerIdentityId" placeholder="身份证号" value="${customerIdentityId}" style="width: 29%"/>&nbsp;
+                <input type="button" onclick="pageTurning(0)"/>
+                <!--<button type="button" onclick="pageTurning(0)">搜索</button>-->
+
+            </form>
+        </div>
         <!-- Widgets -->
         <div class="widgets">
             <div class="widget rightTabs">
@@ -126,28 +124,28 @@
                     <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                         <thead>
                         <tr>
-                            <th>贷款id</th>
-                            <th>姓名</th>
-                            <th>性别</th>
-                            <th>出生日期</th>
-                            <th>电话</th>
-                            <th>Email</th>
-                            <th>信用</th>
-                            <th>贷款金额</th>
-                            <th>贷款日期</th>
-                            <th>贷款状态</th>
-                            <th>开始还款日期</th>
-                            <th>贷款期限</th>
-                            <th>分期数</th>
-                            <th>贷款利率</th>
-                            <th>还款信息</th>
+                            <td>贷款id</td>
+                            <td>姓名</td>
+                            <td>性别</td>
+                            <td>出生日期</td>
+                            <td>电话</td>
+                            <td>Email</td>
+                            <td>信用</td>
+                            <td>贷款金额</td>
+                            <td>贷款日期</td>
+                            <td>贷款状态</td>
+                            <td>开始还款日期</td>
+                            <td>贷款期限</td>
+                            <td>分期数</td>
+                            <td>贷款利率</td>
+                            <td>还款信息</td>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach items="${page.objList}" var="loan">
                             <tr>
                                 <td align="center">${loan.loanId}</td>
-                                <td align="center"><a
+                                <td align="center" class="webStatsLink"><a
                                         href="${pageContext.request.contextPath}/overTimeAccountDistribute.do?customerId=${loan.customerMessage.customerId}">
                                         ${loan.customerMessage.customerName}</a></td>
                                 <td align="center">${loan.customerMessage.customerSex}</td>
@@ -167,17 +165,17 @@
                                 <td align="center">${loan.rateOfInterest}</td>
                                 <td align="center"><a
                                         href="${pageContext.request.contextPath}/returnLoanMessage.do?loanId=${loan.loanId}">
-                                    <input type="button" value="还款信息"></a></td>
+                                    <input type="button" value="还款信息" class="greenB"></a></td>
                             </tr>
                         </c:forEach>
                         </tbody>
                     </table>
-                    <div>
-                        <input type="button" value="首页" onclick="pageTurning(1)">
-                        <input type="button" value="上一页" onclick="pageTurning(2)">
-                        <span id="pageInfo">第${page.currentPage}页/共${page.allPageNum}页</span>
-                        <input type="button" value="下一页" onclick="pageTurning(3)">
-                        <input type="button" value="末页" onclick="pageTurning(4)">
+                    <div align="center">
+                        <a href="#" onclick="pageTurning(1)">首页</a>&nbsp;&nbsp;
+                        <a href="#" onclick="pageTurning(2)">上一页</a>&nbsp;&nbsp;
+                        <span id="pageInfo">第${page.currentPage}页/共${page.allPageNum}页</span>&nbsp;&nbsp;
+                        <a href="#" onclick="pageTurning(3)">下一页</a>&nbsp;&nbsp;
+                        <a href="#" onclick="pageTurning(4)">末页</a>&nbsp;&nbsp;
                     </div>
                 </fieldset>
                     </div>

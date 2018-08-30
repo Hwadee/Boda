@@ -1,4 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%--
   Created by IntelliJ IDEA.
   User: dell
   Date: 2018/8/11
@@ -158,8 +160,8 @@
                                         <div class="oneThree">
                                             <label>生日</label>
                                             <div class="formRight">
-                                                <input type="text" value="${detailInfo.printEmpBirthday()}"
-                                                       class="validate[required,custom[date]]" readonly="readonly"
+                                                <input type="text" value="<fmt:formatDate value='${detailInfo.empBirthday}' pattern='yyyy-MM-dd'/>"
+                                                       class="validate[required,custom[date]] datepicker" readonly="readonly"
                                                        name="birthday" id="birthday"/>
                                             </div>
                                         </div>
@@ -278,8 +280,8 @@
                             <div class="formRow">
                                 <label>邮箱：</label>
                                 <div class="formRight">
-                                    <input type="text" value="${detailInfo.empEmail}" name="email" id="email"
-                                           class="validate[custom[email]]" readonly="readonly">
+                                    <input type="text" name="email" id="email"
+                                           class="validate[custom[email]]" readonly="readonly" value="${detailInfo.empEmail}">
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -334,7 +336,7 @@
                             <div class="formRow">
                                 <label>上传头像<span class="req">*</span></label>
                                 <div class="formRight">
-                                    <input type="file" accept="image/*" name="req" id="req">
+                                    <input type="file" accept="image/*" name="image">
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -353,10 +355,9 @@
 
 <div class="clear"></div>
 <script type="text/javascript">
+    //显示hometown
     var homeTown = "${detailInfo.empHometown}";
     document.getElementById(homeTown + "1").selected = true;
-    var address = "${detailInfo.empAddress}";
-    document.getElementById(address + "2").selected = true;
 </script>
 <script type="text/javascript">
     var msg1 = "${PSW}";

@@ -72,8 +72,6 @@
 
     <script type="text/javascript" src="./js/charts/chart.js"></script>
 
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
 
 <body>
@@ -104,18 +102,16 @@
     <div class="line"></div>
     <!-- Main 表格 -->
     <div class="wrapper">
-        <form id="form1" action="LoanInfo.do" class="searchWidget">
-            <div style="width: 95%;">
-            <div class="formRow">
-                <div class="oneTwo"><input type="text" name="loanMinDate" id="loanMinDate" placeholder="最早贷款时间"/></div>
-                <div class="oneTwo"><input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间"/></div>
-            </div>
-            </div>
-            <div style="width: 5%; float: left;" align="center"><input type="submit" name="querybtn" value=""/></div>
+        <form id="form1" action="LoanInfo.do" >
+            <div class="searchWidget">
+            <input type="text" name="loanMinDate" id="loanMinDate" placeholder="最早贷款时间" class="datepicker" style="width: 45%" value="${loanMinDate}"/>
+            <input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间" class="datepicker" style="width: 45%" value="${loanMaxDate}"/>
+
+            <input type="submit" name="querybtn" value=""/>
             <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
             <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
-
+            </div>
         </form>
 
         <!-- Widgets -->
@@ -158,12 +154,12 @@
 
                     <c:if test="${loanPage.objList!=null}">
                         <tr>
-                            <td colspan="6" align="center">
-                                <button onclick="pageTurn(1)">首页</button> &nbsp;
-                                <button onclick="pageTurn(2)">上一页</button>&nbsp;
+                            <td colspan="7" align="center">
+                                <a onclick="pageTurn(1)">首页</a> &nbsp;
+                                <a onclick="pageTurn(2)">上一页</a>&nbsp;
                                 &nbsp;第${loanPage.currentPage}页&nbsp;/&nbsp;共${loanPage.allPageNum}页&nbsp;
-                                <button onclick="pageTurn(3)">下一页</button>&nbsp;
-                                <button onclick="pageTurn(4)">末页</button>&nbsp;
+                                <a onclick="pageTurn(3)">下一页</a>&nbsp;
+                                <a onclick="pageTurn(4)">末页</a>&nbsp;
 
                             </td>
                         </tr>

@@ -21,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return false;
         } else if (!ActionPowerManage.hasPower(request)) {
             request.setAttribute("MSG", "没有权限");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("index2.jsp").forward(request, response);
             return false;
         }
         try {

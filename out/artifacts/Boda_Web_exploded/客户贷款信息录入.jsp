@@ -15,8 +15,7 @@
     <title>客户贷款申请</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/birthday.js"></script>
-    <script type="text/javascript" src="./js/place.js"></script>
+
     <script type="text/javascript" src="./js/plugins/spinner/ui.spinner.js"></script>
     <script type="text/javascript" src="./js/plugins/spinner/jquery.mousewheel.js"></script>
 
@@ -109,73 +108,73 @@
         <div class="widgets">
             <div class="widget">
                 <div class="title">
-                    <img src="./images/icons/dark/stats.png" alt class="titleIcon">
+                    <img src="./images/icons/dark/stats.png" alt="" class="titleIcon">
                     <h6 id="edit">客户贷款申请信息</h6>
                 </div>
-                <form id="validate" class="form" method="post" action="AddLoanInfo.do">
+                <form id="validate" method="post" class="form" action="AddLoanInfo.do">
                     <fieldset>
                         <div class="formRow">
-                            <label>customerId<span class="req">*</span> </label>
+                            <label>客户Id<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addId" name="customerId"/>
+                                <input type="text" id="addId" name="customerId" class="validate[required,custom[integer]]"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>empId<span class="req">*</span> </label>
+                            <label>员工Id<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addEmpId" name="empId"/>
+                                <input type="text" id="addEmpId" name="empId" class="validate[required,custom[integer]]"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>loanMoney<span class="req">*</span> </label>
+                            <label>贷款<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addLoanMoney" name="loanMoney"/>
+                                <input type="text" id="addLoanMoney" name="loanMoney" class="validate[required,custom[integer]]"/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>loanDate<span class="req">*</span> </label>
+                            <label>贷款日期<span class="req">*</span> </label>
                             <div class="formRight">
                                 <c:set var="now" value="<%=new java.util.Date()%>"/>
-                                <input type="text" id="addLoanDate" name="loanDate"/>
+                                <input type="text" id="addLoanDate" name="loanDate" class="datepicker validate[required,custom[date]] "/>
                             </div>
                             <div class="clear"></div>
                         </div>
+                        <%--<div class="formRow">--%>
+                            <%--<label>贷款状态<span class="req">*</span> </label>--%>
+                            <%--<div class="formRight">--%>
+                                <%--<input type="text" id="addLoanState" name="loanState" class="validate[required]"/>--%>
+                            <%--</div>--%>
+                            <%--<div class="clear"></div>--%>
+                        <%--</div>--%>
                         <div class="formRow">
-                            <label>loanState<span class="req">*</span> </label>
-                            <div class="formRight">
-                                <input type="text" id="addLoanState" name="loanState"/>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="formRow">
-                            <label>returnStartDate<span class="req">*</span> </label>
+                            <label>开始还款日期<span class="req">*</span> </label>
                             <div class="formRight">
                                 <c:set var="now" value="<%=new java.util.Date()%>"/>
-                                <input type="text" id="addReturnStartDate" name="returnStartDate"/>
+                                <input type="text" id="addReturnStartDate" name="returnStartDate" class="datepicker validate[required,custom[date]] " />
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>returnYears<span class="req">*</span> </label>
+                            <label>归还年数<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addReturnYears" name="returnYears"/>
+                                <input type="text" id="addReturnYears" name="returnYears" class="validate[required,custom[integer]] " />
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>numbersOfStages<span class="req">*</span> </label>
+                            <label>期数<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="NumberOfStages" name="numberOfStages"/>
+                                <input type="text" id="NumberOfStages" name="numberOfStages"  class="validate[required,custom[integer]] "/>
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="formRow">
-                            <label>rateOfInterest<span class="req">*</span> </label>
+                            <label>利率<span class="req">*</span> </label>
                             <div class="formRight">
-                                <input type="text" id="addRateOfInterest" name="rateOfInterest"/>
+                                <input type="text" id="addRateOfInterest" name="rateOfInterest"  class="validate[required,custom[number]] "/>
                             </div>
                             <div class="clear"></div>
                         </div>

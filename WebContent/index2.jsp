@@ -150,7 +150,7 @@
                         <div class="clear"></div>
                         <div class="newUpdate">
                             <div class="uDone">
-                                <a href="IntoLoanExamine.do" title>
+                                <a href="QueryLoanInfo.do" title>
                                     <strong>客户贷款审批</strong>
                                 </a>
                                 <span>针对贷款账户资料进行审批流程</span>
@@ -168,15 +168,15 @@
                         <h6>贷后账户管理</h6>
                     </div>
                     <div class="updates">
-                        <div class="newUpdate">
-                            <div class="uDone">
-                                <a href="逾期账户分配条件.jsp" title>
-                                    <strong>逾期账户分配条件</strong>
-                                </a>
-                                <span>根据账户情况设置分配条件</span>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
+                        <%--<div class="newUpdate">--%>
+                        <%--<div class="uDone">--%>
+                        <%--<a href="逾期账户分配条件.jsp" title>--%>
+                        <%--<strong>逾期账户分配条件</strong>--%>
+                        <%--</a>--%>
+                        <%--<span>根据账户情况设置分配条件</span>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="clear"></div>--%>
                         <div class="newUpdate">
                             <div class="uDone">
                                 <a href="IntoOverTimeWork.do" title>
@@ -281,6 +281,11 @@
 </div>
 
 <div class="clear"></div>
-
+<script type="text/javascript">
+    const msg = "${MSG}";
+    if (msg !== null && msg !== "") {
+        alert(msg);
+    }
+</script>
 </body>
 </html>

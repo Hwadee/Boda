@@ -122,15 +122,15 @@
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
-                        <th>还款id</th>
-                        <th>贷款id</th>
-                        <th>还款金额</th>
-                        <th>还款日期</th>
-                        <th>应还金额</th>
-                        <th>应还日期</th>
-                        <th>还款期数</th>
-                        <th>还款状态</th>
-                        <th>催促还款</th>
+                        <td>还款id</td>
+                        <td>贷款id</td>
+                        <td>还款金额</td>
+                        <td>还款日期</td>
+                        <td>应还金额</td>
+                        <td>应还日期</td>
+                        <td>还款期数</td>
+                        <td>还款状态</td>
+                        <td>催促还款</td>
                     </tr>
                     </thead>
                     <tbody>

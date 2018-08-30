@@ -123,15 +123,14 @@
                 <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                     <thead>
                     <tr>
-                        <th>还款id</th>
-                        <th>贷款id</th>
-                        <th>还款金额</th>
-                        <th>应还金额</th>
-                        <th>还款日期</th>
-                        <th>应还日期</th>
-                        <th>分期数</th>
-                        <th>还款状态</th>
-
+                        <td>还款id</td>
+                        <td>贷款id</td>
+                        <td>还款金额</td>
+                        <td>应还金额</td>
+                        <td>还款日期</td>
+                        <td>应还日期</td>
+                        <td>分期数</td>
+                        <td>还款状态</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -152,12 +151,12 @@
                     </c:forEach>
                     </tbody>
                 </table>
-                <div>
-                    <input type="button" value="首页" onclick="pageTurning(1)">
-                    <input type="button" value="上一页" onclick="pageTurning(2)">
+                <div align="center">
+                    <a href="#" onclick="pageTurning(1)">首页</a>
+                    <a href="#" onclick="pageTurning(2)">上一页</a>
                     <span id="pageInfo">第${todayReturnPage.currentPage}页/共${todayReturnPage.allPageNum}页</span>
-                    <input type="button" value="下一页" onclick="pageTurning(3)">
-                    <input type="button" value="末页" onclick="pageTurning(4)">
+                    <a href="#" onclick="pageTurning(3)">下一页</a>
+                    <a href="#" onclick="pageTurning(4)">末页</a>
                 </div>
             </div>
         </div>

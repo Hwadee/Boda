@@ -26,6 +26,11 @@
 		</association>
 	</resultMap>
 
+	<!--<sql id="where">-->
+		<!--<where>-->
+			<!--<if	test="loanId != null and loanId != ''">AND loan_id = #{loanId}</if>-->
+		<!--</where>-->
+	<!--</sql>-->
 	<!-- 通过还款id查询还款信息-->
 	<select id="findReturnLoanById" parameterType="Integer" resultType="com.boda.pojo.ReturnLoan">
 		SELECT *

@@ -144,7 +144,7 @@
     <!-- 查找贷款信息总数 -->
     <select id="findLoanCount" resultType="int">
         SELECT count(*)
-        FROM return_loan
+        FROM loan
     </select>
 
     <!-- 根据贷款金额查询贷款信息 -->
@@ -172,10 +172,11 @@
     </update>
 
     <!-- 查询未审批客户信息 -->
-    <select id="findLoanByLoanState" resultType="com.boda.pojo.Loan">
+    <select id="findUnapprovedLoan" resultType="com.boda.pojo.Loan">
         SELECT *
         FROM loan
         WHERE loan_state ='未审批'
+        LIMIT #{startRow}, #{length}
     </select>
 
     <!-- 通过指定信息查询符合条件的数量 -->

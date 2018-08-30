@@ -132,8 +132,8 @@
                     <div class="updates">
                         <div class="newUpdate">
                             <div class="uDone">
-                                <a href="客户信息录入.jsp" title>
-                                    <strong>客户信息录入</strong>
+                                <a href="IntoAddLoan.do" title>
+                                    <strong>贷款信息录入</strong>
                                 </a>
                                 <span>针对贷款用户个人信息录入</span>
                             </div>
@@ -141,7 +141,7 @@
                         <div class="clear"></div>
                         <div class="newUpdate">
                             <div class="uDone">
-                                <a href="#" title>
+                                <a href="IntoCusInfo.do" title>
                                     <strong>客户信息查询</strong>
                                 </a>
                                 <span>查询各贷款账户状态、查询数量、查询客户信息、模糊查询等</span>
@@ -150,7 +150,7 @@
                         <div class="clear"></div>
                         <div class="newUpdate">
                             <div class="uDone">
-                                <a href="#" title>
+                                <a href="QueryLoanInfo.do" title>
                                     <strong>客户贷款审批</strong>
                                 </a>
                                 <span>针对贷款账户资料进行审批流程</span>
@@ -168,18 +168,18 @@
                         <h6>贷后账户管理</h6>
                     </div>
                     <div class="updates">
+                        <%--<div class="newUpdate">--%>
+                            <%--<div class="uDone">--%>
+                                <%--<a href="逾期账户分配条件.jsp" title>--%>
+                                    <%--<strong>逾期账户分配条件</strong>--%>
+                                <%--</a>--%>
+                                <%--<span>根据账户情况设置分配条件</span>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="clear"></div>--%>
                         <div class="newUpdate">
                             <div class="uDone">
-                                <a href="#" title>
-                                    <strong>逾期账户分配条件</strong>
-                                </a>
-                                <span>根据账户情况设置分配条件</span>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="newUpdate">
-                            <div class="uDone">
-                                <a href="#" title>
+                                <a href="IntoOverTimeWork.do" title>
                                     <strong>逾期账户工作</strong>
                                 </a>
                                 <span>针对逾期账户进行催收工作，主要页面能显示客户基本信息、还款情况、逾期天数等</span>
@@ -208,8 +208,8 @@
                     <div class="wUserInfo">
                         <a href="#" title="" class="wUserPic"><img src="images/user.png" alt=""/></a>
                         <ul class="leftList">
-                            <li><a href="#" title=""><strong>放款名单</strong></a></li>
-                            <li><a href="#" title="">表现当天已签署合同名单、及历史记录</a></li>
+                            <li><a href="IntoLoanInfo.do" title=""><strong>放款名单</strong></a></li>
+                            <li><a href="IntoLoanInfo.do" title="">表现当天已签署合同名单、及历史记录</a></li>
                         </ul>
                         <div class="clear"></div>
                     </div>
@@ -219,8 +219,8 @@
                     <div class="wUserInfo">
                         <a href="#" title="" class="wUserPic"><img src="images/user.png" alt=""/></a>
                         <ul class="leftList">
-                            <li><a href="#" title=""><strong>还款功能</strong></a></li>
-                            <li><a href="#" title="">记录各账户还款页面操作功能</a></li>
+                            <li><a href="returnOfToday.do" title=""><strong>还款名单</strong></a></li>
+                            <li><a href="returnOfToday.do" title="">今日还款名单</a></li>
                         </ul>
                         <div class="clear"></div>
                     </div>
@@ -237,15 +237,15 @@
                     <div class="updates">
                         <div class="newUpdate">
                             <span class="uNotice">
-                                <a href="#" title=""><strong>部门管理</strong></a>
-                                <span>建立各个部门的基本资料，可定义多层的部门设置</span>
+                                <a href="IntoDeptInfo.do" title=""><strong>部门管理</strong></a>
+                                <span>建立各个部门的基本资料</span>
                             </span>
                             <div class="clear"></div>
                         </div>
 
                         <div class="newUpdate">
                             <span class="uNotice">
-                                <a href="人员管理.jsp" title=""><strong>人员管理</strong></a>
+                                <a href="IntoEmpInfo.do" title=""><strong>人员管理</strong></a>
                                 <span>建立人员的基本资料</span>
                             </span>
                             <div class="clear"></div>
@@ -253,16 +253,16 @@
 
                         <div class="newUpdate">
                             <span class="uNotice">
-                                <a href="#" title=""><strong>权限设置</strong></a>
-                                <span>根据使用人员的岗位分配不同的系统操作权限</span>
+                                <a href="IntoPowerSetting.do" title=""><strong>权限设置</strong></a>
+                                <span>根据职位位分配不同的系统操作权限</span>
                             </span>
                             <div class="clear"></div>
                         </div>
 
                         <div class="newUpdate">
                             <span class="uNotice">
-                                <a href="#" title=""><strong>操作系统查询</strong></a>
-                                <span>对每个使用人员的操作记录进行查询</span>
+                                <a href="OperationLogs.do" title=""><strong>操作系统查询</strong></a>
+                                <span>查询系统使用操作记录</span>
                             </span>
                             <div class="clear"></div>
                         </div>
@@ -281,6 +281,11 @@
 </div>
 
 <div class="clear"></div>
-
+<script type="text/javascript">
+    const msg = "${MSG}";
+    if (msg !== null && msg !== "") {
+        alert(msg);
+    }
+</script>
 </body>
 </html>

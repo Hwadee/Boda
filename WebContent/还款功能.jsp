@@ -122,33 +122,34 @@
                     <table cellpadding="0" cellspacing="0" width="100%" class="sTable" id="listTable">
                         <thead>
                         <tr>
-                            <th>还款id</th>
-                            <th>贷款id</th>
-                            <th>归还钱数</th>
-                            <th>应还钱数</th>
-                            <th>归还时间</th>
-                            <th>应还时间</th>
-                            <th>期数</th>
-                            <th>状态</th>
-
+                            <td>还款id</td>
+                            <td>贷款id</td>
+                            <td>归还钱数</td>
+                            <td>应还钱数</td>
+                            <td>归还时间</td>
+                            <td>应还时间</td>
+                            <td>期数</td>
+                            <td>状态</td>
+                            <td>是否还款</td>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach items="${returnLoan}" var="returnLoan">
                             <tr>
-                                <td>${returnLoan.returnId}</td>
-                                <td>${returnLoan.loanId}</td>
-                                <td>${returnLoan.returnMoney}</td>
-                                <td>${returnLoan.shouldReturnMoney}</td>
-                                <td><fmt:formatDate value="${returnLoan.returnDate}"
+                                <td align="center">${returnLoan.returnId}</td>
+                                <td align="center">${returnLoan.loanId}</td>
+                                <td align="center">${returnLoan.returnMoney}</td>
+                                <td align="center">${returnLoan.shouldReturnMoney}</td>
+                                <td align="center"><fmt:formatDate value="${returnLoan.returnDate}"
                                                     pattern="yyyy-MM-dd"/></td>
-                                <td><fmt:formatDate value="${returnLoan.shouldReturnDate}"
-                                                    pattern="yyyy-MM-dd"/></td>
-                                <td>${returnLoan.whichStage}</td>
-                                <td>${returnLoan.returnState}</td>
-                                <td>
+                                <td align="center"><fmt:formatDate value="${returnLoan.shouldReturnDate}"
+                                                                   pattern="yyyy-MM-dd"/></td>
+                                <td align="center">${returnLoan.whichStage}</td>
+                                <td align="center">${returnLoan.returnState}</td>
+                                <td align="center">
                                     <a href="${pageContext.request.contextPath}/updateReturnMoney.do?returnId=${returnLoan.returnId}">
-                                        <input type="button" value="确认还款"></a></td>
+                                        <input type="button" value="确认还款" class="blueB"></a>
+                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>

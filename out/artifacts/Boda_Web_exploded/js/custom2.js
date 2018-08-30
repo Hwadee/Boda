@@ -494,10 +494,8 @@ $(function () {
     $(".datepicker").datepicker({
         defaultDate: +7,
         autoSize: true,
-        /*appendText: '(dd-mm-yyyy)',
-        dateFormat: 'dd-mm-yy',*/
-        /*appendText: '(yyyy-mm-dd)',*/
-        dateFormat: 'yy-mm-dd',
+        appendText: '(dd-mm-yyyy)',
+        dateFormat: 'dd-mm-yy',
     });
 
     $(".datepickerInline").datepicker({
@@ -509,7 +507,7 @@ $(function () {
     });
 
 
-	
+
 
 
 
@@ -869,5 +867,5 @@ $(function () {
 
     $("select, input:checkbox, input:radio, input:file").uniform();
 
-	
+
 });

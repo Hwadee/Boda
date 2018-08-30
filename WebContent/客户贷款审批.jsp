@@ -102,11 +102,10 @@
     <!-- Main 表格 -->
     <div class="wrapper">
         <form action="QueryLoanInfo.do" id="form1" class="searchWidget">
-            <input type="text" name="loanState" placeholder="贷款状态查询"/>
             <input type="hidden" id="currentPage" name="currentPage" value="${loanPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${loanPage.pageSize}">
             <input type="hidden" id="allPageNum" name="allPageNum" value="${loanPage.allPageNum}">
-            <input type="submit" name="querybtn" value=""/>
+            <%--<input type="submit" name="querybtn" value=""/>--%>
         </form>
         <!-- 显示搜索结果提示信息 -->
         <div id="searchMsgText" class="red">${searchMSG}</div>
@@ -208,7 +207,7 @@
                 $('#allPageNum').val("0");
                 break;
             case 1:
-                if (currentPage > 1) $('#currentPage').val("1");
+                if (currentPage >= 1) $('#currentPage').val("1");
                 else return;
                 break;
             case 2:
@@ -231,6 +230,7 @@
                 else return;
                 break;
         }
+        document.getElementById("currentPage").value = currentPage;
         document.getElementById("form1").submit();
     }
 </script>
