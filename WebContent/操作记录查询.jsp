@@ -109,9 +109,11 @@
                 <input type="hidden" id="pageSize" name="pageSize" value="${operationLogPage.pageSize}">
                 <input type="hidden" id="allPageNum" name="allPageNum" value="${operationLogPage.allPageNum}">
 
-                <input type="text" id="employeeId" name="empId" placeholder="员工ID" style="width: 29%"/>
-                <input type="text" id="startDate" name="startDate" placeholder="开始日期" style="width: 29%"/>
-                <input type="text" id="endDate" name="endDate" placeholder="结束日期" style="width: 29%"/>
+                <input type="text" id="employeeId" name="empId" placeholder="员工ID" style="width: 29%" value="${empId}"/>
+                <input type="text" id="startDate" name="startDate" placeholder="开始日期" style="width: 29%"
+                       value="${startDate}"/>
+                <input type="text" id="endDate" name="endDate" placeholder="结束日期" style="width: 29%"
+                       value="${endDate}"/>
                 <input type="button" onclick="pageTurning(0)"/>
             </form>
         </div>
@@ -221,6 +223,7 @@
         }
         document.getElementById("currentPage").value = currentPage;
         document.getElementById("form1").submit();
+
     }
 
 </script>

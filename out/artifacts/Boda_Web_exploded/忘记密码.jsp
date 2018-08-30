@@ -5,14 +5,13 @@
     <title>博达小额贷款业务管理系统登录</title>
     <link href="./css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <style type="text/css">
-        .sendCode a {
+        .sendCode a{
             float: right;
             color: #999;
             margin-bottom: 10px;
             font-family: 'Droid Sans', sans-serif;
         }
-
-        .sendCode a:hover {
+        .sendCode a:hover{
             color: #323B43;
         }
     </style>
@@ -41,7 +40,7 @@
     </script>
 
     <script type="text/javascript">
-
+        
         function sendValidationEmail() {
             const account = $("#empAccount").val();
             document.getElementById("sendCode").innerHTML = "已发送";
@@ -59,14 +58,14 @@
 
         <%--const smsg = "${successMSG}";--%>
         <%--if (smsg !== null && smsg !== "") {--%>
-        <%--alert(smsg);--%>
-        //        }
+            <%--alert(smsg);--%>
+//        }
 
         <%--const empAccount = "${account}";--%>
         <%--if (empAccount === null || empAccount === "") {--%>
-        <%--$("#empAccount").val("账号");--%>
+            <%--$("#empAccount").val("账号");--%>
         <%--} else {--%>
-        <%--$("#empAccount").val(empAccount);--%>
+            <%--$("#empAccount").val(empAccount);--%>
         <%--}--%>
     </script>
 </head>
@@ -80,8 +79,7 @@
         </div>
         <form action="ForgetPasswd.do" method="post">
             <li style="margin-bottom: 0px;">
-                <input id="empAccount" type="text" class="text" name="empAccount" value="${account}"
-                       onfocus="this.value = '';"
+                <input id="empAccount" type="text" class="text" name="empAccount" value="${account}" onfocus="this.value = '';"
                        onblur="if (this.value === '') {this.value = '账号';}"><a href="#" class=" icon user"></a>
             </li>
             <div class="sendCode"><a href="#" id="sendCode" onclick="sendValidationEmail()">发送验证码</a></div>
@@ -92,13 +90,13 @@
             </li>
             <div class="clear"></div>
             <div class="submit">
-                <input type="submit" value="重置密码">
+                <input type="submit" value="重置密码" >
                 <!--<input id="sendCodebtn" type="button" value="发送验证码" onclick="sendValidationEmail()">-->
                 <h4><a href="#" onclick="location.href = 'IntoLogin.do'">返回登录</a></h4>
                 <div class="clear"></div>
             </div>
         </form>
-
+        
     </div>
 </div>
 </div>

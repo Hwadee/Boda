@@ -278,7 +278,7 @@
                             <div class="formRow">
                                 <label>邮箱：</label>
                                 <div class="formRight">
-                                    <input type="text" value="" name="email" id="email"
+                                    <input type="text" value="${detailInfo.empEmail}" name="email" id="email"
                                            class="validate[custom[email]]" readonly="readonly">
                                 </div>
                                 <div class="clear"></div>

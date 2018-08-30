@@ -105,9 +105,10 @@
 <div class="wrapper">
     <div id="cusInfoTable" class="searchWidget">
         <form action="CusInfo.do" id="form1">
-            <input type="text" name="customerName" placeholder="客户名" style="width: 29%"/>
-            <input type="text" name="customerPhone" placeholder="电话" style="width: 29%"/>
-            <input type="text" name="customerIdentityId" placeholder="身份证" style="width: 29%"/>
+            <input type="text" name="customerName" placeholder="客户名" style="width: 29%" value="${customerName}"/>
+            <input type="text" name="customerPhone" placeholder="电话" style="width: 29%" value="${customerPhone}"/>
+            <input type="text" name="customerIdentityId" placeholder="身份证" style="width: 29%"
+                   value="${customerIdentityId}"/>
 
             <input type="hidden" id="currentPage" name="currentPage" value="${cusPage.currentPage}">
             <input type="hidden" id="pageSize" name="pageSize" value="${cusPage.pageSize}">
@@ -191,7 +192,7 @@
     <!--endprint1-->
 
 </div>
-<!--新增部门信息-->
+<!--新增客户信息-->
 <div id="addInfo" class="wrapper" style="display: none">
     <div class="widgets">
         <div class="widget">

@@ -107,8 +107,10 @@
         <form id="form1" action="LoanInfo.do" class="searchWidget">
             <div style="width: 95%;">
             <div class="formRow">
-                <div class="oneTwo"><input type="text" name="loanMinDate" id="loanMinDate" placeholder="最早贷款时间"/></div>
-                <div class="oneTwo"><input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间"/></div>
+                <div class="oneTwo"><input type="text" name="loanMinDate" id="loanMinDate" placeholder="最早贷款时间"
+                                           value="${loanMinDate}"/></div>
+                <div class="oneTwo"><input type="text" name="loanMaxDate" id="loanMaxDate" placeholder="最晚贷款时间"
+                                           value="${loanMaxDate}"/></div>
             </div>
             </div>
             <div style="width: 5%; float: left;" align="center"><input type="submit" name="querybtn" value=""/></div>

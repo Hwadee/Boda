@@ -106,9 +106,9 @@
         <div class="searchWidget">
             <form id="form1" action="EmpInfo.do">
 
-                <input type="text" name="empId" placeholder="员工号" style="width: 29%"/>
-                <input type="text" name="empName" placeholder="员工姓名" style="width: 29%"/>
-                <input type="text" name="empDept" placeholder="所在部门" style="width: 29%"/>
+                <input type="text" name="empId" placeholder="员工号" style="width: 29%" value="${empId}"/>
+                <input type="text" name="empName" placeholder="员工姓名" style="width: 29%" value="${empName}"/>
+                <input type="text" name="empDept" placeholder="所在部门" style="width: 29%" value="${empDept}"/>
 
                 <input type="hidden" id="currentPage" name="currentPage" value="${empPage.currentPage}">
                 <input type="hidden" id="pageSize" name="pageSize" value="${empPage.pageSize}">

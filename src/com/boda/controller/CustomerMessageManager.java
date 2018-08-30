@@ -41,6 +41,9 @@ public class CustomerMessageManager {
             model.addAttribute("searchMSG", "无符合结果");
         } else {
             model.addAttribute("cusPage", page);
+            model.addAttribute("customerName", customerName);
+            model.addAttribute("customerPhone", customerPhone);
+            model.addAttribute("customerIdentityId", customerIdentityId);
         }
         return "客户信息查询";
     }

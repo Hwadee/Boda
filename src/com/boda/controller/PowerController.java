@@ -35,7 +35,7 @@ public class PowerController {
                 List<PostPowerRelation> powerList = powerControllerService.findPowerByPostId(employee.getPostId());
                 request.getSession().setAttribute("employee", employee);
                 request.getSession().setAttribute("powerList", powerList);
-                return "index";
+                return "index2";
             }
 
         } catch (Exception e) {

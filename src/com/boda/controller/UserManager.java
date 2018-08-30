@@ -35,6 +35,7 @@ public class UserManager {
     public String intoForgetPasswd() {
         return "忘记密码";
     }
+
 //    @RequestMapping("/UserLogin.do")
 //    public String UserLoginController(String account, String password, HttpServletRequest request, Model model) throws IOException {
 //
@@ -92,6 +93,9 @@ public class UserManager {
             model.addAttribute("searchMSG", "无符合结果");
         } else {
             model.addAttribute("empPage", page);
+            model.addAttribute("empId", empId);
+            model.addAttribute("empName", empName);
+            model.addAttribute("empDept", empDept);
         }
         return "人员管理";
     }

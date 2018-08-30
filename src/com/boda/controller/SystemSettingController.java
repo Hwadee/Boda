@@ -44,7 +44,11 @@ public class SystemSettingController {
             Integer pageSize_ = (pageSize == null || "".equals(pageSize)) ? defaultPageSize : Integer.parseInt(pageSize);
             Page<OperationLog> operationLogPage = systemSettingService.getOperationLogs(currentPage_, pageSize_, startDate_, endDate_, empId_);
             model.addAttribute("operationLogPage", operationLogPage);
+            model.addAttribute("empId", empId);
+            model.addAttribute("startDate", startDate);
+            model.addAttribute("endDate", endDate);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("操作记录查询异常");
         }
         return "操作记录查询";

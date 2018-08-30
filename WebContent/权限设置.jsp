@@ -194,7 +194,7 @@
                 }
             },
             error: function (request) {
-                alert("出现错误!")
+                alert("获取职位信息失败，请刷新页面后重试");
             }
         });
     }

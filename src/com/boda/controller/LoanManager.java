@@ -47,15 +47,8 @@ public class LoanManager {
         page = ls.getLoanInfo(loanMinDate, loanMaxDate, page);
 
         model.addAttribute("loanPage", page);
-//
-//        Page<Loan> loans = ls.getLoanInfo(loanMinDate, loanMaxDate, page);
-//
-//        if (!loans.isEmpty()) {
-//            model.addAttribute("loaninfo", loans);
-//
-//        } else {
-//            model.addAttribute("MSG", "无符合结果");
-//        }
+        model.addAttribute("loanMinDate", loanMinDate);
+        model.addAttribute("loanMaxDate", loanMaxDate);
 
         return "放款名单";
     }
